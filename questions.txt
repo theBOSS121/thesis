@@ -1,0 +1,7 @@
+Charectarization and construction of permutation graphs
+
+(b) If uv is an edge and x is a vertex that lies between u d v in the drawing, then either !!!uv!!!(ux) is an edge or an xv is an edge. 
+
+Definition 2.1: (b) simmilar to above
+
+page 5: G = G(P_1,...,P_1) ??? and G = K_1(G) ??? kind of understand (don't like the notation)
