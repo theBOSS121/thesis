@@ -11,6 +11,7 @@
 \newtheorem*{definition}{Definition}
 \newtheorem*{theorem}{Theorem}
 \newtheorem*{lemma}{Lemma}
+\newtheorem*{corollary}{Corollary}
 
 \makeatletter
 \xpatchcmd{\@thm}{\thm@headpunct{.}}{\thm@headpunct{}}{}{}
@@ -23,8 +24,8 @@
 definitions
 \end{comment}
 
-\section{ Characterization and Constriction of Permutation Graphs: }
-\subsection{ Article definitions, theorems and lemmas: }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ Article: Characterization and Constriction of Permutation Graphs }
 An inversion of $\sigma$ is an ordered pair $(a_i, a_j)$ where $i < j$ but $a_i > a_j$. Equivalently $(x, y)$ is an inversion if and only if $x > y$ and $\sigma^{-1}(x) < \sigma^{-1}(y)$ 
 
 \begin{definition}[1.1]
@@ -109,8 +110,64 @@ If the only ways G can be written as a composition are $G = G(P_1,...,P_1)$, $G 
 \begin{theorem}[3.5]
     Let G be a decomposable permutation graph. Then there exists a non-trivial prime permutation graph U and pemutation graphs $H_1, H_2, ..., H_k$ which are subgraphs of G such that $G = U(H_1, H_2, ..., H_k)$
 \end{theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section { Article: Permutation graphs and the weak Bruhat order }
 
-\subsection{ Graph theory definitions}
+Let $I(\sigma) = \{ (i_k,i_l): i_k > i_l, 1 \leq k < l \leq n \}$ be the inversion set of $\sigma$.
+
+Each inversion $(i_k, i_l)$ of $\sigma$ has an associated unordered pair $\{ i_k, i_l \}$ called unordered inversion of $\sigma$, the set of which is denoted by $E(\sigma)$
+
+The permutation $\sigma$ thus determines: \\
+(a) a labeled graph $G(\sigma)$ with vertex set $\{ 1, 2, ..., n\}$ and edge set $E(\sigma)$ with the edges of $G(\sigma)$ corresponding to the unordered inversions of the permutation $\sigma$; \\
+(b) a labeled digraph $\Gamma(\sigma)$ with vertex set $\{ 1, 2, ..., n \}$ and edge set $I(\sigma)$ whose (directed) edges thus correspond to the inversions of $\sigma$.
+
+Thus $\Gamma(\sigma)$ is an orientation of $G(\sigma)$
+
+The set $I(\sigma)$ of inversions also determines a partially ordered set $(P(\sigma), \preceq_{\sigma})$ on $\{1, 2, ..., n\}$, since $1 \leq k < l < t \leq n$ and $(i_k, i_l)$, $(i_l, i_t) \in I(\sigma) \Rightarrow (i_k, i_t) \in I(\sigma)$  
+
+Note that the graph complement of $G(\sigma)$ is $G(\overleftarrow{\sigma})$ where $\overleftarrow{\sigma}$ is the permutation obtained from $\sigma$ by reversing the sequence of its elements to get $\overleftarrow{\sigma} = (i_n, ..., i_2, i_1)$
+
+\begin{theorem}[1.1]
+    A graph G is a permutation graph $\Leftrightarrow$ G and $\overline{G}$ are comparability graphs.
+\end{theorem}
+
+A poset (partially ordered set) $P = (X, \leq)$ determines a graph $G(P)$ with vertex set $X$ whose edges are all those pairs $\{ a, b \}$ such that $a \neq b$ and either $a \leq b$ or $b \leq a$. The transitive property of a partial order implies that $G(P)$ is a comparability graph. A linear extension of a poset $P = (X, \leq)$ is a linearly ordered set $P = (X, \leq^{'})$ on the same set X of elements such that $x \leq y$ always implies $x \leq^{'} y$. The dimension of a poset $(P, \leq)$ is the smallest number of its linear extensions whose intersection is $(P, \leq)$. A poset of dimension 1 is a linearly ordered set.
+
+\begin{theorem}[1.2]
+    A poset $P = (X, \leq)$ has dimension at most 2 $\Leftrightarrow$ the complement of its comparability graph is also a comparability graph
+\end{theorem}
+
+\begin{corollary}[1.3]
+    Let $\sigma$ be a permutation of $\{ 1, 2, ..., n\}$ not equal to the identity permutation $(1, 2, ..., n)$ or its reversal $(n, n-1, ..., 1)$. Then the dimension of $(P(\sigma), \preceq)$ equals 2.
+\end{corollary}
+
+\begin{lemma}[2.1]
+    Assume that $1 \leq k < l \leq n$. Let $\pi = (i_1, ..., i_{k-1}, i_k, ..., i_l, i_{l+1}, ..., i_n)$ where $i_k > i_l$, and let $\sigma = (i_1, ..., i_{k-1}, i_l, ..., i_k, i_{l+1}, ..., i_n)$ be obtained from $\pi$ by the transposition that interchanges $i_k$ and $i_l$. Consider the partition of $L = \{ k, k+1, ..., l \}$ given by $L = L_1 \cup L_2 \cup L_3 \cup  \{ k, l \}$ where \\
+    $L_1 = \{ s \in L: i_s > i_k \}$, $L_2 = \{ s \in L: i_k > i_s > i_l \}$, $L_3 = \{ s \in L: i_l > i_s \}$ \\
+    Consider the graphs $G(\sigma)$ and $G(\pi)$ with edge sets $E(\sigma)$ and $E(\pi)$. Then \\
+    $E(\sigma) \setminus E(\pi) = \{ (i_k, i_l) \} \cup \{ (i_k, i_s): s \in L_2 \cup L_3 \}$ \\
+    $E(\pi) \setminus E(\sigma) = \{ (i_l, i_s): s \in L_3 \} \cup \{ (i_s, i_k): s \in L_1 \}$ \\
+    In particular, $\sigma \preceq_b \pi \Leftrightarrow i_k > i_s > i_l$  $(k < s < l)$, and thus $\sigma \preceq_b \pi \Leftrightarrow \sigma$ can be obtained from $\pi$ by a sequence of adjacent transpositions.
+
+\end{lemma}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ Graph theory definitions }
 Induced subgraph of a graph is another graph, formed from a subset of the vertices of the graph and all of the edges (from the original graph) connecting pairs of vertices in that subset.
 
 An isomorphism $f$ of graphs $G$ and $H$ is bijection between the vertex sets of $G$ and $H$ $f: V(G) \rightarrow V(H)$ such that any two vertices u and v of $G$ are adjacent in $G \Leftrightarrow f(u)$ and $f(v)$ are adjacent in $H$. (edge-preserving bijection) $G \simeq H$
@@ -142,6 +199,7 @@ Disjoint union of graphs is an operation that combines two or more graphs to for
 
 The diameter of a tree is the length of the longest path between any 2 nodes of a tree. 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{ Relacije in urejenosti: }
 Relacije: $ R\subseteq A\times A, A\neq\emptyset$ \\
 R je refleksivna $\Leftrightarrow \forall x\in A: xRx$ \\
@@ -168,6 +226,7 @@ Transitivna ovojnica relacije R: $R^{+} = \bigcup_{n=1}^{\infty} R^{n}$
 Transitive closure $R^{+}$ of a homogeneous binary relation R on a set X is the smallest relation on X that contains R and is transitive.\\
 For example, if X is a set of airports and xRy means "there is a direct flight from airport x to airport y" (for x and y in X), then the transitive closure of R on X is the relation $R^+$ such that x$R^+$y means "it is possible to fly from x to y in one or more flights".
 
+
 \section { Funkcije }
 Funkcija $f: X \rightarrow Y$ je: \\
 injektivna : $x_1 \neq x_2 \Rightarrow f(x_1) \neq f(x_2) \Leftrightarrow f(x_1) = f(x_2) \Rightarrow x_1 = x_2$ \\
@@ -177,9 +236,7 @@ $\exists$ injekcija $f: X \rightarrow Y \Rightarrow |X| \leq |Y|$ \\
 $\exists$ surjekcija $f: X \rightarrow Y \Rightarrow |X| \geq |Y|$ \\
 $\exists$ bijekcija $f: X \rightarrow Y \Rightarrow |X| = |Y|$ \\
 
-
-% Inversion:\\
-% An inversion of $\sigma$ is an ordered pair $(a_i, a_j)$ where $i < j$ but $a_i > a_j$. Equivalently $(x, y)$ is an inversion if and only if $x > y$ and $\sigma^{-1}(x) < \sigma^{-1}(y)$
-
+\section { Other }
+Partition is division of a set of objects into a family of subsets that are mutually exclusive and jointly exhaustive.
 
 \end{document}

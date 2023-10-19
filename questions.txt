@@ -4,4 +4,6 @@ Charectarization and construction of permutation graphs
 
 Definition 2.1: (b) simmilar to above
 
-page 5: G = G(P_1,...,P_1) ??? and G = K_1(G) ??? kind of understand (don't like the notation)
+Permutation graphs and the weak Bruhat order:
+
+Lemma 2.1: not true?

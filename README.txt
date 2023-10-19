@@ -1,4 +1,4 @@
-Hours: 13h
+Hours: 15h
 
 links:
 https://en.wikipedia.org/wiki/Inversion_(discrete_mathematics)
