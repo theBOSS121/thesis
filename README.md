@@ -1,7 +1,7 @@
 # thesis
 
 
-Hours: 17h
+Hours: 19
 
 links:
 https://en.wikipedia.org/wiki/Inversion_(discrete_mathematics)
@@ -17,7 +17,14 @@ Characterization and Construction of Permutation Graphs:
 https://pdfs.semanticscholar.org/6bbc/d1cbc4495e8d7d95d8bca07a702172c6aaf1.pdf
 Permutation graphs and the weak Bruhat order*:
 https://adam-journal.eu/index.php/ADAM/article/view/1536/1498
+On graphs associated to sets of rankings / Comparing rankings by means of competitivity
+graphs: structural properties and computation (same authors):
+https://www.sciencedirect.com/science/article/pii/S0377042715001557?ref=pdf_download&fr=RR-2&rr=818f1d58fbfc5a59
+https://arxiv.org/pdf/1310.6921.pdf
 
+maybe later:
+https://www.sciencedirect.com/science/article/pii/S0166218X87800033?ref=cra_js_challenge&fr=RR-1
+https://arxiv.org/pdf/1709.06979.pdf
 
 Inversion number can be thought of as a measure of how “out of order” a
 permutation is.
