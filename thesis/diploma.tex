@@ -380,14 +380,16 @@ Ker gledamo permutacije na množici $[n]$, ki ima naravno urejenost, lahko zgorn
     \pi = (3 5 1 4 2)
 \end{align}
 Če je $n > 10$ med številkami pišemo vejice.
-Zapis permutacije $\pi$ kot produkt disjunktnih ciklov. 
+Permutacijo lahko zapišemo tudi kot produkt disjunktnih ciklov:
 \begin{align}
     \pi = (1 3)(2 5)(4)
 \end{align}
-Ker vemo $\pi \in S_5$ lahko cikel dolžine ena izpustimo.
+Posamezni cikel $(a_1, a_2, ..., a_i)$ nam pove, da je $\pi(a_1) = a_2$, $\pi(a_2) = a_3$, ..., $\pi(a_{i-1}) = a_i$ in $\pi(a_i) = a_1$.
+Ker vemo $\pi \in S_5$ lahko cikel dolžine ena izpustimo:
 \begin{align}
     \pi = (1 3)(2 5)
 \end{align}
+
 
 \begin{definicija}
     Naj bo A množica. 
@@ -402,6 +404,29 @@ Ker vemo $\pi \in S_5$ lahko cikel dolžine ena izpustimo.
 
 \end{definicija}
 
+\begin{trditev}
+    Naj bo $\circ$ kompozitum permutacij. $(S_n, \circ)$ je grupa.
+\end{trditev}
+\begin{dokaz}
+    \begin{enumerate}
+        \item Asociativnost: Naj bodo $\pi, \sigma, \tau \in S_n$. Za $\forall i \in [n]$ 
+        \begin{align}
+            ((\pi \circ \sigma) \circ \tau)(i) = (\pi \circ \sigma)(\tau(i)) = \pi(\sigma(\tau(i)))\\
+            (\pi \circ (\sigma \circ \tau))(i) = \pi((\sigma \circ \tau)(i)) = \pi(\sigma(\tau(i))) 
+        \end{align}
+        \item Enota: Naj bo $id \in S_n$ permutacija podana s predpisom $id(a) = a$, $\forall a \in [n]$. Za $\forall \pi \in S_n$ in $\forall i \in [n]$ velja:
+        \begin{align}
+            (\pi \circ id)(i) = \pi(id(i)) = \pi(i) \\
+            (id \circ \pi)(i) = id(\pi(i)) = \pi(i)
+        \end{align}
+        \item Inverz: Naj bo $\pi \in S_n$. Ker je $\pi$ bijekcija, $\exists \pi^{-1} \in S_n$.
+        \begin{align}
+            \pi \circ \pi^{-1} = \pi^{-1} \circ \pi = id
+        \end{align}
+    \end{enumerate}
+\end{dokaz}
+
+\chapter{ Inverzije }
 
 
 

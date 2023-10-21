@@ -5,18 +5,19 @@
 \contentsline {chapter}{Abstract}{}{chapter*.3}%
 \babel@toc {slovene}{}\relax 
 \contentsline {chapter}{\numberline {1} Permutacije }{1}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Uvod}{3}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Osnovni gradniki \LaTeX {a}}{5}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Matematično okolje in sklicevanje na besedilne konstrukte}{7}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Plovke: slike in tabele}{9}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Formati slik}{10}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Podnapisi k slikam in tabelam}{11}{subsection.5.1.1}%
-\contentsline {chapter}{\numberline {6}Struktura strokovnih besedil}{13}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Pogoste napake pri pisanju v slovenščini}{15}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Koristni nasveti pri pisanju v \LaTeX {u}}{17}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Pisave v \LaTeX u}{18}{section.8.1}%
-\contentsline {chapter}{\numberline {9}Kaj pa literatura?}{21}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Izbiranje virov za spisek literature}{23}{section.9.1}%
-\contentsline {chapter}{\numberline {10}Sistem STUDIS in PDF/A}{25}{chapter.10}%
-\contentsline {chapter}{\numberline {11}Sklepne ugotovitve}{27}{chapter.11}%
-\contentsline {chapter}{Literatura}{29}{chapter.11}%
+\contentsline {chapter}{\numberline {2} Inverzije }{3}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Uvod}{5}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Osnovni gradniki \LaTeX {a}}{7}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Matematično okolje in sklicevanje na besedilne konstrukte}{9}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Plovke: slike in tabele}{11}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Formati slik}{12}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Podnapisi k slikam in tabelam}{13}{subsection.6.1.1}%
+\contentsline {chapter}{\numberline {7}Struktura strokovnih besedil}{15}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Pogoste napake pri pisanju v slovenščini}{17}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Koristni nasveti pri pisanju v \LaTeX {u}}{19}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Pisave v \LaTeX u}{20}{section.9.1}%
+\contentsline {chapter}{\numberline {10}Kaj pa literatura?}{23}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Izbiranje virov za spisek literature}{25}{section.10.1}%
+\contentsline {chapter}{\numberline {11}Sistem STUDIS in PDF/A}{27}{chapter.11}%
+\contentsline {chapter}{\numberline {12}Sklepne ugotovitve}{29}{chapter.12}%
+\contentsline {chapter}{Literatura}{31}{chapter.12}%

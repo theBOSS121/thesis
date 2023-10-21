@@ -5,7 +5,6 @@ predstavitve permutacij
 grupa
 simetricna grupa
 cayleyev izrek
-inverzije
 razlicni nacini predstavitve inverzij
 zanimivosti o inverzijah
 rodovna funkcija
