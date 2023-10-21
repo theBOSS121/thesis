@@ -1,13 +1,13 @@
 This is BibTeX, Version 0.99d (TeX Live 2023)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: vzorec_dip_Seminar.aux
+The top-level auxiliary file: diploma.aux
 The style file: plainnat.bst
 Database file #1: literatura.bib
 Warning--empty year in knuth
 Warning--empty year in slovarcek
 You've used 13 entries,
             2773 wiz_defined-function locations,
-            669 strings with 6982 characters,
+            668 strings with 6953 characters,
 and the built_in function-call counts, 5305 in all, are:
 = -- 486
 > -- 264

@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex vzorec_dip_Seminar"] 1697229773 "vzorec_dip_Seminar.aux" "vzorec_dip_Seminar.bbl" "vzorec_dip_Seminar" 1697230123 0
-  "./literatura.bib" 1697210330 3558 6e4e71e23721b5089829977800a84ba8 ""
+["bibtex diploma"] 1697903736 "diploma.aux" "diploma.bbl" "diploma" 1697903932 0
+  "./literatura.bib" 1697896386 3974 8bc287452e06b778819cc7d2363b11a7 ""
   "c:/texlive/2023/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1697219399 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "vzorec_dip_Seminar.aux" 1697230122 6455 5eaf3228efc2c8db99bd091797469cef "pdflatex"
+  "diploma.aux" 1697903930 6651 eda9e3fe7cb6f615cadf4c8b1f742e77 "pdflatex"
   (generated)
-  "vzorec_dip_Seminar.bbl"
-  "vzorec_dip_Seminar.blg"
+  "diploma.bbl"
+  "diploma.blg"
   (rewritten before read)
-["pdflatex"] 1697230121 "c:/Users/Luka/source/isrm/thesys/thesis-template/vzorec_dip_Seminar.tex" "vzorec_dip_Seminar.pdf" "vzorec_dip_Seminar" 1697230123 0
-  "c:/Users/Luka/source/isrm/thesys/thesis-template/vzorec_dip_Seminar.tex" 1697230120 37222 7ee01ea00f9b836b66d656062f2edf17 ""
+["pdflatex"] 1697903929 "c:/Users/Luka/source/isrm/thesis/thesis/diploma.tex" "diploma.pdf" "diploma" 1697903932 0
+  "c:/Users/Luka/source/isrm/thesis/thesis/diploma.tex" 1697903928 39949 417d34f6a08a832c684194c573f52fab ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1697215677 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1697214843 1536 06717a2b50de47d4087ac0e6cd759455 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1697212153 1004 54797486969f23fa377b128694d548df ""
@@ -39,6 +39,7 @@
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1697212153 32080 340ef9bf63678554ee606688e7b5339d ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb" 1697212153 32166 b0c356b15f19587482a9217ce1d8fa67 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1697212153 32001 6aeea3afe875097b1eb0da29acd61e28 ""
+  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1697212153 30251 6afa5cb1d0204815a708a080681d4674 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1697212153 36741 fa121aac0049305630cf160b86157ee4 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1697212153 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1697212153 32722 d7379af29a190c3f453aba36302ff5a9 ""
@@ -47,6 +48,7 @@
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb" 1697212153 34586 5a65dc15601f9c74fe3fb3f37b3b8b6f ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb" 1697212153 24393 3b7eb51a67a0a62aec5849271bdb9c2e ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1697212153 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1697212153 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1697212153 36118 fad905eba93cff5bce1e185fe980a177 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb" 1697212153 35660 fb24af7afbadb71801619f1415838111 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb" 1697212153 24252 1e4e051947e12dfb50fee0b7f4e26e3a ""
@@ -133,20 +135,20 @@
   "c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1697224407 4750288 b9e32a962a7e89ce3e18dd08022e1c68 ""
   "c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1697224515 8195351 f0c12f76edf2bf3522a5e617f308faa1 ""
   "c:/texlive/2023/texmf.cnf" 1697224385 713 baa45e065482d44c4cd81b98ef72c63b ""
+  "diploma.aux" 1697903930 6651 eda9e3fe7cb6f615cadf4c8b1f742e77 "pdflatex"
+  "diploma.bbl" 1697903737 3433 d20d1ee1bcee395224e3f3770fbd98c8 "bibtex diploma"
+  "diploma.out" 1697903930 2760 71da38a75b988ce57e9db45db4308079 "pdflatex"
+  "diploma.toc" 1697903930 1539 099611b82b964afe02909c99c947bdd5 "pdflatex"
   "pdfa-1b.xmp" 1697210330 4334 479cc641e5392dfefe9617dab6275493 ""
-  "pdfa-1b.xmpi" 1697230122 2134 575f26f7d9664f3e2911cf2e66454913 "pdflatex"
+  "pdfa-1b.xmpi" 1697903930 2198 b599042249d0c6a1ba4b25b2026c9e46 "pdflatex"
   "pic1.pdf" 1697210330 27895 eecdab4dee44ad75bcdf5185e9b15381 ""
   "pic2.png" 1697210331 114410 625328c99d6c7623e1c9bbf99512cb21 ""
-  "vzorec_dip_Seminar.aux" 1697230122 6455 5eaf3228efc2c8db99bd091797469cef "pdflatex"
-  "vzorec_dip_Seminar.bbl" 1697229774 3433 d20d1ee1bcee395224e3f3770fbd98c8 "bibtex vzorec_dip_Seminar"
-  "vzorec_dip_Seminar.out" 1697230122 2644 4586169504bf03763cb5046b0df0eedf "pdflatex"
-  "vzorec_dip_Seminar.toc" 1697230122 1466 d1e3c538e5dfe756407a253ee296d51f "pdflatex"
   (generated)
+  "diploma.aux"
+  "diploma.log"
+  "diploma.out"
+  "diploma.pdf"
+  "diploma.toc"
   "pdfa-1b.xmpi"
-  "vzorec_dip_Seminar.aux"
-  "vzorec_dip_Seminar.log"
-  "vzorec_dip_Seminar.out"
-  "vzorec_dip_Seminar.pdf"
-  "vzorec_dip_Seminar.toc"
   (rewritten before read)
   "pdfa-1b.xmpi"

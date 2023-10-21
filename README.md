@@ -1,7 +1,19 @@
 # thesis
 
+permutacije
+predstavitve permutacij
+grupa
+simetricna grupa
+cayleyev izrek
+inverzije
+razlicni nacini predstavitve inverzij
+zanimivosti o inverzijah
+rodovna funkcija
+permutacijski grafi
+karektarizacija permutacijskih grafov
+delne urejenost permutacij
 
-Hours: 19
+
 
 links:
 https://en.wikipedia.org/wiki/Inversion_(discrete_mathematics)
@@ -50,3 +62,6 @@ inversion vector or Lehmer code.
 An inversion of f is an ordered pair (ai, aj), where i < j
 but ai > aj. Equivalently, (x, y) is an inversion
 if and only if x > y and f^(-1)(x) < f^(-1)(y)
+
+
+Hours: 21

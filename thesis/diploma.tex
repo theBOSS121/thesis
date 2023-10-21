@@ -1,5 +1,5 @@
 \documentclass[a4paper, 12pt]{book}
-%\documentclass[a4paper, 12pt, draft]{book}  Nalogo preverite tudi z opcijo draft, ki vam bo pokazala, katere vrstice so predolge!
+% \documentclass[a4paper, 12pt, draft]{book} % Nalogo preverite tudi z opcijo draft, ki vam bo pokazala, katere vrstice so predolge!
 
 
 
@@ -26,13 +26,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	DIPLOMA INFO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\ttitle}{Vzorec diplomskega dela}
-\newcommand{\ttitleEn}{Diploma thesis sample}
+\newcommand{\ttitle}{Inverzije v permutacijah, permutacijski grafi in njihove lastnosti}
+\newcommand{\ttitleEn}{Inversions in permutations}
 \newcommand{\tsubject}{\ttitle}
 \newcommand{\tsubjectEn}{\ttitleEn}
 \newcommand{\tauthor}{Luka Uranič}
-\newcommand{\tkeywords}{računalnik, računalnik, računalnik}
-\newcommand{\tkeywordsEn}{computer, computer, computer}
+\newcommand{\tkeywords}{permutacija, inverzija, permutacijski grafi}
+\newcommand{\tkeywordsEn}{permutation, inversion, permutation graph}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -40,7 +40,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hypersetup{pdftitle={\ttitle}}
 \hypersetup{pdfsubject=\ttitleEn}
-\hypersetup{pdfauthor={\tauthor, matjaz.kralj@fri.uni-lj.si}}
+\hypersetup{pdfauthor={\tauthor, lu3748@student.uni-lj.is}}
 \hypersetup{pdfkeywords=\tkeywordsEn}
 
 
@@ -82,6 +82,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % konstrukti
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\newtheorem{definicija}{Definicija}[chapter]
 \newtheorem{izrek}{Izrek}[chapter]
 \newtheorem{trditev}{Trditev}[izrek]
 \newenvironment{dokaz}{\emph{Dokaz.}\ }{\hspace{\fill}{$\Box$}}
@@ -95,7 +96,7 @@
 % define medatata
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \def\Title{\ttitle}
-\def\Author{\tauthor, matjaz.kralj@fri.uni-lj.si}
+\def\Author{\tauthor, lu3748@student.uni-lj.si}
 \def\Subject{\ttitleEn}
 \def\Keywords{\tkeywordsEn}
 
@@ -142,7 +143,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
 \pdfinfo{%
     /Title    (\ttitle)
-    /Author   (\tauthor, damjan@cvetan.si)
+    /Author   (\tauthor, lu3748@student.uni-lj.si)
     /Subject  (\ttitleEn)
     /Keywords (\tkeywordsEn)
     /ModDate  (\pdfcreationdate)
@@ -175,15 +176,15 @@
     {\titfont \ttitle \par}%
     {\vskip 3em \textsc{DIPLOMSKO DELO\\[5mm]         % dodal Solina za ostale študijske programe
 %    VISOKOŠOLSKI STROKOVNI ŠTUDIJSKI PROGRAM\\ PRVE STOPNJE\\ RAČUNALNIŠTVO IN INFORMATIKA}\par}%
-%     UNIVERZITETNI  ŠTUDIJSKI PROGRAM\\ PRVE STOPNJE\\ RAČUNALNIŠTVO IN INFORMATIKA}\par}%
+%    UNIVERZITETNI  ŠTUDIJSKI PROGRAM\\ PRVE STOPNJE\\ RAČUNALNIŠTVO IN INFORMATIKA}\par}%
 %    INTERDISCIPLINARNI UNIVERZITETNI\\ ŠTUDIJSKI PROGRAM PRVE STOPNJE\\ MULTIMEDIJA}\par}%
 %    INTERDISCIPLINARNI UNIVERZITETNI\\ ŠTUDIJSKI PROGRAM PRVE STOPNJE\\ UPRAVNA INFORMATIKA}\par}%
     INTERDISCIPLINARNI UNIVERZITETNI\\ ŠTUDIJSKI PROGRAM PRVE STOPNJE\\ RAČUNALNIŠTVO IN MATEMATIKA}\par}%
     \vfill\null%
 % izberite pravi habilitacijski naziv mentorja!
-    {\large \textsc{Mentor}: viš. pred./doc./izr. prof./prof. dr. Peter Klepec\par}%
-   {\large \textsc{Somentor}:  viš. pred./doc./izr. prof./prof. dr.  Martin Krpan \par}%
-    {\vskip 2em \large Ljubljana, 2019 \par}%
+    {\large \textsc{Mentor}: izr. prof. dr. Polona Oblak\par}%
+%    {\large \textsc{Somentor}:  viš. pred./doc./izr. prof./prof. dr.  Martin Krpan \par}%
+    {\vskip 2em \large Ljubljana, 2023 \par}%
 \end{center}
 % prazna stran
 %\clearemptydoublepage      % dodal Solina (izjava o licencah itd. se izpiše na hrbtni strani naslovnice)
@@ -212,13 +213,13 @@ Za objavo in koriščenje rezultatov diplomske naloge je potrebno pisno privolje
 \vfill
 
 \bigskip
-\noindent\textbf{Kandidat:} Ime Priimek\\
-\noindent\textbf{Naslov:} Naslov diplome v slovenščini\\
+\noindent\textbf{Kandidat:} Luka Uranič\\
+\noindent\textbf{Naslov:} Inverzije v permutacijah, permutacijski grafi in njihove lastnosti\\
 % vstavite ustrezen naziv študijskega programa!
-\noindent\textbf{Vrsta naloge:} npr. Diplomska naloga na univerzitetnem programu prve stopnje Računalništvo in informatika \\
+\noindent\textbf{Vrsta naloge:} Diplomska naloga na univerzitetnem programu prve stopnje Računalništvo in matematika \\
 % izberite pravi habilitacijski naziv mentorja!
-\noindent\textbf{Mentor:} viš. pred. / doc. / izr. prof. / prof. dr. Ime Priimek\\
-\noindent\textbf{Somentor:} isto kot za mentorja
+\noindent\textbf{Mentor:}  izr. prof. dr. Polona Oblak\\
+% \noindent\textbf{Somentor:} isto kot za mentorja
 
 \bigskip
 \noindent\textbf{Opis:}\\
@@ -253,12 +254,12 @@ Na tem mestu zapišite, komu se zahvaljujete za izdelavo diplomske naloge. Pazit
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % posvetilo, če sama zahvala ne zadošča :-)
-\thispagestyle{empty}\mbox{}{\vskip0.20\textheight}\mbox{}\hfill\begin{minipage}{0.55\textwidth}%
-Svoji dragi Alenčici.
-\normalfont\end{minipage}
+% \thispagestyle{empty}\mbox{}{\vskip0.20\textheight}\mbox{}\hfill\begin{minipage}{0.55\textwidth}%
+% Svoji dragi Alenčici.
+% \normalfont\end{minipage}
 
-% prazna stran
-\clearemptydoublepage
+% % prazna stran
+% \clearemptydoublepage
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -347,6 +348,78 @@ A proper abstract should contain around 100 words which makes this one way too s
 \setcounter{page}{1}
 \pagestyle{fancy}
 
+% \chapter{ Definicije }
+% Naj bo $f: X \rightarrow Y$.\\
+% Funkcija f je injektivna: 
+% \begin{equation}
+%     \label{injektivnost}
+%     x_1 \neq x_2 \Rightarrow f(x_1) \neq f(x_2) \Leftrightarrow f(x_1) = f(x_2) \Rightarrow x_1 = x_2
+% \end{equation}
+% % injektivna : $$ \\
+% surjektivna : $\forall y \in Y$ $\exists x \in X: f(x) = y$ \\
+% bijektivna: injektivna in surjektivna \\
+% $\exists$ injekcija $f: X \rightarrow Y \Rightarrow |X| \leq |Y|$ \\
+% $\exists$ surjekcija $f: X \rightarrow Y \Rightarrow |X| \geq |Y|$ \\
+% $\exists$ bijekcija $f: X \rightarrow Y \Rightarrow |X| = |Y|$ \\
+
+\chapter{ Permutacije }
+Naj bo $[n] = \{ 1, 2, ..., n \}$. 
+Bijektivni preslikavi $\pi: [n] \rightarrow [n]$ rečemo permutacija. 
+Množico vseh permutacij na množici $[n]$ označimo z $S_n$.
+Permutacijo lahko zapišemo na različne načine. 
+Primer: $\pi \in S_5$, $\pi(1) = 3$, $\pi(2) = 5$, $\pi(3) = 1$, $\pi(4) = 4$ in $\pi(5) = 2$.
+Zapis permutacije $\pi$ kot vodoravna tabela:
+\begin{align}
+    \pi = \begin{pmatrix}
+        1 & 2 & 3 & 4 & 5 \\
+        3 & 5 & 1 & 4 & 2
+    \end{pmatrix}
+\end{align}
+Ker gledamo permutacije na množici $[n]$, ki ima naravno urejenost, lahko zgornjo vrstico izpustimo:
+\begin{align}
+    \pi = (3 5 1 4 2)
+\end{align}
+Če je $n > 10$ med številkami pišemo vejice.
+Zapis permutacije $\pi$ kot produkt disjunktnih ciklov. 
+\begin{align}
+    \pi = (1 3)(2 5)(4)
+\end{align}
+Ker vemo $\pi \in S_5$ lahko cikel dolžine ena izpustimo.
+\begin{align}
+    \pi = (1 3)(2 5)
+\end{align}
+
+\begin{definicija}
+    Naj bo A množica. 
+    Operacija $\cdot:A \times A \rightarrow A$ vsakemu urejenemu paru elementov iz A priredi natančno določen element iz množice A. 
+    Par $(A, \cdot)$ je grupa če velja:
+    \begin{enumerate}
+        \item $\forall a, b, c \in A: (a \cdot b) \cdot c = a \cdot (b \cdot c)$ (asociativnost)
+        \item $\exists e \in A: \forall a \in A: a \cdot e = e \cdot a = a$ (obstoj enote)
+        \item $\forall a \in A: \exists a^{-1} \in A: a \cdot a^{-1} = a^{-1} \cdot a = e$ (obstoj inverza)
+        
+    \end{enumerate}
+
+\end{definicija}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Uvod}
 Prvi koristen nasvet v zvezi uporabo \LaTeX{a} je, da v celoti preberete ta dokument!
 
