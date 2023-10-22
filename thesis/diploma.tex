@@ -23,6 +23,10 @@
 \usepackage{soul}       % dodal Solina
 \usepackage[numbers]{natbib}  % dodal Solina
 
+
+\usepackage{tikz}
+\usepackage{enumitem}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	DIPLOMA INFO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -83,6 +87,7 @@
 % konstrukti
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
 \newtheorem{definicija}{Definicija}[chapter]
+\newtheorem{lema}{Lema}[chapter]
 \newtheorem{izrek}{Izrek}[chapter]
 \newtheorem{trditev}{Trditev}[izrek]
 \newenvironment{dokaz}{\emph{Dokaz.}\ }{\hspace{\fill}{$\Box$}}
@@ -427,6 +432,96 @@ Ker vemo $\pi \in S_5$ lahko cikel dolžine ena izpustimo:
 \end{dokaz}
 
 \chapter{ Inverzije }
+
+Inverzija permutacije $\sigma = (a_1, a_2,... a_n) \in S_n$ je urejen par $(a_i, a_j)$, kjer je $i < j$ $(\sigma^{-1}(a_i) < \sigma^{-1}(a_j))$ in $a_i > a_j$.
+
+\chapter{ Graf inverzij }
+
+\begin{definicija}
+    Naj bo $\sigma \in S_n$. Graf inverzij permutacije $\sigma$, ki ga označimo z $G_{\sigma}$,  je graf z vozlišči $1, 2,..., n$, kjer je $xy$ povezava grafa $G_{\sigma}$ natanko tedaj, ko je $(x, y)$ ali $(y, x)$ inverzija permutacije $\sigma$. Vsak graf izomorfen grafu $G_{\sigma}$ za neko permutacijo $\sigma$ imenujemo permutacijski graf.
+\end{definicija}
+
+Primer: 
+$\sigma = (4, 2, 5, 1, 7, 6, 3) \in S_7$, naj bo $V(G_{\sigma}) = \{ 1, 2, ..., 7\}$ množica vozlišč in $I = \{ (4, 2), (4, 1), (4, 3), (2, 1), (5, 1), (5, 3), (7, 6), (7, 3), (6, 3) \}$ množica inverzij permutacije $\sigma$:
+
+\begin{tikzpicture}[shorten >=1pt,-]
+    \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=25pt,inner sep=0pt]
+    \foreach \num/\x in {4/1, 2/3, 5/5, 1/7, 7/9, 6/11, 3/13}
+            \node[vertex] (V-\num) at (\x,0) {$\num$};
+
+        \foreach \from/\to in {4/2, 5/1, 7/6, 6/3}
+            \draw (V-\from) -- (V-\to);
+
+        \draw (V-2) .. controls (3.5, 0.75) and (6.5, 0.75) .. (V-1);
+        \draw (V-7) .. controls (9.5, 0.75) and (12.5, 0.75) .. (V-3);
+        \draw (V-4) .. controls (1.5, 1.5) and (6.5, 1.5) .. (V-1);
+        \draw (V-5) .. controls (5.5, 1.5) and (12.5, 1.5) .. (V-3);
+        \draw (V-4) .. controls (1, 2.5) and (13, 2.5) .. (V-3);
+\end{tikzpicture}
+
+\begin{definicija}
+\label{def0}
+    Naj bo $G$ graf na n vozliščih. Zaporedju vozlišč $l = (v_1, v_2, ..., v_n)$ rečemo kohezivno vozliščno zaporedje grafa $G$ (ali enostavno kohezivno zaporedje grafa $G$), če so izpolnjeni naslednji pogoji:
+    \begin{enumerate}[label=(\alph*)]
+        \item če $i < k < j$ in $v_iv_k$, $v_kv_j \in E(G) \Rightarrow v_iv_j \in E(G)$
+        \item če $i < k < j$ in $v_iv_j \in E(G) \Rightarrow v_iv_k \in E(G)$ ali $v_kv_j \in E(G)$
+    \end{enumerate}
+\end{definicija}
+
+\begin{lema}
+    Naj bo $G$ graf. $l$ je kohezivno zaporedje grafa $G \Leftrightarrow l$ je kohezivno zaporedje grafa $\overline{G}$ 
+\end{lema}
+\begin{dokaz}
+    Naj bo $l = (v_1, v_2, ..., v_n)$ kohezivno zaporedje grafa $G$. Trdimo, da je $l$ kohezivno zaporedje grafa $\overline{G}$. 
+    \begin{enumerate}[label=(\alph*)]
+        \item Naj bosta $v_iv_k, v_kv_j \in E(\overline{G})$ tako da $i < k < j$. Potem $v_iv_k, v_kv_j \notin E(G)$. Po (b) iz definicije \ref{def0} o kohezivnem zaporedju sledi, da $v_iv_j \notin E(G)$. Kar pomeni $v_iv_j \in E(\overline{G})$
+        \item Naj bo $v_iv_j \in E(\overline{G})$ tako da $i < j$. Naj bo k tako naravno število, da je $i < k < j$. Potem $v_iv_j \notin E(G)$. Po (a) iz definicije \ref{def0} sledi, da nemoreta biti oba $v_iv_k$ in $v_kv_j$ povezavi grafa $G$. Zato sledi, da je vsaj ena od povezav $v_iv_k$ in $v_kv_j$ povezava grafa $\overline{G}$. 
+    \end{enumerate}
+    Obratno smer dokaza sledi iz dejstva, da je $\overline{\overline{G}} = G$.
+\end{dokaz}
+
+\begin{izrek}
+    Naj bo $\sigma \in S_n$. $\sigma = (\sigma(1), \sigma(2), ..., \sigma(n))$ je kohezivno zaporedje permutacijskega grafa $G_{\sigma}$
+\end{izrek}
+\begin{dokaz}
+    Naj bo $\sigma = (\sigma(1), \sigma(2), ..., \sigma(n)) \in S_n$. Trdimo, da je $\sigma$ kohezivno zaporedje grafa $G_{\sigma}$. 
+    \begin{enumerate}[label=(\alph*)]
+        \item Če je $i < k < j$ in $\sigma(i)\sigma(k), \sigma(k)\sigma(j) \in E(G_{\sigma})$, potem sta $(\sigma(i),\sigma(k))$ in $(\sigma(k),\sigma(j))$ inverziji permutacije $\sigma$. Kar pomeni $\sigma(i) > \sigma(k) > \sigma(j)$. Zato tudi $(\sigma(i),\sigma(j))$ inverzija permutacije $\sigma$ in $\sigma(i)\sigma(j) \in E(G_{\sigma})$.        
+
+        \item Naj bo $\sigma(i)\sigma(j) \in E(G_{\sigma})$ in k tak da $i < k < j$. Potem je $(\sigma(i),\sigma(j))$ inverzija permutacije $\sigma$ in $\sigma(i) > \sigma(j)$. Če je $\sigma(i) > \sigma(k)$ je $(\sigma(i),\sigma(k))$ inverzija permutacije $\sigma$ in $\sigma(i)\sigma(k) \in E(G_{\sigma})$. Če je $\sigma(k) > \sigma(j)$ je $(\sigma(k), \sigma(j))$ inverzija permutacije $\sigma$ in $\sigma(k)\sigma(j) \in E(G_{\sigma})$. Tako je vsaj ena od povezav $\sigma(i)\sigma(k)$ in $\sigma(k)\sigma(j)$ povezava grafa $G_{\sigma}$.
+    \end{enumerate}
+\end{dokaz}
+
+$(v_1, v_2, ..., v_n)$ je kohezivno zaporedje grafa $G$ $\Leftrightarrow$ $(v_n, v_{n-1}, ..., v_1)$ je kohezivno zaporedje grafa $G$.
+
+Določiti smer povezave vu grafa G pomeni spremeniti vu v urejen par (v, u) ali (u, v).
+
+\begin{definicija}
+    Orientacija grafa $G$ je usmerjen graf pridobljen tako da vsaki povezavi grafa $G$ določimo smer.
+\end{definicija}
+
+Za usmerjen graf $D$ rečemo, da je tranzitiven, če je $(x, z)$ usmerjena povezava grafa $D$ kadar sta $(x, y)$ in $(y, z)$ usmerjeni povezavi grafa $D$. 
+
+V usmerjenem grafu $D$ je izhodna stopnja vozlišča x, označena $deg_D^+(x)$ ali $deg^+(x)$, število vozlišč y grafa $D$ tako da je $(x, y)$ usmerjena povezava grafa $D$. Vhodna stopnja vozlišča x, označena $deg_D^-(x)$ ali $deg^-(x)$, je število vozlišč y grafa $D$ tako da je $(y, x)$ usmerjena povezava grafa $D$.
+
+Polnemu orientiranemu grafu rečemo turnir. Rezultat vozlišča x v turnirju je $s(x) = deg^+(x)$. Rezultatsko zaporedje turnirja je zaporedje rezultatov vozlišč turnirja v nepadajočem vrstnem redu.
+
+\begin{izrek}
+    Naj bo T turnir na n vozliščih. Naslednje trditve so ekvivalentne:
+    \begin{enumerate}
+        \item T je tranzitiven
+        \item Za $\forall x,y \in V(T)$ velja, če je $(x, y)$ usmerjena povezava v T potem je $s(x) > s(y)$
+        \item Za $\forall x,y \in V(T)$  velja, če je $s(x) > s(y)$ potem je $(x, y)$ usmerjena povezava v $T$
+        \item Rezultatsko zaporedje turnirja $T$ je $(0, 1, 2, ..., n-1)$
+    \end{enumerate}
+\end{izrek}
+\begin{dokaz}
+    Turnir T na n vozliščih, ki je tranzitiven je izomorfen grafu permutacije $\sigma = (n, n-1, ..., 1)$ z usmerjenimi povezavami. Kar pomeni $x \rightarrow y$, če je $(x, y)$ inverzija. Če uredimo vozlišča od leve proti desni tako kot so v permutaciji $\sigma$ vidimo, da ima vsako vozlišče povezave do vseh vozlišč desno on njega. Iz tega sledijo vse lastnosti iz izreka.
+\end{dokaz}
+
+\begin{izrek}
+    Graf G je permutacijski graf natanko tedaj ko ima kohezivno zaporedje.
+\end{izrek}
 
 
 
