@@ -1,0 +1,2 @@
+Characterization and construction of permutation graphs:
+Proof of Theorem 3.5 G = U(H_1, H_2, ..., H_k) != V(L_1, L_2, ..., L_p)

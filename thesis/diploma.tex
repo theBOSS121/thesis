@@ -469,6 +469,7 @@ $\sigma = (4, 2, 5, 1, 7, 6, 3) \in S_7$, naj bo $V(G_{\sigma}) = \{ 1, 2, ..., 
 \end{definicija}
 
 \begin{lema}
+\label{lema0}
     Naj bo $G$ graf. $l$ je kohezivno zaporedje grafa $G \Leftrightarrow l$ je kohezivno zaporedje grafa $\overline{G}$ 
 \end{lema}
 \begin{dokaz}
@@ -481,6 +482,7 @@ $\sigma = (4, 2, 5, 1, 7, 6, 3) \in S_7$, naj bo $V(G_{\sigma}) = \{ 1, 2, ..., 
 \end{dokaz}
 
 \begin{izrek}
+\label{izrek_sigma_kohezivno_zaporedje}
     Naj bo $\sigma \in S_n$. $\sigma = (\sigma(1), \sigma(2), ..., \sigma(n))$ je kohezivno zaporedje permutacijskega grafa $G_{\sigma}$
 \end{izrek}
 \begin{dokaz}
@@ -507,6 +509,7 @@ V usmerjenem grafu $D$ je izhodna stopnja vozlišča x, označena $deg_D^+(x)$ a
 Polnemu orientiranemu grafu rečemo turnir. Rezultat vozlišča x v turnirju je $s(x) = deg^+(x)$. Rezultatsko zaporedje turnirja je zaporedje rezultatov vozlišč turnirja v nepadajočem vrstnem redu.
 
 \begin{izrek}
+\label{izrek_tranzitiven_turnir}
     Naj bo T turnir na n vozliščih. Naslednje trditve so ekvivalentne:
     \begin{enumerate}
         \item T je tranzitiven
@@ -520,8 +523,321 @@ Polnemu orientiranemu grafu rečemo turnir. Rezultat vozlišča x v turnirju je 
 \end{dokaz}
 
 \begin{izrek}
+\label{izrek_permutacijski_graf_kohezivno_zaporedje}
     Graf G je permutacijski graf natanko tedaj ko ima kohezivno zaporedje.
 \end{izrek}
+\begin{dokaz}
+    $(\Rightarrow)$ Vsak permutacijski graf $G$ je izomorfen nekemu grafu $G_{\sigma}$ za neko permutacijo $\sigma$. Po izreku \ref{izrek_sigma_kohezivno_zaporedje}, je $\sigma$ kohezivno zaporedje grafa $G_{\sigma}$. Naj bo f izomorfizem, ki graf $G$ slika v graf $G_{\sigma}$. Potem je $f^{-1}$ izomorfizem, ki graf $G_{\sigma}$ slika v graf $G$. Sledi, da je $\pi = f^{-1} \circ \sigma = f^{-1}(\sigma)$ kohezivno zaporedje grafa $G$, saj je $\sigma$ kohezivno zaporedje grafa $G_{\sigma}$.
+
+    $(\Leftarrow)$ Naj bo $G$ graf s kohezivnim zaporedjem $\pi = (v_1, v_2, ..., v_n)$. Orientirajmo graf $G$ tako, da vsako povezavo $v_iv_j \in E(G)$ usmerimo od vozlišča z manjšim indeksom proti vozlišču z večjim indeksom. Če je $i < j$, tako dobimo $(v_i, v_j)$. Z D označimo usmerjen graf, ki ga dobimo na ta način. Spomnimo se, da je po $(a)$ iz \ref{def0} D tranzitiven. Orientirajmo še komplement $\overline{G}$ grafa $G$. Povezave $v_iv_j \in \overline{G}$, kjer je $i < j$ usmerimo od večjega indeksa k manjšemu in tako dobimo $(v_j, v_i)$. Označimo dobljeni graf z $\overline{D}$. Zaradi \ref{lema0} je $\pi$ kohezivno zaporedje grafa $\overline{G}$. Zato je tudi usmerjen graf $\overline{D}$ tranzitiven. Unija grafov $T = D \cup \overline{D}$ je orientacija polnega grafa $G \cup \overline{G}$. Zato je T turnir. Radi bi pokazali, da je T tranzitiven turnir. Naj bosta $(x, y)$ in $(y, z)$ usmerjeni povezavi v grafu $T$. Če bi obe pripadali enemu od $D$ ali $\overline{D}$ bi sledilo, da je $(x, z)$ usmerjena povezava v $T$, saj sta $D$ in $\overline{D}$ tranzitivna. Zato privzamimo, da $(x, y) \in E(D) $ in $(y, z) \in E(\overline{D})$. Če je $(x, z) \in E(D)$ smo končali, saj je potem $(x, z) \in E(T)$. Če $(x, z) \notin E(D)$, potem je $(z, x) \in E(\overline{D})$. Zaradi tranzitivnosti $\overline{D}$ in $(y, z), (z, x) \in E(\overline{D})$ sledi, da je $(y, x) \in E(\overline{D})$. To je protislovje, saj je $(x, y) \in E(D)$. Sledi, da je $(x, z) \in E(T)$ in T je tranzitiven turnir. Po izreku \ref{izrek_tranzitiven_turnir}, je rezultatsko zaporedje turnirja $T$ enako $(0, 1, 2, ..., n-1)$. Naj bo $\sigma(i) = 1 + s(v_i)$, kjer je $s(v_i)$ rezultat vozlišča $v_i$ grafa $T$. Radi bi pokazali, da je $f: v_i \rightarrow 1 + s(v_i) = \sigma(i)$ izomorfizem, ki slika graf $G$ v graf $G_{\sigma}$. Preslikava $f$ je bijektivna, saj imajo vozlišča različne rezultate. Pokazati moramo še, da f ohranja sosenosti vozlišč. Naj bo $v_iv_j \in E(G)$, kjer je $i < j$. Potem je $(v_i, v_j) \in E(D)$. Ker je T tranzitiven turnir, je po izreku \ref{izrek_tranzitiven_turnir} $s(v_i) > s(v_j)$. Sledi, da je $\sigma(v_i) = 1 + s(v_i) > 1 + s(v_j) = \sigma(v_j)$. Zato je $(\sigma(i), \sigma(j))$ inverzija v $\sigma$ in $f(v_i)$ in $f(v_j)$ sta sosednji vozlišči v $G_{\sigma}$. Obratno, naj bo xy povezava v $G_{\sigma}$. Potem je $(x, y)$ ali $(y, x)$ inverzija v $\sigma$. Privzemimo, da je $(x, y)$ inverzija v $\sigma$. Ker je $x = \sigma(i) = 1 + s(v_i)$ in $y = \sigma(j) = 1 + s(v_j)$, kjer je $i < j$. Ker je $(x, y)$ inverzija je $x > y$, zato je tudi $s(v_i) > s(v_j)$. Zato je $(v_i, v_j) \in E(T)$. Ker je $i < j$ je $(v_i, v_j) \in E(D)$ in posledično $v_iv_j \in E(G)$.
+\end{dokaz}
+
+\begin{izrek}
+    Naj bo $G$ graf. Naslednje trditve so ekvivalentne:
+    \begin{enumerate}[label=(\alph*)]
+        \item $G$ je permutacijski graf
+        \item $\overline{G}$ je permutaciski graf
+        \item Vsak induciran podgraf grafa $G$ je permutacijski graf
+        \item Vsaka povezana komponenta grafa $G$ je permutacijski graf
+    \end{enumerate}
+\end{izrek}
+\begin{dokaz}
+    Ekvivalentnost trditve $(a)$ in $(b)$ sledi iz leme \ref{lema0} in izreka \ref{izrek_permutacijski_graf_kohezivno_zaporedje}. Če je $(v_1, v_2, ..., v_n)$ kohezivno zaporedje grafa $G$, potem ima podgraf induciran z vozlišči $\{ v_{i_1}, v_{i_2}, ..., v_{i_k} \}$, kjer $i_1 < i_2 < ... < i_k$, kohezivno zaporedje $(v_{i_1}, v_{i_2}, ..., v_{i_k})$ (izpolnjeni sta $(a)$ in $(b)$ iz definicije \ref{def0}). Torej induciran podgraf je permutacijski in $(a)$ in $(c)$ sta ekvivalentni. Iz $(c)$ sledi $(d)$, saj je vsaka povezana komponenta induciran podgraf. Pokazati moramo še da iz $(d)$ sledi $(a)$. Naj bo $G$ graf, ki ima povezane komponente $G_1, G_2, ..., G_k$. Povezana komponenta $G_i$ naj ima $n_i$ vozlišč. Ker je vsaka povezana komponenta grafa $G$ permutacijski graf ima vsaka povezana komponenta tudi kohezivno zaporedje. Naj bo $l_i = (v_1^i, v_2^i, ..., v_{n_i}^i)$ kohezivno zaporedje $G_i$. Potem je $l = (l_1, l_2, ..., l_k) = (v_1^1, v_2^1, ..., l_{n_1}^1, v_1^2, v_2^2, ..., l_{n_2}^2, ..., v_1^k, v_2^k, ..., l_{n_k}^k)$ kohezivno zaporedje grafa $G$ in graf $G$ permutacijski. 
+\end{dokaz}
+
+Grafi poti $P_n$ in zvezd $K_{1,n}$ so permutacijski grafi saj imajo kohezivno zaporedje. Primera kohezivnih zaporedji za pot $P_{13}$ sta permutaciji $\sigma_1 = (3, 1, 5, 2, 7, 4, 9, 6, 11, 8, 13, 10, 12)$ in $\sigma_2 = (2, 4, 1, 6, 3, 8, 5, 10, 7, 12, 9, 13, 11)$. Primer kohezivnega zaporedja za zvezdo $K_{1, n}$ pa je permutacija $\pi = (n+1, 1, 2, ..., n)$.\\
+\begin{tikzpicture}[shorten >=1pt,-]
+    \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
+    \foreach \num/\x in {3/1, 1/2, 5/3, 2/4, 7/5, 4/6, 9/7, 6/8, 11/9, 8/10, 10/12}
+            \node[vertex] (V-\num) at (\x,0) {$\num$};
+
+        \foreach \from/\to in {3/1, 5/2, 7/4, 9/6, 11/8}
+            \draw (V-\from) -- (V-\to);
+
+        \draw (V-3) .. controls (1.5, 0.75) and (3.5, 0.75) .. (V-2);
+        \draw (V-5) .. controls (3.5, 0.75) and (5.5, 0.75) .. (V-4);
+        \draw (V-7) .. controls (5.5, 0.75) and (7.5, 0.75) .. (V-6);
+        \draw (V-9) .. controls (7.5, 0.75) and (9.5, 0.75) .. (V-8);
+        \draw (V-11) .. controls (9.5, 0.75) and (11.5, 0.75) .. (V-10);
+        % \draw (V-13) .. controls (11.5, 0.75) and (12.5, 0.75) .. (V-12);
+        
+        \filldraw [black] (11,0) circle (.5pt);
+        \filldraw [black] (11.33,0) circle (.5pt);
+        % \filldraw [black] (11.5,0) circle (.5pt);
+        % \filldraw [black] (12.5,0) circle (.5pt);
+        % \filldraw [black] (12.75,0) circle (.5pt);
+        % \filldraw [black] (13,0) circle (.5pt);
+        
+        \filldraw [black] (11,0) circle (.5pt);
+        \filldraw [black] (11.6,0.53) circle (.5pt);
+        \filldraw [black] (12.2,0.63) circle (.5pt);
+        \filldraw [black] (12.8,0.63) circle (.5pt);
+        \filldraw [black] (13.4,0.53) circle (.5pt);
+        \filldraw [black] (14,0) circle (.5pt);
+\end{tikzpicture}
+
+% \begin{tikzpicture}[shorten >=1pt,-]
+%     \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
+%     \foreach \num/\x in {2/1, 4/2, 1/3, 6/4, 3/5, 8/6, 5/7, 10/8, 7/9, 12/10, 9/11, 13/12, 11/13}
+%             \node[vertex] (V-\num) at (\x,0) {$\num$};
+
+%         \foreach \from/\to in {4/1, 6/3, 8/5, 10/7, 12/9, 13/11}
+%             \draw (V-\from) -- (V-\to);
+
+%         \draw (V-2) .. controls (1.5, 0.75) and (2.5, 0.75) .. (V-1);
+%         \draw (V-4) .. controls (2.5, 0.75) and (4.5, 0.75) .. (V-3);
+%         \draw (V-6) .. controls (4.5, 0.75) and (6.5, 0.75) .. (V-5);
+%         \draw (V-8) .. controls (6.5, 0.75) and (8.5, 0.75) .. (V-7);
+%         \draw (V-10) .. controls (8.5, 0.75) and (10.5, 0.75) .. (V-9);
+%         \draw (V-12) .. controls (10.5, 0.75) and (12.5, 0.75) .. (V-11);
+% \end{tikzpicture}
+
+\begin{tikzpicture}[shorten >=1pt,-]
+    \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=35pt,inner sep=0pt]
+    \foreach \num/\x in {n+1/1, 1/3, 2/5, n/9}
+            \node[vertex] (V-\num) at (\x,0) {$\num$};
+
+        \foreach \from/\to in {n+1/1}
+            \draw (V-\from) -- (V-\to);
+
+        \draw (V-n+1) .. controls (1.5, 0.75) and (4.5, 0.75) .. (V-2);
+        \draw (V-n+1) .. controls (1.5, 1.5) and (8.5, 1.5) .. (V-n);
+
+        
+        \filldraw [black] (6.5,0) circle (1pt);
+        \filldraw [black] (7,0) circle (1pt);
+        \filldraw [black] (7.5,0) circle (1pt);
+\end{tikzpicture}
+
+Vidimo, da je pogoj za poti $P_n$ $(a)$ iz definicije kohezivnega zaporedja \ref{def0} na prazno izpolnjen, saj ni dveh povezav $v_iv_k$ in $v_kv_j$, kjer so $i < k < j$. Pogoj $(b)$ pa je izpolnjen, saj je vedno ko je $v_iv_j$ povezava in k tak, da $i < k < j$ v grafu ena od povezav $v_iv_k$ ali $v_kv_j$. Podobno je pogoj $(a)$ izpolnjen na prazno za zvezde. Pogoj $(b)$ pa je izpolnjen, saj so vse povezave v grafu oblike $v_{n+1}v_k$ za nek $k \in \{ 1, 2, ..., n \}$. Zato katerokoli povezavo vzamemo bodo vsa vozlišča med krajiščema izbrane povezave $v_{n+1}v_k$ povezana z vozliščem $v_{n+1}$.
+
+Poti in zvezde so drevesa. Ampak niso vsa drevesa permutacijski grafi. Drevo $K_{1,3}^*$, pridobljeno s subdivizijo vseh povezav zvezde $K_{1,3}$, ni permutacijski graf.\\
+\begin{tikzpicture}[shorten >=1pt,-]
+    \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \node[vertex] (V-0) at (4,4){};
+            \node[vertex] (V-1) at (4,1.75){};
+            \node[vertex] (V-2) at (2,0){};
+            \node[vertex] (V-3) at (6,0){};
+
+        \foreach \from/\to in {0/1, 1/2, 1/3}
+            \draw (V-\from) -- (V-\to);
+\end{tikzpicture}
+\begin{tikzpicture}[shorten >=1pt,-]
+    \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \node[vertex] (V-0) at (4,4){};
+            \node[vertex] (V-01) at (4,2.90){};
+            \node[vertex] (V-1) at (4,1.75){};
+            \node[vertex] (V-12) at (3, 0.875){};
+            \node[vertex] (V-2) at (2,0){};
+            \node[vertex] (V-13) at (5,0.875){};
+            \node[vertex] (V-3) at (6,0){};
+
+        \foreach \from/\to in {0/01, 12/2, 13/3, 01/1, 1/12, 1/13}
+            \draw (V-\from) -- (V-\to);
+\end{tikzpicture}
+
+\begin{definicija}
+    Gosenica je drevo z lastnostjo da po odstranitvi vseh listov postane pot.
+\end{definicija}
+
+Primer gosenice z 10 listi, ki po odstranitvi listov postane pot ne 5 vozliščih.
+
+\begin{tikzpicture}[shorten >=1pt,-]
+    \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=15pt,inner sep=0pt]
+            \node[vertex] (V-0) at (0, 1){};
+            \node[vertex] (V-1) at (2, 1){};
+            \node[vertex] (V-2) at (4, 1){};
+            \node[vertex] (V-3) at (6, 1){};
+            \node[vertex] (V-4) at (8, 1){};
+            \node[vertex] (V-5) at (0, 2){};
+            \node[vertex] (V-6) at (2, 2){};
+            \node[vertex] (V-7) at (1, 2){};
+            \node[vertex] (V-8) at (3, 2){};
+            \node[vertex] (V-9) at (4, 0){};
+            \node[vertex] (V-10) at (5, 0){};
+            \node[vertex] (V-11) at (8, 0){};
+            \node[vertex] (V-12) at (7, 2){};
+            \node[vertex] (V-13) at (8, 2){};
+            \node[vertex] (V-14) at (9, 2){};
+
+        \foreach \from/\to in {0/1, 1/2, 2/3, 3/4, 0/5, 1/6, 1/7, 1/8, 2/9, 2/10, 4/11, 4/12, 4/13, 4/14}
+            \draw (V-\from) -- (V-\to);
+\end{tikzpicture}
+
+\begin{lema}
+    Drevo je gosenica natanko tedaj ko ne vsebuje $K_{1,3}^*$ kot podgraf.
+\end{lema}
+\begin{dokaz}
+    Če je drevo gosenica, potem po odstranitvi vseh listov dobimo pot. Če drevesu $K_{1,3}^*$ odstranimo vse liste ne dobimo poti. Torej tudi če drevo vsebuje $K_{1,3}^*$ kot podgraf, nam po odstranitvi listov ostane graf, ki ni pot. Torej gosenica ne vsebuje podgrafa $K_{1,3}^*$. Če drevo ne vsebuje $K_{1,3}^*$ kot podgraf, potem ima vsako vozlišče največ dva soseda, ki nista lista. Prav tako graf ne vsebuje ciklov, saj je drevo. Po odstranitvi listov drevesa vedno dobimo povezan graf, zato po odstranitvi listov tako dobimo pot. Torej je drevo, ki ne vsebuje podgrafa $K_{1,3}^*$, gosenica.
+\end{dokaz}
+
+\begin{izrek}
+\label{izrek_gosenica_permutacijski_graf}
+    Drevo je permutacijski graf natanko tedaj ko je gosenica.
+\end{izrek}
+\begin{dokaz}
+    Če drevo ni gosenica, potem vsebuje $K_{1,3}^*$ kot podgraf. Drevo, ki vsebuje $K_{1,3}^*$ ni permutacijski graf, saj $K_{1,3}^*$ ni permutacijski graf. Potrebno je še pokazati, da je gosenica permutacijski graf. Naj bo $C$ gosenica in naj bo $P_n$ pot, ki jo pridobimo iz $C$ tako, da odstranimo liste. Če je $n=1$, potem je $C$ zvezda $K_{1,k}$ za nek $k \geq 0$ ali pa trivialen graf $K_1$. Ker so zvezde in trivialen graf permutacijski grafi, predpostavimo da je $n \geq 2$. Zgradimo kohezivno zaporedje poti $P_n$ kot na primeru od prej. Vse liste lihega vozlišča na poti vstavimo levo od vozlišče $i+1$ na poti $P_n$. Vse liste sodega vozlišča na poti vstavimo med vozlišči $i$ in $i-1$ na poti $P_n$. Rezultat je kohezivno zaporedje. Zato je gosenica C res permutacijski graf.
+    \begin{tikzpicture}[shorten >=1pt,-]
+        \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
+        \foreach \num/\x in {l_1/0, 2/1, l_2/2, 1/3, l_3/4, 4/5, l_4/6, 3/7, l_5/8, 6/9, l_6/10, 5/11, l_7/12, 7/13}
+                \node[vertex] (V-\num) at (\x,0) {$\num$};
+    
+            \foreach \from/\to in {2/l_2, 4/l_4, 6/l_6, 7/l_7}
+                \draw (V-\from) -- (V-\to);
+    
+            \draw (V-l_1) .. controls (0.5, 1) and (2.5, 1) .. (V-1);
+            \draw (V-l_3) .. controls (4.5, 1) and (6.5, 1) .. (V-3);
+            \draw (V-l_5) .. controls (8.5, 1) and (10.5, 1) .. (V-5);
+
+            \draw (V-2) .. controls (1.5, 0.75) and (2.5, 0.75) .. (V-1);
+            \draw (V-4) .. controls (5.5, 0.75) and (6.5, 0.75) .. (V-3);
+            \draw (V-6) .. controls (9.5, 0.75) and (10.5, 0.75) .. (V-5);
+            \draw (V-2) .. controls (1.5, 1.5) and (6.5, 1.5) .. (V-3);
+            \draw (V-4) .. controls (5.5, 1.5) and (10.5, 1.5) .. (V-5);
+            \draw (V-6) .. controls (9.5, 1.5) and (12.5, 1.5) .. (V-7);
+    \end{tikzpicture}
+\end{dokaz}
+
+Disjunktna unija grafov pomeni da vzamemo dva grafa in ju združimo v večji graf tako, da ju postavimo drug ob drugega.
+
+\begin{definicija}
+    Naj bo $G$ graf z vozlišči $x_1, x_2, ..., x_n$ in naj bodo $H_1, H_2, ..., H_n$ poljubni grafi. Kompozicija grafov $H_1, H_2, ..., H_n$ z G, označena z $G(H_1, H_2, ..., H_n)$, je graf sestavljen iz disjunktne unije grafov $H_1, H_2, ..., H_n$ in dodanih povezav $a_ib_j$ kjer je $a_i \in V(H_i)$ in $b_j \in V(H_j)$, kadar je $x_ix_j \in E(G)$. Če je $H_i$ fiksen graf $H$. Potem kompozicijo označimo z $G(H)$.
+\end{definicija}
+
+Vsota grafov L in M, označena z $L + M$, je sestavljena iz disjunktne unije grafov L in M in dodanih povezav $ab$, kjer $a \in V(L)$ in $b \in V(M)$. Se pravi, kompozicija $G(H_1, H_2, ..., H_n)$ je sestavljena iz disjunktne unije grafov $H_i$ in potem iz vsote $H_i + H_j$ za vsak pripadajočo povezavo $x_ix_j \in E(G)$.
+
+\begin{izrek}
+    Naj bo G graf z n vozlišči in naj bodo $H_1, H_2, ..., H_n$ poljubni grafi. Potem je $G(H_1, H_2, ..., H_n)$ permutacijski graf natanko tedaj ko so $G, H_1, H_2, ..., H_n$ permutacijski grafi.
+\end{izrek}
+\begin{dokaz}
+\label{izrek_konstrukcija_permutacijskega_grafa}
+    Privzamimo, da je $G(H_1, H_2, ..., H_n)$ permutacijski graf. Ker so $H_1, H_2, ..., H_n$ inducirani podgrafi grafa $G(H_1, H_2, ..., H_n)$, so permutacijski grafi. Prav tako lahko vzamemo eno vozlišče iz vsakega od grafov $H_i$ in ga označimo z $x_i$. Tako dobimo induciran podgraf izomorfen grafu G. To pomeni, da je tudi G permutacijski. Obratno privzamemo, da so $G, H_1, H_2, ..., H_n$ permutacijski grafi. Potem je $(v_1, v_2, ..., v_n)$ kohezivno zaporedje grafa G. Grafe $H_1, H_2, ..., H_n$ ustrezno preimenujemo tako da je graf, ki pripada vozlišču $v_1$ poimenovan $H_1$, graf, ki pripada vozlišču $v_2$ poimenovan $H_2$, ..., graf, ki pripada vozlišču $v_n$ poimenovan $H_n$. Naj ima graf $H_i$ $n_i$ vozlišč. Potem ima graf $H_i$ kohezivno zaporedje $l_i = (x_1^i, x_2^i, ..., x_{n_i}^i)$. Se pravi je $l = (l_1, l_2, ..., l_n)$ kohezivno zaporedje grafa $G(H_1, H_2, ..., H_n)$ in $G(H_1, H_2, ..., H_n)$ je permutacijski graf.
+\end{dokaz}
+
+Izrek \ref{izrek_konstrukcija_permutacijskega_grafa} nam poda lahkek način za konstrukcijo permutacijskega grafa. Naj bo $G$ polni graf $K3$. Poglejmo si kompozicijo $K_3(P_2, C_3, P_1)$. Ker so $K_3$, $P_2, C_3, P_1$ polni grafi dobimo polni graf $K_6$.
+
+\begin{tikzpicture}[shorten >=1pt,-]
+    \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=10pt,inner sep=0pt]
+            \node[vertex] (V-0) at (1, 0){$P_2$};
+            \node[vertex] (V-1) at (0, 1){$P_2$};
+
+            \node[vertex] (V-2) at (2, 2){$C_3$};
+            \node[vertex] (V-3) at (3, 3){$C_3$};
+            \node[vertex] (V-4) at (4, 2){$C_3$};
+            
+            \node[vertex] (V-5) at (5, 0){$P_1$};
+            
+        \foreach \from/\to in {0/1, 2/3, 3/4, 4/2, 0/2, 0/3, 0/4, 1/2, 1/3, 1/4, 2/5, 3/5, 4/5, 0/5, 1/5}
+            \draw (V-\from) -- (V-\to);
+\end{tikzpicture}
+
+Poglejmo si še kompozicijo $P_3(P_2, P_3, P_1)$.
+
+\begin{tikzpicture}[shorten >=1pt,-]
+    \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=10pt,inner sep=0pt]
+            \node[vertex] (V-0) at (1, 0){$P_2$};
+            \node[vertex] (V-1) at (0, 1){$P_2$};
+
+            \node[vertex] (V-2) at (2, 3){$C_3$};
+            \node[vertex] (V-3) at (3, 3){$C_3$};
+            \node[vertex] (V-4) at (4, 3){$C_3$};
+            
+            \node[vertex] (V-5) at (5, 0){$P_1$};
+            
+        \foreach \from/\to in {0/1, 2/3, 3/4, 0/2, 0/3, 0/4, 1/2, 1/3, 1/4, 2/5, 3/5, 4/5}
+            \draw (V-\from) -- (V-\to);
+\end{tikzpicture}
+
+Vsi grafi na največ 4 vozliščih so permutacijski. Zato sta tudi $P_3(P_2, P_3, P_1)$ in $K_3(P_2, C_3, P_1)$ permutacijska.
+
+Vsak graf z n vozlišči se lahko zapiše kot $G(\overset{n}{\overline{P_1, ..., P_1}})$ and $K_1(G)$. Če sta to edina načina kako zapisati graf z n vozlišči kot kompozicijo, potem je graf primaren.
+
+Med polnimi grafi sta primarna samo grafa $K_1$ in $K_2$.
+
+Premer drevesa je najdaljša pot med dvema vozliščema v grafu.
+
+Med drevesi s premerom, ki ni večji od 3 lahko pokažemo, da so primarne samo poti $P_1, P_2$ in $P_4$. To so vse gosenice, ki nimajo dveh listov z istim sosednjim vozliščem. Graf $P_3$ ni primaren, saj ima dva lista, ki imata isto sosednje vozlišče.
+
+\begin{tikzpicture}[shorten >=1pt,-]
+    \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=35pt,inner sep=0pt]
+        \node[vertex] (V-1) at (0, 0){$d = 0$};
+
+        \node[vertex] (V-2) at (6, 0){$d = 1$};
+        \node[vertex] (V-3) at (6, 2){$d = 1$};
+        
+        \node[vertex] (V-4) at (2, 2){$d = 2$};
+        \node[vertex] (V-5) at (4, 3){$d = 2$};
+        \node[vertex] (V-6) at (4, 1){$d = 2$};
+        
+        \node[vertex] (V-7) at (0, 4){$d = 3$};
+        \node[vertex] (V-8) at (0, 6){$d = 3$};
+        \node[vertex] (V-9) at (2, 5){$d = 3$};
+        \node[vertex] (V-10) at (4, 5){$d = 3$};
+        \node[vertex] (V-11) at (6, 4){$d = 3$};
+        \node[vertex] (V-12) at (6, 6){$d = 3$};
+            
+        \foreach \from/\to in {2/3, 4/5, 4/6, 7/9, 8/9, 9/10, 10/11, 10/12}
+            \draw (V-\from) -- (V-\to);
+
+            
+        \filldraw [black] (4,1.8) circle (1pt);
+        \filldraw [black] (4,2) circle (1pt);
+        \filldraw [black] (4,2.2) circle (1pt);
+
+        \filldraw [black] (0,4.8) circle (1pt);
+        \filldraw [black] (0,5) circle (1pt);
+        \filldraw [black] (0,5.2) circle (1pt);
+        \filldraw [black] (6,4.8) circle (1pt);
+        \filldraw [black] (6,5) circle (1pt);
+        \filldraw [black] (6,5.2) circle (1pt);
+\end{tikzpicture}
+
+$P_3 = P_2(P_1, \overline{K_2})$
+
+\begin{tikzpicture}[shorten >=1pt,-]
+    \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=35pt,inner sep=0pt]
+        \node[vertex] (V-1) at (2, 1){$d = 2$};
+        \node[vertex] (V-2) at (4, 2){$d = 2$};
+        \node[vertex] (V-3) at (4, 0){$d = 2$};
+
+        \foreach \from/\to in {1/2, 1/3}
+            \draw (V-\from) -- (V-\to);
+\end{tikzpicture}
+
+$P_3(P_1, P_1, P_1, \overline{K_2})$
+
+\begin{tikzpicture}[shorten >=1pt,-]
+    \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=35pt,inner sep=0pt]
+        
+        \node[vertex] (V-1) at (0, 1){$d = 3$};
+        \node[vertex] (V-2) at (2, 1){$d = 3$};
+        \node[vertex] (V-3) at (4, 1){$d = 3$};
+        \node[vertex] (V-4) at (6, 0){$d = 3$};
+        \node[vertex] (V-5) at (6, 2){$d = 3$};
+            
+        \foreach \from/\to in {1/2, 2/3, 3/4, 3/5}
+            \draw (V-\from) -- (V-\to);            
+\end{tikzpicture}
+
+\begin{izrek}
+    Drevo je primaren permutacijski graf natanko tedaj, ko je gosenica brez dveh listov z istim sosednjim vozliščem.
+\end{izrek}
+\begin{dokaz}
+    Ker smo že pogledali drevesa z premeri, ki ne presegajo 3, privzamimo, da imamo drevo T s premerom vsaj 4. Naj bo T drevo z n vozlišči. Privzemimo, da je T primaren permutacijski graf. Po izreku \ref{izrek_gosenica_permutacijski_graf} je T gosenica. Predpostavimo, da imamo dva lista $x_1$ in $x_2$, ki imata istega soseda $y$. Naj bo G graf, ki ga dobimo, če identificiramo ti dve vozlišči ($x_1$ in $x_2$ zamenjamo z enim listom $x_12$, ki je povezan s sosedom vozlišč $x_1$ in $x_2$). Naj bodo $y_1, y_2, ..., y_{n-1}$ vozlišča grafa $G$. Recimo, da je $y_1$ vozlišče pridobljeno z identifikacijo vozlišč $x_1$ in $x_2$. Naj bo $H_1 = \overline{K_2}$, to je graf z dvema vozliščema brez povezave in $H_i$ trivialen graf za $i = 2, 3, ..., n-1$. Potem je $T = G(H_1, H_2, ..., H_n)$. To je v protislovju s tem, da je T primaren. Obratno privzamimo, da je T gosenica brez dveh listov z istim sosednjim vozliščem in predpostavimo, da T ni primaren permutacijski graf. Potem je za nek netrivialen graf G z vozlišči $y_1, y_2, ..., y_k$, $T = G(H_1, H_2, ..., H_k)$. Brez izgube splošnosti lahko privzamemo, da ima $H_1$ vsaj 2 vozlišči. Graf G mora biti povezan, saj bi v nasprotnem primeru bil tudi graf T nepovezan. Naj bosta $y_1$ in $y_2$ sosednji vozlišči. Potem je $H_1 + H_2$ podgraf grafa T. Če bi $H_2$ imel vsaj 2 vozlišči, bi graf $H1 + H2$ vseboval cikel, kar je v protislovju s tem, da je T drevo. Torej ima $H_2$ samo eno vozlišče. Če bi $y_1$ imel še kakšnega soseda v grafu $G$, bi graf $T$ tako imel cikel dolžine 4. Prav tako v $H_1$ ne sme biti povezav, saj bi tako podgraf $H_1 + H_2$ vseboval cikel dolžine 3. Ampak potem so vsa vozlišča grafa $H_1$ listje grafa T, ki imajo skupnega soseda iz $H_2$. To je protislovje.
+\end{dokaz}
+
+\begin{izrek}
+    Naj bo $G$ sestavljen permutacijski graf. Potem obstaja netrivialen primaren permutacijski graf $U$ in permutacijski grafi $H_1, H_2, ..., H_k$, ki so podgrafi grafa $G$, tako da je $G = U(H_1, H_2, ..., H_k)$.
+\end{izrek}
+\begin{dokaz}
+    Naj bo $G = U(H_1, H_2, ..., H_k)$, kjer je U netrivialen. Če vzamemo eno vozlišče $x_i$ iz vsakega izmed $H_i$, potem je induciran podgraf izomorfen grafu $U$. Zato mora biti U permutacijski. Prav tako so grafi $H_i$ permutacijski, saj so inducirani podgrafi grafa $G$. Privzemimo, da ima U najmanjše število vozlišč med vsemi takimi kompozicijami. Dokazali bi radi, da je $U$ primaren. Privzemimo, da $U$ ni primaren. Naj bo $U = V(L_1, L_2, ..., L_p)$ kompozicija, kjer je V netrivialen. Ker je U kompozicija in oglišča grafa $U$ predstavljajo inducirane podgrafe $H_i$ v grafu $G$, potem vsak $L_i$ predstavlja neko podmnožico $A_i \subset \{ H_1, H_2, ..., H_k \}$. $A_i$ je tako tudi induciran podgraf grafa $G$. Zato je $G = V(A_1, A2, ..., A_p)$. Ampak to predstavla protislovje z izborom grafa $U$. Torej je $U$ primaren.
+\end{dokaz}
+
+
+
+
+
+
 
 
 

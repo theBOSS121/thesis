@@ -12,6 +12,11 @@ permutacijski grafi
 karektarizacija permutacijskih grafov
 delne urejenost permutacij
 
+TODO:
+primeri
+slike
+glavni primer iz karakterizacije in construkcije permutacijskih grafov
+
 
 
 links:
@@ -51,6 +56,8 @@ n=3: 𝑥^3 + 2𝑥^2 + 2𝑥 + 1 = (𝑥^2 + 𝑥 + 1)(𝑥 + 1)
 n=4: 𝑥^6 + 3𝑥^5 + 5𝑥^4 + 6𝑥^3 + 5𝑥^2 + 3𝑥 + 1 = (𝑥^3 + 𝑥^2 + 𝑥 + 1)(𝑥^2 + 𝑥 + 1)(𝑥 + 1)
 general n: (𝑥^𝑛−1 + 𝑥^𝑛−2 + ⋯ + 𝑥 + 1)(𝑥^𝑛−2 + 𝑥^𝑛−2 + ⋯ + 𝑥 + 1) ⋯ (𝑥^2 + 𝑥 + 1)(𝑥 + 1)
 
+https://cs.uwaterloo.ca/journals/JIS/VOL4/MARGOLIUS/inversions.pdf
+
 The inversion number is the number of crossings in the arrow diagram of the permutation
 
 Kendall tau distance or bubble sort distance
@@ -63,4 +70,4 @@ but ai > aj. Equivalently, (x, y) is an inversion
 if and only if x > y and f^(-1)(x) < f^(-1)(y)
 
 
-Hours: 24
+Hours: 31
