@@ -90,6 +90,7 @@
 \newtheorem{lema}{Lema}[chapter]
 \newtheorem{izrek}{Izrek}[chapter]
 \newtheorem{trditev}{Trditev}[izrek]
+\newtheorem{domneva}{Domneva}[izrek]
 \newenvironment{dokaz}{\emph{Dokaz.}\ }{\hspace{\fill}{$\Box$}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -367,6 +368,7 @@ A proper abstract should contain around 100 words which makes this one way too s
 % $\exists$ surjekcija $f: X \rightarrow Y \Rightarrow |X| \geq |Y|$ \\
 % $\exists$ bijekcija $f: X \rightarrow Y \Rightarrow |X| = |Y|$ \\
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{ Permutacije }
 Naj bo $[n] = \{ 1, 2, ..., n \}$. 
 Bijektivni preslikavi $\pi: [n] \rightarrow [n]$ rečemo permutacija. 
@@ -431,10 +433,12 @@ Ker vemo $\pi \in S_5$ lahko cikel dolžine ena izpustimo:
     \end{enumerate}
 \end{dokaz}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{ Inverzije }
 
 Inverzija permutacije $\sigma = (a_1, a_2,... a_n) \in S_n$ je urejen par $(a_i, a_j)$, kjer je $i < j$ $(\sigma^{-1}(a_i) < \sigma^{-1}(a_j))$ in $a_i > a_j$.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{ Graf inverzij }
 
 \begin{definicija}
@@ -832,6 +836,101 @@ $P_3(P_1, P_1, P_1, \overline{K_2})$
 \begin{dokaz}
     Naj bo $G = U(H_1, H_2, ..., H_k)$, kjer je U netrivialen. Če vzamemo eno vozlišče $x_i$ iz vsakega izmed $H_i$, potem je induciran podgraf izomorfen grafu $U$. Zato mora biti U permutacijski. Prav tako so grafi $H_i$ permutacijski, saj so inducirani podgrafi grafa $G$. Privzemimo, da ima U najmanjše število vozlišč med vsemi takimi kompozicijami. Dokazali bi radi, da je $U$ primaren. Privzemimo, da $U$ ni primaren. Naj bo $U = V(L_1, L_2, ..., L_p)$ kompozicija, kjer je V netrivialen. Ker je U kompozicija in oglišča grafa $U$ predstavljajo inducirane podgrafe $H_i$ v grafu $G$, potem vsak $L_i$ predstavlja neko podmnožico $A_i \subset \{ H_1, H_2, ..., H_k \}$. $A_i$ je tako tudi induciran podgraf grafa $G$. Zato je $G = V(A_1, A2, ..., A_p)$. Ampak to predstavla protislovje z izborom grafa $U$. Torej je $U$ primaren.
 \end{dokaz}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{ Graf tekmovalnosti }
+
+\begin{definicija}
+    Če imamo podano končno množico elementov $N = \{ 1, 2, ..., n \}$, ki jim bomo rekli vozlišča, definirajmo rangiranje c množice $N$ kot vsaka bijektivna presliava $c: N \rightarrow N$.
+
+    Ker je rangiranje permutacija elementov $N$, lahko rangiranja identificiramo z vektorjem $N^n = N \times ... \times N$ na naslednji način: če imamo rangiranje $c: N \rightarrow N$, identificiramo $c \equiv (i_1, ..., i_n) \in N^n$, where $c(1) = i_1$, $c(2) = i_2$, ..., $c(n) = i_n$
+    
+    Če je $c \equiv (i_1, ..., i_n)$ rangiranje, potem bomo napisali $i \prec_c j$, kadar se vozlišče i pojavi pred vozliščem j v vektorju rangiranja c, to je ko $c^{-1}(i) < c^{-1}(j)$. Zato rangiranje $c \equiv (i_1, ..., i_n)$ definira zaporedje (urejenost) množice $N = \{ 1, ..., n\}$, kjer je prvi element zaporedja $c(1)$, drugi $c(2)$, in tako naprej.
+\end{definicija}
+
+\begin{definicija}
+\label{def_tekmovalnosti}
+    Če imamo podano končno množico $R = {c_1, c_2, ..., c_r}$ rangiranj, potem rečemo, da je par vozlišč $(i, j) \in N \times N$ tekmuje, če obstajata $c_s, c_t \in R$ tako da je $i \prec_{c_s} j$ ampak $j \prec_{c_t} i$, to je i in j zamenjata svoji relativni poziciji v rengiranjih $c_s$ in $c_t$.
+
+    Tekmovalnost med dvema vozliščema $i, j \in N$ je močno povezano z dejstvom, da je $(i, j)$ inverzija rangiranja množice. Spomnimo se, da je inverzija v rangiranju c par vozlišč $(i, j)$, tako da je $(i-j)(c^{-1}(i) - c^{-1}(j)) < 0$
+\end{definicija}
+
+\begin{lema}
+    Če imamo podano končno množico $R = \{ c_1, c_2, ..., c_r \}$ rangiranj, so naslednje trditve ekvivalentne:
+    \begin{enumerate}[label=(\roman*)]
+        \item Par vozlišč (i, j) tekmuje
+        \item Obstaja $c_s \in \{ c_1, ..., c_{r-1} \}$ tak, da $i$ in $j$ zamenjata svoji relativni poziciji med rangiranji $c_s$ in $c_{s+1}$
+        \item Obstaja preimenovanje vozlišč, tako da je $c_1 = id \equiv (1, 2, ..., n)$ in nek $c_s \in {c_2, ..., c_r}$ z inverzijo $(i, j)$
+    \end{enumerate}
+\end{lema}
+\begin{dokaz}
+    Če velja $(ii) \Rightarrow (i)$, po definiciji \ref{def_tekmovalnosti}. Za $(i) \Rightarrow (iii)$ preimenujmo vozlišča, tako da bo $c_1 = id$. Če $i$ in $j$ zamenjata svoji relativni poziciji med rengiranjema $c_s$ in $c_t$, potem je v enem izmed $c_s$ ali $c_t$ inverzija $(i, j)$. Za $(iii) \Rightarrow (ii)$ preimenujmo vozlišča, tako da $c_1 = id$. Imamo inverzijo $(i, j)$ v $c_s$. Potem $i$ in $j$ zamenjata pozicijo med $c_s$ in $c_{s-1}$ ali pa $c_{s-1}$ prav tako vsebuje inverzijo $(i, j)$ in se zamenjava zgodi prej. Ker je $R$ končna množica lahko sklep ponavljamo induktivno.
+\end{dokaz}
+
+\begin{definicija}
+    Naj bo $R = \{ c_1, c_2, ..., c_r \}$ množica rangiranj vozlišč $N = \{ 1, ..., n \}$. Definirajmo graf tekmovalnosti množice rangiranj $R$, kot neusmerjen graf $G_c(R) = (N, E_R)$, kjer je množica povezav $E_R$ podana na nasledni način: med $i$ in $j$ je povezava, če $(i, j)$ tekmujeta.
+\end{definicija}
+
+\begin{definicija}
+    Če vzamemo množico rangiranj $R = \{ c_1, ..., c_r \}$ vozlišč $N = \{ 1, ..., n\}$ in fiksiramo $i \in N$, je tekmovalnostna množica $C(i)$ vozlišča $i$ je množica elementov množice $N$, ki tekmuje z i vključno z i. $C(i) = \{ j \in N | (i, j) compete \} \cup \{ i \}$.
+\end{definicija}
+
+\begin{definicija}
+    Če vzamemo rangiranja $R = \{ c_1, ..., c_r\}$ vozlišč $N = \{ 1, ..., n\}$, množici  vozlišč $C \subseteq N$ rečemo množica tekmovalcev, če je maksimalna množica glede na lastnost tekmovalnosti svojih elementov, to je vsaka dva element $i, j \in C$, $(i, j)$ tekmujeta in $C$ je maksimalna glede na to lastnost.
+\end{definicija}
+
+Opomba: Množice tekmovalcev so ravno največji polni podgrafi grafa $G_c(R)$. Opazimo, da dva vozlišča tekmujeta natanko tedaj ko pripadata isti množici tekmovalcev. Še več, lahko preverimo, da je množica vozlišč $C \subseteq N$ množica tekmovalcev natanko tedaj ko je $C = \underset{i \in C}{\cap}C(i)$.
+
+\begin{definicija}
+    Če vzamemo množico rangiranj $R = \{ c_1, ..., c_r\}$ vozlišč $N = \{ 1, ..., n\}$, rečemo da par vozlišč $(i, j) \in N \times N$ slejkoprej tekmuje, če obstaja $k \in \mathbb{N}$ in vozlišča $i_1, ..., i_k \in N$ tako da $(i, i_1)$ tekmujeta, $(i_1, i_2)$ tekmujeta, ..., in $(i_k, j)$ tekmujeta.
+
+    Množici vozlišč $D \subseteq N$ rečemo množica tekmovalcev, ki slejkoprej tekmuje, če je maksimalna množica glede na lastnost slejkoprej tekmovalnosti med svojimi elementi.
+\end{definicija}
+
+Opomba: Preprosto je preveriti, da če par vozlišč $(i, j)$ tekmuje potem tudi slejkoprej tekmuje. Še več $(i, j)$ slejkoprej tekmuje natanko tedaj, ko sta $i$ in $j$ povezana z potjo v grafu $G_c(R)$.
+
+Opazimo, da so množice tekmovalcev iz N, ki slejkoprej tekmujejo, povezane komponente grafa $G_c(R)$ in dva vozlišča slejkoprej tekmujeta natanko tedaj ko pripadata isti množici tekmovalcev, ki slejkoprej tekmujejo. Seveda dve vozlišči, ki pripadata različnim množicam tekmovalcev, ki slejkoprej tekmuje, ne moreta tekmovati.
+
+\begin{definicija}
+    Graf $G = (N, E)$ je tetivni, če vsak cikel dolžine 4 ali več vsebuje tetivo, to je povezavo, ki ni del cikla, ki povezuje dve vozlišči cikla.
+\end{definicija}
+
+\begin{definicija}
+    Imejmo neko delno urejeno množico $(N, \preceq)$, to je množica $N$ z refleksivno, antisimetrično in transitvno relacijo $\preceq$ med njenimi elementi. Delno urejeni množici $(N, \preceq)$ lahko priredimo usmerjen graf $G_{\preceq}$, tako da je množica vozlišč enaka $N$, vozlišči $i$ in $j$ pa sta povezani, če $i \neq j$ in $i \preceq j$.
+    Graf $G = (N, E)$ je primerljivostni graf, če je neusmerjen graf pridobljen po odstranitvi orientacije v grafu $G_{\preceq}$ za neko delno urejenost $\preceq$  množice $N$.
+\end{definicija}
+
+Pokazano je že bilo, da je graf $G = (N, E)$ primerljivosten natanko tedaj ko dopušča tranzitivno orientacijo svojih povezav, to je če je usmerjen graf $\overset{\rightarrow}{G} = (N, \overset{\rightarrow}{E})$ pridobljen iz G z orientiacijo vseh povezav v E, tako da če je $(i, j), (j, k) \in \overset{\rightarrow}{E}$ potem je $(i, k) \in \overset{\rightarrow}{E}$
+
+Uporabna karakterizacija permutacijskih grafov je dejstvo, da sta $G$ in komplement $\overline{G}$ primerljivostna grafa, to je dovoljujeta tranzitivno orientazijo svojih povezav. 
+
+Opazimo, da so permutacijski grafi tako primerljivostni grafi kot tekmovalnostni (imamo dve rangiranji/permutaciji $c_1 = id$ in $c_2$, ki predstavlje permutacijski graf).
+
+\begin{definicija}
+    Graf $G = (N, E)$ je delno kohezivno zaporedje vozlišč (ali enostavneje delno kohezivno zaporedje), če obstaja preimenovanje vozlišč, tako da velja $(b)$ iz definicije \ref{def0}, to je če obstaja povezava $ab$, kjer $a < b$, potem mora za vsak $x$, $a < x < b$ obstajati povezava ax ali xb. Graf G je delno koheziven, če ima delno kohezivno zaporedje.
+\end{definicija}
+
+Medtem ko je pogoj $(a)$ iz definicije \ref{def0} je povezan z primerljivostnimi grafi, je pogoj $(b)$ (delna kohezivnost) povezan z tekmovalnostnimi grafi, kot pokaže nasledni izrek.
+
+\begin{izrek}
+\label{tekmovalnosni_graf_delno_koheziven}
+    Vsak tekmovalnostni graf je delno koheziven.
+\end{izrek}
+\begin{dokaz}
+    Privzamimo brez izgube splošnosti, da rangiranje $id \equiv (1, 2, ..., n)$ pripada množici rangiranj $R$, ki generira graf. Naj bo $ab$ povezava, kjer $a < b$ in $x$ tak, da je $a < x < b$. Ker je $ab$ povezava vozlišči $(a, b)$ tekmujeta, kar pomeni, da obstaja tako rangiranje $c_m \in R$, da je $b \prec_{c_m} a$. Če $x \prec_{c_m} a$ potem tekmujeta $(x, a)$ in je $ax$ povezava, v nasprotnem primeru je $b \prec_{c_m} a \prec_{c_m} x$, kar pomeni, da tekmujeta $(b, x)$ in imamo povezavo $xb$.
+\end{dokaz}
+
+\begin{domneva}
+    Izrek \ref{tekmovalnosni_graf_delno_koheziven} je karakterizacija tekmovalnostnih grafov, to pomeni $G = (N, E)$ je tekmovalnostni graf natanko tedaj ko ima delno kohezivno zaporedje.
+\end{domneva}
+
+
+
+
+
+
+
+
 
 
 
