@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex diploma"] 1698333864 "diploma.aux" "diploma.bbl" "diploma" 1698334017 0
+["bibtex diploma"] 1698437225 "diploma.aux" "diploma.bbl" "diploma" 1698437230 0
   "./literatura.bib" 1698223319 4430 af8a6c31c1bd3fad0e0ed68706c287bb ""
   "C:/Users/Luka/AppData/Local/Programs/MiKTeX/bibtex/bst/natbib/plainnat.bst" 1284455456 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "diploma.aux" 1698334016 8843 251c8fe86e737f401a52ce5aacd51ad4 "pdflatex"
+  "diploma.aux" 1698437228 11811 f220775bbba67dfcf333a8e461c46bd1 "pdflatex"
   (generated)
   "diploma.bbl"
   "diploma.blg"
   (rewritten before read)
-["pdflatex"] 1698334013 "c:/Users/Luka/source/isrm/thesis/thesis/diploma.tex" "diploma.pdf" "diploma" 1698334017 0
+["pdflatex"] 1698437225 "c:/Users/Luka/source/isrm/thesis/thesis/diploma.tex" "diploma.pdf" "diploma" 1698437230 0
   "C:/Users/Luka/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1697993077 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Luka/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1668856178 10787539 90990f4fddf7454626dcfebd3c532b42 ""
   "C:/Users/Luka/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ectt1000.tfm" 993062340 1348 d70ddf2d5d512b838e50a335e385e919 ""
@@ -203,13 +203,13 @@
   "C:/Users/Luka/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Luka/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
   "C:/Users/Luka/AppData/Local/Programs/MiKTeX/tex/latex/xmpincl/xmpincl.sty" 1633254124 2832 d498c59e94b7dfa3b4bcf74380ad6348 ""
-  "c:/Users/Luka/source/isrm/thesis/thesis/diploma.tex" 1698334012 91417 d1b233a635ee41a0f48429efad7ae861 ""
-  "diploma.aux" 1698334016 8843 251c8fe86e737f401a52ce5aacd51ad4 "pdflatex"
-  "diploma.bbl" 1698333865 3542 99a19eeb0dcd89d81cd5ac97face4fb1 "bibtex diploma"
-  "diploma.out" 1698334016 3566 c62af2e811e797ffb391d7e4878422c2 "pdflatex"
-  "diploma.toc" 1698334016 1896 aa1a2ad31b48c39cb4ba79b2a7f7e177 "pdflatex"
+  "c:/Users/Luka/source/isrm/thesis/thesis/diploma.tex" 1698437220 96778 352fa4b49b2759aaa9afb9f88c084b93 ""
+  "diploma.aux" 1698437228 11811 f220775bbba67dfcf333a8e461c46bd1 "pdflatex"
+  "diploma.bbl" 1698437225 3542 99a19eeb0dcd89d81cd5ac97face4fb1 "bibtex diploma"
+  "diploma.out" 1698437228 3788 c5c487699019068643ac796843d729df "pdflatex"
+  "diploma.toc" 1698437228 1990 cfa50c4cd57cfb6d90d2deddb8fa1cb7 "pdflatex"
   "pdfa-1b.xmp" 1697993022 4412 deb1ff309e16114051c14cac08e12a8c ""
-  "pdfa-1b.xmpi" 1698334015 2150 706fd81bb5ce58d6f2cc12b7bab9468e "pdflatex"
+  "pdfa-1b.xmpi" 1698437227 2150 a763cdf2dd19d6a7f4c00150fbf45664 "pdflatex"
   "pic1.pdf" 1697993022 27895 eecdab4dee44ad75bcdf5185e9b15381 ""
   "pic2.png" 1697993022 114410 625328c99d6c7623e1c9bbf99512cb21 ""
   (generated)

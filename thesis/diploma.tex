@@ -165,6 +165,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\let\ab\allowbreak
 
 \begin{document}
 \selectlanguage{slovene}
@@ -375,34 +376,36 @@ A proper abstract should contain around 100 words which makes this one way too s
 % $\exists$ bijekcija $f: X \rightarrow Y \Rightarrow |X| = |Y|$ \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{ Notacija, oznake in definicije }
+[n] = $\{ 1, 2,..., n\}$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{ Permutacije }
-Naj bo $[n] = \{ 1, 2, ..., n \}$. 
 Bijektivni preslikavi $\pi: [n] \rightarrow [n]$ rečemo permutacija. 
 Množico vseh permutacij na množici $[n]$ označimo z $S_n$.
 Permutacijo lahko zapišemo na različne načine. 
 Primer: $\pi \in S_5$, $\pi(1) = 3$, $\pi(2) = 5$, $\pi(3) = 1$, $\pi(4) = 4$ in $\pi(5) = 2$.
 Zapis permutacije $\pi$ kot vodoravna tabela:
-\begin{align}
+\[
     \pi = \begin{pmatrix}
         1 & 2 & 3 & 4 & 5 \\
         3 & 5 & 1 & 4 & 2
     \end{pmatrix}
-\end{align}
+\]
 Ker gledamo permutacije na množici $[n]$, ki ima naravno urejenost, lahko zgornjo vrstico izpustimo:
-\begin{align}
+\[
     \pi = (3 5 1 4 2)
-\end{align}
+\]
 Če je $n > 10$ med številkami pišemo vejice.
 Permutacijo lahko zapišemo tudi kot produkt disjunktnih ciklov:
-\begin{align}
+\[
     \pi = (1 3)(2 5)(4)
-\end{align}
+\]
 Posamezni cikel $(a_1, a_2, ..., a_i)$ nam pove, da je $\pi(a_1) = a_2$, $\pi(a_2) = a_3$, ..., $\pi(a_{i-1}) = a_i$ in $\pi(a_i) = a_1$.
 Ker vemo $\pi \in S_5$ lahko cikel dolžine ena izpustimo:
-\begin{align}
+\[
     \pi = (1 3)(2 5)
-\end{align}
-
+\]
 
 \begin{definicija}
     Naj bo A množica. 
@@ -423,19 +426,23 @@ Ker vemo $\pi \in S_5$ lahko cikel dolžine ena izpustimo:
 \begin{dokaz}
     \begin{enumerate}
         \item Asociativnost: Naj bodo $\pi, \sigma, \tau \in S_n$. Za $\forall i \in [n]$ 
-        \begin{align}
-            ((\pi \circ \sigma) \circ \tau)(i) = (\pi \circ \sigma)(\tau(i)) = \pi(\sigma(\tau(i)))\\
+        \[
+            ((\pi \circ \sigma) \circ \tau)(i) = (\pi \circ \sigma)(\tau(i)) = \pi(\sigma(\tau(i)))
+        \]
+        \[
             (\pi \circ (\sigma \circ \tau))(i) = \pi((\sigma \circ \tau)(i)) = \pi(\sigma(\tau(i))) 
-        \end{align}
+        \]
         \item Enota: Naj bo $id \in S_n$ permutacija podana s predpisom $id(a) = a$, $\forall a \in [n]$. Za $\forall \pi \in S_n$ in $\forall i \in [n]$ velja:
-        \begin{align}
-            (\pi \circ id)(i) = \pi(id(i)) = \pi(i) \\
+        \[
+            (\pi \circ id)(i) = \pi(id(i)) = \pi(i)
+        \]
+        \[
             (id \circ \pi)(i) = id(\pi(i)) = \pi(i)
-        \end{align}
+        \]
         \item Inverz: Naj bo $\pi \in S_n$. Ker je $\pi$ bijekcija, $\exists \pi^{-1} \in S_n$.
-        \begin{align}
+        \[
             \pi \circ \pi^{-1} = \pi^{-1} \circ \pi = id
-        \end{align}
+        \]
     \end{enumerate}
 \end{dokaz}
 
@@ -443,6 +450,20 @@ Ker vemo $\pi \in S_5$ lahko cikel dolžine ena izpustimo:
 \chapter{ Inverzije }
 
 Inverzija permutacije $\sigma = (a_1, a_2,... a_n) \in S_n$ je urejen par $(a_i, a_j)$, kjer je $i < j$ $(\sigma^{-1}(a_i) < \sigma^{-1}(a_j))$ in $a_i > a_j$.
+
+Število inverzij permutacije $\sigma$ je enako številu inverzij permutacije $\sigma^{-1}$. Še več, če ima $\sigma$ inverzije $(a_{i_1}, a_{j_1}), ...., (a_{i_k}, a_{j_k})$, potem ima $\sigma^{-1}$ inverzije $(j_1, i_1), ...., (j_k, i_k)$.
+
+Primer: $\sigma = (4, 2, 1, 3)$, inverzije permutacije $\sigma$ so $(4, 2), (4, 1), (4, 3), (2, 1)$. Pozicije inverzij permutacije $\sigma$ so sledeči pari: $(1, 2), (1, 3), (1, 4), (2, 3)$. Inverz permutacije $\sigma$ je $\sigma^{-1} = (3, 2, 4, 1)$, inverzije permutacije $\sigma^{-1}$ so $(3, 2), \ab (3, 1), (2, 1), (4, 1)$. Opazimo, da so to ravno obrnjeni pari pozicij inverzij permutacije $\sigma$.
+
+Število inverzije je mera, ki nam pove kako daleč je permutacija od urejenega zaporedja $(1, ..., n)$. Urejena permutacija nima inverzij. Največ inverzij ima permutacija $(n, n-1, ..., 1)$ . V tem primeru je vsak par števil $(i, j) \in [n], i < j$ v inverziji. Izborov dveh elementov izmed n pa je ravno $n \choose 2$.
+
+Da bi permutacijo s k inverzijami uredili (to je, jo preoblikovali v identično permutacijo), je vedno mogoče in zahteva zaporedje k transpozicij sosednjih elementov. Na vsakem koraku izberemo transpozicijo $i$ in $i+1$, če je element na poziciji $i+1$ manjši od elementa na poziciji $i$. Na ta način zmanjšamo število inverzij za 1. To ponavljamo dokler ne pridemo do identične permutacije.
+
+Primer: $\sigma = (4, 2, 1, 3)$ ima 4 inverzije. Postopek ureditve $\sigma$:\\
+$(4, 2, 1, 3) \overset{(12)}{\rightarrow} (2, 4, 1, 3) \overset{(23)}{\rightarrow} (2, 1, 4, 3) \overset{(34)}{\rightarrow} (2, 1, 3, 4) \overset{(12)}{\rightarrow} (1, 2, 3, 4)$
+
+Število permutacij množice [n] s k inverzijami je koeficijent pred $x^k$ v razvoju produkta: 
+\[\prod_{m=1}^{n}\sum_{i=0}^{m-1} x^i = 1 (1 + x) (1 + x + x^2) \cdot\cdot\cdot (1 + x + \cdot\cdot\cdot + x^{n-1})\]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{ Graf inverzij }
@@ -454,20 +475,26 @@ Inverzija permutacije $\sigma = (a_1, a_2,... a_n) \in S_n$ je urejen par $(a_i,
 Primer: 
 $\sigma = (4, 2, 5, 1, 7, 6, 3) \in S_7$, naj bo $V(G_{\sigma}) = \{ 1, 2, ..., 7\}$ množica vozlišč in $I = \{ (4, 2), (4, 1), (4, 3), (2, 1), (5, 1), (5, 3), (7, 6), (7, 3), (6, 3) \}$ množica inverzij permutacije $\sigma$:
 
-\begin{tikzpicture}[shorten >=1pt,-]
-    \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=25pt,inner sep=0pt]
-    \foreach \num/\x in {4/1, 2/3, 5/5, 1/7, 7/9, 6/11, 3/13}
-            \node[vertex] (V-\num) at (\x,0) {$\num$};
+\begin{figure}[h]
+    \begin{center}        
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=25pt,inner sep=0pt]
+            \foreach \num/\x in {4/1, 2/3, 5/5, 1/7, 7/9, 6/11, 3/13}
+                    \node[vertex] (V-\num) at (\x,0) {$\num$};
 
-        \foreach \from/\to in {4/2, 5/1, 7/6, 6/3}
-            \draw (V-\from) -- (V-\to);
+                \foreach \from/\to in {4/2, 5/1, 7/6, 6/3}
+                    \draw (V-\from) -- (V-\to);
 
-        \draw (V-2) .. controls (3.5, 0.75) and (6.5, 0.75) .. (V-1);
-        \draw (V-7) .. controls (9.5, 0.75) and (12.5, 0.75) .. (V-3);
-        \draw (V-4) .. controls (1.5, 1.5) and (6.5, 1.5) .. (V-1);
-        \draw (V-5) .. controls (5.5, 1.5) and (12.5, 1.5) .. (V-3);
-        \draw (V-4) .. controls (1, 2.5) and (13, 2.5) .. (V-3);
-\end{tikzpicture}
+                \draw (V-2) .. controls (3.5, 0.75) and (6.5, 0.75) .. (V-1);
+                \draw (V-7) .. controls (9.5, 0.75) and (12.5, 0.75) .. (V-3);
+                \draw (V-4) .. controls (1.5, 1.5) and (6.5, 1.5) .. (V-1);
+                \draw (V-5) .. controls (5.5, 1.5) and (12.5, 1.5) .. (V-3);
+                \draw (V-4) .. controls (1, 2.5) and (13, 2.5) .. (V-3);
+        \end{tikzpicture}        
+    \end{center}
+    \caption{Primer grafa inverzij.}
+    \label{graf_inverzij}
+\end{figure}
 
 \begin{definicija}
 \label{def0}
@@ -556,35 +583,42 @@ Polnemu orientiranemu grafu rečemo turnir. Rezultat vozlišča x v turnirju je 
 \end{dokaz}
 
 Grafi poti $P_n$ in zvezd $K_{1,n}$ so permutacijski grafi saj imajo kohezivno zaporedje. Primera kohezivnih zaporedji za pot $P_{13}$ sta permutaciji $\sigma_1 = (3, 1, 5, 2, 7, 4, 9, 6, 11, 8, 13, 10, 12)$ in $\sigma_2 = (2, 4, 1, 6, 3, 8, 5, 10, 7, 12, 9, 13, 11)$. Primer kohezivnega zaporedja za zvezdo $K_{1, n}$ pa je permutacija $\pi = (n+1, 1, 2, ..., n)$.\\
-\begin{tikzpicture}[shorten >=1pt,-]
-    \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
-    \foreach \num/\x in {3/1, 1/2, 5/3, 2/4, 7/5, 4/6, 9/7, 6/8, 11/9, 8/10, 10/12}
-            \node[vertex] (V-\num) at (\x,0) {$\num$};
-
-        \foreach \from/\to in {3/1, 5/2, 7/4, 9/6, 11/8}
-            \draw (V-\from) -- (V-\to);
-
-        \draw (V-3) .. controls (1.5, 0.75) and (3.5, 0.75) .. (V-2);
-        \draw (V-5) .. controls (3.5, 0.75) and (5.5, 0.75) .. (V-4);
-        \draw (V-7) .. controls (5.5, 0.75) and (7.5, 0.75) .. (V-6);
-        \draw (V-9) .. controls (7.5, 0.75) and (9.5, 0.75) .. (V-8);
-        \draw (V-11) .. controls (9.5, 0.75) and (11.5, 0.75) .. (V-10);
-        % \draw (V-13) .. controls (11.5, 0.75) and (12.5, 0.75) .. (V-12);
+\begin{figure}[h]
+    \begin{center}        
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \foreach \num/\x in {3/1, 1/2, 5/3, 2/4, 7/5, 4/6, 9/7, 6/8, 11/9, 8/10, 10/12}
+                    \node[vertex] (V-\num) at (\x,0) {$\num$};
         
-        \filldraw [black] (11,0) circle (.5pt);
-        \filldraw [black] (11.33,0) circle (.5pt);
-        % \filldraw [black] (11.5,0) circle (.5pt);
-        % \filldraw [black] (12.5,0) circle (.5pt);
-        % \filldraw [black] (12.75,0) circle (.5pt);
-        % \filldraw [black] (13,0) circle (.5pt);
+                \foreach \from/\to in {3/1, 5/2, 7/4, 9/6, 11/8}
+                    \draw (V-\from) -- (V-\to);
         
-        \filldraw [black] (11,0) circle (.5pt);
-        \filldraw [black] (11.6,0.53) circle (.5pt);
-        \filldraw [black] (12.2,0.63) circle (.5pt);
-        \filldraw [black] (12.8,0.63) circle (.5pt);
-        \filldraw [black] (13.4,0.53) circle (.5pt);
-        \filldraw [black] (14,0) circle (.5pt);
-\end{tikzpicture}
+                \draw (V-3) .. controls (1.5, 0.75) and (3.5, 0.75) .. (V-2);
+                \draw (V-5) .. controls (3.5, 0.75) and (5.5, 0.75) .. (V-4);
+                \draw (V-7) .. controls (5.5, 0.75) and (7.5, 0.75) .. (V-6);
+                \draw (V-9) .. controls (7.5, 0.75) and (9.5, 0.75) .. (V-8);
+                \draw (V-11) .. controls (9.5, 0.75) and (11.5, 0.75) .. (V-10);
+                % \draw (V-13) .. controls (11.5, 0.75) and (12.5, 0.75) .. (V-12);
+                
+                \filldraw [black] (11,0) circle (.5pt);
+                \filldraw [black] (11.33,0) circle (.5pt);
+                % \filldraw [black] (11.5,0) circle (.5pt);
+                % \filldraw [black] (12.5,0) circle (.5pt);
+                % \filldraw [black] (12.75,0) circle (.5pt);
+                % \filldraw [black] (13,0) circle (.5pt);
+                
+                \filldraw [black] (11,0) circle (.5pt);
+                \filldraw [black] (11.6,0.53) circle (.5pt);
+                \filldraw [black] (12.2,0.63) circle (.5pt);
+                \filldraw [black] (12.8,0.63) circle (.5pt);
+                \filldraw [black] (13.4,0.53) circle (.5pt);
+                \filldraw [black] (14,0) circle (.5pt);
+        \end{tikzpicture}     
+    \end{center}
+    \caption{Primer kohezivnega zaporedja za pot $P_n$.}
+    \label{graf_kohezivnega_zaporedja_pot}
+\end{figure}
+
 
 % \begin{tikzpicture}[shorten >=1pt,-]
 %     \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
@@ -602,49 +636,63 @@ Grafi poti $P_n$ in zvezd $K_{1,n}$ so permutacijski grafi saj imajo kohezivno z
 %         \draw (V-12) .. controls (10.5, 0.75) and (12.5, 0.75) .. (V-11);
 % \end{tikzpicture}
 
-\begin{tikzpicture}[shorten >=1pt,-]
-    \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=35pt,inner sep=0pt]
-    \foreach \num/\x in {n+1/1, 1/3, 2/5, n/9}
-            \node[vertex] (V-\num) at (\x,0) {$\num$};
+\begin{figure}[h]
+    \begin{center}        
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=35pt,inner sep=0pt]
+            \foreach \num/\x in {n+1/1, 1/3, 2/5, n/9}
+                    \node[vertex] (V-\num) at (\x,0) {$\num$};
 
-        \foreach \from/\to in {n+1/1}
-            \draw (V-\from) -- (V-\to);
+                \foreach \from/\to in {n+1/1}
+                    \draw (V-\from) -- (V-\to);
 
-        \draw (V-n+1) .. controls (1.5, 0.75) and (4.5, 0.75) .. (V-2);
-        \draw (V-n+1) .. controls (1.5, 1.5) and (8.5, 1.5) .. (V-n);
+                \draw (V-n+1) .. controls (1.5, 0.75) and (4.5, 0.75) .. (V-2);
+                \draw (V-n+1) .. controls (1.5, 1.5) and (8.5, 1.5) .. (V-n);
 
-        
-        \filldraw [black] (6.5,0) circle (1pt);
-        \filldraw [black] (7,0) circle (1pt);
-        \filldraw [black] (7.5,0) circle (1pt);
-\end{tikzpicture}
+                
+                \filldraw [black] (6.5,0) circle (1pt);
+                \filldraw [black] (7,0) circle (1pt);
+                \filldraw [black] (7.5,0) circle (1pt);
+        \end{tikzpicture} 
+    \end{center}
+    \caption{Primer kohezivnega zaporedja za zvezdo $K_{1, n}$.}
+    \label{graf_kohezivnega_zaporedja_zvezda}
+\end{figure}
 
 Vidimo, da je pogoj za poti $P_n$ $(a)$ iz definicije kohezivnega zaporedja \ref{def0} na prazno izpolnjen, saj ni dveh povezav $v_iv_k$ in $v_kv_j$, kjer so $i < k < j$. Pogoj $(b)$ pa je izpolnjen, saj je vedno ko je $v_iv_j$ povezava in k tak, da $i < k < j$ v grafu ena od povezav $v_iv_k$ ali $v_kv_j$. Podobno je pogoj $(a)$ izpolnjen na prazno za zvezde. Pogoj $(b)$ pa je izpolnjen, saj so vse povezave v grafu oblike $v_{n+1}v_k$ za nek $k \in \{ 1, 2, ..., n \}$. Zato katerokoli povezavo vzamemo bodo vsa vozlišča med krajiščema izbrane povezave $v_{n+1}v_k$ povezana z vozliščem $v_{n+1}$.
 
 Poti in zvezde so drevesa. Ampak niso vsa drevesa permutacijski grafi. Drevo $K_{1,3}^*$, pridobljeno s subdivizijo vseh povezav zvezde $K_{1,3}$, ni permutacijski graf.\\
-\begin{tikzpicture}[shorten >=1pt,-]
-    \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
-            \node[vertex] (V-0) at (4,4){};
-            \node[vertex] (V-1) at (4,1.75){};
-            \node[vertex] (V-2) at (2,0){};
-            \node[vertex] (V-3) at (6,0){};
 
-        \foreach \from/\to in {0/1, 1/2, 1/3}
-            \draw (V-\from) -- (V-\to);
-\end{tikzpicture}
-\begin{tikzpicture}[shorten >=1pt,-]
-    \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
-            \node[vertex] (V-0) at (4,4){};
-            \node[vertex] (V-01) at (4,2.90){};
-            \node[vertex] (V-1) at (4,1.75){};
-            \node[vertex] (V-12) at (3, 0.875){};
-            \node[vertex] (V-2) at (2,0){};
-            \node[vertex] (V-13) at (5,0.875){};
-            \node[vertex] (V-3) at (6,0){};
+\begin{figure}[h]
+    \begin{center}        
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
+                    \node[vertex] (V-0) at (4,4){};
+                    \node[vertex] (V-1) at (4,1.75){};
+                    \node[vertex] (V-2) at (2,0){};
+                    \node[vertex] (V-3) at (6,0){};
+        
+                \foreach \from/\to in {0/1, 1/2, 1/3}
+                    \draw (V-\from) -- (V-\to);
+        \end{tikzpicture}
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
+                    \node[vertex] (V-0) at (4,4){};
+                    \node[vertex] (V-01) at (4,2.90){};
+                    \node[vertex] (V-1) at (4,1.75){};
+                    \node[vertex] (V-12) at (3, 0.875){};
+                    \node[vertex] (V-2) at (2,0){};
+                    \node[vertex] (V-13) at (5,0.875){};
+                    \node[vertex] (V-3) at (6,0){};
+        
+                \foreach \from/\to in {0/01, 12/2, 13/3, 01/1, 1/12, 1/13}
+                    \draw (V-\from) -- (V-\to);
+        \end{tikzpicture}
+    \end{center}
+    \caption{Graf $K_{1, 3}$ in $K_{1, 3}^*$.}
+    \label{graf_subdivizija_k13}
+\end{figure}
 
-        \foreach \from/\to in {0/01, 12/2, 13/3, 01/1, 1/12, 1/13}
-            \draw (V-\from) -- (V-\to);
-\end{tikzpicture}
 
 \begin{definicija}
     Gosenica je drevo z lastnostjo da po odstranitvi vseh listov postane pot.
@@ -652,27 +700,34 @@ Poti in zvezde so drevesa. Ampak niso vsa drevesa permutacijski grafi. Drevo $K_
 
 Primer gosenice z 10 listi, ki po odstranitvi listov postane pot ne 5 vozliščih.
 
-\begin{tikzpicture}[shorten >=1pt,-]
-    \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=15pt,inner sep=0pt]
-            \node[vertex] (V-0) at (0, 1){};
-            \node[vertex] (V-1) at (2, 1){};
-            \node[vertex] (V-2) at (4, 1){};
-            \node[vertex] (V-3) at (6, 1){};
-            \node[vertex] (V-4) at (8, 1){};
-            \node[vertex] (V-5) at (0, 2){};
-            \node[vertex] (V-6) at (2, 2){};
-            \node[vertex] (V-7) at (1, 2){};
-            \node[vertex] (V-8) at (3, 2){};
-            \node[vertex] (V-9) at (4, 0){};
-            \node[vertex] (V-10) at (5, 0){};
-            \node[vertex] (V-11) at (8, 0){};
-            \node[vertex] (V-12) at (7, 2){};
-            \node[vertex] (V-13) at (8, 2){};
-            \node[vertex] (V-14) at (9, 2){};
+\begin{figure}[h]
+    \begin{center}        
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=15pt,inner sep=0pt]
+                    \node[vertex] (V-0) at (0, 1){};
+                    \node[vertex] (V-1) at (2, 1){};
+                    \node[vertex] (V-2) at (4, 1){};
+                    \node[vertex] (V-3) at (6, 1){};
+                    \node[vertex] (V-4) at (8, 1){};
+                    \node[vertex] (V-5) at (0, 2){};
+                    \node[vertex] (V-6) at (2, 2){};
+                    \node[vertex] (V-7) at (1, 2){};
+                    \node[vertex] (V-8) at (3, 2){};
+                    \node[vertex] (V-9) at (4, 0){};
+                    \node[vertex] (V-10) at (5, 0){};
+                    \node[vertex] (V-11) at (8, 0){};
+                    \node[vertex] (V-12) at (7, 2){};
+                    \node[vertex] (V-13) at (8, 2){};
+                    \node[vertex] (V-14) at (9, 2){};
+        
+                \foreach \from/\to in {0/1, 1/2, 2/3, 3/4, 0/5, 1/6, 1/7, 1/8, 2/9, 2/10, 4/11, 4/12, 4/13, 4/14}
+                    \draw (V-\from) -- (V-\to);
+        \end{tikzpicture}
+    \end{center}
+    \caption{Graf gosenice z 10 listi.}
+    \label{graf_gosenice_10_listov}
+\end{figure}
 
-        \foreach \from/\to in {0/1, 1/2, 2/3, 3/4, 0/5, 1/6, 1/7, 1/8, 2/9, 2/10, 4/11, 4/12, 4/13, 4/14}
-            \draw (V-\from) -- (V-\to);
-\end{tikzpicture}
 
 \begin{lema}
     Drevo je gosenica natanko tedaj ko ne vsebuje $K_{1,3}^*$ kot podgraf.
@@ -687,25 +742,31 @@ Primer gosenice z 10 listi, ki po odstranitvi listov postane pot ne 5 vozlišči
 \end{izrek}
 \begin{dokaz}
     Če drevo ni gosenica, potem vsebuje $K_{1,3}^*$ kot podgraf. Drevo, ki vsebuje $K_{1,3}^*$ ni permutacijski graf, saj $K_{1,3}^*$ ni permutacijski graf. Potrebno je še pokazati, da je gosenica permutacijski graf. Naj bo $C$ gosenica in naj bo $P_n$ pot, ki jo pridobimo iz $C$ tako, da odstranimo liste. Če je $n=1$, potem je $C$ zvezda $K_{1,k}$ za nek $k \geq 0$ ali pa trivialen graf $K_1$. Ker so zvezde in trivialen graf permutacijski grafi, predpostavimo da je $n \geq 2$. Zgradimo kohezivno zaporedje poti $P_n$ kot na primeru od prej. Vse liste lihega vozlišča na poti vstavimo levo od vozlišče $i+1$ na poti $P_n$. Vse liste sodega vozlišča na poti vstavimo med vozlišči $i$ in $i-1$ na poti $P_n$. Rezultat je kohezivno zaporedje. Zato je gosenica C res permutacijski graf.
-    \begin{tikzpicture}[shorten >=1pt,-]
-        \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
-        \foreach \num/\x in {l_1/0, 2/1, l_2/2, 1/3, l_3/4, 4/5, l_4/6, 3/7, l_5/8, 6/9, l_6/10, 5/11, l_7/12, 7/13}
-                \node[vertex] (V-\num) at (\x,0) {$\num$};
-    
-            \foreach \from/\to in {2/l_2, 4/l_4, 6/l_6, 7/l_7}
-                \draw (V-\from) -- (V-\to);
-    
-            \draw (V-l_1) .. controls (0.5, 1) and (2.5, 1) .. (V-1);
-            \draw (V-l_3) .. controls (4.5, 1) and (6.5, 1) .. (V-3);
-            \draw (V-l_5) .. controls (8.5, 1) and (10.5, 1) .. (V-5);
-
-            \draw (V-2) .. controls (1.5, 0.75) and (2.5, 0.75) .. (V-1);
-            \draw (V-4) .. controls (5.5, 0.75) and (6.5, 0.75) .. (V-3);
-            \draw (V-6) .. controls (9.5, 0.75) and (10.5, 0.75) .. (V-5);
-            \draw (V-2) .. controls (1.5, 1.5) and (6.5, 1.5) .. (V-3);
-            \draw (V-4) .. controls (5.5, 1.5) and (10.5, 1.5) .. (V-5);
-            \draw (V-6) .. controls (9.5, 1.5) and (12.5, 1.5) .. (V-7);
-    \end{tikzpicture}
+    \begin{figure}[h]
+        \begin{center}        
+            \begin{tikzpicture}[shorten >=1pt,-]
+                \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
+                \foreach \num/\x in {l_1/0, 2/1, l_2/2, 1/3, l_3/4, 4/5, l_4/6, 3/7, l_5/8, 6/9, l_6/10, 5/11, l_7/12, 7/13}
+                        \node[vertex] (V-\num) at (\x,0) {$\num$};
+            
+                    \foreach \from/\to in {2/l_2, 4/l_4, 6/l_6, 7/l_7}
+                        \draw (V-\from) -- (V-\to);
+            
+                    \draw (V-l_1) .. controls (0.5, 1) and (2.5, 1) .. (V-1);
+                    \draw (V-l_3) .. controls (4.5, 1) and (6.5, 1) .. (V-3);
+                    \draw (V-l_5) .. controls (8.5, 1) and (10.5, 1) .. (V-5);
+        
+                    \draw (V-2) .. controls (1.5, 0.75) and (2.5, 0.75) .. (V-1);
+                    \draw (V-4) .. controls (5.5, 0.75) and (6.5, 0.75) .. (V-3);
+                    \draw (V-6) .. controls (9.5, 0.75) and (10.5, 0.75) .. (V-5);
+                    \draw (V-2) .. controls (1.5, 1.5) and (6.5, 1.5) .. (V-3);
+                    \draw (V-4) .. controls (5.5, 1.5) and (10.5, 1.5) .. (V-5);
+                    \draw (V-6) .. controls (9.5, 1.5) and (12.5, 1.5) .. (V-7);
+            \end{tikzpicture}
+        \end{center}
+        \caption{Primer kohezivnega zaporedja gosenice.}
+        \label{graf_kohezivnega_zaporedja_gosenice}
+    \end{figure}
 \end{dokaz}
 
 Disjunktna unija grafov pomeni da vzamemo dva grafa in ju združimo v večji graf tako, da ju postavimo drug ob drugega.
@@ -726,37 +787,51 @@ Vsota grafov L in M, označena z $L + M$, je sestavljena iz disjunktne unije gra
 
 Izrek \ref{izrek_konstrukcija_permutacijskega_grafa} nam poda lahkek način za konstrukcijo permutacijskega grafa. Naj bo $G$ polni graf $K3$. Poglejmo si kompozicijo $K_3(P_2, C_3, P_1)$. Ker so $K_3$, $P_2, C_3, P_1$ polni grafi dobimo polni graf $K_6$.
 
-\begin{tikzpicture}[shorten >=1pt,-]
-    \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=10pt,inner sep=0pt]
-            \node[vertex] (V-0) at (1, 0){$P_2$};
-            \node[vertex] (V-1) at (0, 1){$P_2$};
+\begin{figure}[h]
+    \begin{center}        
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=10pt,inner sep=0pt]
+                    \node[vertex] (V-0) at (1, 0){$P_2$};
+                    \node[vertex] (V-1) at (0, 1){$P_2$};
+        
+                    \node[vertex] (V-2) at (2, 2){$C_3$};
+                    \node[vertex] (V-3) at (3, 3){$C_3$};
+                    \node[vertex] (V-4) at (4, 2){$C_3$};
+                    
+                    \node[vertex] (V-5) at (5, 0){$P_1$};
+                    
+                \foreach \from/\to in {0/1, 2/3, 3/4, 4/2, 0/2, 0/3, 0/4, 1/2, 1/3, 1/4, 2/5, 3/5, 4/5, 0/5, 1/5}
+                    \draw (V-\from) -- (V-\to);
+        \end{tikzpicture}
+    \end{center}
+    \caption{Graf $K_3(P_2, C_3, P_1)$.}
+    \label{graf_kompozicija_primer1}
+\end{figure}
 
-            \node[vertex] (V-2) at (2, 2){$C_3$};
-            \node[vertex] (V-3) at (3, 3){$C_3$};
-            \node[vertex] (V-4) at (4, 2){$C_3$};
-            
-            \node[vertex] (V-5) at (5, 0){$P_1$};
-            
-        \foreach \from/\to in {0/1, 2/3, 3/4, 4/2, 0/2, 0/3, 0/4, 1/2, 1/3, 1/4, 2/5, 3/5, 4/5, 0/5, 1/5}
-            \draw (V-\from) -- (V-\to);
-\end{tikzpicture}
 
 Poglejmo si še kompozicijo $P_3(P_2, P_3, P_1)$.
 
-\begin{tikzpicture}[shorten >=1pt,-]
-    \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=10pt,inner sep=0pt]
-            \node[vertex] (V-0) at (1, 0){$P_2$};
-            \node[vertex] (V-1) at (0, 1){$P_2$};
+\begin{figure}[h]
+    \begin{center}        
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=10pt,inner sep=0pt]
+                    \node[vertex] (V-0) at (1, 0){$P_2$};
+                    \node[vertex] (V-1) at (0, 1){$P_2$};
+        
+                    \node[vertex] (V-2) at (2, 3){$C_3$};
+                    \node[vertex] (V-3) at (3, 3){$C_3$};
+                    \node[vertex] (V-4) at (4, 3){$C_3$};
+                    
+                    \node[vertex] (V-5) at (5, 0){$P_1$};
+                    
+                \foreach \from/\to in {0/1, 2/3, 3/4, 0/2, 0/3, 0/4, 1/2, 1/3, 1/4, 2/5, 3/5, 4/5}
+                    \draw (V-\from) -- (V-\to);
+        \end{tikzpicture}
+    \end{center}
+    \caption{Graf $P_3(P_2, P_3, P_1)$.}
+    \label{graf_kompozicija_primer2}
+\end{figure}
 
-            \node[vertex] (V-2) at (2, 3){$C_3$};
-            \node[vertex] (V-3) at (3, 3){$C_3$};
-            \node[vertex] (V-4) at (4, 3){$C_3$};
-            
-            \node[vertex] (V-5) at (5, 0){$P_1$};
-            
-        \foreach \from/\to in {0/1, 2/3, 3/4, 0/2, 0/3, 0/4, 1/2, 1/3, 1/4, 2/5, 3/5, 4/5}
-            \draw (V-\from) -- (V-\to);
-\end{tikzpicture}
 
 Vsi grafi na največ 4 vozliščih so permutacijski. Zato sta tudi $P_3(P_2, P_3, P_1)$ in $K_3(P_2, C_3, P_1)$ permutacijska.
 
@@ -768,66 +843,87 @@ Premer drevesa je najdaljša pot med dvema vozliščema v grafu.
 
 Med drevesi s premerom, ki ni večji od 3 lahko pokažemo, da so primarne samo poti $P_1, P_2$ in $P_4$. To so vse gosenice, ki nimajo dveh listov z istim sosednjim vozliščem. Graf $P_3$ ni primaren, saj ima dva lista, ki imata isto sosednje vozlišče.
 
-\begin{tikzpicture}[shorten >=1pt,-]
-    \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=35pt,inner sep=0pt]
-        \node[vertex] (V-1) at (0, 0){$d = 0$};
-
-        \node[vertex] (V-2) at (6, 0){$d = 1$};
-        \node[vertex] (V-3) at (6, 2){$d = 1$};
+\begin{figure}[h]
+    \begin{center}        
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=35pt,inner sep=0pt]
+                \node[vertex] (V-1) at (0, 0){$d = 0$};
         
-        \node[vertex] (V-4) at (2, 2){$d = 2$};
-        \node[vertex] (V-5) at (4, 3){$d = 2$};
-        \node[vertex] (V-6) at (4, 1){$d = 2$};
+                \node[vertex] (V-2) at (6, 0){$d = 1$};
+                \node[vertex] (V-3) at (6, 2){$d = 1$};
+                
+                \node[vertex] (V-4) at (2, 2){$d = 2$};
+                \node[vertex] (V-5) at (4, 3){$d = 2$};
+                \node[vertex] (V-6) at (4, 1){$d = 2$};
+                
+                \node[vertex] (V-7) at (0, 4){$d = 3$};
+                \node[vertex] (V-8) at (0, 6){$d = 3$};
+                \node[vertex] (V-9) at (2, 5){$d = 3$};
+                \node[vertex] (V-10) at (4, 5){$d = 3$};
+                \node[vertex] (V-11) at (6, 4){$d = 3$};
+                \node[vertex] (V-12) at (6, 6){$d = 3$};
+                    
+                \foreach \from/\to in {2/3, 4/5, 4/6, 7/9, 8/9, 9/10, 10/11, 10/12}
+                    \draw (V-\from) -- (V-\to);
         
-        \node[vertex] (V-7) at (0, 4){$d = 3$};
-        \node[vertex] (V-8) at (0, 6){$d = 3$};
-        \node[vertex] (V-9) at (2, 5){$d = 3$};
-        \node[vertex] (V-10) at (4, 5){$d = 3$};
-        \node[vertex] (V-11) at (6, 4){$d = 3$};
-        \node[vertex] (V-12) at (6, 6){$d = 3$};
-            
-        \foreach \from/\to in {2/3, 4/5, 4/6, 7/9, 8/9, 9/10, 10/11, 10/12}
-            \draw (V-\from) -- (V-\to);
+                    
+                \filldraw [black] (4,1.8) circle (1pt);
+                \filldraw [black] (4,2) circle (1pt);
+                \filldraw [black] (4,2.2) circle (1pt);
+        
+                \filldraw [black] (0,4.8) circle (1pt);
+                \filldraw [black] (0,5) circle (1pt);
+                \filldraw [black] (0,5.2) circle (1pt);
+                \filldraw [black] (6,4.8) circle (1pt);
+                \filldraw [black] (6,5) circle (1pt);
+                \filldraw [black] (6,5.2) circle (1pt);
+        \end{tikzpicture}
+    \end{center}
+    \caption{Grafi dreves s premerom $\leq 3$.}
+    \label{graf_dreves_premer_leq3}
+\end{figure}
 
-            
-        \filldraw [black] (4,1.8) circle (1pt);
-        \filldraw [black] (4,2) circle (1pt);
-        \filldraw [black] (4,2.2) circle (1pt);
 
-        \filldraw [black] (0,4.8) circle (1pt);
-        \filldraw [black] (0,5) circle (1pt);
-        \filldraw [black] (0,5.2) circle (1pt);
-        \filldraw [black] (6,4.8) circle (1pt);
-        \filldraw [black] (6,5) circle (1pt);
-        \filldraw [black] (6,5.2) circle (1pt);
-\end{tikzpicture}
 
 $P_3 = P_2(P_1, \overline{K_2})$
 
-\begin{tikzpicture}[shorten >=1pt,-]
-    \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=35pt,inner sep=0pt]
-        \node[vertex] (V-1) at (2, 1){$d = 2$};
-        \node[vertex] (V-2) at (4, 2){$d = 2$};
-        \node[vertex] (V-3) at (4, 0){$d = 2$};
+\begin{figure}[h]
+    \begin{center}        
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=35pt,inner sep=0pt]
+                \node[vertex] (V-1) at (2, 1){$d = 2$};
+                \node[vertex] (V-2) at (4, 2){$d = 2$};
+                \node[vertex] (V-3) at (4, 0){$d = 2$};
+        
+                \foreach \from/\to in {1/2, 1/3}
+                    \draw (V-\from) -- (V-\to);
+        \end{tikzpicture}
+    \end{center}
+    \caption{Graf $P_3 = P_2(P_1, \overline{K_2})$.}
+    \label{graf_P3}
+\end{figure}
 
-        \foreach \from/\to in {1/2, 1/3}
-            \draw (V-\from) -- (V-\to);
-\end{tikzpicture}
 
 $P_3(P_1, P_1, P_1, \overline{K_2})$
 
-\begin{tikzpicture}[shorten >=1pt,-]
-    \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=35pt,inner sep=0pt]
-        
-        \node[vertex] (V-1) at (0, 1){$d = 3$};
-        \node[vertex] (V-2) at (2, 1){$d = 3$};
-        \node[vertex] (V-3) at (4, 1){$d = 3$};
-        \node[vertex] (V-4) at (6, 0){$d = 3$};
-        \node[vertex] (V-5) at (6, 2){$d = 3$};
-            
-        \foreach \from/\to in {1/2, 2/3, 3/4, 3/5}
-            \draw (V-\from) -- (V-\to);            
-\end{tikzpicture}
+\begin{figure}[h]
+    \begin{center}        
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=35pt,inner sep=0pt]
+                
+                \node[vertex] (V-1) at (0, 1){$d = 3$};
+                \node[vertex] (V-2) at (2, 1){$d = 3$};
+                \node[vertex] (V-3) at (4, 1){$d = 3$};
+                \node[vertex] (V-4) at (6, 0){$d = 3$};
+                \node[vertex] (V-5) at (6, 2){$d = 3$};
+                    
+                \foreach \from/\to in {1/2, 2/3, 3/4, 3/5}
+                    \draw (V-\from) -- (V-\to);            
+        \end{tikzpicture}
+    \end{center}
+    \caption{Graf kompozicije $P_3(P_1, P_1, P_1, \overline{K_2})$.}
+    \label{graf_kompozicije_P3_P1_P1_P1_K2c}
+\end{figure}
 
 \begin{izrek}
     Drevo je primaren permutacijski graf natanko tedaj, ko je gosenica brez dveh listov z istim sosednjim vozliščem.
