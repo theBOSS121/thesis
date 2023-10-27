@@ -70,4 +70,4 @@ but ai > aj. Equivalently, (x, y) is an inversion
 if and only if x > y and f^(-1)(x) < f^(-1)(y)
 
 
-Hours: 38
+38
