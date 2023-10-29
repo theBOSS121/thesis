@@ -377,9 +377,21 @@ A proper abstract should contain around 100 words which makes this one way too s
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{ Notacija, oznake in definicije }
-[n] = $\{ 1, 2,..., n\}$\\
+$[n] = \{ 1, 2,..., n\}$. \\
 $S_n$ je množico vseh permutacij na množici $[n]$. \\
 $id \in S_n$ je permutacija podana s predpisom $id(a) = a$ za $\forall a \in [n]$. \\
+$V(G)$ je množica vozlišč grafa $G$. \\
+$E(G)$ je množica povezav grafa $G$. \\
+$\overline{G}$ je komplement grafa $G$ (nepovezave grafa $G$ so povezave grafa $\overline{G}$). \\
+$K_n$ je poln graf na n vozliščih. \\
+$\overline{K_n}$ je nepovezan graf na n vozliščih. \\
+$P_n$ je pot na n vozliščih. \\
+$K_{n, k}$ je dvodelen graf z n vozlišči v eni in k vozlišči v drugi množici. \\
+$deg_D^+(x)$ je izhodna stopnja vozlišča $x$ v usmerjenem grafu $D$. \\
+$deg_D^-(x)$ je vhodna stopnja vozlišča $x$ v usmerjenem grafu $D$. \\
+Disjunktna unija grafov pomeni da vzamemo dva grafa in ju združimo v večji graf tako, da ju postavimo drug ob drugega. \\
+Določiti smer povezave $vu$ grafa $G$ pomeni spremeniti $vu$ v urejen par $(v, u)$ ali $(u, v)$. \\
+Orientacija grafa $G$ je usmerjen graf pridobljen tako da vsaki povezavi grafa $G$ določimo smer. \\
 
 \begin{definicija}[definicija grupe]
     Naj bo A množica. 
@@ -391,8 +403,9 @@ $id \in S_n$ je permutacija podana s predpisom $id(a) = a$ za $\forall a \in [n]
         \item $\forall a \in A: \exists a^{-1} \in A: a \cdot a^{-1} = a^{-1} \cdot a = e$ (obstoj inverza)
         
     \end{enumerate}
-
 \end{definicija}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{ Permutacije }
@@ -659,14 +672,16 @@ Vsota števk v faktorskem zapisu (Lehmerjeva koda ali vektor inverzij) nam pove 
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{ Graf inverzij }
+\chapter{ Permutacijski grafi }
 
 \begin{definicija}
-    Naj bo $\sigma \in S_n$. Graf inverzij permutacije $\sigma$, ki ga označimo z $G_{\sigma}$,  je graf z vozlišči $1, 2,..., n$, kjer je $xy$ povezava grafa $G_{\sigma}$ natanko tedaj, ko je $(x, y)$ ali $(y, x)$ inverzija permutacije $\sigma$. Vsak graf izomorfen grafu $G_{\sigma}$ za neko permutacijo $\sigma$ imenujemo permutacijski graf.
+    Naj bo $\sigma \in S_n$. Graf inverzij permutacije $\sigma$, ki ga označimo z $G_{\sigma}$, je neusmerjen graf z $V(G_{\sigma}) = [n]$, kjer je $xy \in E(G_{\sigma})$ natanko tedaj, ko je $(x, y)$ ali $(y, x)$ inverzija permutacije $\sigma$. Vsak graf izomorfen grafu $G_{\sigma}$ za neko permutacijo $\sigma$ imenujemo permutacijski graf.
 \end{definicija}
 
 Primer: 
-$\sigma = (4, 2, 5, 1, 7, 6, 3) \in S_7$, naj bo $V(G_{\sigma}) = \{ 1, 2, ..., 7\}$ množica vozlišč in $I = \{ (4, 2), (4, 1), (4, 3), (2, 1), (5, 1), (5, 3), (7, 6), (7, 3), (6, 3) \}$ množica inverzij permutacije $\sigma$:
+$\sigma = (4, 2, 5, 1, 7, 6, 3) \in S_7$, $V(G_{\sigma}) =[7]$. Množica inverzij $\sigma$ je
+$I = \{ (4, 2), (4, 1), (4, 3), (2, 1), (5, 1), (5, 3), (7, 6), (7, 3), (6, 3) \}$
+zato je $E(G_{\sigma}) = \{ \{ 4, 2 \}, \{ 4, 1 \}, \{ 4, 3 \}, \{ 2, 1 \}, \{ 5, 1 \}, \{ 5, 3 \}, \{ 7, 6 \}, \{ 7, 3 \}, \{ 6, 3 \} \}$. Graf $G_{\sigma}$ je prikazan na sliki \ref{graf_inverzij}.
 
 \begin{figure}[h]
     \begin{center}        
@@ -691,26 +706,50 @@ $\sigma = (4, 2, 5, 1, 7, 6, 3) \in S_7$, naj bo $V(G_{\sigma}) = \{ 1, 2, ..., 
 
 Če je graf permutacijski graf, potem lahko veliko problem, ki so NP-polni na poljubnih grafih rešimo v polinomskem času. Na primer: iskanje naječjega podgrafa, ki je poln graf, je ekvivalento iskanju največjega padajočega zaporedja v permutaciji, ki definira permutacijski graf.
 
-\begin{definicija}
-\label{def0}
-    Naj bo $G$ graf na n vozliščih. Zaporedju vozlišč $l = (v_1, v_2, ..., v_n)$ rečemo kohezivno vozliščno zaporedje grafa $G$ (ali enostavno kohezivno zaporedje grafa $G$), če so izpolnjeni naslednji pogoji:
+\begin{definicija}[Kohezivno zaporedje grafa]
+\label{def_kohezivno_zaporedje}
+    Naj bo $G$ neusmerjen graf na n vozliščih. 
+    Zaporedju vozlišč $l = (v_1, v_2, ..., v_n)$ rečemo kohezivno vozliščno zaporedje grafa $G$ (ali enostavneje kohezivno zaporedje grafa $G$), če sta izpolnjena nasledna pogoja (glej sliko \ref{graf_kohezivno_zaporedje_ab}):
     \begin{enumerate}[label=(\alph*)]
         \item če $i < k < j$ in $v_iv_k$, $v_kv_j \in E(G) \Rightarrow v_iv_j \in E(G)$
         \item če $i < k < j$ in $v_iv_j \in E(G) \Rightarrow v_iv_k \in E(G)$ ali $v_kv_j \in E(G)$
     \end{enumerate}
 \end{definicija}
 
+\begin{figure}[h]
+    \begin{center}        
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=25pt,inner sep=0pt]
+            \foreach \num/\x in {i/1, k/3, j/5}
+                    \node[vertex] (V-\num) at (\x,0) {$v_{\num}$};
+            \foreach \num/\x in {i/7, k/9, j/11}
+                    \node[vertex] (VV-\num) at (\x,0) {$v_{\num}$};
+
+                \foreach \from/\to in {i/k, k/j}
+                    \draw (V-\from) -- (V-\to);
+                \foreach \from/\to in {i/k, k/j}
+                    \draw[dotted] (VV-\from) -- (VV-\to);
+
+
+                \draw[dotted] (V-i) .. controls (1.5, 1) and (4.5, 1) .. (V-j);
+                \draw (VV-i) .. controls (7.5, 1) and (10.5, 1) .. (VV-j);
+        \end{tikzpicture}        
+    \end{center}
+    \caption{Pogoja za kohezivno zaporedje grafa $G$.}
+    \label{graf_kohezivno_zaporedje_ab}
+\end{figure}
+
 \begin{lema}
 \label{lema0}
-    Naj bo $G$ graf. $l$ je kohezivno zaporedje grafa $G \Leftrightarrow l$ je kohezivno zaporedje grafa $\overline{G}$ 
+    Naj bo $G$ graf. Zaporedje vozlišč $l$ je kohezivno zaporedje grafa $G$ natanko tedaj ko je $l$ kohezivno zaporedje grafa $\overline{G}$ 
 \end{lema}
 \begin{dokaz}
-    Naj bo $l = (v_1, v_2, ..., v_n)$ kohezivno zaporedje grafa $G$. Trdimo, da je $l$ kohezivno zaporedje grafa $\overline{G}$. 
+    $(\Rightarrow)$ Naj bo $l = (v_1, v_2, ..., v_n)$ kohezivno zaporedje grafa $G$. Trdimo, da je $l$ kohezivno zaporedje grafa $\overline{G}$. 
     \begin{enumerate}[label=(\alph*)]
-        \item Naj bosta $v_iv_k, v_kv_j \in E(\overline{G})$ tako da $i < k < j$. Potem $v_iv_k, v_kv_j \notin E(G)$. Po (b) iz definicije \ref{def0} o kohezivnem zaporedju sledi, da $v_iv_j \notin E(G)$. Kar pomeni $v_iv_j \in E(\overline{G})$
-        \item Naj bo $v_iv_j \in E(\overline{G})$ tako da $i < j$. Naj bo k tako naravno število, da je $i < k < j$. Potem $v_iv_j \notin E(G)$. Po (a) iz definicije \ref{def0} sledi, da nemoreta biti oba $v_iv_k$ in $v_kv_j$ povezavi grafa $G$. Zato sledi, da je vsaj ena od povezav $v_iv_k$ in $v_kv_j$ povezava grafa $\overline{G}$. 
+        \item Naj bosta $v_iv_k, v_kv_j \in E(\overline{G})$ tako da $i < k < j$. Potem, po definiciji komplementa $v_iv_k, v_kv_j \notin E(G)$. Če pogoj (b) iz definicije \ref{def_kohezivno_zaporedje} negiramo ($i < k < j$ in $v_iv_k, v_kv_j \notin E(G) \Rightarrow v_iv_j \notin E(G)$) sledi, da $v_iv_j \notin E(G)$. Kar pomeni $v_iv_j \in E(\overline{G})$
+        \item Naj bo $v_iv_j \in E(\overline{G})$ tako da $i < j$ in k tako naravno število, da je $i < k < j$. Potem $v_iv_j \notin E(G)$. Če pogoj (a) iz definicije \ref{def_kohezivno_zaporedje} negiramo vidimo, da $v_iv_k \notin E(G)$ ali $v_kv_j \notin E(G)$ (vsaj ena od povezav $v_iv_k, v_kv_j$ ni povezava grafa $G$). Zato sledi, da je $v_iv_k \in E(\overline{G})$ ali $v_kv_j \in E(\overline{G})$. 
     \end{enumerate}
-    Obratno smer dokaza sledi iz dejstva, da je $\overline{\overline{G}} = G$.
+    $(\Leftarrow)$ Obratna smer dokaza sledi iz dejstva, da je $\overline{\overline{G}} = G$.
 \end{dokaz}
 
 \begin{izrek}
@@ -720,25 +759,44 @@ $\sigma = (4, 2, 5, 1, 7, 6, 3) \in S_7$, naj bo $V(G_{\sigma}) = \{ 1, 2, ..., 
 \begin{dokaz}
     Naj bo $\sigma = (\sigma(1), \sigma(2), ..., \sigma(n)) \in S_n$. Trdimo, da je $\sigma$ kohezivno zaporedje grafa $G_{\sigma}$. 
     \begin{enumerate}[label=(\alph*)]
-        \item Če je $i < k < j$ in $\sigma(i)\sigma(k), \sigma(k)\sigma(j) \in E(G_{\sigma})$, potem sta $(\sigma(i),\sigma(k))$ in $(\sigma(k),\sigma(j))$ inverziji permutacije $\sigma$. Kar pomeni $\sigma(i) > \sigma(k) > \sigma(j)$. Zato tudi $(\sigma(i),\sigma(j))$ inverzija permutacije $\sigma$ in $\sigma(i)\sigma(j) \in E(G_{\sigma})$.        
+        \item Če je $i < k < j$ in $\sigma(i)\sigma(k), \sigma(k)\sigma(j) \in E(G_{\sigma})$, potem sta $(\sigma(i),\sigma(k))$ in $(\sigma(k),\sigma(j))$ inverziji permutacije $\sigma$, kar pomeni $\sigma(i) > \sigma(k) > \sigma(j)$. Zato je tudi $(\sigma(i),\sigma(j))$ inverzija permutacije $\sigma$ in $\sigma(i)\sigma(j) \in E(G_{\sigma})$.        
 
         \item Naj bo $\sigma(i)\sigma(j) \in E(G_{\sigma})$ in k tak da $i < k < j$. Potem je $(\sigma(i),\sigma(j))$ inverzija permutacije $\sigma$ in $\sigma(i) > \sigma(j)$. Če je $\sigma(i) > \sigma(k)$ je $(\sigma(i),\sigma(k))$ inverzija permutacije $\sigma$ in $\sigma(i)\sigma(k) \in E(G_{\sigma})$. Če je $\sigma(k) > \sigma(j)$ je $(\sigma(k), \sigma(j))$ inverzija permutacije $\sigma$ in $\sigma(k)\sigma(j) \in E(G_{\sigma})$. Tako je vsaj ena od povezav $\sigma(i)\sigma(k)$ in $\sigma(k)\sigma(j)$ povezava grafa $G_{\sigma}$.
     \end{enumerate}
 \end{dokaz}
 
-$(v_1, v_2, ..., v_n)$ je kohezivno zaporedje grafa $G$ $\Leftrightarrow$ $(v_n, v_{n-1}, ..., v_1)$ je kohezivno zaporedje grafa $G$.
-
-Določiti smer povezave vu grafa G pomeni spremeniti vu v urejen par (v, u) ali (u, v).
-
-\begin{definicija}
-    Orientacija grafa $G$ je usmerjen graf pridobljen tako da vsaki povezavi grafa $G$ določimo smer.
-\end{definicija}
+Zaporedje vozlišč $(v_1, v_2, ..., v_n)$ je kohezivno zaporedje grafa $G$ natanko tedaj, ko je zaporedje vozlišč $(v_n, v_{n-1}, ..., v_1)$ kohezivno zaporedje grafa $G$.
 
 Za usmerjen graf $D$ rečemo, da je tranzitiven, če je $(x, z)$ usmerjena povezava grafa $D$ kadar sta $(x, y)$ in $(y, z)$ usmerjeni povezavi grafa $D$. 
 
-V usmerjenem grafu $D$ je izhodna stopnja vozlišča x, označena $deg_D^+(x)$ ali $deg^+(x)$, število vozlišč y grafa $D$ tako da je $(x, y)$ usmerjena povezava grafa $D$. Vhodna stopnja vozlišča x, označena $deg_D^-(x)$ ali $deg^-(x)$, je število vozlišč y grafa $D$ tako da je $(y, x)$ usmerjena povezava grafa $D$.
-
 Polnemu orientiranemu grafu rečemo turnir. Rezultat vozlišča x v turnirju je $s(x) = deg^+(x)$. Rezultatsko zaporedje turnirja je zaporedje rezultatov vozlišč turnirja v nepadajočem vrstnem redu.
+
+\begin{figure}[h]
+    \begin{center}        
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=25pt,inner sep=0pt]
+            \foreach \num/\x in {1/1, 2/3}
+                    \node[vertex] (V-\num) at (\x,0) {$\num$};
+            \foreach \num/\x in {3/1, 4/3}
+                    \node[vertex] (V-\num) at (\x,2) {$\num$};
+            \foreach \num/\x in {4/5, 3/7, 2/9, 1/11}
+                    \node[vertex] (VV-\num) at (\x,0) {$\num$};
+
+                \foreach \from/\to in {1/2, 2/4, 4/3, 1/3, 3/2, 4/1}
+                    \draw[-latex] (V-\from) -- (V-\to);
+                \foreach \from/\to in {4/3, 3/2, 2/1}
+                    \draw[-latex] (VV-\from) -- (VV-\to);
+
+                \draw[-latex] (VV-4) .. controls (5.5, 1) and (8.5, 1) .. (VV-2);
+                \draw[-latex] (VV-3) .. controls (7.5, 1) and (10.5, 1) .. (VV-1);
+                \draw[-latex] (VV-4) .. controls (5.5, 1.5) and (10.5, 1.5) .. (VV-1);
+        \end{tikzpicture}
+    \end{center}
+    \caption{Levo je turnir, desno je tranzitiven turnir na 4 vozliščih}
+    \label{graf_turnirja_in_tranzitivnega_turnirja}
+\end{figure}
+
+Obstaja samo en tranzitiven turnir na n vozliščih (do izomorfizma natančno), ki je izomorfen grafu permutacije $\sigma = (n, n-1, ..., 1)$ z usmerjenimi povezavami $x \rightarrow y$, če je $(x, y)$ inverzija. Opazimo tudi, da v tranzitivnem turnirju ni usmerjenih ciklov. 
 
 \begin{izrek}
 \label{izrek_tranzitiven_turnir}
@@ -751,7 +809,7 @@ Polnemu orientiranemu grafu rečemo turnir. Rezultat vozlišča x v turnirju je 
     \end{enumerate}
 \end{izrek}
 \begin{dokaz}
-    Turnir T na n vozliščih, ki je tranzitiven je izomorfen grafu permutacije $\sigma = (n, n-1, ..., 1)$ z usmerjenimi povezavami. Kar pomeni $x \rightarrow y$, če je $(x, y)$ inverzija. Če uredimo vozlišča od leve proti desni tako kot so v permutaciji $\sigma$ vidimo, da ima vsako vozlišče povezave do vseh vozlišč desno on njega. Iz tega sledijo vse lastnosti iz izreka.
+    Tranzitiven turnir T na n vozliščih je izomorfen grafu permutacije $\sigma = (n, n-1, ..., 1)$ z usmerjenimi povezavami $x \rightarrow y$, če je $(x, y)$ inverzija. Če uredimo vozlišča od leve proti desni tako kot so v permutaciji $\sigma$ vidimo, da ima vsako vozlišče povezave do vseh vozlišč desno on njega (glej sliko \ref{graf_turnirja_in_tranzitivnega_turnirja}). Iz tega sledijo vse lastnosti iz izreka.
 \end{dokaz}
 
 \begin{izrek}
@@ -759,10 +817,94 @@ Polnemu orientiranemu grafu rečemo turnir. Rezultat vozlišča x v turnirju je 
     Graf G je permutacijski graf natanko tedaj ko ima kohezivno zaporedje.
 \end{izrek}
 \begin{dokaz}
-    $(\Rightarrow)$ Vsak permutacijski graf $G$ je izomorfen nekemu grafu $G_{\sigma}$ za neko permutacijo $\sigma$. Po izreku \ref{izrek_sigma_kohezivno_zaporedje}, je $\sigma$ kohezivno zaporedje grafa $G_{\sigma}$. Naj bo f izomorfizem, ki graf $G$ slika v graf $G_{\sigma}$. Potem je $f^{-1}$ izomorfizem, ki graf $G_{\sigma}$ slika v graf $G$. Sledi, da je $\pi = f^{-1} \circ \sigma = f^{-1}(\sigma)$ kohezivno zaporedje grafa $G$, saj je $\sigma$ kohezivno zaporedje grafa $G_{\sigma}$.
+    $(\Rightarrow)$ Vsak permutacijski graf $G$ je izomorfen nekemu grafu $G_{\sigma}$ za neko permutacijo $\sigma$. Po izreku \ref{izrek_sigma_kohezivno_zaporedje}, je $\sigma = (\sigma(1), ..., \sigma(n)$ kohezivno zaporedje grafa $G_{\sigma}$. Naj bo f izomorfizem, ki graf $G$ slika v graf $G_{\sigma}$. Potem je $g = f^{-1}$ izomorfizem, ki graf $G_{\sigma}$ slika v graf $G$. Sledi, da je $\pi = (g(\sigma(1)), ..., g(\sigma(n)))$ kohezivno zaporedje grafa $G$, saj je $\sigma$ kohezivno zaporedje grafa $G_{\sigma}$ (glej sliko \ref{graf_izomorfizem_f_k3}).
 
-    $(\Leftarrow)$ Naj bo $G$ graf s kohezivnim zaporedjem $\pi = (v_1, v_2, ..., v_n)$. Orientirajmo graf $G$ tako, da vsako povezavo $v_iv_j \in E(G)$ usmerimo od vozlišča z manjšim indeksom proti vozlišču z večjim indeksom. Če je $i < j$, tako dobimo $(v_i, v_j)$. Z D označimo usmerjen graf, ki ga dobimo na ta način. Spomnimo se, da je po $(a)$ iz \ref{def0} D tranzitiven. Orientirajmo še komplement $\overline{G}$ grafa $G$. Povezave $v_iv_j \in \overline{G}$, kjer je $i < j$ usmerimo od večjega indeksa k manjšemu in tako dobimo $(v_j, v_i)$. Označimo dobljeni graf z $\overline{D}$. Zaradi \ref{lema0} je $\pi$ kohezivno zaporedje grafa $\overline{G}$. Zato je tudi usmerjen graf $\overline{D}$ tranzitiven. Unija grafov $T = D \cup \overline{D}$ je orientacija polnega grafa $G \cup \overline{G}$. Zato je T turnir. Radi bi pokazali, da je T tranzitiven turnir. Naj bosta $(x, y)$ in $(y, z)$ usmerjeni povezavi v grafu $T$. Če bi obe pripadali enemu od $D$ ali $\overline{D}$ bi sledilo, da je $(x, z)$ usmerjena povezava v $T$, saj sta $D$ in $\overline{D}$ tranzitivna. Zato privzamimo, da $(x, y) \in E(D) $ in $(y, z) \in E(\overline{D})$. Če je $(x, z) \in E(D)$ smo končali, saj je potem $(x, z) \in E(T)$. Če $(x, z) \notin E(D)$, potem je $(z, x) \in E(\overline{D})$. Zaradi tranzitivnosti $\overline{D}$ in $(y, z), (z, x) \in E(\overline{D})$ sledi, da je $(y, x) \in E(\overline{D})$. To je protislovje, saj je $(x, y) \in E(D)$. Sledi, da je $(x, z) \in E(T)$ in T je tranzitiven turnir. Po izreku \ref{izrek_tranzitiven_turnir}, je rezultatsko zaporedje turnirja $T$ enako $(0, 1, 2, ..., n-1)$. Naj bo $\sigma(i) = 1 + s(v_i)$, kjer je $s(v_i)$ rezultat vozlišča $v_i$ grafa $T$. Radi bi pokazali, da je $f: v_i \rightarrow 1 + s(v_i) = \sigma(i)$ izomorfizem, ki slika graf $G$ v graf $G_{\sigma}$. Preslikava $f$ je bijektivna, saj imajo vozlišča različne rezultate. Pokazati moramo še, da f ohranja sosenosti vozlišč. Naj bo $v_iv_j \in E(G)$, kjer je $i < j$. Potem je $(v_i, v_j) \in E(D)$. Ker je T tranzitiven turnir, je po izreku \ref{izrek_tranzitiven_turnir} $s(v_i) > s(v_j)$. Sledi, da je $\sigma(v_i) = 1 + s(v_i) > 1 + s(v_j) = \sigma(v_j)$. Zato je $(\sigma(i), \sigma(j))$ inverzija v $\sigma$ in $f(v_i)$ in $f(v_j)$ sta sosednji vozlišči v $G_{\sigma}$. Obratno, naj bo xy povezava v $G_{\sigma}$. Potem je $(x, y)$ ali $(y, x)$ inverzija v $\sigma$. Privzemimo, da je $(x, y)$ inverzija v $\sigma$. Ker je $x = \sigma(i) = 1 + s(v_i)$ in $y = \sigma(j) = 1 + s(v_j)$, kjer je $i < j$. Ker je $(x, y)$ inverzija je $x > y$, zato je tudi $s(v_i) > s(v_j)$. Zato je $(v_i, v_j) \in E(T)$. Ker je $i < j$ je $(v_i, v_j) \in E(D)$ in posledično $v_iv_j \in E(G)$.
+    \begin{figure}[h]
+        \begin{center}        
+            \begin{tikzpicture}[shorten >=1pt,-]
+                \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=25pt,inner sep=0pt]
+                \foreach \num/\x in {1/1, 3/3.5}
+                    \node[vertex] (V-\num) at (\x,0) {$v_\num$};
+                    
+                    \node[vertex] (V-2) at (2.25, 1.5) {$v_2$};
+                
+                \foreach \num/\x in {3/6, 2/7.5, 1/9}
+                    \node[vertex] (VV-\num) at (\x,0) {$\num$};
+    
+                    \foreach \from/\to in {1/2, 2/3, 3/1}
+                        \draw (V-\from) -- (V-\to);
+                    \foreach \from/\to in {3/2, 2/1}
+                        \draw (VV-\from) -- (VV-\to);
+    
+                    \draw (VV-3) .. controls (6.5, 1) and (8.5, 1) .. (VV-1);
+            \end{tikzpicture}
+        \end{center}
+        \caption{Izomorfna grafa $G$ in $G_{\sigma}$}
+        \label{graf_izomorfizem_f_k3}
+    \end{figure}
+
+    $(\Leftarrow)$ Naj bo $G$ graf s kohezivnim zaporedjem $\pi = (v_1, v_2, ..., v_n)$ (slika \ref{graf_s_kohezivnim_zaporedjem}). 
+    \begin{figure}[h]
+        \begin{center}
+            \begin{tikzpicture}[shorten >=1pt,-]
+                \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=25pt,inner sep=0pt]
+                \foreach \num/\x in {1/1, 2/3, 3/5, 4/7}
+                        \node[vertex] (V-\num) at (\x,0) {$v_{\num}$};
+            
+                    \foreach \from/\to in {1/2, 3/4}
+                        \draw (V-\from) -- (V-\to);
+            
+                    \draw (V-1) .. controls (1.5, 1.5) and (6.5, 1.5) .. (V-4);
+            \end{tikzpicture}
+        \end{center}
+        \caption{Graf $G$ s koezivnim zaporedjem $(v_1, v_2, v_3, v_4)$.}
+        \label{graf_s_kohezivnim_zaporedjem}
+    \end{figure}
+    Orientirajmo graf $G$ tako, da vse povezave usmerimo od vozlišča z manjšim indeksom proti vozlišču z večjim indeksom. Če je $i < j$ in $v_iv_j \in E(G)$, tako dobimo $(v_i, v_j)$. Označimo usmerjen graf, ki ga na ta način dobimo z D. Spomnimo se, da je zaradi pogoja $(a)$ iz \ref{def_kohezivno_zaporedje} graf D tranzitiven. Orientirajmo še komplement $\overline{G}$ grafa $G$. Povezave $v_iv_j \in E(\overline{G})$, kjer je $i < j$ usmerimo od večjega indeksa k manjšemu in tako dobimo $(v_j, v_i)$. Označimo dobljeni graf z $\overline{D}$. Zaradi leme \ref{lema0} je $\pi$ kohezivno zaporedje grafa $\overline{G}$. Zato je tudi usmerjen graf $\overline{D}$ tranzitiven. Unija grafov $T = D \cup \overline{D}$ je turnir (orientacija polnega grafa $G \cup \overline{G}$). Glej sliko \ref{graf_tranzitivni_turnir}.
+    \begin{figure}[h]
+        \begin{center}
+            \begin{tikzpicture}[shorten >=1pt,-]
+                \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=25pt,inner sep=0pt]
+                \foreach \num/\x in {1/1, 2/3, 3/5, 4/7}
+                        \node[vertex] (V-\num) at (\x,0) {$v_{\num}$};
+            
+                    \foreach \from/\to in {1/2, 3/4}
+                        \draw[-latex] (V-\from) -- (V-\to);
+                    \draw[-latex] (V-1) .. controls (1.5, 1.5) and (6.5, 1.5) .. (V-4);
+                    
+                    
+                    \draw[dotted, -latex] (V-3) .. controls (4, 0.85) and (2, 0.85) .. (V-1);
+                    \draw[dotted, -latex] (V-4) .. controls (6, 0.85) and (4, 0.85) .. (V-2);
+                    \draw[dotted, -latex] (V-3) -- (V-2);
+            \end{tikzpicture}
+        \end{center}
+        \caption{ Tranzitiven turnir $T$.}
+        \label{graf_tranzitivni_turnir}
+    \end{figure}
+    Radi bi pokazali, da je T tranzitiven turnir. Naj bosta $(x, y)$ in $(y, z)$ usmerjeni povezavi v grafu $T$. Če bi obe pripadali enemu od $D$ ali $\overline{D}$ bi sledilo, da je $(x, z)$ usmerjena povezava v $T$, saj sta $D$ in $\overline{D}$ tranzitivna. Zato brez škode za splošnost privzamimo, da $(x, y) \in E(D) $ in $(y, z) \in E(\overline{D})$. Če je $(x, z) \in E(D)$ smo končali, saj je potem $(x, z) \in E(T)$. Zato privzamimo da $(x, z) \notin E(D)$. Poglejmo ali je lahko $(z, x) \in E(D)$. Zaradi tranzitivnosti grafa D bi to pomenilo da je tudi $(z, y) \in E(D)$, kar je v protislovju s tem da je  $(y, z) \in E(\overline{D})$. Potem je $(z, x) \in E(\overline{D})$ ali $(x, z) \in E(\overline{D})$. Če je $(z, x) \in E(\overline{D})$, potem zaradi tranzitivnosti $\overline{D}$ in $(y, z), (z, x) \in E(\overline{D})$ sledi, da je $(y, x) \in E(\overline{D})$. To je v protislovju z $(x, y) \in E(D)$. Se pravi nam ostane $(x, z) \in E(\overline{D})$. Sledi, da je $(x, z) \in E(T)$ in T je tranzitiven turnir. Po izreku \ref{izrek_tranzitiven_turnir}, je rezultatsko zaporedje tranzitivnega turnirja $T$ enako $(0, 1, 2, ..., n-1)$. 
+    \begin{figure}[h]
+        \begin{center}
+            \begin{tikzpicture}[shorten >=1pt,-]
+                \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=25pt,inner sep=0pt]
+                \foreach \num/\x in {3/1, 1/3, 4/5, 2/7}
+                        \node[vertex] (V-\num) at (\x,0) {\num};
+            
+                    \foreach \from/\to in {3/1, 4/2}
+                        \draw (V-\from) -- (V-\to);
+                    \draw (V-3) .. controls (1.5, 1.5) and (6.5, 1.5) .. (V-2);
+                    
+                    
+                    % \draw[dotted, -latex] (V-3) .. controls (4, 0.85) and (2, 0.85) .. (V-1);
+                    % \draw[dotted, -latex] (V-4) .. controls (6, 0.85) and (4, 0.85) .. (V-2);
+                    % \draw[dotted, -latex] (V-3) -- (V-2);
+            \end{tikzpicture}
+        \end{center}
+        \caption{Permutacijski graf $G_\sigma$, $\sigma = (3, 1, 4, 2)$.}
+        \label{graf_permutacije3142}
+    \end{figure}
+    Naj bo $\sigma(i) = 1 + s(v_i)$, kjer je $s(v_i)$ rezultat vozlišča $v_i$ grafa $T$ (glej sliki \ref{graf_tranzitivni_turnir} in \ref{graf_permutacije3142}). Radi bi pokazali, da je $f: v_i \rightarrow 1 + s(v_i) = \sigma(i)$ izomorfizem, ki slika graf $G$ v graf $G_{\sigma}$. Preslikava $f$ je bijektivna, saj imajo vozlišča različne rezultate. Pokazati moramo še, da f ohranja sosenosti vozlišč. Naj bo $v_iv_j \in E(G)$, kjer je $i < j$. Potem je $(v_i, v_j) \in E(D)$. Ker je T tranzitiven turnir, je $s(v_i) > s(v_j)$ (izrek \ref{izrek_tranzitiven_turnir}). Sledi, da je $\sigma(v_i) = 1 + s(v_i) > 1 + s(v_j) = \sigma(v_j)$. Zato je $(\sigma(i), \sigma(j))$ inverzija v $\sigma$ in $f(v_i)f(v_j) \in E(G_{\sigma})$. Obratno, naj bo $xy \in E(G_{\sigma})$. Potem je $(x, y)$ ali $(y, x)$ inverzija v $\sigma$. Privzemimo, da je $(x, y)$ inverzija v $\sigma$. Potem je $x = \sigma(i) = 1 + s(v_i)$ in $y = \sigma(j) = 1 + s(v_j)$, $i < j$. Ker je $(x, y)$ inverzija je $x > y$. Potem je tudi $s(v_i) > s(v_j)$ in $(v_i, v_j) \in E(T)$ (izrek \ref{izrek_tranzitiven_turnir}). Ker je $i < j$ je $(v_i, v_j) \in E(D)$ in posledično $v_iv_j \in E(G)$.
 \end{dokaz}
+
 
 \begin{izrek}
     Naj bo $G$ graf. Naslednje trditve so ekvivalentne:
@@ -774,10 +916,21 @@ Polnemu orientiranemu grafu rečemo turnir. Rezultat vozlišča x v turnirju je 
     \end{enumerate}
 \end{izrek}
 \begin{dokaz}
-    Ekvivalentnost trditve $(a)$ in $(b)$ sledi iz leme \ref{lema0} in izreka \ref{izrek_permutacijski_graf_kohezivno_zaporedje}. Če je $(v_1, v_2, ..., v_n)$ kohezivno zaporedje grafa $G$, potem ima podgraf induciran z vozlišči $\{ v_{i_1}, v_{i_2}, ..., v_{i_k} \}$, kjer $i_1 < i_2 < ... < i_k$, kohezivno zaporedje $(v_{i_1}, v_{i_2}, ..., v_{i_k})$ (izpolnjeni sta $(a)$ in $(b)$ iz definicije \ref{def0}). Torej induciran podgraf je permutacijski in $(a)$ in $(c)$ sta ekvivalentni. Iz $(c)$ sledi $(d)$, saj je vsaka povezana komponenta induciran podgraf. Pokazati moramo še da iz $(d)$ sledi $(a)$. Naj bo $G$ graf, ki ima povezane komponente $G_1, G_2, ..., G_k$. Povezana komponenta $G_i$ naj ima $n_i$ vozlišč. Ker je vsaka povezana komponenta grafa $G$ permutacijski graf ima vsaka povezana komponenta tudi kohezivno zaporedje. Naj bo $l_i = (v_1^i, v_2^i, ..., v_{n_i}^i)$ kohezivno zaporedje $G_i$. Potem je $l = (l_1, l_2, ..., l_k) = (v_1^1, v_2^1, ..., l_{n_1}^1, v_1^2, v_2^2, ..., l_{n_2}^2, ..., v_1^k, v_2^k, ..., l_{n_k}^k)$ kohezivno zaporedje grafa $G$ in graf $G$ permutacijski. 
+    Ekvivalentnost trditve $(a)$ in $(b)$ sledi iz leme \ref{lema0} in izreka \ref{izrek_permutacijski_graf_kohezivno_zaporedje}. Naj bo $(v_1, v_2, ..., v_n)$ kohezivno zaporedje grafa $G$. Induciran podgraf z vozlišči $\{ v_{i_1}, v_{i_2}, ..., v_{i_k} \}$, kjer $i_1 < i_2 < ... < i_k$, ima kohezivno zaporedje $(v_{i_1}, v_{i_2}, ..., v_{i_k})$ (izpolnjeni sta $(a)$ in $(b)$ iz definicije \ref{def_kohezivno_zaporedje}). Torej induciran podgraf je permutacijski in iz $(a)$ sledi $(c)$. Iz $(c)$ sledi $(d)$, saj je vsaka povezana komponenta induciran podgraf. Pokazati moramo še da iz $(d)$ sledi $(a)$. Naj bo $G$ graf, ki ima povezane komponente $G_1, G_2, ..., G_k$. Povezana komponenta $G_i$ naj ima $n_i$ vozlišč. Ker je vsaka povezana komponenta grafa $G$ permutacijski graf ima vsaka povezana komponenta tudi kohezivno zaporedje. Naj bo $l_i = (v_1^i, v_2^i, ..., v_{n_i}^i)$ kohezivno zaporedje povezane komponente $G_i$. Potem je $l = (l_1, l_2, ..., l_k) = (v_1^1, v_2^1, ..., v_{n_1}^1, v_1^2, v_2^2, ..., v_{n_2}^2, ..., v_1^k, v_2^k, ..., v_{n_k}^k)$ kohezivno zaporedje grafa $G$ in graf $G$ permutacijski. 
 \end{dokaz}
 
-Grafi poti $P_n$ in zvezd $K_{1,n}$ so permutacijski grafi saj imajo kohezivno zaporedje. Primera kohezivnih zaporedji za pot $P_{13}$ sta permutaciji $\sigma_1 = (3, 1, 5, 2, 7, 4, 9, 6, 11, 8, 13, 10, 12)$ in $\sigma_2 = (2, 4, 1, 6, 3, 8, 5, 10, 7, 12, 9, 13, 11)$. Primer kohezivnega zaporedja za zvezdo $K_{1, n}$ pa je permutacija $\pi = (n+1, 1, 2, ..., n)$.\\
+Grafi poti $P_n$ in zvezd $K_{1,n}$ so permutacijski grafi saj imajo kohezivno zaporedje (sliki \ref{graf_kohezivnega_zaporedja_pot} in \ref{graf_kohezivnega_zaporedja_zvezda}). Kohezivni zaporedji za pot $P_{13}$ sta permutaciji:
+\[
+    \sigma_1 = (3, 1, 5, 2, 7, 4, 9, 6, 11, 8, 13, 10, 12)
+\] 
+in 
+\[
+    \sigma_2 = (2, 4, 1, 6, 3, 8, 5, 10, 7, 12, 9, 13, 11).
+\]
+Kohezivno zaporedje za zvezdo $K_{1, n}$ pa je permutacija: 
+\[
+    \pi = (n+1, 1, 2, ..., n).
+\]
 \begin{figure}[h]
     \begin{center}        
         \begin{tikzpicture}[shorten >=1pt,-]
@@ -854,9 +1007,9 @@ Grafi poti $P_n$ in zvezd $K_{1,n}$ so permutacijski grafi saj imajo kohezivno z
     \label{graf_kohezivnega_zaporedja_zvezda}
 \end{figure}
 
-Vidimo, da je pogoj za poti $P_n$ $(a)$ iz definicije kohezivnega zaporedja \ref{def0} na prazno izpolnjen, saj ni dveh povezav $v_iv_k$ in $v_kv_j$, kjer so $i < k < j$. Pogoj $(b)$ pa je izpolnjen, saj je vedno ko je $v_iv_j$ povezava in k tak, da $i < k < j$ v grafu ena od povezav $v_iv_k$ ali $v_kv_j$. Podobno je pogoj $(a)$ izpolnjen na prazno za zvezde. Pogoj $(b)$ pa je izpolnjen, saj so vse povezave v grafu oblike $v_{n+1}v_k$ za nek $k \in \{ 1, 2, ..., n \}$. Zato katerokoli povezavo vzamemo bodo vsa vozlišča med krajiščema izbrane povezave $v_{n+1}v_k$ povezana z vozliščem $v_{n+1}$.
+Vidimo, da je pogoj $(a)$ iz definicije kohezivnega zaporedja \ref{def_kohezivno_zaporedje} za poti $P_n$ na prazno izpolnjen, saj ni dveh povezav $v_iv_k$ in $v_kv_j$, kjer so $i < k < j$. Pogoj $(b)$ pa je izpolnjen, saj je vedno ko je $v_iv_j$ povezava in k tak, da $i < k < j$ v grafu ena od povezav $v_iv_k$ ali $v_kv_j$. Podobno je pogoj $(a)$ izpolnjen na prazno za zvezde. Pogoj $(b)$ pa je izpolnjen, saj so vse povezave v grafu oblike $v_{n+1}v_k$ za $k \in \{ 1, 2, ..., n \}$. Zato katerokoli povezavo vzamemo bodo vsa vozlišča med krajiščema izbrane povezave $v_{n+1}v_k$ povezana z vozliščem $v_{n+1}$.
 
-Poti in zvezde so drevesa. Ampak niso vsa drevesa permutacijski grafi. Drevo $K_{1,3}^*$, pridobljeno s subdivizijo vseh povezav zvezde $K_{1,3}$, ni permutacijski graf.\\
+Poti in zvezde so drevesa. Ampak niso vsa drevesa permutacijski grafi. Drevo $K_{1,3}^*$, pridobljeno s subdivizijo vseh povezav zvezde $K_{1,3}$, ni permutacijski graf (slika \ref{graf_subdivizija_k13}).
 
 \begin{figure}[h]
     \begin{center}        
@@ -869,7 +1022,7 @@ Poti in zvezde so drevesa. Ampak niso vsa drevesa permutacijski grafi. Drevo $K_
         
                 \foreach \from/\to in {0/1, 1/2, 1/3}
                     \draw (V-\from) -- (V-\to);
-        \end{tikzpicture}
+        \end{tikzpicture}\qquad
         \begin{tikzpicture}[shorten >=1pt,-]
             \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
                     \node[vertex] (V-0) at (4,4){};
@@ -890,10 +1043,8 @@ Poti in zvezde so drevesa. Ampak niso vsa drevesa permutacijski grafi. Drevo $K_
 
 
 \begin{definicija}
-    Gosenica je drevo z lastnostjo da po odstranitvi vseh listov postane pot.
+    Gosenica je drevo, ki po odstranitvi vseh listov postane pot (slika \ref{graf_gosenice_10_listov}).
 \end{definicija}
-
-Primer gosenice z 10 listi, ki po odstranitvi listov postane pot ne 5 vozliščih.
 
 \begin{figure}[h]
     \begin{center}        
@@ -931,40 +1082,37 @@ Primer gosenice z 10 listi, ki po odstranitvi listov postane pot ne 5 vozlišči
     Če je drevo gosenica, potem po odstranitvi vseh listov dobimo pot. Če drevesu $K_{1,3}^*$ odstranimo vse liste ne dobimo poti. Torej tudi če drevo vsebuje $K_{1,3}^*$ kot podgraf, nam po odstranitvi listov ostane graf, ki ni pot. Torej gosenica ne vsebuje podgrafa $K_{1,3}^*$. Če drevo ne vsebuje $K_{1,3}^*$ kot podgraf, potem ima vsako vozlišče največ dva soseda, ki nista lista. Prav tako graf ne vsebuje ciklov, saj je drevo. Po odstranitvi listov drevesa vedno dobimo povezan graf, zato po odstranitvi listov tako dobimo pot. Torej je drevo, ki ne vsebuje podgrafa $K_{1,3}^*$, gosenica.
 \end{dokaz}
 
+\begin{figure}[h]
+    \begin{center}        
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=19pt,inner sep=0pt]
+            \foreach \num/\x in {l_1/0, 2/1, l_2/2, 1/3, l_3/4, 4/5, l_4/6, 3/7, l_5/8, 6/9, l_6/10, 5/11}
+                    \node[vertex] (V-\num) at (\x,0) {$\num$};
+        
+                \foreach \from/\to in {2/l_2, 4/l_4, 6/l_6}
+                    \draw[dashed] (V-\from) -- (V-\to);
+        
+                \draw[dashed] (V-l_1) .. controls (0.5, 1) and (2.5, 1) .. (V-1);
+                \draw[dashed] (V-l_3) .. controls (4.5, 1) and (6.5, 1) .. (V-3);
+                \draw[dashed] (V-l_5) .. controls (8.5, 1) and (10.5, 1) .. (V-5);
+    
+                \draw (V-2) .. controls (1.5, 0.75) and (2.5, 0.75) .. (V-1);
+                \draw (V-4) .. controls (5.5, 0.75) and (6.5, 0.75) .. (V-3);
+                \draw (V-6) .. controls (9.5, 0.75) and (10.5, 0.75) .. (V-5);
+                \draw (V-2) .. controls (1.5, 1.5) and (6.5, 1.5) .. (V-3);
+                \draw (V-4) .. controls (5.5, 1.5) and (10.5, 1.5) .. (V-5);
+        \end{tikzpicture}
+    \end{center}
+    \caption{Primer kohezivnega zaporedja gosenice.}
+    \label{graf_kohezivnega_zaporedja_gosenice}
+\end{figure}
 \begin{izrek}
 \label{izrek_gosenica_permutacijski_graf}
     Drevo je permutacijski graf natanko tedaj ko je gosenica.
 \end{izrek}
 \begin{dokaz}
-    Če drevo ni gosenica, potem vsebuje $K_{1,3}^*$ kot podgraf. Drevo, ki vsebuje $K_{1,3}^*$ ni permutacijski graf, saj $K_{1,3}^*$ ni permutacijski graf. Potrebno je še pokazati, da je gosenica permutacijski graf. Naj bo $C$ gosenica in naj bo $P_n$ pot, ki jo pridobimo iz $C$ tako, da odstranimo liste. Če je $n=1$, potem je $C$ zvezda $K_{1,k}$ za nek $k \geq 0$ ali pa trivialen graf $K_1$. Ker so zvezde in trivialen graf permutacijski grafi, predpostavimo da je $n \geq 2$. Zgradimo kohezivno zaporedje poti $P_n$ kot na primeru od prej. Vse liste lihega vozlišča na poti vstavimo levo od vozlišče $i+1$ na poti $P_n$. Vse liste sodega vozlišča na poti vstavimo med vozlišči $i$ in $i-1$ na poti $P_n$. Rezultat je kohezivno zaporedje. Zato je gosenica C res permutacijski graf.
-    \begin{figure}[h]
-        \begin{center}        
-            \begin{tikzpicture}[shorten >=1pt,-]
-                \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
-                \foreach \num/\x in {l_1/0, 2/1, l_2/2, 1/3, l_3/4, 4/5, l_4/6, 3/7, l_5/8, 6/9, l_6/10, 5/11, l_7/12, 7/13}
-                        \node[vertex] (V-\num) at (\x,0) {$\num$};
-            
-                    \foreach \from/\to in {2/l_2, 4/l_4, 6/l_6, 7/l_7}
-                        \draw (V-\from) -- (V-\to);
-            
-                    \draw (V-l_1) .. controls (0.5, 1) and (2.5, 1) .. (V-1);
-                    \draw (V-l_3) .. controls (4.5, 1) and (6.5, 1) .. (V-3);
-                    \draw (V-l_5) .. controls (8.5, 1) and (10.5, 1) .. (V-5);
-        
-                    \draw (V-2) .. controls (1.5, 0.75) and (2.5, 0.75) .. (V-1);
-                    \draw (V-4) .. controls (5.5, 0.75) and (6.5, 0.75) .. (V-3);
-                    \draw (V-6) .. controls (9.5, 0.75) and (10.5, 0.75) .. (V-5);
-                    \draw (V-2) .. controls (1.5, 1.5) and (6.5, 1.5) .. (V-3);
-                    \draw (V-4) .. controls (5.5, 1.5) and (10.5, 1.5) .. (V-5);
-                    \draw (V-6) .. controls (9.5, 1.5) and (12.5, 1.5) .. (V-7);
-            \end{tikzpicture}
-        \end{center}
-        \caption{Primer kohezivnega zaporedja gosenice.}
-        \label{graf_kohezivnega_zaporedja_gosenice}
-    \end{figure}
+    $(\Rightarrow)$ Če drevo ni gosenica, potem vsebuje $K_{1,3}^*$ kot podgraf. Drevo, ki vsebuje $K_{1,3}^*$ ni permutacijski graf, saj $K_{1,3}^*$ ni permutacijski graf. $(\Leftarrow)$ Potrebno je še pokazati, da je gosenica permutacijski graf. To bomo pokazali tako, da bomo gosenici našli kohezivno zaporedje. Naj bo $C$ gosenica in naj bo $P_n$ pot, ki jo pridobimo iz $C$ tako, da odstranimo liste. Če je $n=1$, potem je $C$ zvezda $K_{1,k}$ za nek $k \geq 0$ ali pa trivialen graf $K_1$. Ker so zvezde in trivialen graf permutacijski grafi, predpostavimo da je $n \geq 2$. Zgradimo kohezivno zaporedje poti $P_n$ kot na primeru od prej. Vse liste lihega vozlišča $i$ na poti vstavimo levo od vozlišče $i+1$ na poti $P_n$. Vse liste sodega vozlišča $i$ na poti vstavimo med vozlišči $i$ in $i-1$ na poti $P_n$. Rezultat je kohezivno zaporedje (slika \ref{graf_kohezivnega_zaporedja_gosenice}). Zato je gosenica C res permutacijski graf.    
 \end{dokaz}
-
-Disjunktna unija grafov pomeni da vzamemo dva grafa in ju združimo v večji graf tako, da ju postavimo drug ob drugega.
 
 \begin{definicija}
     Naj bo $G$ graf z vozlišči $x_1, x_2, ..., x_n$ in naj bodo $H_1, H_2, ..., H_n$ poljubni grafi. Kompozicija grafov $H_1, H_2, ..., H_n$ z G, označena z $G(H_1, H_2, ..., H_n)$, je graf sestavljen iz disjunktne unije grafov $H_1, H_2, ..., H_n$ in dodanih povezav $a_ib_j$ kjer je $a_i \in V(H_i)$ in $b_j \in V(H_j)$, kadar je $x_ix_j \in E(G)$. Če je $H_i$ fiksen graf $H$. Potem kompozicijo označimo z $G(H)$.
@@ -1204,10 +1352,10 @@ Uporabna karakterizacija permutacijskih grafov je dejstvo, da sta $G$ in komplem
 Opazimo, da so permutacijski grafi tako primerljivostni grafi kot tekmovalnostni (imamo dve rangiranji/permutaciji $c_1 = id$ in $c_2$, ki predstavlje permutacijski graf).
 
 \begin{definicija}
-    Graf $G = (N, E)$ je delno kohezivno zaporedje vozlišč (ali enostavneje delno kohezivno zaporedje), če obstaja preimenovanje vozlišč, tako da velja $(b)$ iz definicije \ref{def0}, to je če obstaja povezava $ab$, kjer $a < b$, potem mora za vsak $x$, $a < x < b$ obstajati povezava ax ali xb. Graf G je delno koheziven, če ima delno kohezivno zaporedje.
+    Graf $G = (N, E)$ je delno kohezivno zaporedje vozlišč (ali enostavneje delno kohezivno zaporedje), če obstaja preimenovanje vozlišč, tako da velja $(b)$ iz definicije \ref{def_kohezivno_zaporedje}, to je če obstaja povezava $ab$, kjer $a < b$, potem mora za vsak $x$, $a < x < b$ obstajati povezava ax ali xb. Graf G je delno koheziven, če ima delno kohezivno zaporedje.
 \end{definicija}
 
-Medtem ko je pogoj $(a)$ iz definicije \ref{def0} je povezan z primerljivostnimi grafi, je pogoj $(b)$ (delna kohezivnost) povezan z tekmovalnostnimi grafi, kot pokaže nasledni izrek.
+Medtem ko je pogoj $(a)$ iz definicije \ref{def_kohezivno_zaporedje} je povezan z primerljivostnimi grafi, je pogoj $(b)$ (delna kohezivnost) povezan z tekmovalnostnimi grafi, kot pokaže nasledni izrek.
 
 \begin{izrek}
 \label{tekmovalnosni_graf_delno_koheziven}
