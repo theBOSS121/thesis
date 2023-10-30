@@ -8,8 +8,8 @@
 \contentsline {chapter}{\numberline {2} Permutacije }{3}{chapter.2}%
 \contentsline {chapter}{\numberline {3} Inverzije }{7}{chapter.3}%
 \contentsline {chapter}{\numberline {4} Permutacijski grafi }{13}{chapter.4}%
-\contentsline {chapter}{\numberline {5} Graf tekmovalnosti }{27}{chapter.5}%
-\contentsline {chapter}{\numberline {6} Algoritem za izračun množice tekmovalcev, ki slejkoprej tekmujejo }{31}{chapter.6}%
+\contentsline {chapter}{\numberline {5} Tekmovalnostni graf }{27}{chapter.5}%
+\contentsline {chapter}{\numberline {6} Algoritem za izračun množice posrednih in neposrednih tekmovalcev }{31}{chapter.6}%
 \contentsline {chapter}{\numberline {7}Uvod}{37}{chapter.7}%
 \contentsline {chapter}{\numberline {8}Osnovni gradniki \LaTeX {a}}{39}{chapter.8}%
 \contentsline {chapter}{\numberline {9}Matematično okolje in sklicevanje na besedilne konstrukte}{41}{chapter.9}%

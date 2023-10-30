@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.11.19)  29 OCT 2023 22:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.11.19)  30 OCT 2023 23:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1004,24 +1004,24 @@ File: l3backend-pdftex.def 2022-09-28 L3 backend support: PDF output (pdfTeX)
 ) (diploma.aux)
 \openout1 = `diploma.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
  (C:\Users\Luka\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count329
@@ -1041,7 +1041,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\Luka\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 170.
+Package hyperref Info: Link coloring OFF on input line 176.
  (diploma.out) (diploma.out)
 \@outlinefile=\write6
 \openout6 = `diploma.out'.
@@ -1051,20 +1051,20 @@ Package hyperref Info: Link coloring OFF on input line 170.
 
 
 {C:/Users/Luka/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 217.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 223.
  (C:\Users\Luka\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 217.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 223.
  (C:\Users\Luka\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.220 \clearemptydoublepage
+l.226 \clearemptydoublepage
                             [2]
-Underfull \hbox (badness 10000) in paragraph at lines 229--236
+Underfull \hbox (badness 10000) in paragraph at lines 235--242
 
  []
 
@@ -1072,26 +1072,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 229--236
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.257 \clearemptydoublepage
+l.263 \clearemptydoublepage
                             [3
 
 ]
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.257 \clearemptydoublepage
+l.263 \clearemptydoublepage
                             [4
 
 ]
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.266 \clearemptydoublepage
+l.272 \clearemptydoublepage
                             [5]
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.266 \clearemptydoublepage
+l.272 \clearemptydoublepage
                             [6
 
 ] (diploma.toc
@@ -1109,14 +1109,14 @@ l.20 ...i pisanju v slovenščini}{49}{chapter.12}
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.286 \clearemptydoublepage
+l.292 \clearemptydoublepage
                             [8] Excluding 'comment' comment.
-Overfull \hbox (1.76152pt too wide) in paragraph at lines 305--305
+Overfull \hbox (1.76152pt too wide) in paragraph at lines 311--311
 []\OT1/cmr/bx/n/12 kratica| 
  []
 
 
-Overfull \hbox (1.24765pt too wide) in paragraph at lines 307--307
+Overfull \hbox (1.24765pt too wide) in paragraph at lines 313--313
 []\OT1/cmr/bx/n/12 DBMS| 
  []
 
@@ -1124,7 +1124,7 @@ Overfull \hbox (1.24765pt too wide) in paragraph at lines 307--307
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.314 \clearemptydoublepage
+l.320 \clearemptydoublepage
                             [9
 
 
@@ -1132,48 +1132,56 @@ l.314 \clearemptydoublepage
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.314 \clearemptydoublepage
+l.320 \clearemptydoublepage
                             [10
 
 ]
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.335 \clearemptydoublepage
+l.341 \clearemptydoublepage
                             [11
 
 ]
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.335 \clearemptydoublepage
+l.341 \clearemptydoublepage
                             [12
 
 ]
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.357 \clearemptydoublepage
+l.363 \clearemptydoublepage
                             [13
 
 ]
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.357 \clearemptydoublepage
+l.363 \clearemptydoublepage
                             [14
 
 ]
 Poglavje 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 380--395
+Underfull \hbox (badness 10000) in paragraph at lines 386--402
 
  []
 
-[1
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
 
 
-] [2]
+]
+Underfull \hbox (badness 10000) in paragraph at lines 414--430
+
+ []
+
+[2]
 Poglavje 2.
 [3
 
@@ -1186,7 +1194,7 @@ Poglavje 3.
 ]
 Poglavje 4.
 
-Overfull \hbox (5.79723pt too wide) in paragraph at lines 681--685
+Overfull \hbox (5.79723pt too wide) in paragraph at lines 702--706
 \OML/cmm/m/it/12 E\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 G[]\OT1/cmr/m/n/12 ) = \OMS/cmsy/m/n/12 ff\OT1/cmr/m/n/12 4\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 4\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 4\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 3\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 5\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 5\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 3\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 7\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 6\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 7\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 3\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 6\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 3\OMS/cmsy/m/n/12 gg$\OT1/cmr/m/n/12 . Graf
  []
 
@@ -1194,88 +1202,61 @@ Overfull \hbox (5.79723pt too wide) in paragraph at lines 681--685
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16] [17] [18]
+[16] [17] [18] [19]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[20] [21]
-Overfull \hbox (1.77974pt too wide) in paragraph at lines 1118--1119
-[]\OT1/cmr/m/it/12 Naj bo $\OML/cmm/m/it/12 G$ \OT1/cmr/m/it/12 graf z vo-zli^^Ts^^Tci $\OML/cmm/m/it/12 x[]; x[]; :::; x[]$ \OT1/cmr/m/it/12 in naj bodo $\OML/cmm/m/it/12 H[]; H[]; :::; H[]$
- []
-
-
-Overfull \hbox (29.60558pt too wide) in paragraph at lines 1118--1119
-\OT1/cmr/m/it/12 po-ljubni grafi. Kom-po-zi-cija gra-fov $\OML/cmm/m/it/12 H[]; H[]; :::; H[]$ \OT1/cmr/m/it/12 z G, ozna^^Tcena z $\OML/cmm/m/it/12 G\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 H[]; H[]; :::; H[]\OT1/cmr/m/n/12 )$\OT1/cmr/m/it/12 ,
- []
-
-
-Overfull \hbox (6.80016pt too wide) in paragraph at lines 1126--1130
-\OT1/cmr/m/n/12 meni, da je tudi G per-mu-ta-cij-ski. Obra-tno pri-vza-memo, da so $\OML/cmm/m/it/12 G; H[]; H[]; :::; H[]$
- []
-
+[20] [21] [22]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Overfull \hbox (3.92793pt too wide) in paragraph at lines 1179--1180
-[]\OT1/cmr/m/n/12 Vsi grafi na najve^^Tc 4 vo-zli^^Ts^^Tcih so per-mu-ta-cij-ski. Zato sta tudi $\OML/cmm/m/it/12 P[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 P[]; P[]; P[]\OT1/cmr/m/n/12 )$
- []
-
-[22]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[23] [24] [25] [26]
-Poglavje 5.
-
-Overfull \hbox (9.83598pt too wide) in paragraph at lines 1289--1290
-[][]\OT1/cmr/m/it/12 Ce imamo po-dano kon^^Tcno mno^^Tzico ele-men-tov $\OML/cmm/m/it/12 N \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; :::; n\OMS/cmsy/m/n/12 g$\OT1/cmr/m/it/12 ,
- []
-
-[27
+[23] [24] [25] [26
 
 ]
-Overfull \hbox (6.2992pt too wide) in paragraph at lines 1324--1325
-[][]\OT1/cmr/m/it/12 Ce vza-memo ran-gi-ra-nja $\OML/cmm/m/it/12 R \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 c[]; :::; c[]\OMS/cmsy/m/n/12 g$ \OT1/cmr/m/it/12 vo-zli^^Ts^^Tc $\OML/cmm/m/it/12 N \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; :::; n\OMS/cmsy/m/n/12 g$\OT1/cmr/m/it/12 ,
- []
-
-[28] [29] [30]
+Poglavje 5.
+[27] [28] [29] [30]
 Poglavje 6.
 [31
 
-] [32] [33] [34]
-Overfull \hbox (4.03384pt too wide) in paragraph at lines 1465--1466
+] [32] (C:\Users\Luka\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1441.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 1427--1462
+[]$[]$ 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34] [35]
+Overfull \hbox (4.03384pt too wide) in paragraph at lines 1496--1497
 \OT1/cmr/m/it/12 ozna^^Tcimo z $\OML/cmm/m/it/12 D[]; :::; D[]$\OT1/cmr/m/it/12 . De-fi-ni-rajmo bi-narno re-la-cijo $\OMS/cmsy/m/n/12 !$ \OT1/cmr/m/it/12 med dvema mno^^Tzicama
  []
 
-[35] [36
-
-]
+[36]
 Poglavje 7.
 
 Underfull \vbox (badness 1558) has occurred while \output is active []
 
- [37] [38]
+ [37
+
+] [38]
 Poglavje 8.
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1537.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1568.
 (C:\Users\Luka\AppData\Local\Programs\MiKTeX\tex/latex/base\omscmr.fd
 File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1537.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1568.
  [39
 
 ] [40
@@ -1290,20 +1271,20 @@ Underfull \vbox (badness 2689) has occurred while \output is active []
  [43
 
 ]
-<pic1.pdf, id=547, 455.24379pt x 341.4326pt>
+<pic1.pdf, id=558, 455.24379pt x 341.4326pt>
 File: pic1.pdf Graphic file (type pdf)
 <use pic1.pdf>
-Package pdftex.def Info: pic1.pdf  used on input line 1616.
+Package pdftex.def Info: pic1.pdf  used on input line 1647.
 (pdftex.def)             Requested size: 234.00238pt x 175.50371pt.
  [44 <./pic1.pdf>]
-Underfull \hbox (badness 2197) in paragraph at lines 1635--1635
+Underfull \hbox (badness 2197) in paragraph at lines 1666--1666
 []\OT1/cmr/m/n/12 Tabela 10.1: []Kompatibilnost razli^^Tcnih for-ma-tov sli-kov-nih da-to-tek z
  []
 
-<pic2.png, id=631, 405.515pt x 347.2975pt>
+<pic2.png, id=642, 405.515pt x 347.2975pt>
 File: pic2.png Graphic file (type png)
 <use pic2.png>
-Package pdftex.def Info: pic2.png  used on input line 1647.
+Package pdftex.def Info: pic2.png  used on input line 1678.
 (pdftex.def)             Requested size: 284.52756pt x 243.6842pt.
 [45] [46 <./pic2.png>]
 Poglavje 11.
@@ -1312,7 +1293,7 @@ Poglavje 11.
 ] [48]
 Poglavje 12.
 
-Overfull \hbox (0.94252pt too wide) in paragraph at lines 1708--1711
+Overfull \hbox (0.94252pt too wide) in paragraph at lines 1739--1742
 \OT1/cmr/m/n/12 ven-ske na-re-ko-vaje je v tej La-TeXovi pre-dlogi de-fi-ni-ran nov ukaz [] []\OT1/cmtt/m/n/12 \sn{ ... }[]\OT1/cmr/m/n/12 . 
  []
 
@@ -1330,7 +1311,7 @@ Poglavje 14.
 Underfull \vbox (badness 1558) has occurred while \output is active []
 
  [55]
-Overfull \hbox (2.6261pt too wide) in paragraph at lines 1819--1826
+Overfull \hbox (2.6261pt too wide) in paragraph at lines 1850--1857
 []\OT1/cmr/m/n/12 Z upo-rabo \OT1/cmr/m/sc/12 Bib\OT1/cmr/m/n/12 T[]Xa v slo-ven^^Ts^^Tcini je ^^Tse ne-kaj ne-do-sle-dno-sti, saj so pomo^^Tzne
  []
 
@@ -1361,25 +1342,25 @@ Underfull \hbox (badness 2799) in paragraph at lines 55--59
 
 ) [64] (diploma.aux)
 Package rerunfilecheck Info: File `diploma.out' has not changed.
-(rerunfilecheck)             Checksum: B68F87900B122F4BA53F7E6FA43B34C8;3818.
+(rerunfilecheck)             Checksum: 4FF16BD0367D51281ED9D13514490E1E;3823.
  )
 (\end occurred inside a group at level 2)
 
-### simple group (level 2) entered at line 1786 ({)
-### simple group (level 1) entered at line 1777 ({)
+### simple group (level 2) entered at line 1817 ({)
+### simple group (level 1) entered at line 1808 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 24722 strings out of 475385
- 451461 string characters out of 2777378
- 794357 words of memory out of 3000000
- 45428 multiletter control sequences out of 15000+600000
+ 25329 strings out of 475385
+ 458399 string characters out of 2777378
+ 979584 words of memory out of 3000000
+ 46029 multiletter control sequences out of 15000+600000
  483534 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,13n,89p,1889b,1033s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 84i,13n,89p,1992b,1769s stack positions out of 10000i,1000n,20000p,200000b,80000s
 <C:/Users/Luka/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Luka/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Luka/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Luka/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Luka/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Luka/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Luka/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Luka/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Luka/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Luka/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Luka/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Luka/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Users/Luka/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/Luka/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Luka/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Luka/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Luka/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Luka/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/Luka/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/Luka/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Luka/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on diploma.pdf (78 pages, 592296 bytes).
+Output written on diploma.pdf (78 pages, 595437 bytes).
 PDF statistics:
- 902 PDF objects out of 1000 (max. 8388607)
- 229 named destinations out of 1000 (max. 500000)
+ 913 PDF objects out of 1000 (max. 8388607)
+ 231 named destinations out of 1000 (max. 500000)
  203 words of extra memory for PDF output out of 10000 (max. 10000000)
 

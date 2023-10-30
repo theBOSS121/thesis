@@ -994,6 +994,10 @@ INPUT diploma.toc
 INPUT diploma.toc
 INPUT C:\Users\Luka\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
 OUTPUT diploma.toc
+INPUT C:\Users\Luka\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\Luka\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\Luka\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\Luka\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
 INPUT C:\Users\Luka\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt12.tfm
 INPUT C:\Users\Luka\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
 INPUT C:\Users\Luka\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
