@@ -1445,7 +1445,7 @@ Dokaz zadnjega izreka nam podaja algoritem za izračun množice posrednih in nep
             $i := 0$;
             while $q_i \neq q_{i+1}$ do
                 $i := i + 1$;
-                Construct $D_j := D_{[p_j, q_j]}$;
+                Construct $D_j := D_{[p_j, q_i]}$;
                 $q_{i+1} := \underset{x \in D_j, c \in R}{max} c^{-1}(x)$;
             end
             $N := N \setminus D_j$;
@@ -1461,23 +1461,23 @@ Dokaz zadnjega izreka nam podaja algoritem za izračun množice posrednih in nep
 \end{minipage}
 
 \begin{definicija}
-    Naj bo $R = \{ c_1, ..., c_r \}$ množica $r$ rangiranj $(r \geq 2)$ vozlišč $N = \{ 1, ..., n \}$. Definirajmo usmerjen graf $G_d(R)$  na naslenji način:
+    Naj bo $R = \{ c_1, ..., c_r \}$ množica $r$ rangiranj $(r \geq 2)$ množice $[n]$. Definirajmo usmerjen graf $G_d(R)$  na naslenji način:
     \begin{enumerate}[label=(\roman*)]
-        \item Vozlišča grafa $G_d(R)$ so elementi množice $N$.
-        \item Če $i, j \in N$, $i \neq j$ potem je $(i, j)$ usmerjena povezava v grafu $G_d(R)$, če obstaja rangiranje $c_m \in R$, tako da je $i \preceq_{c_m} j$.
+        \item Vozlišča grafa $G_d(R)$ so elementi množice $[n]$.
+        \item Če $i, j \in [n]$, $i \neq j$ potem je $(i, j)$ usmerjena povezava v grafu $G_d(R)$, če obstaja rangiranje $c_m \in R$, tako da je $i \preceq_{c_m} j$.
     \end{enumerate}
 \end{definicija}
 
 Opomba: Opazimo, da se usmerjen graf $G_d(R)$ sklada z usmerjenim grafom $G_{\preceq}$, ki ga definiramo z (refleksivno in antisimetrično) relacijo $\preceq$ podano z:
 \begin{enumerate}[label=(\roman*)]
-    \item $i \preceq i$ za vsak $i \in N$
-    \item $i \preceq j$ $(i,j \in N, i neq j)$, če obstaja tako rangiranje $c_m \in R$, da je $i \preceq_{c_m} j$
+    \item $i \preceq i$ za vsak $i \in [n]$
+    \item $i \preceq j$ $(i,j \in [n], i \neq j)$, če obstaja tako rangiranje $c_m \in R$, da je $i \preceq_{c_m} j$
 \end{enumerate}
 Tekmovalnostni graf $G_c(R)$ se sklada z neusmerjenim grafom z enakimi vozlišči kot $G_d(R)$ in povezavami med $(i, j)$, kadar sta usmerjeni povezavi $(i, j), (j, i) \in E(G_d(R))$
 
 \begin{trditev}
-\label{trditev_ekvivalenc_mnozic_tekmovalcev_ki_slejkoprej_tekmujejo}
-    Naj bosta $D_1$ in $D_2$ dve različni množici tekmovalcev, ki slejkoprej tekmujejo. Naslednji trditvi o usmerjenem grafu $G_d(R)$ sta ekvivalentni:
+\label{trditev_ekvivalenc_mnozic_posrednih_tekmovalcev}
+    Naj bosta $D_1$ in $D_2$ dve različni množici posrednih in neposrednih tekmovalcev. Naslednji trditvi o usmerjenem grafu $G_d(R)$ sta ekvivalentni:
     \begin{enumerate}[label=(\roman*)]
         \item Obstaja usmerjena povezava $(a, b)$, tako da je $a \in D_1$ in $b \in D_2$
         \item Vsa vozlišča iz $D_1$ imajo usmerjeno povezavo proti vsem vozliščem iz $D_2$
@@ -1485,30 +1485,30 @@ Tekmovalnostni graf $G_c(R)$ se sklada z neusmerjenim grafom z enakimi vozlišč
 \end{trditev}
 \begin{dokaz}
     \begin{enumerate}
-        \item Pokazali bomo, da če je $a \in D_1$, $b_1, b_2 \in D_2$, par $(b_1, b_2)$ tekmuje in obstaja usmerjena povezava od $a$ do $b_1$, potem obstaja usmerjena povezava od $a$ do $b_2$. Po hipotezi obstaja rangiranje $c_m$ tako da je $a \prec_{c_m} b_1$. Če $a \prec_{c_m} b_2$ potem smo pokazali kar smo hoteli, sicer $b_2 \prec_{c_m} a \prec_{c_m} b_1$. Ampak ker $(b_1, b_2)$ tekmujeta, obstaja rangiranje $c_{m'}$, tako da $b_1 \prec_{c_{m'}} b2$ in ker $a$ ne tekmuje z $b_1$ mora biti $a \prec_{c_{m'}} b_1 \prec_{c_{m'}} b_2$, kar pomeni, da $(a, b_2)$ tekmujeta. To je protislovje.
-        \item Pokazali bomo, da če je $a \in D_1$, $b \in D_2$ in obstaja usmerjena povezava od $a$ proti $b$, potem za vsak $b' \in D_2$ obstaja povezava od a do b. Ker sta $b, b' \in D_2$ obstaja $k \in N$ in $b_1, ..., b_k \in D_2$ tako da $(b, b_1)$ tekmujeta, $(b_1, b_2)$ tekmujeta, ..., $(b_k, b')$ tekmujeta. Vozlišča $a, b, b1$ so v takem razmerju kot v koraku $1.$, zato obstaja povezava od $a$ do $b_1$, podobno vozlišča $a, b_1, b_2$, zato obstaja povezava $a$ do $b_2$, ..., podobno vozlišča $a, b_k, b'$, zato obstaja povezava od $a$ do $b'$.
-        \item $(i) \Rightarrow (ii)$. Če od elementa $a \in D_1$ obstaja povezava do elementa v $D_2$, potem po koraku $2.$ obstaja povezava od $a$ do vseh elementov v $D_2$. Zdaj fiksirajmo nek element iz $D_2$ in uporabimo korak $2.$. Tako dobimo, da obstaja povezava od vsakega elementa iz $D_1$ do fiksiranega elementa.        
+        \item Pokazali bomo, da če je $a \in D_1$, $b_1, b_2 \in D_2$, par $(b_1, b_2)$ tekmuje in obstaja usmerjena povezava od $a$ do $b_1$, potem obstaja usmerjena povezava od $a$ do $b_2$. Po hipotezi obstaja rangiranje $c_m$ tako da je $a \prec_{c_m} b_1$. Če $a \prec_{c_m} b_2$ potem smo pokazali kar smo hoteli, sicer $b_2 \prec_{c_m} a \prec_{c_m} b_1$. Ampak ker $(b_1, b_2)$ tekmujeta, obstaja rangiranje $c_{m'}$, tako da $b_1 \prec_{c_{m'}} b2$ in ker $a$ ne tekmuje z $b_1$ mora biti $a \prec_{c_{m'}} b_1 \prec_{c_{m'}} b_2$, kar pomeni, da $(a, b_2)$ tekmujeta. To je protislovje in zato $a \prec_{c_m} b_2$.
+        \item Pokazali bomo, da če je $a \in D_1$, $b \in D_2$ in obstaja usmerjena povezava od $a$ proti $b$, potem za vsak $b' \in D_2$ obstaja povezava od a do b. Ker sta $b, b' \in D_2$ obstaja $k \in \mathbb{N}$ in $b_1, ..., b_k \in D_2$ tako da $(b, b_1)$ tekmujeta, $(b_1, b_2)$ tekmujeta, ..., $(b_k, b')$ tekmujeta. Vozlišča $a, b, b_1$ so v takem razmerju kot v koraku $1.$, zato obstaja povezava od $a$ do $b_1$, podobno vozlišča $a, b_1, b_2$, zato obstaja povezava $a$ do $b_2$, ..., podobno vozlišča $a, b_k, b'$, zato obstaja povezava od $a$ do $b'$.
+        \item $(i) \Rightarrow (ii)$. Če od elementa $a \in D_1$ obstaja povezava do elementa v $D_2$, potem po koraku $2.$ obstaja povezava od $a$ do vseh elementov v $D_2$. Zdaj fiksirajmo nek element iz $D_2$ in dva elementa iz $D_1$. Uporabimo podoben premislek kot smo ga v korakih $1$ in $2$ in dobimo, da obstaja povezava od vsakega elementa iz $D_1$ do fiksiranega elementa.
     \end{enumerate}
 \end{dokaz}
 
 \begin{definicija}
-\label{definicija_relacije_mnozic_tekmovalcev_ki_slejoprej_tekmujejo}
-    Naj bo $R = \{ c_1, ..., c_r \}$ množica r rangiranj $(r \geq 2)$ vozlišč $N = \{ 1, ..., n \}$, katerih množice tekmovalcev, ki slejkoprej tekmujejo, označimo z $D_1, ..., D_k$. Definirajmo binarno relacijo $\rightarrow$ med dvema množicama tekmovalcev, ki slejkoprej tekmujejo na nasledni način:
+\label{definicija_relacije_mnozic_posrednih_tekmovalcev}
+    Naj bo $R = \{ c_1, ..., c_r \}$ množica r rangiranj $(r \geq 2)$ vozlišč $[n]$, katerih množice posrednih in neposrednih tekmovalcev, označimo z $D_1, ..., D_k$. Definirajmo binarno relacijo $\rightarrow$ med dvema množicama posrednih in neposrednih tekmovalcev na nasledni način:
     \begin{enumerate}[label=(\roman*)]
-        \item $D_i \rightarrow D_i$ za vsako množico tekmovalcev $D_i$, ki slejkoprej tekmujejo.
-        \item za vsaki različni množici $D_i, D_j$ tekmovalcev, ki slejkoprej tekmujejo, je $D_i \rightarrow D_j \Leftrightarrow$ velja katerakoli od trditev iz \ref{trditev_ekvivalenc_mnozic_tekmovalcev_ki_slejkoprej_tekmujejo}
+        \item $D_i \rightarrow D_i$ za vsako množico posrednih in neposrednih tekmovalcev $D_i$.
+        \item za vsaki različni množici $D_i, D_j$ posrednih in neposrednih tekmovalcev, je $D_i \rightarrow D_j$ naranko tedaj ko velja katerakoli od trditev iz \ref{trditev_ekvivalenc_mnozic_posrednih_tekmovalcev}
     \end{enumerate}
 \end{definicija}
 
 \begin{lema}
-    Binarna relacija iz definicije \ref{definicija_relacije_mnozic_tekmovalcev_ki_slejoprej_tekmujejo} je tranzitivna
+    Binarna relacija iz definicije \ref{definicija_relacije_mnozic_posrednih_tekmovalcev} je tranzitivna
 \end{lema}
 \begin{dokaz}
-    Predpostavimo, da je $D_1 \rightarrow D_2$ in $D_2 \rightarrow D_3$, ampak $D_3 \rightarrow D_1$. Vzamimo vozlišče $x \in D_1$. Ker je $D_3 \rightarrow D_1$, obstaja rangiranje $c_m$, tako da je $a \prec_{c_m} x$ za vse $a \in D_3$. Še več, ker $D_1 \rightarrow D_2$, $x prec_{c_m} b$ za vsa $b \in D_2$ in zato $a \prec_{c_m} b$ za vse $a \in D_3$ in $b \in D_2$, kar pomeni $D_3 \rightarrow D_2$. To je protislovje.
+    Predpostavimo, da je $D_1 \rightarrow D_2$ in $D_2 \rightarrow D_3$, ampak $D_3 \rightarrow D_1$. Vzamimo vozlišče $x \in D_1$. Ker je $D_3 \rightarrow D_1$, obstaja rangiranje $c_m$, tako da je $a \prec_{c_m} x$ za vse $a \in D_3$. Še več, ker $D_1 \rightarrow D_2$, $x \prec_{c_m} b$ za vsa $b \in D_2$ in zato $a \prec_{c_m} b$ za vse $a \in D_3$ in $b \in D_2$, kar pomeni $D_3 \rightarrow D_2$. To je protislovje.
 \end{dokaz}
 
 \begin{posledica}
-    Binarna relacija podana v definiciji \ref{definicija_relacije_mnozic_tekmovalcev_ki_slejoprej_tekmujejo} nam daje linearno urejost med množicami tekmovalcev iz $N$, ki slejkoprej tekmujejo.
+    Binarna relacija podana v definiciji \ref{definicija_relacije_mnozic_posrednih_tekmovalcev} nam daje linearno urejost med množicami posrednih in neposrednih tekmovalcev iz $[n]$.
 \end{posledica}
 
 
