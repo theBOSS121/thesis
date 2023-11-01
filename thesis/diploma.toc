@@ -4,24 +4,13 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{Abstract}{}{chapter*.3}%
 \babel@toc {slovene}{}\relax 
-\contentsline {chapter}{\numberline {1} Notacija, oznake in definicije }{1}{chapter.1}%
-\contentsline {chapter}{\numberline {2} Permutacije }{3}{chapter.2}%
-\contentsline {chapter}{\numberline {3} Inverzije }{7}{chapter.3}%
-\contentsline {chapter}{\numberline {4} Permutacijski grafi }{13}{chapter.4}%
-\contentsline {chapter}{\numberline {5} Tekmovalnostni graf }{27}{chapter.5}%
-\contentsline {chapter}{\numberline {6} Algoritem za izračun množice posrednih in neposrednih tekmovalcev }{31}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Uvod}{37}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Osnovni gradniki \LaTeX {a}}{39}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Matematično okolje in sklicevanje na besedilne konstrukte}{41}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Plovke: slike in tabele}{43}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Formati slik}{44}{section.10.1}%
-\contentsline {subsection}{\numberline {10.1.1}Podnapisi k slikam in tabelam}{45}{subsection.10.1.1}%
-\contentsline {chapter}{\numberline {11}Struktura strokovnih besedil}{47}{chapter.11}%
-\contentsline {chapter}{\numberline {12}Pogoste napake pri pisanju v slovenščini}{49}{chapter.12}%
-\contentsline {chapter}{\numberline {13}Koristni nasveti pri pisanju v \LaTeX {u}}{51}{chapter.13}%
-\contentsline {section}{\numberline {13.1}Pisave v \LaTeX u}{52}{section.13.1}%
-\contentsline {chapter}{\numberline {14}Kaj pa literatura?}{55}{chapter.14}%
-\contentsline {section}{\numberline {14.1}Izbiranje virov za spisek literature}{57}{section.14.1}%
-\contentsline {chapter}{\numberline {15}Sistem STUDIS in PDF/A}{59}{chapter.15}%
-\contentsline {chapter}{\numberline {16}Sklepne ugotovitve}{61}{chapter.16}%
-\contentsline {chapter}{Literatura}{63}{chapter.16}%
+\contentsline {chapter}{\numberline {1}Uvod}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2} Notacija, oznake in definicije }{3}{chapter.2}%
+\contentsline {chapter}{\numberline {3} Permutacije }{5}{chapter.3}%
+\contentsline {chapter}{\numberline {4} Inverzije }{9}{chapter.4}%
+\contentsline {chapter}{\numberline {5} Permutacijski grafi }{15}{chapter.5}%
+\contentsline {chapter}{\numberline {6} Tekmovalnostni graf }{29}{chapter.6}%
+\contentsline {chapter}{\numberline {7} Algoritem za izračun množice posrednih in neposrednih tekmovalcev }{35}{chapter.7}%
+\contentsline {chapter}{\numberline {8} Uporaba algoritma na resničnih podatkih }{43}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Sklepne ugotovitve}{45}{chapter.9}%
+\contentsline {chapter}{Literatura}{47}{chapter.9}%
