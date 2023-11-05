@@ -1,4 +1,4 @@
-\begin{thebibliography}{8}
+\begin{thebibliography}{9}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -52,5 +52,11 @@ Regino Criado, Esther Garc{\'\i}a, Francisco Pedroche, and Miguel Romance.
 Severino~V Gervacio, Teofina~A Rapanut, and Phoebe Chloe~F Ramos.
 \newblock Characterization and construction of permutation graphs.
 \newblock 2013.
+
+\bibitem[Margolius(2001)]{generatingFunction}
+Barbara~H Margolius.
+\newblock Permutations with inversions.
+\newblock \emph{Journal of Integer Sequences}, 4\penalty0 (2):\penalty0 3,
+  2001.
 
 \end{thebibliography}
