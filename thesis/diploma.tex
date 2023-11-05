@@ -563,8 +563,7 @@ Inverzija permutacije $\sigma = (a_1, a_2,... a_n) \in S_n$ je urejen par $(a_i,
 
 Standardne primerjalne algoritme razvrščanja lahko prilagodimo tako, da izračunamo število inverzij v času $O(n \cdot log(n))$. Primer: Merge sort.
 
-Urediti permutacijo (jo preoblikovati v identično permutacijo) s $k$ inverzijami je vedno mogoče in zahteva zaporedje $k$ transpozicij sosednjih elementov. Na vsakem koraku izberemo transpozicijo $i$ in $i+1$, če je element na poziciji $i+1$ manjši od elementa na poziciji $i$. Na ta način zmanjšamo število inverzij za $1$. To ponavljamo, dokler ne pridemo do identične permutacije.
-%%%prva poved se mi zdi čudna (zahteva?)
+Urediti permutacijo (jo preoblikovati v identično permutacijo) s $k$ inverzijami je vedno mogoče. To lahko storimo z zaporedjem $k$ transpozicij sosednjih elementov. Na vsakem koraku izberemo transpozicijo $i$ in $i+1$, če je element na poziciji $i+1$ manjši od elementa na poziciji $i$. Na ta način zmanjšamo število inverzij za $1$. To ponavljamo, dokler ne pridemo do identične permutacije.
 
 \begin{primer}
     Postopek ureditve permutacije $\sigma = (4, 2, 1, 3)$, ki ima $4$ inverzije. $(i j)$ je zapis transpozicije elementov na poziciji $i$ in $j$ z disjunktnim ciklom:
