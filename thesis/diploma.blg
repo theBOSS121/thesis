@@ -1,8 +1,6 @@
-This is BibTeX, Version 0.99d
+This is BibTeX, Version 0.99d (TeX Live 2023)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: diploma.aux
-Reallocating 'name_of_file' (item size: 1) to 11 items.
-Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: plainnat.bst
 Database file #1: literatura.bib
 Warning--to sort, need author or key in permutation
@@ -16,45 +14,45 @@ Warning--empty year in permutation
 Warning--empty year in permutationGraph
 Warning--empty year in permutationGroup
 Warning--empty journal in charectarizationPermutationGraphs
-You've used 9 entries,
+You've used 10 entries,
             2773 wiz_defined-function locations,
-            638 strings with 6143 characters,
-and the built_in function-call counts, 2931 in all, are:
-= -- 270
-> -- 100
-< -- 2
-+ -- 41
-- -- 30
-* -- 211
-:= -- 379
-add.period$ -- 27
-call.type$ -- 9
-change.case$ -- 37
-chr.to.int$ -- 7
-cite$ -- 34
-duplicate$ -- 155
-empty$ -- 311
-format.name$ -- 36
-if$ -- 648
+            644 strings with 6259 characters,
+and the built_in function-call counts, 3229 in all, are:
+= -- 296
+> -- 110
+< -- 3
++ -- 45
+- -- 33
+* -- 226
+:= -- 428
+add.period$ -- 30
+call.type$ -- 10
+change.case$ -- 41
+chr.to.int$ -- 8
+cite$ -- 36
+duplicate$ -- 174
+empty$ -- 341
+format.name$ -- 40
+if$ -- 710
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 4
-newline$ -- 53
-num.names$ -- 16
-pop$ -- 125
+missing$ -- 5
+newline$ -- 58
+num.names$ -- 20
+pop$ -- 134
 preamble$ -- 1
-purify$ -- 28
+purify$ -- 31
 quote$ -- 0
-skip$ -- 102
+skip$ -- 115
 stack$ -- 0
-substring$ -- 51
-swap$ -- 11
+substring$ -- 53
+swap$ -- 12
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 99
+type$ -- 110
 warning$ -- 11
-while$ -- 15
+while$ -- 18
 width$ -- 0
-write$ -- 114
+write$ -- 126
 (There were 11 warnings)

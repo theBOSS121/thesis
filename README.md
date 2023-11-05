@@ -25,6 +25,8 @@ https://en.wikipedia.org/wiki/Permutation
 https://en.wikipedia.org/wiki/Permutation_graph
 https://en.wikipedia.org/wiki/Permutation_group
 https://en.wikipedia.org/wiki/Factorial_number_system
+https://www.youtube.com/watch?v=6zGxhukxMVA
+
 
 https://oeis.org/A008302 (polynomial, recursive relation)
 https://www.youtube.com/watch?v=6WjnRyYLmM4&list=PLnQX-jgAF5pQS2GUFCsatSyZkSH7e8UM8&index=17 (permutation diagram points in a square and much more) 
