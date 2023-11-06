@@ -20,6 +20,8 @@ glavni primer iz karakterizacije in construkcije permutacijskih grafov
 
 
 links:
+https://en.wikipedia.org/wiki/2014_MotoGP_World_Championship
+
 https://en.wikipedia.org/wiki/Inversion_(discrete_mathematics)
 https://en.wikipedia.org/wiki/Permutation
 https://en.wikipedia.org/wiki/Permutation_graph
@@ -73,4 +75,4 @@ but ai > aj. Equivalently, (x, y) is an inversion
 if and only if x > y and f^(-1)(x) < f^(-1)(y)
 
 
-73
+78
