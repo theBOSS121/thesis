@@ -2,12 +2,11 @@ mailto: studinfo@fri.uni-lj.si
 ukini temo
 in nova temo
 
+send updates via email
+
 prosnja za razvaljavitev teme
 tema ni vsec, 
 v primeru da bo ugodeno, zmenjen, loceno od te prosnje se prosnja za izredni dvig teme
-
-
-update mentor
 
 loceno se en mail:
 prosnja za izredni dvig teme
