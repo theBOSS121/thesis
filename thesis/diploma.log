@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  6 NOV 2023 10:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  6 NOV 2023 23:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -980,7 +980,8 @@ Package: listings 2023/02/27 1.9 (Carsten Heinz)
 \c@posledica=\count326
 \c@domneva=\count327
 \c@primer=\count328
-\countA=\count329
+\c@opomba=\count329
+\countA=\count330
  (c:/texlive/2023/texmf-dist/tex/latex/xmpincl/xmpincl.sty
 Package: xmpincl 2021/09/22 v2.4 Include XMP data in pdflatex
  (c:/texlive/2023/texmf-dist/tex/generic/iftex/ifpdf.sty
@@ -994,41 +995,41 @@ Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 
 <<pdfa-1b.xmpi>> (c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-10-10 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count330
+\l__color_backend_stack_int=\count331
 \l__pdf_internal_box=\box67
 ) (./diploma.aux)
 \openout1 = `diploma.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
  (c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count331
+\scratchcounter=\count332
 \scratchdimen=\dimen277
 \scratchbox=\box68
-\nofMPsegments=\count332
-\nofMParguments=\count333
+\nofMPsegments=\count333
+\nofMParguments=\count334
 \everyMPshowfont=\toks46
-\MPscratchCnt=\count334
+\MPscratchCnt=\count335
 \MPscratchDim=\dimen278
-\MPnumerator=\count335
-\makeMPintoPDFobject=\count336
+\MPnumerator=\count336
+\makeMPintoPDFobject=\count337
 \everyMPtoPDFconversion=\toks47
 ) (c:/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1036,30 +1037,30 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (c:/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 176.
+Package hyperref Info: Link coloring OFF on input line 177.
  (./diploma.out) (./diploma.out)
 \@outlinefile=\write6
 \openout6 = `diploma.out'.
 
-\c@lstlisting=\count337
+\c@lstlisting=\count338
  [1
 
 
 {c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 223.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 224.
  (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 223.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 224.
  (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.226 \clearemptydoublepage
+l.227 \clearemptydoublepage
                             [2]
-Underfull \hbox (badness 10000) in paragraph at lines 235--242
+Underfull \hbox (badness 10000) in paragraph at lines 236--243
 
  []
 
@@ -1067,18 +1068,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 235--242
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.263 \clearemptydoublepage
+l.264 \clearemptydoublepage
                             [3
 
 ]
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.263 \clearemptydoublepage
+l.264 \clearemptydoublepage
                             [4
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 267--270
+Underfull \hbox (badness 10000) in paragraph at lines 268--271
 
  []
 
@@ -1086,12 +1087,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 267--270
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.272 \clearemptydoublepage
+l.273 \clearemptydoublepage
                             [5]
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.272 \clearemptydoublepage
+l.273 \clearemptydoublepage
                             [6
 
 ] (./diploma.toc)
@@ -1102,167 +1103,153 @@ l.272 \clearemptydoublepage
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.292 \clearemptydoublepage
+l.293 \clearemptydoublepage
                             [7
 
 ]
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.292 \clearemptydoublepage
+l.293 \clearemptydoublepage
                             [8
 
 ]
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.341 \clearemptydoublepage
+l.342 \clearemptydoublepage
                             [9
 
 ]
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.341 \clearemptydoublepage
+l.342 \clearemptydoublepage
                             [10
 
 ]
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.363 \clearemptydoublepage
+l.364 \clearemptydoublepage
                             [11
 
 ]
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.363 \clearemptydoublepage
+l.364 \clearemptydoublepage
                             [12
 
 ]
 Poglavje 1.
-[1
 
-
-] [2
-
-]
-Poglavje 2.
-
-Underfull \hbox (badness 10000) in paragraph at lines 377--407
+Underfull \hbox (badness 10000) in paragraph at lines 378--408
 
  []
 
+[1
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3] [4]
-Poglavje 3.
-[5
+] [2]
+Poglavje 2.
+[3
 
-] [6] [7] [8
+] [4] [5] [6
 
 ]
+Poglavje 3.
+[7]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[8] [9] [10]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[11]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12] [13] [14] [15] [16]
 Poglavje 4.
-[9]
+[17
+
+] [18] [19]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10] [11] [12] [13] [14] [15] [16] [17] [18]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[20] [21] [22]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[23]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[24] [25] [26] [27] [28] [29] [30]
 Poglavje 5.
-[19
-
-] [20] [21]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[31
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[22] [23] [24]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[25]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[26] [27] [28]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[29] [30] [31] [32
+] [32] [33] [34] [35] [36
 
 ]
 Poglavje 6.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[33] [34] [35] [36] [37] [38
-
-]
-Poglavje 7.
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39] [40] [41] (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
+ [37] [38] [39] (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1742.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1765.
 
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 1729--1763
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 1752--1786
 []$[]$ 
  []
 
-[42]
+[40]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [43] [44] [45] [46
+ [41] [42] [43] [44] [45] [46
 
 ]
-Poglavje 8.
-
-Underfull \vbox (badness 4013) has occurred while \output is active []
-
- [47] [48] [49] [50
-
-]
-Poglavje 9.
-[51] [52
+Poglavje 7.
+[47] [48
 
 ] (./diploma.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 21--25
+Underfull \hbox (badness 10000) in paragraph at lines 19--22
 []\OT1/cmr/m/n/12 Permutation.  Do-se-gljivo: []$\OT1/cmtt/m/n/12 https : / / en . wikipedia . org / wiki /
  []
 
-[53
+[49
 
-]) [54] (./diploma.aux)
+]) [50] (./diploma.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-10-10>
  ***********
 Package rerunfilecheck Info: File `diploma.out' has not changed.
-(rerunfilecheck)             Checksum: 491B3DBB47F98C898F30E25A5BB0BB72;1898.
+(rerunfilecheck)             Checksum: 0662EEF07A8A8A689FD468488A5D5591;2510.
  ) 
 Here is how much of TeX's memory you used:
- 25805 strings out of 474503
- 456248 string characters out of 5756704
- 1953043 words of memory out of 5000000
- 47134 multiletter control sequences out of 15000+600000
- 566965 words of font info for 68 fonts, out of 8000000 for 9000
+ 25823 strings out of 474503
+ 456536 string characters out of 5756704
+ 1950043 words of memory out of 5000000
+ 47148 multiletter control sequences out of 15000+600000
+ 567272 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,13n,89p,2033b,1771s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,13n,89p,1250b,1771s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on diploma.pdf (66 pages, 376111 bytes).
+Output written on diploma.pdf (62 pages, 378386 bytes).
 PDF statistics:
- 707 PDF objects out of 1000 (max. 8388607)
- 594 compressed objects within 6 object streams
- 216 named destinations out of 1000 (max. 500000)
- 113 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 717 PDF objects out of 1000 (max. 8388607)
+ 607 compressed objects within 7 object streams
+ 220 named destinations out of 1000 (max. 500000)
+ 137 words of extra memory for PDF output out of 10000 (max. 10000000)
 

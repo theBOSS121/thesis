@@ -337,6 +337,7 @@ INPUT ./diploma.toc
 INPUT ./diploma.toc
 INPUT diploma.toc
 OUTPUT diploma.toc
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
