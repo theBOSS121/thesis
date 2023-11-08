@@ -1295,6 +1295,219 @@ Poti in zvezde so drevesa. Ampak niso vsa drevesa permutacijski grafi. Drevo $K_
     $(\Leftarrow)$ Potrebno je še pokazati, da je gosenica permutacijski graf. To bomo pokazali tako, da bomo gosenici našli kohezivno zaporedje. Naj bo $C$ gosenica in naj bo $P_n$ pot, ki jo pridobimo iz $C$ tako, da odstranimo liste. Če je $n=1$, potem je $C$ zvezda $K_{1,k}$ za nek $k \geq 0$ ali pa trivialen graf $K_1$. Ker so zvezde in trivialen graf permutacijski grafi, predpostavimo, da je $n \geq 2$. Zgradimo kohezivno zaporedje poti $P_n$ kot na primeru od prej. Vse liste lihega vozlišča $i$ na poti vstavimo levo od vozlišče $i+1$ na poti $P_n$. Vse liste sodega vozlišča $i$ na poti vstavimo desno od vozlišča $i-1$ na poti $P_n$. Rezultat je kohezivno zaporedje (slika \ref{graf_kohezivnega_zaporedja_gosenice}). Zato je gosenica $C$ res permutacijski graf.    
 \end{dokaz}
 
+Imejmo tako gosenico, da ko ji odstranimo vse liste dobimo pot na $k$ vozliščih. Vozlišče na poti $u_i$ naj ima $m_i$ listov. Označimo tako gosenico z $C_k(m_1, m_2, ..., m_k)$.
+
+\begin{figure}[h]
+    \begin{center}        
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \tikzstyle{vertex2}=[circle,draw=black!50,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \foreach \num/\x in {5/1, 1/2, 8/5, 4/6}
+                    \node[vertex] (V-\num) at (\x,0) {$\num$};
+            \foreach \num/\x in {2/0, 3/3, 6/4, 7/7}
+                    \node[vertex2] (V-\num) at (\x,0) {$\num$};
+        
+                \foreach \from/\to in {5/1, 8/4}
+                    \draw[-latex] (V-\from) -- (V-\to);
+        
+                \draw[-latex] (V-2) .. controls (0.5, 0.75) and (1.5, 0.75) .. (V-1);
+                \draw[-latex] (V-6) .. controls (4.5, 0.75) and (5.5, 0.75) .. (V-4);
+    
+                \draw[-latex] (V-5) .. controls (1.5, 0.75) and (2.5, 0.75) .. (V-3);
+                \draw[-latex] (V-8) .. controls (5.5, 0.75) and (6.5, 0.75) .. (V-7);
+                \draw[-latex] (V-5) .. controls (1.5, 1.33) and (5.5, 1.33) .. (V-4);
+        \end{tikzpicture}\\\quad\\                    
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \tikzstyle{vertex2}=[circle,draw=black!50,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \foreach \num/\x in {3/0, 7/3, 2/4, 6/7}
+                    \node[vertex] (V-\num) at (\x,0) {$\num$};
+            \foreach \num/\x in {1/1, 4/2, 5/5, 8/6}
+                    \node[vertex2] (V-\num) at (\x,0) {$\num$};
+        
+                \foreach \from/\to in {3/1, 7/2, 8/6}
+                    \draw[-latex] (V-\from) -- (V-\to);
+        
+                \draw[-latex] (V-4) .. controls (2.5, 0.75) and (3.5, 0.75) .. (V-2);
+                \draw[-latex] (V-7) .. controls (3.5, 0.75) and (4.5, 0.75) .. (V-5);
+
+                \draw[-latex] (V-3) .. controls (0.5, 1.1) and (3.5, 1.1) .. (V-2);
+                \draw[-latex] (V-7) .. controls (3.5, 1.1) and (6.5, 1.1) .. (V-6);
+        \end{tikzpicture}
+    \end{center}
+    \caption{Tranzitivni orientaciji gosenice $C_4(1, 1, 1, 1)$.}
+    \label{tranzitivni_orientaciji_gosenice}
+\end{figure}
+
+\begin{figure}[h]
+    \begin{center}        
+        % \begin{tikzpicture}[shorten >=1pt,-]
+        %     \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
+        %     \tikzstyle{vertex2}=[circle,draw=black!50,fill=white!25,minimum size=20pt,inner sep=0pt]
+        %     \foreach \num/\x in {5/1, 1/2, 8/5, 4/6}
+        %             \node[vertex] (V-\num) at (\x,0) {$\num$};
+        %     \foreach \num/\x in {2/0, 3/3, 6/4, 7/7}
+        %             \node[vertex2] (V-\num) at (\x,0) {$\num$};
+        
+        %         \foreach \from/\to in {5/1, 8/4}
+        %             \draw (V-\from) -- (V-\to);
+        
+        %         \draw (V-2) .. controls (0.5, 0.75) and (1.5, 0.75) .. (V-1);
+        %         \draw (V-6) .. controls (4.5, 0.75) and (5.5, 0.75) .. (V-4);
+    
+        %         \draw (V-5) .. controls (1.5, 0.75) and (2.5, 0.75) .. (V-3);
+        %         \draw (V-8) .. controls (5.5, 0.75) and (6.5, 0.75) .. (V-7);
+        %         \draw (V-5) .. controls (1.5, 1.33) and (5.5, 1.33) .. (V-4);
+        % \end{tikzpicture}\\\quad\\                    
+        % \begin{tikzpicture}[shorten >=1pt,-]
+        %     \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
+        %     \tikzstyle{vertex2}=[circle,draw=black!50,fill=white!25,minimum size=20pt,inner sep=0pt]
+        %     \foreach \num/\x in {3/0, 7/3, 2/4, 6/7}
+        %             \node[vertex] (V-\num) at (\x,0) {$\num$};
+        %     \foreach \num/\x in {1/1, 4/2, 5/5, 8/6}
+        %             \node[vertex2] (V-\num) at (\x,0) {$\num$};
+        
+        %         \foreach \from/\to in {3/1, 7/2, 8/6}
+        %             \draw (V-\from) -- (V-\to);
+        
+        %         \draw (V-4) .. controls (2.5, 0.75) and (3.5, 0.75) .. (V-2);
+        %         \draw (V-7) .. controls (3.5, 0.75) and (4.5, 0.75) .. (V-5);
+
+        %         \draw (V-3) .. controls (0.5, 1.1) and (3.5, 1.1) .. (V-2);
+        %         \draw (V-7) .. controls (3.5, 1.1) and (6.5, 1.1) .. (V-6);
+        % \end{tikzpicture}\\\quad\\
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \tikzstyle{vertex2}=[circle,draw=black!50,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \foreach \num/\x in {5/1, 1/2, 9/5, 4/6, 8/9}
+                    \node[vertex] (V-\num) at (\x,0) {$\num$};
+            \foreach \num/\x in {2/0, 3/3, 6/4, 7/7, 10/8}
+                    \node[vertex2] (V-\num) at (\x,0) {$\num$};
+        
+                \foreach \from/\to in {5/1, 9/4, 10/8}
+                    \draw (V-\from) -- (V-\to);
+        
+                \draw (V-2) .. controls (0.5, 0.75) and (1.5, 0.75) .. (V-1);
+                \draw (V-6) .. controls (4.5, 0.75) and (5.5, 0.75) .. (V-4);
+    
+                \draw (V-5) .. controls (1.5, 0.75) and (2.5, 0.75) .. (V-3);
+                \draw (V-9) .. controls (5.5, 0.75) and (6.5, 0.75) .. (V-7);
+
+                \draw (V-5) .. controls (1.5, 1.33) and (5.5, 1.33) .. (V-4);
+                \draw (V-9) .. controls (5.5, 1.1) and (8.5, 1.1) .. (V-8);
+        \end{tikzpicture}\\\quad\\                    
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \tikzstyle{vertex2}=[circle,draw=black!50,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \foreach \num/\x in {3/0, 7/3, 2/4, 10/7, 6/8}
+                    \node[vertex] (V-\num) at (\x,0) {$\num$};
+            \foreach \num/\x in {1/1, 4/2, 5/5, 8/6, 9/9}
+                    \node[vertex2] (V-\num) at (\x,0) {$\num$};
+        
+                \foreach \from/\to in {3/1, 7/2, 10/6}
+                    \draw (V-\from) -- (V-\to);
+        
+                \draw (V-4) .. controls (2.5, 0.75) and (3.5, 0.75) .. (V-2);
+                \draw (V-7) .. controls (3.5, 0.75) and (4.5, 0.75) .. (V-5);        
+                \draw (V-8) .. controls (6.5, 0.75) and (7.5, 0.75) .. (V-6);
+                \draw (V-10) .. controls (7.5, 0.75) and (8.5, 0.75) .. (V-9);
+
+                \draw (V-3) .. controls (0.5, 1.1) and (3.5, 1.1) .. (V-2);
+                \draw (V-7) .. controls (3.5, 1.33) and (7.5, 1.33) .. (V-6);
+        \end{tikzpicture}\\\quad\\
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \tikzstyle{vertex2}=[circle,draw=black!50,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \foreach \num/\x in {5/1, 1/2, 9/5, 4/6, 12/9, 8/10}
+                    \node[vertex] (V-\num) at (\x,0) {$\num$};
+            \foreach \num/\x in {2/0, 3/3, 6/4, 7/7, 10/8, 11/11}
+                    \node[vertex2] (V-\num) at (\x,0) {$\num$};
+        
+                \foreach \from/\to in {5/1, 9/4, 12/8}
+                    \draw (V-\from) -- (V-\to);
+        
+                \draw (V-2) .. controls (0.5, 0.75) and (1.5, 0.75) .. (V-1);
+                \draw (V-6) .. controls (4.5, 0.75) and (5.5, 0.75) .. (V-4);
+                \draw (V-10) .. controls (8.5, 0.75) and (9.5, 0.75) .. (V-8);
+
+                \draw (V-5) .. controls (1.5, 0.75) and (2.5, 0.75) .. (V-3);
+                \draw (V-9) .. controls (5.5, 0.75) and (6.5, 0.75) .. (V-7);
+                \draw (V-12) .. controls (9.5, 0.75) and (10.5, 0.75) .. (V-11);
+
+                \draw (V-5) .. controls (1.5, 1.33) and (5.5, 1.33) .. (V-4);
+                \draw (V-9) .. controls (5.5, 1.33) and (9.5, 1.33) .. (V-8);
+        \end{tikzpicture}\\\quad\\                    
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \tikzstyle{vertex2}=[circle,draw=black!50,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \foreach \num/\x in {3/0, 7/3, 2/4, 11/7, 6/8, 10/11}
+                    \node[vertex] (V-\num) at (\x,0) {$\num$};
+            \foreach \num/\x in {1/1, 4/2, 5/5, 8/6, 9/9, 12/10}
+                    \node[vertex2] (V-\num) at (\x,0) {$\num$};
+        
+                \foreach \from/\to in {3/1, 7/2, 11/6, 12/10}
+                    \draw (V-\from) -- (V-\to);
+        
+                \draw (V-4) .. controls (2.5, 0.75) and (3.5, 0.75) .. (V-2);
+                \draw (V-7) .. controls (3.5, 0.75) and (4.5, 0.75) .. (V-5);        
+                \draw (V-8) .. controls (6.5, 0.75) and (7.5, 0.75) .. (V-6);
+                \draw (V-11) .. controls (7.5, 0.75) and (8.5, 0.75) .. (V-9);
+
+                \draw (V-3) .. controls (0.5, 1.1) and (3.5, 1.1) .. (V-2);
+                \draw (V-7) .. controls (3.5, 1.33) and (7.5, 1.33) .. (V-6);
+                \draw (V-11) .. controls (7.5, 1.1) and (10.5, 1.1) .. (V-10);
+        \end{tikzpicture}
+    \end{center}
+    \caption{Permutacije gosenic.}
+    \label{gosenica_dve_permutaciji}
+\end{figure}
+
+\begin{izrek}
+\label{izrek_gosenica_vsaj_dve_permutaciji}
+    Gosenica $C_k(m_1, m_2, ..., m_k)$ je permutacijski graf vsaj dveh permutacij.
+\end{izrek}
+\begin{dokaz}
+    Vsako drevo, z vsaj eno povezavo ima natanko dve tranzitivni orientaciji. To sledi iz dejstva, da ko usmerimo eno povezavo smo že določili tranzitivno orientacijo drevesa. Zato ima tudi gosenica $C_k(m_1, m_2, ..., m_k)$ natanko dve tranizitivni orientaciji (slika \ref{tranzitivni_orientaciji_gosenice}).
+    Naj bo $n = k + m_1 + m_2 + \cdot\cdot\cdot + m_k$ število vozlišč grafa $C_k(m_1, m_2, ..., m_k)$. Priredimo števila $1, 2, ..., n$ vozliščem grafa. To naredimo tako, da če je povezava $uv$ orientirana od $u$ proti $v$, potem je mora biti število, ki ga priredimo vozlišču $u$, večje od števila, ki ga priredimo vozlišču $v$ (slika \ref{tranzitivni_orientaciji_gosenice}). To bomo naredili induktivno na dva načina (sliki \ref{tranzitivni_orientaciji_gosenice} in \ref{gosenica_dve_permutaciji}). (1. način) Če je $k = 1$ priredimo število $1$ vozlišču $u_1$ in števila $2, 3, ..., m_1+1$ listom, ki so sosedi vozlišča $u_1$. To nam da permutacijo $(2, 3, ..., m_1+1, 1)$. Naj bo k sodo število in si poglejmo kako iz $C_k(m_1, m_2, ..., m_k)$ naredimo $C_{k+1}(m_1, m_2, ..., m_{k+1})$. Povečamo število $p$, ki je prirejeno vozlišču $u_k$ na $p+1$ in priredimo število $p$ vozlišču $u_{k+1}$. Števila $p+2, p+3, ..., p+m_{k+1}+1$ priredimo listom, ki so sosedi vozlišča $u_{k+1}$. Se pravi smo permutacijo posodobili tako, da najprej nakoncu zaporedja prejšne permutacije priključimo nova števila v zaporedju $p+2, p+3, ..., p+m_{k+1}+1, p+1$ in dobimo $(\cdot\cdot\cdot, p, \cdot\cdot\cdot, p+2, p+3, ..., p+m_{k+1}+1, p+1)$, potem pa zamenjamo števili $p$ in $p+1$ in dobimo $(\cdot\cdot\cdot, p+1, \cdot\cdot\cdot, p+2, p+3, ..., p+m_{k+1}+1, p)$. Naj bo sedaj k liho število in si poglejmo kako iz $C_k(m_1, m_2, ..., m_k)$ naredimo $C_{k+1}(m_1, m_2, ..., m_{k+1})$. Naj bo $p_k = k + m_1 + m_2 + \cdot\cdot\cdot + m_k$. Priredimo števila $p_k+1, p_k+2, ..., p_k+m_{k+1}$ listom, ki so sosedi vozlšča $u_{k+1}$. Število $p_k+m_{k+1}+1$ pa priredimo vozlišču $u_{k+1}$. Se pravi smo permutacijo posodobili tako, da najprej nakoncu zaporedja prejšne permutacije priključimo nova števila v zaporedju $p_k + m_{k+1} + 1, p_k+1, p_k+2,...,p_k+m_{k+1}$ in dobimo $(\cdot\cdot\cdot, p_k - m_k - 1, \cdot\cdot\cdot, p_k + m_{k+1} + 1, p_k+1, p_k+2,...,p_k+m_{k+1})$, potem pa zamenjamo števili $p_k - m_k - 1$ in $p_k + m_{k+1} + 1$, ki pripadata vozliščema $u_k$ in $u_{k+1}$. (2. način) Če je $k = 1$ priredimo število $m_1 + 1$ vozlišču $u_1$ in števila $1, 2, ..., m_1$ listom, ki so sosedi vozlišča $u_1$. To nam da permutacijo $(m_1+1, 1, 2, ..., m_1)$. Naj bo k sodo število in si poglejmo kako iz $C_k(m_1, m_2, ..., m_k)$ naredimo $C_{k+1}(m_1, m_2, ..., m_{k+1})$. To naredimo na tak način, kot smo pri 1. načinu v primeru ko je bil k liho število. Naj bo k liho število in si poglejmo kako iz $C_k(m_1, m_2, ..., m_k)$ naredimo $C_{k+1}(m_1, m_2, ..., m_{k+1})$. To naredimo na tak način, kot smo pri 1. načinu v primeru ko je bil k sodo število. Tako smo pokazali, da je $C_k(m_1, m_2, ..., m_k)$ permutacijski graf vsaj dveh permutacij.
+
+\end{dokaz}
+
+\begin{izrek}
+\label{izrek_dve_permutaciji_poti}
+    Za $n \geq 3$ obstajata natanko dve permutaciji iz $S_n$, katerih permutacijski graf je pot na $n$ vozliščih.
+\end{izrek}
+\begin{dokaz}
+    Naj bo $n \geq 3$ in $\sigma = (\sigma_1, \sigma_2,..., \sigma_n) \in S_n$ takšna permutacija, da je $G_{\sigma} = P_n$. Opazimo naslednje lastnosti permutacije $\sigma$:
+    \begin{enumerate}[label=(\alph*)]
+        \item $(\sigma_1, \sigma_2, ..., \sigma_k) \notin S_k$ za $k < n$.
+        \item $i-2 \leq \sigma_i \leq i+2$ za $i \leq n$
+    \end{enumerate}
+    
+    Dokaz lastnosti (a): Naj bo $k < n$. Če je $(\sigma_1, \sigma_2, ..., \sigma_k) \in S_k$, potem graf $G_{\sigma}$ ni povezan. To je v nasprotju s tem, da je $G_{\sigma}$ pot.
+    
+    Dokaz lastnosti (b): Če je $\sigma_i \leq i-3$, potem je največ $i-4$ števil, ki so manjše od $\sigma_i$, med $i-1$ števili pred $\sigma_i$ v permutaciji $\sigma$. Zato so vsaj 3 števila pred $\sigma_i$ v permutaciji $\sigma$ večja od $\sigma_i$. To pomeni, de ima $\sigma_i$ vsaj $3$ sosede, kar pa je v protislovju s tem, da je $G_{\sigma}$ pot. Podobno če je $\sigma_i \geq i+3$, potem so za $\sigma_i$ v permutaciji $\sigma$ vsaj 3 števila, ki so manjša od $\sigma_i$. Kar zopet pomeni, de ima $\sigma_i$ vsaj $3$ sosede, kar pa je v protislovju s tem, da je $G_{\sigma}$ pot.
+
+    Zaradi lastnosti (a) in (b) je $\sigma_1 \in \{ 2, 3\}$. Poglejmo si najprej primer, ko je $\sigma_1 = 2$. Zaradi lastnosti (a) in (b) je $\sigma_2 \in \{ 3, 4 \}$. Če je $\sigma_2 = 3$, potem graf vsebuje pot na vozliščih $2, 3, 1$, kjer imata vozlišči $3$ in $1$ stopnjo enako $1$, kar se lahko zgodi samo, če je $n = 3$ (v nasprotnem primeru bi bil graf $G_{\sigma}$ nepovezan). Če je $\sigma_2 = 4$, potem mora biti $\sigma_3 = 1$ (drugače bi imelo vozlišče $1$ stopnjo vsaj $3$), se pravi $\sigma = (2, 4, 1, ...)$. Zaradi lastnosti (a) in (b) je $\sigma_4 \in \{ 5, 6 \}$. Če je $\sigma_4 = 5$, potem ima stopnjo 1, kar se lahko zgodi samo ko je $n = 5$ in $\sigma = (2, 4, 1, 5, 3)$. Sicer je $\sigma_4 = 6$ in $\sigma_5 = 3$ (drugače bi imelo vozlišče $3$ stopnjo vsaj $3$), se pravi $\sigma = (2, 4, 1, 6, 3,...)$. Tako lahko nadaljujemo do poljubne dolžine. Induktivno lahko pokažemo, da je $\sigma$ unikatno določena. 
+    
+    Pogljemo si sedaj še primer, ko je $\sigma_1 = 3$. Potem je $\sigma_2 \in \{ 1, 2, 4\}$. $\sigma \neq 2$, saj bi tako v permutaciji imeli podzaporedje $3, 2, 1$, kar nam da cikel dolžine 3. Prav tako $\sigma \neq 4$, saj bi tako permutacija vsebovala povezave $32, 31, 42, 41$, kar nam da cikel dolžine 4. Zato je $\sigma_2 = 1$. Zaradi lastnosti (a) in (b) je $\sigma_3 \in \{ 4, 5 \}$. Če je $\sigma_3 = 4$, potem je $\sigma_4 = 2$ (drugače bi imelo vozlišče $2$ stopnjo vsaj $3$). Se pravi $n = 4$ in $\sigma = (3, 1, 4, 2)$. Če je $\sigma_3 = 5$ potem je $\sigma_4 = 2$ in $\sigma = (3, 1, 5, 2,...)$. Podobno, kot prej lahko nadaljujemo do poljubne dolžine. Induktivno lahko pokažemo, da je $\sigma$ unikatno določena.
+
+    Dobimo sklep, da obstajata natanko dve permutaciji iz $S_n$, katerih permutacijski graf je pot na $n$ vozliščih.
+\end{dokaz}
+
+\begin{posledica}
+    Naj bo $\sigma \in S_n$ taka, da je njen permutacijski graf pot na $n$ vozliščih. Potem nam zaporedje vozlišč na poti da permutacijo $\sigma^*$, ki je sestavljena iz sosednjih transpozicij. Še več $\sigma^* \preceq_b \sigma$.
+\end{posledica}
+\begin{dokaz}
+    Po izreku \ref{izrek_dve_permutaciji_poti} imata edini dve poti na $n$ vozliščih permutaciji $\sigma_1 = (2, 4, 1, 6, 3,...)$ in $\sigma_2 = (3, 1, 5, 2, 7, 4,...)$. Zaporedja vozlišč na poti sta $\sigma_1^* = (2, 1, 4, 3,...)$ in $\sigma_2^* = (1, 3, 2, 5, 4,...)$. Vidimo, da je permutacija $\sigma^*$ pridobljena iz permutacije $\sigma$ z zaporedjem transpozicij sosednjih elementov, kjer vsaka transpozicija odstrani eno inverzjo.
+\end{dokaz}
+
+\begin{posledica}    
+    Naj bo $n \geq 3$ in $C$ gosenica na $n$ vozliščih. Potem obstajata natanko dve permutaciji iz $S_n$, katerih permutacijski graf je izomorfen grafu gosenice $C$.
+\end{posledica}
+\begin{dokaz}
+    Privzamimo, da ima pot gosenice maksimalno dolžino (se pravi $m_1 = m_k = 0$). Naj bo $N$ število permutacij iz $S_n$, katerih permutacijski graf je izomorfen grafu $C$. Po izreku \ref{izrek_gosenica_vsaj_dve_permutaciji} je $N \geq 2$. Naj bo $\pi$ perutacija, katere graf je izomorfen grafu $C$. Vidimo, da je $\pi$ unikatno določena z zaporedjem vozlišč na poti. To je res, saj morajo biti listi urejeni naraščujoče, da preprečimo dodatne inverzije v permutaciji. Po izreku \ref{izrek_dve_permutaciji_poti} obstajata natanko dve zaporedji vozlišč na poti. Torej je $N \leq 2$. Zato je $N = 2$.
+\end{dokaz}
+
 \begin{definicija}
     Naj bo $G$ graf z množico vozlišč $V(G) = \{x_1, x_2, ..., x_n\}$ in naj bodo $H_1, H_2, ..., H_n$ poljubni grafi. Kompozicija grafov $H_1, H_2, ..., H_n$ z grafom $G$, označena z $G(H_1, H_2, ..., H_n)$, je graf sestavljen iz disjunktne unije $H_1, H_2, ..., H_n$ in dodanih povezav $a_ib_j$, kjer je $a_i \in V(H_i)$ in $b_j \in V(H_j)$, kadar je $x_ix_j \in E(G)$ (sliki \ref{graf_kompozicija_primer1} in \ref{graf_kompozicija_primer2}). Če je $H_i$ fiksen graf $H$, potem kompozicijo označimo z $G(H)$. 
 \end{definicija}

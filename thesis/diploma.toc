@@ -12,8 +12,8 @@
 \contentsline {section}{\numberline {3.2} Rodovna funkcija }{13}{section.3.2}%
 \contentsline {section}{\numberline {3.3} Lehmerjeva koda in vektor inverzij}{15}{section.3.3}%
 \contentsline {chapter}{\numberline {4} Permutacijski grafi }{19}{chapter.4}%
-\contentsline {chapter}{\numberline {5} Tekmovalnostni grafi }{33}{chapter.5}%
-\contentsline {chapter}{\numberline {6} Algoritem za izračun množice posrednih in neposrednih tekmovalcev }{39}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Uporaba algoritma na resničnih podatkih}{46}{section.6.1}%
-\contentsline {chapter}{\numberline {7}Sklepne ugotovitve}{51}{chapter.7}%
-\contentsline {chapter}{Literatura}{53}{chapter.7}%
+\contentsline {chapter}{\numberline {5} Tekmovalnostni grafi }{37}{chapter.5}%
+\contentsline {chapter}{\numberline {6} Algoritem za izračun množice posrednih in neposrednih tekmovalcev }{43}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Uporaba algoritma na resničnih podatkih}{50}{section.6.1}%
+\contentsline {chapter}{\numberline {7}Sklepne ugotovitve}{55}{chapter.7}%
+\contentsline {chapter}{Literatura}{57}{chapter.7}%
