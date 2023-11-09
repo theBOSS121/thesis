@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  8 NOV 2023 19:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  9 NOV 2023 21:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1113,7 +1113,14 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has be
 l.274 \clearemptydoublepage
                             [6
 
-] (./diploma.toc)
+] (./diploma.toc
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.23 ...a na resničnih podatkih}{49}{section.5.3}
+                                                  % [7
+
+])
 \tf@toc=\write7
 \openout7 = `diploma.toc'.
 
@@ -1122,21 +1129,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has be
 <to be read again> 
                    \relax 
 l.294 \clearemptydoublepage
-                            [7
-
-]
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.294 \clearemptydoublepage
-                            [8
-
-]
+                            [8]
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.343 \clearemptydoublepage
                             [9
+
 
 ]
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
@@ -1172,33 +1171,43 @@ Poglavje 2.
 
 ]
 Poglavje 3.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 [9]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10] [11] [12]
+[10] [11]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [14] [15] [16] [17] [18]
+[12] [13] [14] [15] [16] [17] [18]
 Poglavje 4.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 [19
 
-] [20] [21]
+] [20]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[21] [22]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[22] [23] [24]
+[23] [24]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [25]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1209,79 +1218,77 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [28]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29] [30] [31] [32]
+ [29] [30] [31]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[32]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[33] [34]
-Overfull \hbox (5.01471pt too wide) in paragraph at lines 1663--1664
+[33]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[34]
+Overfull \hbox (5.01471pt too wide) in paragraph at lines 1683--1684
 \OT1/cmr/m/it/12 ne-tri-vi-a-len pri-ma-ren per-mu-ta-cij-ski graf $\OML/cmm/m/it/12 U$ \OT1/cmr/m/it/12 in per-mu-ta-cij-ski grafi $\OML/cmm/m/it/12 H[]; H[]; :::; H[]$\OT1/cmr/m/it/12 ,
  []
 
-[35] [36
-
-]
+[35] [36]
 Poglavje 5.
+[37
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+] [38] [39] [40] [41]
+Underfull \vbox (badness 1132) has occurred while \output is active []
 
-[37] [38] [39] [40] [41] [42
-
-]
-Poglavje 6.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [43] [44] [45] (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
+ [42] [43] [44] (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1972.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1995.
 
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 1959--1993
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 1982--2016
 []$[]$ 
  []
 
-[46]
+[45]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [47] [48] [49] [50] [51] [52] [53] [54
+ [46] [47] [48] [49] [50] [51] [52]
+Poglavje 6.
+[53
 
-]
-Poglavje 7.
-[55] [56
+] [54
 
 ] (./diploma.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 19--22
 []\OT1/cmr/m/n/12 Permutation.  Do-se-gljivo: []$\OT1/cmtt/m/n/12 https : / / en . wikipedia . org / wiki /
  []
 
-[57
+[55
 
-]) [58] (./diploma.aux)
+]) [56] (./diploma.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-10-10>
  ***********
 Package rerunfilecheck Info: File `diploma.out' has not changed.
-(rerunfilecheck)             Checksum: 0662EEF07A8A8A689FD468488A5D5591;2510.
+(rerunfilecheck)             Checksum: 582551365FE8C71DB55B9A07C4945C2A;3959.
  ) 
 Here is how much of TeX's memory you used:
- 25958 strings out of 474503
- 458502 string characters out of 5756704
- 1958043 words of memory out of 5000000
- 47260 multiletter control sequences out of 15000+600000
+ 25972 strings out of 474503
+ 458714 string characters out of 5756704
+ 1959043 words of memory out of 5000000
+ 47267 multiletter control sequences out of 15000+600000
  567609 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,13n,89p,2909b,1771s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,14n,89p,2908b,1767s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on diploma.pdf (70 pages, 406061 bytes).
+Output written on diploma.pdf (68 pages, 407382 bytes).
 PDF statistics:
- 776 PDF objects out of 1000 (max. 8388607)
- 656 compressed objects within 7 object streams
- 237 named destinations out of 1000 (max. 500000)
- 137 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 805 PDF objects out of 1000 (max. 8388607)
+ 687 compressed objects within 7 object streams
+ 244 named destinations out of 1000 (max. 500000)
+ 185 words of extra memory for PDF output out of 10000 (max. 10000000)
 

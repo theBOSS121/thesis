@@ -7,13 +7,19 @@
 \contentsline {chapter}{\numberline {1}Uvod}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1} Notacija, oznake in definicije }{1}{section.1.1}%
 \contentsline {chapter}{\numberline {2} Permutacije }{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1} Zapis permutacij }{6}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Simetrična in permutacijska grupa}{7}{section.2.2}%
 \contentsline {chapter}{\numberline {3} Inverzije }{9}{chapter.3}%
 \contentsline {section}{\numberline {3.1} Bruhatovi delni urejenosti }{10}{section.3.1}%
-\contentsline {section}{\numberline {3.2} Rodovna funkcija }{13}{section.3.2}%
+\contentsline {section}{\numberline {3.2} Rodovna funkcija }{14}{section.3.2}%
 \contentsline {section}{\numberline {3.3} Lehmerjeva koda in vektor inverzij}{15}{section.3.3}%
 \contentsline {chapter}{\numberline {4} Permutacijski grafi }{19}{chapter.4}%
+\contentsline {section}{\numberline {4.1} Karakterizacija permutacijskih grafov }{19}{section.4.1}%
+\contentsline {section}{\numberline {4.2} Gosenice }{25}{section.4.2}%
+\contentsline {section}{\numberline {4.3} Konstrukcija permutacijskih grafov}{32}{section.4.3}%
 \contentsline {chapter}{\numberline {5} Tekmovalnostni grafi }{37}{chapter.5}%
-\contentsline {chapter}{\numberline {6} Algoritem za izračun množice posrednih in neposrednih tekmovalcev }{43}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Uporaba algoritma na resničnih podatkih}{50}{section.6.1}%
-\contentsline {chapter}{\numberline {7}Sklepne ugotovitve}{55}{chapter.7}%
-\contentsline {chapter}{Literatura}{57}{chapter.7}%
+\contentsline {section}{\numberline {5.1} Tekmovalnostni grafi ter množice posrednih in neposrednih tekmovalcev }{37}{section.5.1}%
+\contentsline {section}{\numberline {5.2} Algoritem za izračun množice posrednih in neposrednih tekmovalcev }{42}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Uporaba algoritma na resničnih podatkih}{49}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Sklepne ugotovitve}{53}{chapter.6}%
+\contentsline {chapter}{Literatura}{55}{chapter.6}%
