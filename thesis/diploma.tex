@@ -333,8 +333,11 @@ Zahvaljujem se mentorici izr. prof. dr. Poloni Oblak za pomoč in usmeritvi pri 
 \bigskip
 
 %\noindent\textbf{Povzetek:} 
-\noindent V vzorcu je predstavljen postopek priprave diplomskega dela z uporabo okolja \LaTeX. Vaš povzetek mora sicer vsebovati približno 100 besed, ta tukaj je odločno prekratek.
-Dober povzetek vključuje: (1) kratek opis obravnavanega problema, (2) kratek opis vašega pristopa za reševanje tega problema in (3) (najbolj uspešen) rezultat ali prispevek magistrske naloge.
+\noindent V diplomski nalogi si najprej ogledamo inverzije permutacij, njihove lastnosti, rodovno funkcijo za število permutacij množice $[n]$ z $i$ inverzijami in Bruhatovi delni urejenosti.
+Nato pokažemo kako permutacije predstavimo s permutacijskimi grafi, karakteriziramo permutacijske grafe s pomočjo kohezivnega zaporedja vozlišč, pokažemo, da so gosenice edina drevesa, ki so permutacijski grafi ter pokažemo, da za $n \geq 3$ obstajata natanko dve permutaciji, ki generirata permutacijski graf izomorfen neki gosenici na $n$ vozliščih. Potem si ogledamo kaj so tekmovalnostni grafi, množice tekmovalcev, množice posrednih in neposrednih tekmovalcev ter algoritem, ki ne potebuje konstrukcije tekmovalnostega grafa, za izračun množice posrednih in neposrednih tekmovalcev. Na koncu uporabimo algoritem na primeru z resničnimi podatki.
+
+% \noindent V vzorcu je predstavljen postopek priprave diplomskega dela z uporabo okolja \LaTeX. Vaš povzetek mora sicer vsebovati približno 100 besed, ta tukaj je odločno prekratek.
+% Dober povzetek vključuje: (1) kratek opis obravnavanega problema, (2) kratek opis vašega pristopa za reševanje tega problema in (3) (najbolj uspešen) rezultat ali prispevek magistrske naloge.
 
 \bigskip
 
@@ -1689,9 +1692,9 @@ Med drevesi s premerom, ki ni večji od 3 (slika \ref{graf_dreves_premer_leq3}),
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{ Tekmovalnostni grafi }
 
-Rangiranje neke množice nam podaja zaporedje te množice. Rangiranje nam lahko pomaga pri odločanju, saj vemo kateri elementi je boljši ter kateri je slabši. Če imamo več različnih rangiranj iste množice lahko z večjo gotovostjo trdimo, da je nekateri element boljši od drugega. Če elementa med dvema rangiranjema zamenjata relatvno pozicijo vidimo, da sta si med seboj konkurenčna. Rečemo, da tekmujeta.
+Tekmovalnostni grafi so razširitev permutacijskih grafov v smislu, da je vsak tekmovalnostni graf, ki je generiran z dvema permutacijama $\pi$ in $\sigma$ izomorfen ravno permutacijskemu grafu permutacije $\pi^{-1} \circ \sigma$. 
 
-V tem poglavju bomo spoznali kaj so rangiranja, tekmovalnostni grafi, primerljivostni grafi, množice tekmovalcev, množice posrednih in neposrednih tekmovalcev. Nato si bomo ogledali algoritem za izračun množice posrednih in neposrednih tekmovalcev ter kako lahko množice posrednih in neposrednih tekmovalcev uredimo. Na koncu pa si bomo pogledali še primer na resničnih podatkih.
+V tem poglavju bomo spoznali kaj so rangiranja, tekmovalnostni grafi, primerljivostni grafi, množice tekmovalcev, množice posrednih in neposrednih tekmovalcev. Nato si bomo ogledali algoritem za izračun množice posrednih in neposrednih tekmovalcev ter kako lahko množice posrednih in neposrednih tekmovalcev uredimo. Na koncu si bomo pogledali še primer na resničnih podatkih.
 
 \section{ Tekmovalnostni grafi ter množice posrednih in neposrednih tekmovalcev }
 
@@ -2620,18 +2623,19 @@ Poglejmo si še en pristop. Dirkače označimo z zaporedno številko glede na to
 
 % ra\-ču\-nal\-ni\-štvo
 
-\chapter{Sklepne ugotovitve}
+\chapter{Sklep}
 
-Uporaba \LaTeX{a} in \BibTeX{a} je v okviru Diplomskega seminarja \textbf{obvezna}!
-Izbira \LaTeX\ ali ne \LaTeX\ pri pisanju dejanske diplomske naloge pa je pre\-pu\-šče\-na dogovoru med vami in vašim mentorjem.
+V diplomskem delu smo si pogledali kaj so inverzije permutacij, njihove lastnosti in kako definirajo permutacijske in tekmovalnostne grafe.
 
-Res je, da so prvi koraki v \LaTeX{}u težavni. 
-Ta dokument naj vam služi kot začetna opora pri hoji.
-Pri kakršnihkoli nadaljnih vprašanjih ali napakah pa svetujem uporabo Googla, saj je spletnih strani za pomoč pri odpravljanju težav pri uporabi \LaTeX{}a ogromno.
+Diplomsko delo smo začeli s ponovitvijo nekaterih osnovnih pojmov, notacij in definicij, s področja teorije grafov, algebre in teorije množic, ki so ključni za nadaljno razumevanje.
 
-Preden diplomo oddate na sistemu STUDIS, še enkrat preverite, če so slovenske besede, ki vsebujejo črke s strešicami,  pravilno deljene.
-Poravnavo po vrsticah pa kontrolirajte tako, da izvorno datoteko prevedete z opcijo \texttt{draft}, kar vam pokaže predolge vrstice.
+Nato smo definirali permutacije in pokazali nekaj načinov kako jih lahko zapišemo. Povedali smo, da je množica vseh permutacij z $n$ elementi skupaj z operacijo kompozitum simetrična grupa. Permutacijska grupa je vsaka podgrupa simetrične grupe ter po Cayleyevem izreku je vsaka grupa izomorfna neki permutacijski grupi.
 
+V nadaljevanju smo povedali kaj so inverzije neke permutacije. Pokazali smo kako lahko permutacije delno uredimo s pomočjo Bruhatovih delnih urejenosti. Šibka Bruhatova delna urejenost nam pove, da lahko vsako permutacijo z $i$ inverzijami uredimo, z natanko $i$ transpozicijami sosednih elementov. Zatem smo pokazali kako pridemo do rodovne funkcije, ki nam šteje število permutacij množice $[n]$ z $i$ inverzijami. Potem smo pokazali kako lahko množico permutacij $S_n$ uredimo in tako vsaki permutaciji iz množice $S_n$ dodelimo celo število $N$, kjer je $0 \leq N \leq n!$. To lahko naredimo s pomočjo Lehmerjeve kode ali vektorja inverzij.
+
+V naslednjem delu smo se posvetili permutacijskim grafom. Najprej smo jih karakterizirali s pomočjo kohezivnega zaporedja grafa. Potem smo se osredotočili na drevesa, ki so permutacijski grafi. Ugotovili smo, da so to ravno gosenice. Pokazali smo, da obstajata natanko dve permutaciji iz $S_n$, ki imata permutacijski graf izomorfen neki gosenici na $n \geq 3$ vozliščih. Nato smo predstavili kako lahko konstruiramo permutacijske grafe s pomočjo kompozicije grafov.
+
+V zadnjem delu smo si pogledali kaj so tekmovalnostni grafi. Povedali smo kaj so rangiranja, kdaj par vozlišč tekmuje, kako je tekmovalnost dveh vozlišč povezana z inverzijami permutacij, kaj je tekmovalnostna množica, kaj je množica tekmovalcev ter kaj je množica posrednih in neposrednih tekmovalcev. Nato smo povedali kaj so primerljivostni grafi in ugotovili, da so permutacijski grafi tako primerljivosti kot tekmovalnostni grafi. Definirali smo tudi delno kohezivno zaporedje vozlišč ter pokazali, da je vsak tekmovalnostni graf delno koheziven. Zatem smo predstavili algoritem za izračun množice posrednih in neposrednih tekmovalcev direktno iz množice rangiranj brez predhodnega izračuna tekmovalnostnega grafa. Pokazali smo tudi kako so množice posrednih in neposrednih tekmovalcev urejene. Na koncu smo algoritem uporabili na resničnih podatkih. Ker so bili podatki iz špotra, kjer so velike spremembe rangiranj pogoste, smo ugotovili, da če želimo pridobiti uporabne informacije, moramo algoritem uporabiti na manjšem številu rangiranj. Prvi prikazan način je izbira nekaterih rangiranj. Drugi prikazan način pa je izbira nekaj zaporednih rangiranj. Pri drugem načinu tako lahko vidimo formo športkov skozi čas. Treba pa je povdariti, da sta oba načina pomanjkliva. Pri prvem je težava, da dobimo informacije iz neke podmnožice rangiranj. Te informacije so lahko zelo variabilne. Pri drugem načinu je težava v tem, da ne dobimo veliko informacij o športnikih, ki so v tem zaporedju imeli en slab rezultat. Rezultate algoritma bi morda lahko izboljšali s pomočjo predprocesiranja podatkov. Na primer v primeru odstopa športnika, ga lahko kaznujemo z uvrstitvijo na njegovo rahlo podpovprečno mesto, namesto da ga diskvalifikaciramo.
 
 \cleardoublepage
 \addcontentsline{toc}{chapter}{Literatura}

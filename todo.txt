@@ -13,8 +13,9 @@ prosnja za izredni dvig teme
 na osnovi odobrene prejsne prosim za temo pri novem mentorju
 
 
-na zacetku poglavja malo uvoda
+
 
 uvod: kaj, zakaj, kako
-abstract, povzetek
+
+
 zaključek, sklep

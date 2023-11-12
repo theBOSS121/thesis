@@ -21,5 +21,5 @@
 \contentsline {section}{\numberline {5.1} Tekmovalnostni grafi ter množice posrednih in neposrednih tekmovalcev }{37}{section.5.1}%
 \contentsline {section}{\numberline {5.2} Algoritem za izračun množice posrednih in neposrednih tekmovalcev }{42}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Uporaba algoritma na resničnih podatkih}{49}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Sklepne ugotovitve}{53}{chapter.6}%
+\contentsline {chapter}{\numberline {6}Sklep}{53}{chapter.6}%
 \contentsline {chapter}{Literatura}{55}{chapter.6}%
