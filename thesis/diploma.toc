@@ -5,7 +5,7 @@
 \contentsline {chapter}{Abstract}{}{chapter*.2}%
 \babel@toc {slovene}{}\relax 
 \contentsline {chapter}{\numberline {1}Uvod}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1} Notacija, oznake in definicije }{1}{section.1.1}%
+\contentsline {section}{\numberline {1.1} Notacija, oznake in definicije }{2}{section.1.1}%
 \contentsline {chapter}{\numberline {2} Permutacije }{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1} Zapis permutacij }{6}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Simetrična in permutacijska grupa}{7}{section.2.2}%
