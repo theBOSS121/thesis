@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex diploma"] 1699880880 "diploma.aux" "diploma.bbl" "diploma" 1699890020 0
+["bibtex diploma"] 1699880880 "diploma.aux" "diploma.bbl" "diploma" 1699949559 0
   "./literatura.bib" 1699209690 2103 c475d27e6b3c2cdb4fdc0d9aa88e61aa ""
   "c:/texlive/2023/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1697219399 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "diploma.aux" 1699890019 14508 16c5a7825b11bc4884d6502cc56a48a9 "pdflatex"
+  "diploma.aux" 1699949558 14508 16c5a7825b11bc4884d6502cc56a48a9 "pdflatex"
   (generated)
   "diploma.bbl"
   "diploma.blg"
   (rewritten before read)
-["pdflatex"] 1699890016 "c:/Users/Luka/source/isrm/thesis/thesis/diploma.tex" "diploma.pdf" "diploma" 1699890020 0
-  "c:/Users/Luka/source/isrm/thesis/thesis/diploma.tex" 1699890014 162844 6ca8d390cf17921f2adf07113a9eba79 ""
+["pdflatex"] 1699949555 "c:/Users/Luka/source/isrm/thesis/thesis/diploma.tex" "diploma.pdf" "diploma" 1699949559 0
+  "c:/Users/Luka/source/isrm/thesis/thesis/diploma.tex" 1699949553 162849 a2bb0a5ed1d0ddb23eae13b86094856d ""
   "c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1697213653 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1697215677 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1697214843 1536 06717a2b50de47d4087ac0e6cd759455 ""
@@ -206,12 +206,12 @@
   "c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1697224407 4750288 b9e32a962a7e89ce3e18dd08022e1c68 ""
   "c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1697224515 8195351 f0c12f76edf2bf3522a5e617f308faa1 ""
   "c:/texlive/2023/texmf.cnf" 1697224385 713 baa45e065482d44c4cd81b98ef72c63b ""
-  "diploma.aux" 1699890019 14508 16c5a7825b11bc4884d6502cc56a48a9 "pdflatex"
+  "diploma.aux" 1699949558 14508 16c5a7825b11bc4884d6502cc56a48a9 "pdflatex"
   "diploma.bbl" 1699880881 2344 43c44bbdcf09f1b807f4d015bfeb38b1 "bibtex diploma"
-  "diploma.out" 1699890019 3891 0a66649937aeac1e17db8cc4cd685cce "pdflatex"
-  "diploma.toc" 1699890019 1844 9f30237962660ef0e51cf465e15dbf19 "pdflatex"
+  "diploma.out" 1699949558 3891 0a66649937aeac1e17db8cc4cd685cce "pdflatex"
+  "diploma.toc" 1699949558 1844 9f30237962660ef0e51cf465e15dbf19 "pdflatex"
   "pdfa-1b.xmp" 1697210330 4334 479cc641e5392dfefe9617dab6275493 ""
-  "pdfa-1b.xmpi" 1699890017 2336 c464c463f67f1dad56ae46e5df48f10a "pdflatex"
+  "pdfa-1b.xmpi" 1699949556 2344 028f1f769c9aa1792825b034df88e449 "pdflatex"
   (generated)
   "diploma.aux"
   "diploma.log"
