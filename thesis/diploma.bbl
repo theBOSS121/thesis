@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{9}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -7,61 +7,50 @@
 
 \bibitem[fac()]{factorialNumberSystem}
 {Factorial number system}.
-\newblock Dosegljivo:
-  \url{https://en.wikipedia.org/wiki/Factorial_number_system}.
-\newblock [Dostopano: 11. 1. 2023].
-
-\bibitem[inv()]{inversion}
-{Inversion (discrete mathematics)}.
-\newblock Dosegljivo:
-  \url{https://en.wikipedia.org/wiki/Inversion_(discrete_mathematics)}.
-\newblock [Dostopano: 11. 1. 2023].
-
-\bibitem[per({\natexlab{a}})]{permutation}
-{Permutation}.
-\newblock Dosegljivo: \url{https://en.wikipedia.org/wiki/Permutation},
-  {\natexlab{a}}.
-\newblock [Dostopano: 11. 1. 2023].
-
-\bibitem[per({\natexlab{b}})]{permutationGraph}
-{Permutation graph}.
-\newblock Dosegljivo: \url{https://en.wikipedia.org/wiki/Permutation_graph},
-  {\natexlab{b}}.
-\newblock [Dostopano: 11. 1. 2023].
-
-\bibitem[per({\natexlab{c}})]{permutationGroup}
-{Permutation group}.
-\newblock Dosegljivo: \url{https://en.wikipedia.org/wiki/Permutation_group},
-  {\natexlab{c}}.
-\newblock [Dostopano: 11. 1. 2023].
+\newblock Dosegljivo: \url{https://en.wikipedia.org/wiki/Factorial_number_system}.
+\newblock [Dostopano: 18. 1. 2023].
 
 \bibitem[Brualdi and Dahl(2023)]{weakBruhatOrder}
 Richard~A Brualdi and Geir Dahl.
-\newblock Permutation graphs and the weak bruhat order.
+\newblock Permutation graphs and the weak {B}ruhat order.
 \newblock \emph{The Art of Discrete and Applied Mathematics}, 2023.
 
-\bibitem[Criado et~al.(2016)Criado, Garc{\'\i}a, Pedroche, and
-  Romance]{setsOfRankings}
+\bibitem[Criado et~al.(2016)Criado, Garc{\'\i}a, Pedroche, and Romance]{setsOfRankings}
 Regino Criado, Esther Garc{\'\i}a, Francisco Pedroche, and Miguel Romance.
 \newblock On graphs associated to sets of rankings.
-\newblock \emph{Journal of computational and applied mathematics},
-  291:\penalty0 497--508, 2016.
+\newblock \emph{Journal of computational and applied mathematics}, 291:\penalty0 497--508, 2016.
 
-\bibitem[Gervacio et~al.(2013)Gervacio, Rapanut, and
-  Ramos]{charectarizationPermutationGraphs}
+\bibitem[Gervacio et~al.(2013)Gervacio, Rapanut, and Ramos]{charectarizationPermutationGraphs}
 Severino~V Gervacio, Teofina~A Rapanut, and Phoebe Chloe~F Ramos.
 \newblock Characterization and construction of permutation graphs.
-\newblock 2013.
+\newblock \emph{Open Journal of Discrete Mathematics}, 3\penalty0 (1):\penalty0 33--38, 2013.
+
+\bibitem[Golumbic(1980)]{algorithmGraphTheoryAndPerfectGraphs}
+Martin~Charles Golumbic.
+\newblock \emph{Algorithmic graph theory and perfect graphs}.
+\newblock Elsevier, 1980.
+
+\bibitem[Kleinberg and Tardos(2005)]{algorithmDesign}
+Jon Kleinberg and Éva Tardos.
+\newblock Algorithm design.
+\newblock Dosegljivo: \url{https://web.cs.ucla.edu/~srinath/static/pdfs/AlgorithmDesign_%20EvaTardos.pdf}, 2005.
+\newblock [Dostopano: 18. 11. 2023].
 
 \bibitem[Margolius(2001)]{generatingFunction}
 Barbara~H Margolius.
 \newblock Permutations with inversions.
-\newblock \emph{Journal of Integer Sequences}, 4\penalty0 (2):\penalty0 3,
-  2001.
+\newblock \emph{Journal of Integer Sequences}, 4\penalty0 (2), 2001.
+
+\bibitem[Skrekovski(2010)]{dsSkripta}
+Riste Skrekovski.
+\newblock Diskretne strukture {II} [{E}lektronski vir] : zapiski predavanj.
+\newblock Dosegljivo: \url{https://users.fmf.uni-lj.si/skreko/Gradiva/DS2-skripta.pdf}, 2010.
+\newblock [Dostopano: 18. 11. 2023].
 
 \bibitem[Zhao(2007)]{bruhatOrder}
 Yufei Zhao.
-\newblock On the bruhat order of the symmetric group and its shellability.
-\newblock \emph{preprint}, 2007.
+\newblock On the {B}ruhat order of the symmetric group and its shellability.
+\newblock Dosegljivo: \url{https://web.mit.edu/yufeiz/www/papers/bruhat.pdf}, 2007.
+\newblock [Dostopano: 18. 11. 2023].
 
 \end{thebibliography}

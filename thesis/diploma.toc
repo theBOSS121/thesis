@@ -6,20 +6,24 @@
 \babel@toc {slovene}{}\relax 
 \contentsline {chapter}{\numberline {1}Uvod}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1} Notacija, oznake in definicije }{2}{section.1.1}%
-\contentsline {chapter}{\numberline {2} Permutacije }{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1} Zapis permutacij }{6}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Simetrična in permutacijska grupa}{7}{section.2.2}%
-\contentsline {chapter}{\numberline {3} Inverzije }{9}{chapter.3}%
-\contentsline {section}{\numberline {3.1} Bruhatovi delni urejenosti }{10}{section.3.1}%
-\contentsline {section}{\numberline {3.2} Rodovna funkcija }{14}{section.3.2}%
-\contentsline {section}{\numberline {3.3} Lehmerjeva koda in vektor inverzij}{15}{section.3.3}%
-\contentsline {chapter}{\numberline {4} Permutacijski grafi }{19}{chapter.4}%
-\contentsline {section}{\numberline {4.1} Karakterizacija permutacijskih grafov }{19}{section.4.1}%
-\contentsline {section}{\numberline {4.2} Gosenice }{25}{section.4.2}%
-\contentsline {section}{\numberline {4.3} Konstrukcija permutacijskih grafov}{32}{section.4.3}%
-\contentsline {chapter}{\numberline {5} Tekmovalnostni grafi }{37}{chapter.5}%
-\contentsline {section}{\numberline {5.1} Tekmovalnostni grafi ter množice posrednih in neposrednih tekmovalcev }{37}{section.5.1}%
-\contentsline {section}{\numberline {5.2} Algoritem za izračun množice posrednih in neposrednih tekmovalcev }{42}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Uporaba algoritma na resničnih podatkih}{49}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Sklep}{53}{chapter.6}%
-\contentsline {chapter}{Literatura}{55}{chapter.6}%
+\contentsline {chapter}{\numberline {2} Permutacije in inverzije }{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1} Permutacije }{5}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1} Zapis permutacij }{6}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2} Simetrična in permutacijska grupa }{7}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2} Inverzije permutacij }{8}{section.2.2}%
+\contentsline {section}{\numberline {2.3} Bruhatovi delni urejenosti permutacij}{10}{section.2.3}%
+\contentsline {section}{\numberline {2.4} Rodovne funkcije permutacij }{14}{section.2.4}%
+\contentsline {section}{\numberline {2.5} Lehmerjeva koda in vektor inverzij}{16}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1} Faktorski številski sistem }{16}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2} Pretvorba med Lehmerjevo kodo ali vektorjem inverzij in številom }{18}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3} Pretvorba med Lehmerjevo kodo ali vektorjem inverzij in permutacijo }{18}{subsection.2.5.3}%
+\contentsline {chapter}{\numberline {3} Permutacijski grafi }{23}{chapter.3}%
+\contentsline {section}{\numberline {3.1} Karakterizacija permutacijskih grafov }{23}{section.3.1}%
+\contentsline {section}{\numberline {3.2} Gosenice }{29}{section.3.2}%
+\contentsline {section}{\numberline {3.3} Konstrukcija permutacijskih grafov}{36}{section.3.3}%
+\contentsline {chapter}{\numberline {4} Tekmovalnostni grafi }{41}{chapter.4}%
+\contentsline {section}{\numberline {4.1} Tekmovalnostni grafi ter množice posrednih in neposrednih tekmovalcev }{41}{section.4.1}%
+\contentsline {section}{\numberline {4.2} Algoritem za izračun množice posrednih in neposrednih tekmovalcev }{46}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Uporaba algoritma na resničnih podatkih}{53}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Sklep}{57}{chapter.5}%
+\contentsline {chapter}{Literatura}{59}{chapter.5}%

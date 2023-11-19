@@ -382,7 +382,7 @@ Tekmovalnostni graf je generiran z množico permutacij oziroma rangiranj $R$. Vo
 
 Leta 2015 so Criado, García, Pedroche in Romance v ~\cite{setsOfRankings} predstavijo in analizirajo nekaj pomembnih množic vozlišč tekmovalnostnega grafa. Na primer množica tekmovalcev je množica vozlišč, kjer vsako vozlišče iz množice tekmuje z vsemi ostalimi vozlišči iz množice in množica posrednih in neposrednih tekmovalcev je množica vozlišč, kjer vsako vozlišče iz množice posredno ali neposredno tekmuje z vsemi vozlišči iz množice preko neke poti v grafu, kjer med seboj tekmujeta vsaki sosednji vozlišči na poti. Poleg tega predstavijo algoritem, ki ne potrebuje konstrukcije tekmovalnostnega grafa, za izračun množic posrednih in neposrednih tekmovalcev.
 
-Ostale informacije o permutacijah, inverzijah, permutacijskih grafih in faktorskem številskem sistemu so bile pridobiljene iz ~\cite{permutation}, ~\cite{inversion}, ~\cite{permutationGraph}, ~\cite{permutationGroup} in ~\cite{factorialNumberSystem}.
+Ostale informacije o permutacijah, inverzijah, permutacijskih grafih in faktorskem številskem sistemu so bile pridobiljene iz ~\cite{dsSkripta} in ~\cite{factorialNumberSystem}.
 
 % Našteti viri, da se pokažejo v literaturi:
 %  Karakterizacija in konstrukcija permutacijskih grafov~\cite{charectarizationPermutationGraphs}, Permutacijski grafi in šibka Bruhatova urejenost~\cite{weakBruhatOrder}, O Bruhatovi urejenosti in njeni ljuplivost~\cite{bruhatOrder}, O grafih povezanih z množicami rangiranj~\cite{setsOfRankings}, rodovna funkcija~\cite{generatingFunction}. Na spletnih straneh ~\cite{permutation}~\cite{inversion}~\cite{permutationGraph}~\cite{permutationGroup}~\cite{factorialNumberSystem}
@@ -390,7 +390,6 @@ Ostale informacije o permutacijah, inverzijah, permutacijskih grafih in faktorsk
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{ Notacija, oznake in definicije }
-Množico naravnih števil od 1 do n označimo z $[n] = \{ 1, 2,..., n\}$. $S_n$ je množica vseh permutacij na množici $[n]$. Permutacija $id \in S_n$ je podana s predpisom $id(a) = a$ za vsak $a \in [n]$.
 
 Graf $G = (V(G), E(G))$ ima množico vozlišč $V(G)$ in množico povezav $E(G)$. Premer grafa je najdaljša pot med dvema vozliščema. Disjunktna unija grafov je združitev dveh grafov v večji graf tako, da naredimo disjunktno unijo množic vozlišč in povezav. Komplement grafa $G$ označimo z $\overline{G}$ (nepovezave grafa $G$ so povezave grafa $\overline{G}$). $K_n$ je poln graf na $n$ vozliščih, $\overline{K_n}$ je nepovezan graf na $n$ vozliščih, $P_n$ je pot na $n$ vozliščih, $K_{n, k}$ je dvodelen graf z $n$ vozlišči v eni in $k$ vozlišči v drugi množici. Določiti smer povezave $uv$ grafa $G$ pomeni spremeniti $uv$ v urejen par $(u, v)$ ali $(v, u)$. Orientacija grafa $G$ je usmerjen graf pridobljen tako, da vsaki povezavi grafa $G$ določimo smer.
 
@@ -430,74 +429,92 @@ Za relacijo $R$ rečemo, da je:
 \end{definicija}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{ Permutacije }
+\chapter{ Permutacije in inverzije }
 
-Permutacije so razporeditve elementov neke množice v določenem vrstnem redu. Pomembne so v matematiki, računalništvu in na številnih drugih področjih. V tem poglavju bomo definirali permutacije, pogledali kako jih lahko predstavimo in pokazali, da so permutacije množice $[n]$ skupaj s kompozitumom grupa.
+V tem poglavju bomo definirali permutacije, pogledali kako jih lahko predstavimo in pokazali, da so permutacije množice $[n]$ skupaj s kompozitumom grupa. Nato bomo definirali inverzije permutacije, pogledali kako sta definirani Bruhatovi delni urejenosti, pokazali, kako zapišemo rodovno funkcijo za število permutacij množice $[n]$ z $i$ inverzijami, in si ogledali, kako lahko uredimo množico $S_n$ in tako permutacije identificiramo s celimi števili.
+
+\section{ Permutacije }
+
+Množico naravnih števil od 1 do n označimo z $[n] = \{ 1, 2,..., n\}$.
+Permutacije so prerazporeditve elementov neke končne množice. Elemente te množice lahko oštevilčimo s števili $1, 2, ..., n$, zato bomo brez škode za splošnost permutacije gledali na množici $[n]$. 
+$S_n$ je množica vseh permutacij na množici $[n]$.
+Permutacije so pomembne v matematiki, računalništvu in na številnih drugih področjih. 
+
+
 
 \begin{definicija}
-Bijektivni preslikavi $\pi: [n] \rightarrow [n]$ rečemo permutacija (slika \ref{bijektivna_preslikava_n_n}).
+Bijektivni preslikavi $\pi: [n] \rightarrow [n]$ rečemo permutacija.
 \end{definicija}
-\begin{figure}[h]
-    \begin{center}        
-        \begin{tikzpicture}[shorten >=1pt,-]
-            \tikzstyle{vertex}=[circle,draw=black!0,fill=white!25,minimum size=20pt,inner sep=0pt]
-            \foreach \num/\y in {1/1, 2/2, 3/3, 4/4, 5/5}
-                \node[vertex] (V-\num) at (0,5-\y) {$\num$};
-            \foreach \num/\y in {1/1, 2/2, 3/3, 4/4, 5/5}
-                \node[vertex] (VV-\num) at (5, 5-\y) {$\num$};
-        
-            \foreach \from/\to in {1/3, 2/2, 3/5, 4/1, 5/4}
-                \draw[-latex] (V-\from) -- (VV-\to);
-        \end{tikzpicture}     
-    \end{center}
-    \caption{Bijektivna preslikava $[5] \rightarrow [5]$.}
-    \label{bijektivna_preslikava_n_n}
-\end{figure}
 
-\section{ Zapis permutacij }
-Permutacijo lahko zapišemo na različne načine. 
-Zapis permutacije $\pi$ kot vodoravna tabela:
+\subsection{ Zapis permutacij }
+Permutacijo $\pi$ lahko zapišemo z vodoravno tabelo:
 \[
     \pi = \begin{pmatrix}
         1 & 2 & \cdot\cdot\cdot & n \\
         \pi(1) & \pi(2) & \cdot\cdot\cdot & \pi(n)
     \end{pmatrix}.
 \]
-Ker gledamo permutacije na množici $[n]$, ki ima naravno urejenost, lahko zgornjo vrstico izpustimo:
+Ker ima množica $[n]$ naravno urejenost $1 \leq 2 \leq \cdot\cdot\cdot \leq n$, lahko zgornjo vrstico izpustimo in $\pi$ predstavimo zgolj s spodnjo vrstico:
 \[
-    \pi = (\pi(1), \pi(2), \cdot\cdot\cdot, \pi(n)) = (\pi_1, \pi_2, \cdot\cdot\cdot, \pi_n).
+    \pi = (\pi(1), \pi(2), \cdot\cdot\cdot, \pi(n)) = (\pi_1, \pi_2, \cdot\cdot\cdot, \pi_n),
 \]
+kjer je $\pi_i = \pi(i)$.
 Temu zapisu bomo rekli enovrstični zapis permutacije.
-Permutacijo lahko zapišemo tudi kot produkt disjunktnih ciklov:
+Permutacijo lahko zapišemo tudi s produktom disjunktnih ciklov:
 \[
-    \pi = (a_1 a_2 \cdot\cdot\cdot a_i)(b_1 b_2 \cdot\cdot\cdot b_j) \cdot\cdot\cdot (c_1 c_2 \cdot\cdot\cdot c_k).
+    \pi = (a_1 a_2 \cdot\cdot\cdot a_{i_1})(b_1 b_2 \cdot\cdot\cdot b_{i_2}) \cdot\cdot\cdot (c_1 c_2 \cdot\cdot\cdot c_{i_k}).
 \]
 Ta zapis nam pove, da je:
 \begin{align*}
-    \pi(a_1) &= a_2, & \pi(a_2) &= a_3, & \cdot&\cdot\cdot & \pi(a_{i-1}) &= a_i, & \pi(a_i) &= a_1 \\
-    \pi(b_1) &= b_2, & \pi(b_2) &= b_3, & \cdot&\cdot\cdot & \pi(b_{j-1}) &= b_j, & \pi(b_j) &= b_1 \\
+    \pi(a_1) &= a_2, & \pi(a_2) &= a_3, & \cdot&\cdot\cdot & \pi(a_{i_1-1}) &= a_{i_1}, & \pi(a_{i_1}) &= a_1 \\
+    \pi(b_1) &= b_2, & \pi(b_2) &= b_3, & \cdot&\cdot\cdot & \pi(b_{i_2-1}) &= b_{i_2}, & \pi(b_{i_2}) &= b_1 \\
     &&&& \cdot&\cdot\cdot \\
-    \pi(c_1) &= c_2, & \pi(c_2) &= c_3, & \cdot&\cdot\cdot & \pi(c_{k-1}) &= c_k, & \pi(c_k) &= c_1.
+    \pi(c_1) &= c_2, & \pi(c_2) &= c_3, & \cdot&\cdot\cdot & \pi(c_{i_k-1}) &= c_{i_k}, & \pi(c_{i_k}) &= c_1.
 \end{align*}
 
 \begin{primer}
-    Naj bo $\pi \in S_5$, $\pi(1) = 3$, $\pi(2) = 5$, $\pi(3) = 1$, $\pi(4) = 4$ in $\pi(5) = 2$. Zapis permutacije $\pi$ kot vodoravna tabela:
+    Naj bo $\pi \in S_5$, $\pi(1) = 3$, $\pi(2) = 5$, $\pi(3) = 1$, $\pi(4) = 4$ in $\pi(5) = 2$ (slika \ref{bijektivna_preslikava_n_n}). 
+
+    \begin{figure}[h]
+        \begin{center}        
+            \begin{tikzpicture}[shorten >=1pt,-]
+                \tikzstyle{vertex}=[circle,draw=black!0,fill=white!25,minimum size=20pt,inner sep=0pt]
+                \foreach \num/\y in {1/1, 2/2, 3/3, 4/4, 5/5}
+                    \node[vertex] (V-\num) at (0,5-\y) {$\num$};
+                \foreach \num/\y in {1/1, 2/2, 3/3, 4/4, 5/5}
+                    \node[vertex] (VV-\num) at (5, 5-\y) {$\num$};
+            
+                \foreach \from/\to in {1/3, 2/5, 3/1, 4/4, 5/2}
+                    \draw[-latex] (V-\from) -- (VV-\to);
+            \end{tikzpicture}     
+        \end{center}
+        \caption{Primer bijektivne preslikave (permutacije) $\pi = (3, 5, 1, 4, 2)$.}
+        \label{bijektivna_preslikava_n_n}
+    \end{figure}
+
+    Permutacijo $\pi$ zapišemo z vodoravno tabelo in enovrstičnim zapisom na naslednji način:
     \[
         \pi = \begin{pmatrix}
             1 & 2 & 3 & 4 & 5 \\
             3 & 5 & 1 & 4 & 2
-        \end{pmatrix}
+        \end{pmatrix},
     \]
     \[
-        \pi = (3, 5, 1, 4, 2) = (3 5 1 4 2) = 35142
+        \pi = (3, 5, 1, 4, 2).
     \]
-    Če so vsi elementi permutacije manjši od 10 lahko med številkami izpustimo vejice. Pri tem moramo vedeti, da to ni zapis permutacije z disjunktnimi cikli.
-    Včasih izpustimo tudi oklepaje.
-    Zapis permutacije $\pi$ kot produkt disjunktnih ciklov:
+    Če so vsi elementi permutacije manjši od 10, bomo med številkami izpustili vejice. Včasih izpustimo tudi oklepaje. Pri tem moramo vedeti, da to ni zapis permutacije z disjunktnimi cikli.
     \[
-        \pi = (1 3)(2 5)(4) = (1 3)(2 5)
+        \pi = (3 5 1 4 2) = 35142
     \]
-    Če vemo koliko elementov ima permutacija, lahko cikle dolžine ena izpustimo. Zapis permutacije $\pi$ kot produkt disjunktnih ciklov ni enoličen, saj lahko na začetek vsakega cikla postavimo poljuben element iz tega cikla.
+    Permutacijo $\pi$ zapišemo s produktom disjunktnih ciklov na naslednji način:
+    \[
+        \pi = (1 3)(2 5)(4).
+    \]
+    Če vemo koliko elementov ima permutacija, lahko cikle dolžine ena izpustimo. 
+    \[
+        \pi = (1 3)(2 5)
+    \]
+    Zapis permutacije $\pi$ kot produkt disjunktnih ciklov ni enoličen, saj lahko na začetek vsakega cikla postavimo poljuben element iz tega cikla.
     \[
         \pi = (3 1)(5 2)
     \]
@@ -505,10 +522,14 @@ Ta zapis nam pove, da je:
 
 V nadaljevanju bomo za zapis permutacije uporabljali enovrstični zapis razen, kjer bo navedeno drugače.
 
-\section{Simetrična in permutacijska grupa}
+\subsection{ Simetrična in permutacijska grupa }
+
+Naj bo $id \in S_n$ permutacija podana s predpisom $id(a) = a$ za vsak $a \in [n]$.
+
+Kompozitum preslikav, ki ga označimo z $\circ$, je operacija na množici preslikav. Kompozitum preslikav $\pi \circ \sigma$ je taka preslikava, ki najprej element preslika z $\sigma$, nato pa dobljeni element preslika še s $\pi$.
 
 \begin{trditev}
-    Naj bo $\circ$ kompozitum permutacij. $(S_n, \circ)$ je grupa.
+    $(S_n, \circ)$ je grupa.
 \end{trditev}
 \begin{dokaz}
     \begin{enumerate}
@@ -519,32 +540,34 @@ V nadaljevanju bomo za zapis permutacije uporabljali enovrstični zapis razen, k
         \[
             (\pi \circ (\sigma \circ \tau))(i) = \pi((\sigma \circ \tau)(i)) = \pi(\sigma(\tau(i))) 
         \]
-        \item Enota: Za vsaka $\pi \in S_n$ in $i \in [n]$ velja:
+        \item Obstoj enote: Za vsaka $\pi \in S_n$ in $i \in [n]$ velja:
         \[
             (\pi \circ id)(i) = \pi(id(i)) = \pi(i)
         \]
         \[
             (id \circ \pi)(i) = id(\pi(i)) = \pi(i)
         \]
-        \item Inverz: Naj bo $\pi \in S_n$. Ker je $\pi$ bijekcija, obstaja $\pi^{-1} \in S_n$.
+        \item Obstoj inverza: Naj bo $\pi \in S_n$. Ker je $\pi$ bijekcija, obstaja $\pi^{-1} \in S_n$.
         \[
             \pi \circ \pi^{-1} = \pi^{-1} \circ \pi = id
         \]
     \end{enumerate}
-    % \qedhere
+    S pomočjo zgornjih lastnosti smo pokazali, da je $(S_n, \circ)$ grupa.
 \end{dokaz}
 
-Grupi $(S_n, \circ)$ rečemo simetrična grupa. Permutacijska grupa je podgrupa simetrične grupe. Po Cayleyevem izreku je vsaka grupa izomorfna neki permutacijski grupi.
+\begin{definicija}
+    Grupi $(S_n, \circ)$ rečemo simetrična grupa. Vsaki podgrupi simetrične grupe rečemo permutacijska grupa.
+\end{definicija}
+Po Cayleyevem izreku \cite{dsSkripta} je vsaka grupa izomorfna neki permutacijski grupi.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{ Inverzije }
+\section{ Inverzije permutacij }
 
-Inverzija permutacije je par elementov, ki sta v obratnem vrstem redu kot v permutaciji $(1, 2,..., n)$. Število inverzij nam meri stopnjo neurejenosti oziroma oddaljenost permutacije od urejenega zaporedja. V tem poglavju bomo definirali inverzije, pogledali kako sta definirani Bruhatovi delni urejenosti, pokazali kako pridemo do rodovne funkcije za število permutacij množice $[n]$ z $i$ inverzijami in si ogledali kako lahko uredimo množico $S_n$ in tako permutacije identificiramo s celimi števili.
-
+V tem podpoglavju bomo najprej definirali inverzijo permutacije, ki je par elementov, ki sta v obratnem vrstem redu kot v identični permutaciji. Število inverzij nam meri stopnjo neurejenosti permutacije oziroma oddaljenost permutacije od identične permutacije. 
 
 \begin{definicija}
-    Inverzija permutacije $\sigma = (a_1, a_2,... a_n) \in S_n$ je urejen par $(a_i, a_j)$, kjer je $i < j$ $(\sigma^{-1}(a_i) < \sigma^{-1}(a_j))$ in $a_i > a_j$. Množico vseh inverzij permutacije $\sigma$ označimo z $I_{\sigma}$.
+    Inverzija permutacije $\sigma = (a_1, a_2,... a_n) \in S_n$ je urejen par $(a_i, a_j)$, kjer je $i < j$ in $a_i > a_j$. Množico vseh inverzij permutacije $\sigma$ označimo z $I_{\sigma}$. Pozicijski zapis inverzije $(a_i, a_j)$ je $(i, j)$.
 \end{definicija}
 
 \begin{figure}[h]
@@ -568,26 +591,22 @@ Inverzija permutacije je par elementov, ki sta v obratnem vrstem redu kot v perm
     \label{permutacija_4213}
 \end{figure}
 
-Število inverzij permutacije $\sigma$ je enako številu inverzij permutacije $\sigma^{-1}$. Še več, če ima $\sigma$ inverzije $(a_{i_1}, a_{j_1}), ...., (a_{i_k}, a_{j_k})$, potem ima $\sigma^{-1}$ inverzije $(j_1, i_1), ...., (j_k, i_k)$.
+Število inverzij permutacije $\sigma$ je enako številu inverzij permutacije $\sigma^{-1}$. Še več, če ima $\sigma$ inverzije $(a_{i_1}, a_{j_1}), ..., (a_{i_k}, a_{j_k})$, potem ima $\sigma^{-1}$ inverzije $(j_1, i_1), ...., (j_k, i_k)$. Iz dejstva, da je $(a_i, a_j)$ inverzija permutacije $\sigma$ sledi, da je $\sigma^{-1}(a_i) = i < j = \sigma^{-1}(a_j)$ in $\sigma(i) = a_i > a_j = \sigma(j)$. Torej je $(j, i)$ inverzija permutacije $\sigma^{-1}$.
 
 \begin{primer}
-    Naj bo $\sigma = (4, 2, 1, 3)$ kot na sliki \ref{permutacija_4213}. Inverzije permutacije $\sigma$ so $(4, 2), (4, 1), (4, 3), (2, 1)$. Pozicije inverzij permutacije $\sigma$ so sledeči pari: $(1, 2), (1, 3), (1, 4), (2, 3)$. Inverz permutacije $\sigma$ je $\sigma^{-1} = (3, 2, 4, 1)$, inverzije permutacije $\sigma^{-1}$ so $(3, 2), \ab (3, 1), (2, 1), (4, 1)$. Opazimo, da so to ravno obrnjeni pari pozicij inverzij permutacije $\sigma$.
+    Naj bo $\sigma = (4, 2, 1, 3)$ kot na sliki \ref{permutacija_4213}. Inverzije permutacije $\sigma$ so $(4, 2), (4, 1), (4, 3), (2, 1)$. Pozicijski zapisi inverzij permutacije $\sigma$ so $(1, 2), (1, 3), (1, 4), (2, 3)$. Inverz permutacije $\sigma$ je $\sigma^{-1} = (3, 2, 4, 1)$. Inverzije permutacije $\sigma^{-1}$ so $(3, 2), (3, 1), (2, 1), (4, 1)$. To so ravno obrnjeni pozicijski zapisi inverzij permutacije $\sigma$.
 \end{primer}
 
-Urejena permutacija $(1, 2, ..., n)$ nima inverzij. Največ inverzij ima permutacija $(n, n-1, ..., 1)$. V tem primeru je vsak par različnih števil v inverziji. Izborov dveh elementov izmed $n$ pa je ravno $\binom{n}{2}$.
+Urejena permutacija $id = (1, 2, ..., n)$ nima inverzij. Največ inverzij ima permutacija $(n, n-1, ..., 1)$. V tem primeru je vsak par različnih števil v inverziji. Število izborov dveh elementov izmed $n$ je ravno $\binom{n}{2}$, torej je $|I_{(n, n-1, ..., 1)}| = \binom{n}{2}$.
 
-Število inverzij je enako številu presečišč v puščičnem diagramu permutacije (slika \ref{permutacija_4213}).
+Število inverzij je enako številu presečišč v puščičnem diagramu permutacije (slika \ref{permutacija_4213}). To je res, saj vsaka inverzija $(a_i, a_j)$ ustreza presečišču puščic, ki izhajajata iz $i, j$ in gresta proti $a_i, a_j$, saj je $a_i > a_j$ in $i < j$.
 
-Standardne primerjalne algoritme razvrščanja, kot je na primer merge sort, lahko prilagodimo tako, da izračunamo število inverzij neke permutacije v času $O(n \cdot log(n))$.
+Standardne primerjalne algoritme razvrščanja, kot je na primer merge sort, lahko prilagodimo tako, da izračunamo število inverzij neke permutacije iz $S_n$ v času $O(n \cdot \log(n))$ \cite{algorithmDesign}.
 
-\section{ Bruhatovi delni urejenosti }
+\section{ Bruhatovi delni urejenosti permutacij}
 
 \begin{definicija}    
-    (Močna) Bruhatova  delna urejenost na množici $S_n$ je tranzitivno refleksivna ovojnica relacije $\preceq_{B}$, ki jo definiramo kot $\sigma \preceq_{B} (ij) \cdot \sigma$, če je $|I_{(ij) \cdot \sigma}| = |I_{\sigma}| + 1$, kjer je $(ij)$ zapis transpozicije elementov na pozicijah $i$ in $j$ (slika \ref{bruhatova_urejenost_S4}).
-\end{definicija}
-
-\begin{definicija}
-Naj bosta $\sigma, \pi \in S_n$. Permutacija $\sigma$ je manjša ali enaka od permutacije $\pi$ v šibki Bruhatovi delni urejenosti, kar označimo z $\sigma \preceq_b \pi$, če je $I_{\sigma} \subseteq I_{\pi}$ (slika \ref{sibka_bruhatova_urejenost_S4}). Sledi, da lahko $\sigma$ pridobimo iz $\pi$ z zaporedjem transpozicij sosenih elementov, pri čemer vsaka transpozicija zmanjša število inverzij za ena.
+    (Krepka) Bruhatova  delna urejenost na množici $S_n$ je tranzitivno refleksivna ovojnica relacije $\preceq_{B}$, ki jo definiramo kot $\sigma \preceq_{B} (ij) \cdot \sigma$, če je $|I_{(ij) \cdot \sigma}| = |I_{\sigma}| + 1$, kjer je $(ij)$ zapis transpozicije elementov na pozicijah $i$ in $j$.
 \end{definicija}
 
 \begin{figure}[h]
@@ -617,20 +636,17 @@ Naj bosta $\sigma, \pi \in S_n$. Permutacija $\sigma$ je manjša ali enaka od pe
     \label{bruhatova_urejenost_S4}
 \end{figure}
 
-Naslednja lema nam pove kaj se zgodi z množicami inverzij $I_{\pi}$ in $I_{\sigma}$ permutacij $\pi$ in $\sigma$, kjer eno pridobimo iz druge s poljubno transpozicijo.
-
-\begin{lema}
-    Naj bo $1 \leq k < l \leq n$, $\pi = (i_1, ..., i_{k-1}, i_k, ..., i_l, i_{l+1}, ..., i_n)$, kjer je $i_k > i_l$, in $\sigma = (i_1, ..., i_{k-1}, i_l, ..., i_k, i_{l+1}, ..., i_n)$, pridobljena iz $\pi$ s transpozicijo elementov $i_k$ in $i_l$. Poglejmo si particijo množice $L = \{ k, k+ 1, ...., l\}$ v množice $L_1, L_2, L_3$ in $\{ k, l \}$, kjer so:
+\begin{primer}
+    Naj bo $\sigma = (1, 2, 4, 3) \in S_4$ in $\pi = (2, 3, 4, 1) \in S_4$ (slika \ref{bruhatova_urejenost_S4}). $\sigma$ manjša od $\pi$ v (krepki) Bruhatovi delni urejenosti, ker velja:
     \[
-        L_1 = \{ s \in L: i_s > i_k \}, L_2 = \{ s \in L: i_k > i_s > i_l \}, L_3 = \{ s \in L: i_s < i_l \}.
+        \sigma = (1, 2, 4, 3) \preceq_{B} (2, 1, 4, 3) \preceq_{B} (2, 3, 4, 1) = \pi.
     \]
-    Množici inverzij $I_{\pi}, I_{\sigma}$ permutacij $\pi, \sigma$ imata razliki:
-    \begin{align}
-        I_{\pi} \setminus I_{\sigma} &= \{ (i_k, i_l) \} \cup \{ (i_k, i_s): s \in L_2 \cup L_3 \} \cup \{ (i_s, i_l): s \in L_1 \cup L_2 \}, \notag \\
-        I_{\sigma} \setminus I_{\pi} &= \{ (i_l, i_s): s \in L_3 \} \cup \{ (i_s, i_k): s \in L_1 \}. \notag
-    \end{align}
-    Vidimo, da je $\sigma \preceq_b \pi$ ($I_{\sigma} \subseteq I_{\pi}$) natanko tedaj, ko za vsak $s$, kjer je $k < s < l$, velja $i_k > i_s > i_l$ ($I_{\sigma} \setminus I_{\pi} = \emptyset$). Zato je $\sigma \preceq_b \pi$ natanko tedaj, ko lahko pridobimo $\sigma$ iz $\pi$ z zaporedjem transpozicij sosednjih elementov, ki zmanjšajo število inverzij za ena.
-\end{lema}
+\end{primer}
+
+\begin{definicija}
+\label{definicija_sibke_bruhatove_urejenosti}
+Naj bosta $\sigma, \pi \in S_n$. Permutacija $\sigma$ je manjša ali enaka od permutacije $\pi$ v šibki Bruhatovi delni urejenosti, kar označimo z $\sigma \preceq_b \pi$, če je $I_{\sigma} \subseteq I_{\pi}$. 
+\end{definicija}
 
 \begin{figure}[h]
     \begin{center}        
@@ -659,14 +675,14 @@ Naslednja lema nam pove kaj se zgodi z množicami inverzij $I_{\pi}$ in $I_{\sig
     \label{sibka_bruhatova_urejenost_S4}
 \end{figure}
 
-\begin{opomba}
-    Če je $\sigma \preceq_b \pi$, potem $I_{\pi} \setminus I_{\sigma}$ ni vedno množica inverzij neke permutacije. Drži pa, da z ustreznim preimenovanjem elementov dobimo množico inverzij neke permutacije (glej primer \ref{primer_preimenovanje_elementov_mnozice_inverzij}). V splošnem, če je $\sigma \preceq_b \pi$, potem lahko $I_{\pi} \setminus I_{\sigma}$ vedno identificiramo z množico inverzij neke permutacije v smislu, da je vsak interval $[\sigma, \pi]$ v Hessejevem diagramu, kjer je $\pi = \tau \circ \sigma$, v šibki Bruhatovi urejenosti izomorfen nekemu nižjemu intervalu oblike $[id, \tau]$, kjer je $\tau = \tau \circ id$. To je res, saj je $\tau$ po definiciji šibke Bruhatove urejenosti takšna, da doda nekaj novih inverzij, vendar ohrani vse inverzije permutacije $\sigma$. Zato če $\tau$ uporabimo na $id$ prav tako pridobimo enako število inverzij, ki so med seboj v enakih razmerjih, kot novo pridobljene inverzije permutacije $\pi$.
-\end{opomba}
+Iz definicije \ref{definicija_sibke_bruhatove_urejenosti} sledi, da lahko $\sigma$ pridobimo iz $\pi$ z zaporedjem transpozicij sosednih elementov, pri čemer vsaka transpozicija zmanjša število inverzij za ena.
+
 
 \begin{primer}
+\label{primer_nepreimenovanje_elementov_mnozice_inverzij}
     Naj bo $\pi = (4, 2, 1, 3)$ in $\sigma = (2, 1, 3, 4)$. Potem sta:
     \[I_{\pi} = \{ (4, 2), (4, 1), (4, 3), (2, 1) \}, I_{\sigma} = \{ (2, 1) \}\]
-    in zato $\sigma \preceq_b \pi$. Permutacijo $\sigma$ pridobimo iz $\pi$ z zaporedjem treh transpozicij:
+    in zato $\sigma \preceq_b \pi$ (slika \ref{sibka_bruhatova_urejenost_S4}). Permutacijo $\sigma$ pridobimo iz $\pi$ z zaporedjem treh transpozicij sosednjih elementov:
     \[
         (4, 2, 1, 3) \overset{(12)}{\rightarrow} (2, 4, 1, 3) \overset{(23)}{\rightarrow} (2, 1, 4, 3) \overset{(34)}{\rightarrow} (2, 1, 3, 4).
     \]
@@ -676,7 +692,33 @@ Naslednja lema nam pove kaj se zgodi z množicami inverzij $I_{\pi}$ in $I_{\sig
     \]
     ravno množica inverzij $I_{\tau}$ za permutacijo $\tau = (4, 1, 2, 3)$.
 \end{primer}
-    
+
+Naslednja lema nam pove, kaj se zgodi z množicami inverzij $I_{\pi}$ in $I_{\sigma}$ permutacij $\pi$ in $\sigma$, kjer eno pridobimo iz druge s poljubno transpozicijo.
+
+\begin{lema}
+    Naj bo $1 \leq k < l \leq n$, $\pi = (i_1, ..., i_{k-1}, i_k, ..., i_l, i_{l+1}, ..., i_n) \in S_n$, kjer je $i_k > i_l$, in $\sigma = (i_1, ..., i_{k-1}, i_l, ..., i_k, i_{l+1}, ..., i_n) \in S_n$, pridobljena iz $\pi$ s transpozicijo elementov $i_k$ in $i_l$. Poglejmo si particijo množice $L = \{ k, k+ 1, ...., l\}$ v množice $L_1, L_2, L_3$ in $\{ k, l \}$, kjer so:
+    \[
+        L_1 = \{ s \in L: i_s > i_k \}, L_2 = \{ s \in L: i_k > i_s > i_l \}, L_3 = \{ s \in L: i_s < i_l \}.
+    \]
+    Množici inverzij $I_{\pi}, I_{\sigma}$ permutacij $\pi, \sigma$ imata razliki:
+    \begin{align}
+        I_{\pi} \setminus I_{\sigma} &= \{ (i_k, i_l) \} \cup \{ (i_k, i_s): s \in L_2 \cup L_3 \} \cup \{ (i_s, i_l): s \in L_1 \cup L_2 \}, \notag \\
+        I_{\sigma} \setminus I_{\pi} &= \{ (i_l, i_s): s \in L_3 \} \cup \{ (i_s, i_k): s \in L_1 \}. \notag
+    \end{align}
+    Vidimo, da je $\sigma \preceq_b \pi$ ($I_{\sigma} \subseteq I_{\pi}$) natanko tedaj, ko za vsak $s$, kjer je $k < s < l$, velja $i_k > i_s > i_l$ ($I_{\sigma} \setminus I_{\pi} = \emptyset$). Zato je $\sigma \preceq_b \pi$ natanko tedaj, ko lahko pridobimo $\sigma$ iz $\pi$ z zaporedjem transpozicij sosednjih elementov, ki zmanjšajo število inverzij za ena.
+\end{lema}
+\begin{dokaz}
+    Naj bo $1 \leq k < l \leq n$, $\pi = (i_1, ..., i_{k-1}, i_k, ..., i_l, i_{l+1}, ..., i_n) \in S_n$, kjer je $i_k > i_l$, in $\sigma = (i_1, ..., i_{k-1}, i_l, ..., i_k, i_{l+1}, ..., i_n) \in S_n$, pridobljena iz $\pi$ s transpozicijo elementov $i_k$ in $i_l$. Inverzije oblike $(i_a, i_b), (i_{b_1}, i_{b_2})$ in $(i_b, i_c)$, kjer je $a < k$, $k \leq b \leq l$, $k < b_1 < l$, $k < b_2 < l$ in $l < c$, so v obeh permutacijah. Zato jih v razlikah $I_{\pi} \setminus I_{\sigma}$ in $I_{\sigma} \setminus I_{\pi}$ ni. Razliki sta zato ravno:
+    \begin{align}
+        I_{\pi} \setminus I_{\sigma} &= \{ (i_k, i_l) \} \cup \{ (i_k, i_s): s \in L_2 \cup L_3 \} \cup \{ (i_s, i_l): s \in L_1 \cup L_2 \}, \notag \\
+        I_{\sigma} \setminus I_{\pi} &= \{ (i_l, i_s): s \in L_3 \} \cup \{ (i_s, i_k): s \in L_1 \}. \notag
+    \end{align}
+    Sledi, da je $\sigma \preceq_b \pi$ ($I_{\sigma} \subseteq I_{\pi}$) natanko tedaj, ko za vsak $s$, kjer je $k < s < l$, velja $i_k > i_s > i_l$ ($I_{\sigma} \setminus I_{\pi} = \emptyset$).
+\end{dokaz}
+
+\begin{opomba}
+    Če je $\sigma \preceq_b \pi$, potem $I_{\pi} \setminus I_{\sigma}$ ni vedno množica inverzij neke permutacije (glej primera \ref{primer_nepreimenovanje_elementov_mnozice_inverzij} in \ref{primer_preimenovanje_elementov_mnozice_inverzij}). Drži pa, da z ustreznim preimenovanjem elementov dobimo množico inverzij neke permutacije (glej primer \ref{primer_preimenovanje_elementov_mnozice_inverzij}). V splošnem, če je $\sigma \preceq_b \pi$, potem lahko $I_{\pi} \setminus I_{\sigma}$ vedno identificiramo z množico inverzij neke permutacije v smislu, da je vsak interval $[\sigma, \pi]$ v Hessejevem diagramu, kjer je $\pi = \tau \circ \sigma$, v šibki Bruhatovi urejenosti izomorfen nekemu intervalu oblike $[id, \tau]$, kjer je $\tau = \tau \circ id$. To je res, saj je $\tau$ po definiciji šibke Bruhatove urejenosti takšna, da doda nekaj novih inverzij, vendar ohrani vse inverzije permutacije $\sigma$. Če $\tau$ uporabimo na $id$ prav tako pridobimo enako število inverzij, ki so med seboj v enakih razmerjih, kot novo pridobljene inverzije permutacije $\pi$.
+\end{opomba}
 
 \begin{primer}
 \label{primer_preimenovanje_elementov_mnozice_inverzij}
@@ -702,49 +744,124 @@ Kot poseben primer je $id \preceq_b \pi$, za vsak $\pi \in S_n$. Zato je urediti
     \]
 \end{primer}
 
-\section{ Rodovna funkcija }
+\section{ Rodovne funkcije permutacij }
 Naj bo $f_n(x)$ rodovna funkcija s koeficienti $a_i$ pred $x^i$, ki štejejo število permutacij množice $[n]$ z $i$ inverzijami:
 \[
     f_n(x) = \sum_{i=0}^{\binom{n}{2}} a_i x^i.
 \]
-Poglejmo si edino permutacijo dolžine ena $(1)$. Ta permutacija nima nobene inverzije, zato je rodovna funkcija $f_1(x) = 1$. Sedaj iz permutacije dolžine ena naredimo permutacijo dolžine dva tako, da vstavimo dvojko na prvo ali drugo mesto z enako verjetnostjo. Vidimo da, če jo vstavimo na prvo mesto, dobimo permutacijo $(2, 1)$, ki ima eno inverzijo. V drugem primeru pa dobimo permutacijo $(1, 2)$, ki nima inverzij. Tako dobimo rodovno funkcijo $f_2(x) = 1 + x = 1 \cdot (1 + x)$. Sedaj iz permutacije dolžine dva na podoben način naredimo permutacijo dolžine tri. Imamo dve različni permutaciji dolžine dve. Permutacija $(1, 2)$ je brez inverzij. Ko vstavimo trojko na poljubno mesto, tako ustvarimo permutacijo z dvema, eno ali nič inverzijami. Druga permutacija je $(2, 1)$ z eno inverzijo. Ko vstavimo trojko na poljubno mesto, tako ustvarimo permutacijo s tremi, dvema ali eno inverzijo. Tako dobimo rodovno funkcijo 
+Število vseh permutacij množice $[n]$ je $n!$, zato velja:
+\[
+    \sum_{i=0}^{\binom{n}{2}} a_i = n! .
+\]
+Sedaj si poglejmo, kako rekurzivno konstruiramo rodovno funkcijo $f_n(x)$. Začnimo z rodovno funkcijo $f_1$. Edina permutacija iz $S_1$ je $(1)$. Ta permutacija nima nobene inverzije. Tako dobimo rodovno funkcijo:
+\[
+    f_1(x) = 1.
+\]
+Sedaj iz permutacije iz $S_1$ naredimo permutacijo iz $S_2$ tako, da vstavimo dvojko na prvo ali drugo mesto. Vidimo da, če jo vstavimo na prvo mesto, dobimo permutacijo $(2, 1)$, ki ima eno inverzijo. V drugem primeru pa dobimo permutacijo $(1, 2)$, ki nima inverzij. Tako dobimo rodovno funkcijo:
+\[
+    f_2(x) = 1 + x = 1 \cdot (1 + x).
+\]
+Sedaj iz permutacije iz $S_2$ na podoben način naredimo permutacijo iz $S_3$. Imamo dve različni permutaciji iz $S_2$. Permutacija $(1, 2)$ je brez inverzij. Ko vstavimo trojko na poljubno mesto, tako ustvarimo permutacijo z dvema, eno ali nič inverzijami. Druga permutacija je $(2, 1)$ z eno inverzijo. Ko vstavimo trojko na poljubno mesto, tako ustvarimo permutacijo s tremi, dvema ali eno inverzijo. Tako dobimo rodovno funkcijo:
 \[
     f_3(x) = 1 + 2x + 2x^2 + x^3 = 1 \cdot (1 + x + x^2) + x \cdot (1 + x + x^2) = 1 \cdot (1 + x) \cdot (1 + x + x^2).
 \]
-Vidimo da, ko v permutacijo dolžine $n-1$ vstavimo element $n$, lahko naredimo med $0$ in $n-1$ novih inverzij ($1 + x + \cdot\cdot\cdot + x^{n-1}$) odvisno od tega, kam vstavimo element $n$ (vse pozicije so enako verjetne). Prav tako vse inverzije, ki so bile del permutacije dolžine $n-1$, ostanejo. Tako iz $a_i$ permutacij dolžine $n-1$ z $i$ inverzijami dobimo $a_i$ permutacij dolžine $n$ z $i$ inverzijami (vstavimo $n$ na zadnje mesto), $a_i$ permutacij dolžine $n$ z $i+1$ inverzijami (vstavimo $n$ na predzadnje mesto), ..., $a_i$ permutacij dolžine $n$ z $i+n-1$ inverzijami (vstavimo $n$ na prvo mesto). Se pravi iz člena $a_i x^i$ v rodovni funkciji $f_{n-1}$ dobimo člene $a_i x^i \cdot (1 + x + \cdot\cdot\cdot + x^{n-1})$ v rodovni funkciji $f_n$.
-Zato, ker to velja ne glede na to, koliko inverzij je imela permutacija dolžine $n-1$, velja rekurzivna zveza
+Vidimo da, ko v permutacijo iz $S_{n-1}$ vstavimo element $n$, lahko naredimo med $0$ in $n-1$ novih inverzij ($1 + x + \cdot\cdot\cdot + x^{n-1}$) odvisno od tega, kam vstavimo element $n$. Prav tako vse inverzije, ki so bile del permutacije iz $S_{n-1}$, ostanejo. Tako iz $a_i$ permutacij iz $S_{n-1}$ z $i$ inverzijami dobimo $a_i$ permutacij iz $S_n$ z $i$ inverzijami (vstavimo $n$ na zadnje mesto), $a_i$ permutacij iz $S_n$ z $i+1$ inverzijami (vstavimo $n$ na predzadnje mesto), ..., $a_i$ permutacij iz $S_n$ z $i+n-1$ inverzijami (vstavimo $n$ na prvo mesto). Se pravi iz člena $a_i x^i$ v rodovni funkciji $f_{n-1}$ dobimo člene $a_i x^i \cdot (1 + x + \cdot\cdot\cdot + x^{n-1})$ v rodovni funkciji $f_n$.
+Zato, velja rekurzivna zveza:
 \[
     f_n(x) = f_{n-1}(x) \cdot (1 + x + \cdot\cdot\cdot + x^{n-1}).
 \]
-In tako dobimo rodovno funkcijo
+In tako dobimo eksplicitno formulo za rodovno funkcijo:
 \[
     f_n(x) = \prod_{m=1}^{n}\sum_{i=0}^{m-1} x^i = 1 (1 + x) (1 + x + x^2) \cdot\cdot\cdot (1 + x + \cdot\cdot\cdot + x^{n-1}).
 \]
+Naslednja formula iz \cite{generatingFunction} nam pove, kako je Donald Knuth izrazil koeficient $a_i$ iz rodovne funkcije $f_n$:
+\[
+    a_i = \binom{n+i-1}{i} + \sum_{j=1}^{\infty} (-1)^j (\binom{n+i-u_j-j-1}{i-u_j-j} + \binom{n+i-u_j-1}{i-u_j}).
+\]
+Števila $u_j = \frac{j(3j-1)}{2}$ so petkotniška števila. Če je v binomskem simbolu spodaj negativno število, je vrednost binomskega simbola enaka $0$. Zato je vsota končna.
 
 \section{ Lehmerjeva koda in vektor inverzij}
-Množico $S_n$ lahko uredimo na različne načine. Zato lahko vsaki permutaciji iz množice $S_n$ dodelimo celo število $N$, kjer je $0 \leq N \leq n!$. To je ravno njena zaporedna številka v neki ureditvi. Pretvorbo iz števila v permutacijo naredimo preko vmesne oblike zaporedja $n$ števil $d_n,d_{n-1},...,d_2,d_1$, kjer je $d_i$ nenegativno celo število manjše od $i$ (pri tem lahko izpustimo $d_1$, saj je $d_1 = 0$). Prvi korak je, da $N$ predstavimo v faktorskem številskem sistemu (angl. factorial number system). Ta sistem ima za števila manjša od $n!$ baze zaporednih števk $(n-1)!,(n-2)!,...,2!,1!$ (primer \ref{primer_faktorski_stevilski_sistem}). Drugi korak pa je interpretacija tega zaporedja kot vektor inverzij ali Lehmerjeva koda (interpretacija zaporedja za permutacije iz $S_4$ je prikazana v tabeli \ref{tbl:permutacije4vektorji}).
+Množico $S_n$ lahko uredimo na različne načine. Zato lahko vsaki permutaciji iz množice $S_n$ dodelimo celo število $N$, kjer je $0 \leq N \leq n!$. To je ravno njena zaporedna številka v neki ureditvi. V tem podpoglavju si bomo pogledali ureditvi s pomočjo Lehmerjeve kode in vektorja inverzij. Lehmerjeva koda in vektor inverzij sta števili zapisani v faktorskem številskem sistemu. Uporabimo ju kot vmesni korak med pretvarjanjem števila v permutacijo in obratno (slika \ref{pretvarjanje_permutacija_stevilo}).
 
-Število zapisano v faktorskem številskem sistemu pretvorimo v desetiški številski sistem tako, da seštejemo produkt vseh števk s pripadajočo bazo. Pretvorbo iz desetiškega v faktorski številski sistem pa naredimo tako, da število zaporedoma delimo s števili $1, 2, 3...$ in si zapisujemo ostanke pri deljenju, dokler ne dobimo $0$ kot rezultat deljenja. Zapis števila so ostanki pri deljenju od zadnjega deljenja proti prvemu. 
+\begin{figure}[h]
+    \begin{center}        
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black!0,fill=white!25,minimum size=20pt,inner sep=0pt]
+            
+            \node[vertex] (V-1) at (0, 1) {Permutacija};
+            \node[vertex] (V-2a) at (4, 0) {Lehmerjeva koda};
+            \node[vertex] (V-2b) at (4, 2) {Vektor inverzij};
+            \node[vertex] (V-3) at (8, 1) {Število};
+        
+            \foreach \from/\to in {1/2a, 2a/3, 1/2b, 2b/3}
+                \draw[latex-latex] (V-\from) -- (V-\to);
+
+        \end{tikzpicture}     
+    \end{center}
+    \caption{Pretvorba med permutacijo in številom z vmesnim korakom.}
+    \label{pretvarjanje_permutacija_stevilo}
+\end{figure}
+
+\subsection{ Faktorski številski sistem }
+
+Faktorski številski sistem je številski sistem, kjer teže pozicije števk niso geometrična vrsta nekega števila, temveč so fakultete naravnih števil (primer \ref{primer_faktorski_stevilski_sistem1}). Naj ima število v faktorskem številskem sistemu zapis $d_nd_{n-1}...d_2d_1$, potem ima števka $d_i$ na poziciji $i$ težo $(i-1)!$. Števka $d_i$ je nenegativno celo število manjše od $i$ (pri tem lahko izpustimo $d_1$, saj je $d_1$ vedno $0$). 
+
+Število zapisano v faktorskem številskem sistemu pretvorimo v desetiški številski sistem tako, da seštejemo produkt vseh števk s pripadajočo težo pozicije števke (primer \ref{primer_faktorski_stevilski_sistem1}).
 
 \begin{primer}
-\label{primer_faktorski_stevilski_sistem}
-Pretvorbi iz faktorskega v desetiški številski sistem in iz desetiškega v faktorski številski sistem: 
-    \begin{align}
-        341010_{!} = 3 \cdot 5! + 4 \cdot 4! + 1 \cdot 3&! + 0 \cdot 2! + 1 \cdot 1! + 0 \cdot 0! = 463_{10} \notag\\
-        463 / 1 = 463,&\ ostanek = 0 \notag\\
-        463 / 2 = 231,&\ ostanek = 1 \notag\\
-        231 / 3 = 77,&\ ostanek = 0 \notag\\
-        77 / 4 = 19,&\ ostanek = 1 \notag\\
-        19 / 5 = 3,&\ ostanek = 4 \notag\\
-        3 / 6 = 0,&\ ostanek = 3 \notag
-    \end{align}
+\label{primer_faktorski_stevilski_sistem1}
+    Vzemimo za primer število $341010_{!}$ v faktorskem številskem sistemu. Ker je:
+    \[
+        341010_{!} = 3 \cdot 5! + 4 \cdot 4! + 1 \cdot 3! + 0 \cdot 2! + 1 \cdot 1! + 0 \cdot 0! = 463_{10} 
+    \]
+    je $341010_{!} = 463_{10}$
 \end{primer}
 
-V Lehmerjevi kodi permutacije $\sigma$ število $d_n$ predstavlja $\sigma_1 - 1 = \sigma(1) - 1$. To je število elementov manjših od $\sigma_1$, ki so v inverziji z $\sigma_1$. Število $d_{n-1}$ predstavlja število elementov, ki so manjši od $\sigma_2$ in so v inverziji z $\sigma_2$,... Se pravi, $d_{n-i+1}$ predstavlja število elementov, ki so manjši od $\sigma_i$ in so v inverziji z $\sigma_i$.
+Pretvorbo iz desetiškega v faktorski številski sistem pa naredimo tako, da število zaporedoma delimo s števili $1, 2, 3...$ in si zapisujemo ostanke pri deljenju, dokler ne dobimo $0$ kot rezultat deljenja. Zapis števila so ostanki pri deljenju od zadnjega deljenja proti prvemu (primer \ref{primer_faktorski_stevilski_sistem2}). 
+
+\begin{primer}
+\label{primer_faktorski_stevilski_sistem2}
+    Vzemimo za primer število $463$ v desetiškem številskem sistemu. Ker je:
+    \begin{align}
+        463 / 1 = 463,&\ ostanek = 0, \quad 463 = 0 \cdot 0! + 463 \cdot 1! \notag\\
+        463 / 2 = 231,&\ ostanek = 1, \quad 463 = 1 \cdot 1! + 231 \cdot 2! \notag\\
+        231 / 3 = 77,&\ ostanek = 0, \quad 463 = 1 \cdot 1! + 0 \cdot 2! + 77 \cdot 3!  \notag\\
+        77 / 4 = 19,&\ ostanek = 1, \quad 463 = 1 \cdot 1! +  1 \cdot 3! + 19 \cdot 4! \notag\\
+        19 / 5 = 3,&\ ostanek = 4, \quad 463 = 1 \cdot 1! + 1 \cdot 3! + 4 \cdot 4! + 3 \cdot 5! \notag\\
+        3 / 6 = 0,&\ ostanek = 3, \quad 463 = 1 \cdot 1! + 1 \cdot 3! + 4 \cdot 4! + 3 \cdot 5! + 0 \cdot 6! \notag
+    \end{align}
+    je $463_{10} = 341010_{!}$
+\end{primer}
+
+Naj bo x pozitivno celo število zapisano v desetiškem številskem sistemu. Število x bi radi zapisali v faktorskem številskem sistemu: 
+\[
+    x = \sum_{i=1}^{n} d_i \cdot (i-1)!
+\]
+Naj bo $x = x^{(1)}$. Če $x^{(1)}$ delimo z 1, potem je 
+\[
+    x^{(1)} = r_1 + 1 \cdot x^{(2)},
+\]
+kjer je $x^{(2)} = x^{(1)}$ in $r_1 = 0$ $(r_1 < 1)$. Potem lahko rekurzivno delimo $x^{(2)}$ z 2 in dobimo 
+\[
+    x^{(2)} = r_1 + 1 \cdot (r_2 + 2 \cdot x^{(3)}),
+\]
+kjer je $x^{(3)} < x^{(2)}$ in $r_2 < 2$. Na ta način nadaljujemo rekurzijo, ki ima končno število korakov in dobimo:
+\[
+    x = r_1 + 1 \cdot (r_2 + 2 \cdot(r_3 + 3 \cdot(\cdot\cdot\cdot + (n-1) \cdot r_n))),
+\]
+kjer je $0 \leq r_i < i$ za $i = 1, 2, ..., n$. Se pravi $d_i = r_i$. Tako dobimo faktorski zapis števila $x$.
+
+\subsection{ Pretvorba med Lehmerjevo kodo ali vektorjem inverzij in številom }
+Lehmerjeva koda in vektor inverzij sta zapisa števila v faktorskem številskem sistemu, zato je pretvorba med Lehmerjevo kodo ali vektorjem inverzij in številom ravno pretvorba med faktorskim in desetiškim številskim sistemom.
+
+\subsection{ Pretvorba med Lehmerjevo kodo ali vektorjem inverzij in permutacijo }
+Poglejmo si najprej pretvorbi permutacije v Lehmerjevo kodo in vektor inverzij. Naj bo $\sigma = (\sigma_1, \sigma_2, ..., \sigma_n) \in S_n$ in $d_nd_{n-1}...d_2d_1$ zapis števila v faktorskem številskem sistemu (Lehmerjeva koda ali vektor inverzij).
+
+V Lehmerjevi kodi permutacije $\sigma$ števka $d_n$ predstavlja $\sigma_1 - 1$. To je število elementov manjših od $\sigma_1$, ki so v inverziji s $\sigma_1$. Števka $d_{n-1}$ predstavlja število elementov, ki so manjši od $\sigma_2$ in so v inverziji s $\sigma_2$,... V splošnem, števka $d_{n-i+1}$ predstavlja število elementov, ki so manjši od $\sigma_i$ in so v inverziji s $\sigma_i$.
 
 Vektor inverzij permutacije $\sigma$ je podoben zapis. $d_{n-j+1}$ nam pove, koliko je inverzij oblike $(i, j)$, kjer je $j$ manjša vrednost para števil v inverziji.
 
-Obe kodiranji lahko prikažemo z Rothejevim diagramom, kjer pike predstavljajo elemente permutacije, križi pa inverzije permutacije. Lehmerjeva koda nam šteje število križev v vsaki vrstici, vektor inverzij pa nam šteje število križev v vsakem stolpcu. Poleg tega velja tudi, da je vektor inverzij ravno Lehmerjeva koda inverzne permutacije in Lehmerjeva koda je ravno vektor inverzij inverzne permutacije. Primer Rothejevega diagrama je prikazan v tabeli \ref{tbl:rothejev_diagram}.
+Obe kodiranji lahko prikažemo z Rothejevim diagramom, kjer so pike postavljene na pozicijah $(i, \sigma_i)$, križi pa predstavljajo inverzije permutacije. Lehmerjeva koda nam šteje število križev v vsaki vrstici, vektor inverzij pa nam šteje število križev v vsakem stolpcu. Ker ima inverzna permutacija ravno transponiran Rothejev diagram, sledi, da je vektor inverzij ravno Lehmerjeva koda inverzne permutacije in Lehmerjeva koda je ravno vektor inverzij inverzne permutacije. Primer Rothejevega diagrama je prikazan v tabeli \ref{tbl:rothejev_diagram}.
 
 \begin{table}
     \begin{center}
@@ -778,11 +895,49 @@ Obe kodiranji lahko prikažemo z Rothejevim diagramom, kjer pike predstavljajo e
     \label{tbl:rothejev_diagram}
 \end{table}
 
-Da bi pretvorili Lehmerjevo kodo $d_n, d_{n-1}, ..., d_1$ v permutacijo, najprej uredimo števila $1, 2, ..., n$ v vrsto. $\sigma_1$ je enak elementu v vrsti, ki je za $d_{n}$ elementi. Nato ta element izbrišemo iz vrste. $\sigma_2$ je enak elementu v spremenjeni vrsti, ki je za $d_{n-1}$ elementi. Nato ta element izbrišemo iz vrste in ponovimo postopek za $\sigma_3, ..., \sigma_n$.
+Sedaj si poglejmo še pretvorbi Lehmerjeve kode in vektora inverzij v permutacijo (primeri za permutacije iz $S_4$ so v tabeli \ref{tbl:permutacije4vektorji}).
 
-Da bi pretvorili tabelo inverzij $d_n, d_{n-1}, ..., d_1$ v permutacijo, imejmo najprej prazno vrsto. Najprej vzemimo $n$ in ga vstavimo v vrsto za $d_1$ elementi (vedno $0$). Nato vzamemo $n-1$ in ga vstavimo v vrsto za $d_{2}$ elementi, ..., vzamemo $1$ in ga vstavimo v vrsto za $d_{n}$ elementi.
+Da bi pretvorili Lehmerjevo kodo $d_nd_{n-1}...d_1$ v permutacijo, najprej uredimo števila $1, 2, ..., n$ v vrsto. $\sigma_1$ je enak elementu v vrsti, ki je za $d_{n}$ elementi. Nato ta element izbrišemo iz vrste. $\sigma_2$ je enak elementu v spremenjeni vrsti, ki je za $d_{n-1}$ elementi. Nato ta element izbrišemo iz vrste in ponovimo postopek za $\sigma_3, ..., \sigma_n$ (primer \ref{primer_lehmerjeva_koda_permutacija}).
 
-Vsota števk v Lehmerjevi kodi ali vektoru inverzij nam pove število inverzij permutacije. Parnost vsote pa nam pove znak permutacije.
+Da bi pretvorili tabelo inverzij $d_nd_{n-1}...d_1$ v permutacijo, imejmo najprej prazno vrsto. Najprej vzemimo $n$ in ga vstavimo v vrsto za $d_1$ elementi (vedno $0$). Nato vzamemo $n-1$ in ga vstavimo v vrsto za $d_{2}$ elementi, ..., vzamemo $1$ in ga vstavimo v vrsto za $d_{n}$ elementi (primer \ref{primer_vektor_inverzij_permutacija}).
+
+Vsota števk v Lehmerjevi kodi ali vektorju inverzij nam pove število inverzij permutacije, saj vsak križ v Rothejevem diagramu predstavlja ravno eno inverzijo in vsota števk Lehmerjeve kode ali vekorja inverzij je ravno vsota vseh križev v Rothejevem diagramu. 
+
+\begin{primer}
+\label{primer_lehmerjeva_koda_permutacija}
+Vzemimo za primer Lehmerjevo kodo 525013200, kot v primeru iz tabele \ref{tbl:rothejev_diagram}. Ker je
+\begin{align}
+    &d_9 = 5, \quad [ \ 1, \ 2, \ 3, \ 4, \ 5, \ 6, \ 7, \ 8, \ 9 \ ]  \ &\Rightarrow& \ &\sigma_1 = 6, \notag \\
+    &d_8 = 2, \quad [ \ 1, \ 2, \ 3, \ 4, \ 5, \ 7, \ 8, \ 9 \ ] \ &\Rightarrow& \ &\sigma_2 = 3, \notag \\
+    &d_7 = 5, \quad [ \ 1, \ 2, \ 4, \ 5, \ 7, \ 8, \ 9 \ ] \ &\Rightarrow& \ &\sigma_3 = 8, \notag \\
+    &d_6 = 0, \quad [ \ 1, \ 2, \ 4, \ 5, \ 7, \ 9 \ ] \ &\Rightarrow& \ &\sigma_4 = 1, \notag \\
+    &d_5 = 1, \quad [ \ 2, \ 4, \ 5, \ 7, \ 9 \ ] \ &\Rightarrow& \ &\sigma_5 = 4, \notag \\
+    &d_4 = 3, \quad [ \ 2, \ 5, \ 7, \ 9 \ ] \ &\Rightarrow& \ &\sigma_6 = 9, \notag \\
+    &d_3 = 2, \quad [ \ 2, \ 5, \ 7 \ ] \ &\Rightarrow& \ &\sigma_7 = 7, \notag \\
+    &d_2 = 0, \quad [ \ 2, \ 5 \ ] \ &\Rightarrow& \ &\sigma_8 = 2, \notag \\
+    &d_1 = 0, \quad [ \ 5 \ ] \ &\Rightarrow& \ &\sigma_9 = 5, \notag
+\end{align}
+je $\sigma = (6, 3, 8, 1, 4, 9, 7, 2, 5)$ permutacija Lehmerjeve kode 525013200.
+\end{primer}
+\begin{primer}
+\label{primer_vektor_inverzij_permutacija}
+    Vzemimo za primer vektor inverzij 361240200, kot v primeru iz tabele \ref{tbl:rothejev_diagram}. Ker je
+    \begin{align}
+        &d_1 = 0& \ &\Rightarrow& \ &[ \ 9 \ ], \notag \\
+        &d_2 = 0& \ &\Rightarrow& \ &[ \ 8, \ 9 \ ], \notag \\
+        &d_3 = 2& \ &\Rightarrow& \ &[ \ 8, \ 9, \ 7 \ ], \notag \\
+        &d_4 = 0& \ &\Rightarrow& \ &[ \ 6, \ 8, \ 9, \ 7 \ ], \notag \\
+        &d_5 = 4& \ &\Rightarrow& \ &[ \ 6, \ 8, \ 9, \ 7, \ 5 \ ], \notag \\
+        &d_6 = 2& \ &\Rightarrow& \ &[ \ 6, \ 8, \ 4, \ 9, \ 7, \ 5 \ ], \notag \\
+        &d_7 = 1& \ &\Rightarrow& \ &[ \ 6, \ 3, \ 8, \ 4, \ 9, \ 7, \ 5 \ ], \notag \\
+        &d_8 = 6& \ &\Rightarrow& \ &[ \ 6, \ 3, \ 8, \ 4, \ 9, \ 7, \ 2, \ 5 \ ], \notag \\
+        &d_9 = 3& \ &\Rightarrow& \ &[ \ 6, \ 3, \ 8, \ 1, \ 4, \ 9, \ 7, \ 2, \ 5 \ ], \notag \\
+    \end{align}
+    je $\sigma = (6, 3, 8, 1, 4, 9, 7, 2, 5)$ permutacija vektorja inverzij 361240200.
+\end{primer}
+
+
+%Parnost vsote pa nam pove znak permutacije.
 \begin{table}
     \begin{center}
         \begin{tabular}{ |c|c|c|c| } 
@@ -846,7 +1001,7 @@ Vsota števk v Lehmerjevi kodi ali vektoru inverzij nam pove število inverzij p
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{ Permutacijski grafi }
 
-V tem poglavju bomo definirali permutacijske grafe in si ogledali njihovo karakterizacijo s kohezivnim zaporedjem grafa. Nato bomo pokazali, da so gosenice edina drevesa, ki so permutacijski grafi in si ogledali koliko permutacij ima permutacijski graf izomorfen neki poti oziroma neki gosenici. Na koncu pa bomo pokazali še kako lahko konstruiramo permutacijske grafe.
+V tem poglavju bomo definirali permutacijske grafe in si ogledali njihovo karakterizacijo s kohezivnim zaporedjem grafa. Nato bomo pokazali, da so gosenice edina drevesa, ki so permutacijski grafi, in si ogledali, koliko je permutacij, katerih permutacijski graf je izomorfen neki poti ali gosenici. Na koncu pa bomo pokazali še, kako lahko konstruiramo permutacijske grafe.
 
 \section{ Karakterizacija permutacijskih grafov }
 
@@ -855,9 +1010,9 @@ V tem poglavju bomo definirali permutacijske grafe in si ogledali njihovo karakt
 \end{definicija}
 
 \begin{primer}
-    $\sigma = (4, 2, 5, 1, 7, 6, 3) \in S_7$, $V(G_{\sigma}) =[7]$. Množica inverzij $\sigma$ je
+    Naj bo $\sigma = (4, 2, 5, 1, 7, 6, 3) \in S_7$ permutacija in $V(G_{\sigma}) =[7]$ množica vozlišč grafa inverzij permutacije $\sigma$. Množica inverzij permutacije $\sigma$ je
     $I_{\sigma} = \{ (4, 2), (4, 1), (4, 3), (2, 1), (5, 1), (5, 3), (7, 6), (7, 3), (6, 3) \}$,
-    zato je $E(G_{\sigma}) = \{ \{ 4, 2 \}, \{ 4, 1 \}, \{ 4, 3 \}, \{ 2, 1 \}, \{ 5, 1 \}, \{ 5, 3 \}, \{ 7, 6 \}, \{ 7, 3 \}, \{ 6, 3 \} \}$. Graf $G_{\sigma}$ je prikazan na sliki \ref{graf_inverzij}.
+    zato je $E(G_{\sigma}) = \{ 42, 41, 43, 21, 51, 53, 76, 73, 63 \}$  množica povezav grafa inverzij permutacije $\sigma$. Graf $G_{\sigma}$ je prikazan na sliki \ref{graf_inverzij}.
 \end{primer}
 
 \begin{figure}[h]
@@ -881,7 +1036,7 @@ V tem poglavju bomo definirali permutacijske grafe in si ogledali njihovo karakt
     \label{graf_inverzij}
 \end{figure}
 
-Če je graf permutacijski graf, potem lahko veliko problemov, ki so na poljubnih grafih NP-polni, rešimo v polinomskem času. Na primer iskanje največjega podgrafa, ki je poln graf, je ekvivalentno iskanju največjega padajočega zaporedja v permutaciji, ki definira permutacijski graf.
+Če je graf permutacijski graf, potem lahko veliko problemov, ki so na poljubnih grafih NP-polni, rešimo v polinomskem času. Na primer iskanje največjega podgrafa, ki je poln graf, je ekvivalentno iskanju največjega padajočega zaporedja v permutaciji, ki definira permutacijski graf \cite{algorithmGraphTheoryAndPerfectGraphs}.
 
 \begin{definicija}[Kohezivno zaporedje grafa]
 \label{def_kohezivno_zaporedje}
