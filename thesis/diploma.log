@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  20 NOV 2023 13:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  20 NOV 2023 16:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1263,18 +1263,13 @@ Poglavje 5.
 [57
 
 ] [58] (./diploma.bbl
-Underfull \hbox (badness 5288) in paragraph at lines 34--38
+Underfull \hbox (badness 4205) in paragraph at lines 40--44
 []\OT1/cmr/m/n/12 Jon Kle-in-berg and []Eva Tar-dos.  Al-go-ri-thm de-sign.  Do-se-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 34--38
+Underfull \hbox (badness 10000) in paragraph at lines 40--44
 \OT1/cmr/m/n/12 gljivo: []$\OT1/cmtt/m/n/12 https : / / web . cs . ucla . edu / []srinath / static / pdfs /
- []
-
-
-Underfull \hbox (badness 1448) in paragraph at lines 34--38
-\OT1/cmtt/m/n/12 AlgorithmDesign _ %20EvaTardos . pdf$[]\OT1/cmr/m/n/12 , 2005.  [Do-sto-pano: 18. 11.
  []
 
 [59
@@ -1289,18 +1284,18 @@ Package rerunfilecheck Info: File `diploma.out' has not changed.
 (rerunfilecheck)             Checksum: 93F43759CD8F65BF339C978E8636BC8F;3879.
  ) 
 Here is how much of TeX's memory you used:
- 26005 strings out of 474503
- 459376 string characters out of 5756704
+ 26009 strings out of 474503
+ 459465 string characters out of 5756704
  1958043 words of memory out of 5000000
- 47287 multiletter control sequences out of 15000+600000
+ 47290 multiletter control sequences out of 15000+600000
  567916 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,14n,89p,2908b,1767s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on diploma.pdf (72 pages, 426706 bytes).
+Output written on diploma.pdf (72 pages, 426889 bytes).
 PDF statistics:
- 839 PDF objects out of 1000 (max. 8388607)
- 716 compressed objects within 8 object streams
- 257 named destinations out of 1000 (max. 500000)
+ 841 PDF objects out of 1000 (max. 8388607)
+ 718 compressed objects within 8 object streams
+ 258 named destinations out of 1000 (max. 500000)
  177 words of extra memory for PDF output out of 10000 (max. 10000000)
 

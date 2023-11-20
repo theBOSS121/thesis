@@ -3,47 +3,46 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: diploma.aux
 The style file: plainnat.bst
 Database file #1: literatura.bib
-Warning--to sort, need author or key in factorialNumberSystem
 Warning--empty year in factorialNumberSystem
-You've used 9 entries,
+You've used 10 entries,
             2773 wiz_defined-function locations,
-            650 strings with 6448 characters,
-and the built_in function-call counts, 3254 in all, are:
-= -- 289
-> -- 151
-< -- 6
-+ -- 54
-- -- 45
-* -- 217
-:= -- 498
-add.period$ -- 30
-call.type$ -- 9
-change.case$ -- 41
-chr.to.int$ -- 9
+            660 strings with 6588 characters,
+and the built_in function-call counts, 3683 in all, are:
+= -- 327
+> -- 171
+< -- 8
++ -- 61
+- -- 51
+* -- 243
+:= -- 580
+add.period$ -- 34
+call.type$ -- 10
+change.case$ -- 46
+chr.to.int$ -- 10
 cite$ -- 21
-duplicate$ -- 160
-empty$ -- 304
-format.name$ -- 57
-if$ -- 687
+duplicate$ -- 180
+empty$ -- 339
+format.name$ -- 65
+if$ -- 769
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 6
-newline$ -- 56
-num.names$ -- 32
-pop$ -- 105
+missing$ -- 7
+newline$ -- 62
+num.names$ -- 40
+pop$ -- 111
 preamble$ -- 1
-purify$ -- 33
+purify$ -- 37
 quote$ -- 0
-skip$ -- 122
+skip$ -- 135
 stack$ -- 0
-substring$ -- 63
-swap$ -- 9
+substring$ -- 83
+swap$ -- 10
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 94
-warning$ -- 2
-while$ -- 28
+type$ -- 105
+warning$ -- 1
+while$ -- 36
 width$ -- 0
-write$ -- 123
-(There were 2 warnings)
+write$ -- 138
+(There was 1 warning)

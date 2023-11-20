@@ -12,12 +12,6 @@ reference to inversion vektor, Lehmar code:
 http://www.phc.pisa.it/~delvigna/maths/factorial-base.pdf
 https://watermark.silverchair.com/470046.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAA1MwggNPBgkqhkiG9w0BBwagggNAMIIDPAIBADCCAzUGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQM0uZ1TTHFnNlyEtshAgEQgIIDBusK2w1BPL4PoyyyYwwn6_B1gj5Tg4-zyaMDx66P3Ke3p5wa2zR2qQ6armH2o_USlnk8GVbwqkgrVo8TAxAgighyMqVe4OnHz9emhM4hG6eZaYKyhUet94f8O_GvfgJrR-sF8JgoBDUfg_TYsYKxuqk_Ec0LHKKUytYGjUxoxKaTK0LVgnCtHx7JcqNp-bmqW3QD9CWo8fivTlk3-8LaPHWEyMDtMm-qRV0VrwNU1YMs178651gFAtYHCV5jCWJA0MyyWJSs7YWr2W5-t-QsEpGU6I2rSz4jb_8JiIcYSf8VgAyKE9ZFJi1rTUmeEZbmEWIQIGm7vfQkl0kTErJdDIYtzckNIvgRQyB5z2Wu1L0MPwuoXRStNOdN5QoHZw5DxQC3P7m0xNs2DwVd_QHBl72Y47ilDhmzyUzM3-G6W3tsFPI_E5ADkXO-atI2uraYnwWAQ9SBu2Tg91Iw3FepKMsGFkNHiRaK_VRfcld0JVNMfng2Z3mNVqelHIqRjOIlNfQOoOze8-yGP16ZmegznVI8pzIrf-Yx4i4JU7Gn7_MF72FedjyA4x4a6s3s1m-UCUY7H4RXv9LD9B-ixyCkhQeoJx4jqByyK-RY9zJaFrCmHb2YPvAUb7FkN6VuXSswMwsXF1zG_oLw5smlfXRjObR5CodsGpcGfWRaj4UKUxMzoTqLqrUauMUQiGJ3-jAAVNnAHgBAgz4VtNu8aXtzwXmurNDd71aySTfsbdP14o1STUZgXy-vb0wIKkeuFohXTdflUVqKYiMu3eyKLcPXmkNpL6F7WekP9MMuPCR-h5hRXAfr6vpo6n0e-2nwsFeF9xQR5WEdZ2Sj0U7OzAdibf1kbZ-Z35GgLkrE7dxSN3yWpCgh-DIyLRKZ4kC0UNFhnaCRmZ2Ac_O9BTU8LWR6tWmfFoWZEZ6nNeaIpImXmE7d8HKbrxxWehbqsxDGqi0AsXTPIWuVohDyg_OVR9NSl9XeYr15_GKB6EpPLOx1IOwWm9wZ759mX5TP7rI-jety-c-jQ7BJ3Q
 
-slika 2.1 v primer 
-
-
-Look:
-\qedhere
-\rsquere
 
 https://www.scirp.org/html/7-1200116_27380.htm
 http://matematika.fri.uni-lj.si/ds/ds.pdf
@@ -25,4 +19,5 @@ https://users.fmf.uni-lj.si/skreko/Gradiva/DS2-skripta.pdf
 https://users.fmf.uni-lj.si/skreko/Gradiva/DS1-skripta.pdf
 
 
-merge sort referenca
+
+Algorithmic graph theory and perfect graphs - Martin Charles Golumbic (np poln problem največji podgraf, ki je polni graf permutacijski graf)

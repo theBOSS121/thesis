@@ -1,8 +1,6 @@
 # thesis
 Thesys project
 
-
-
 links:
 https://en.wikipedia.org/wiki/2014_MotoGP_World_Championship
 
@@ -32,4 +30,4 @@ On the Brukat order of the Symmetric group and its shellability(strong Bruhad or
 https://web.mit.edu/yufeiz/www/papers/bruhat.pdf
 
 
-98
+110

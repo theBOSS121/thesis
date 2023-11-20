@@ -1,14 +1,14 @@
-\begin{thebibliography}{9}
+\begin{thebibliography}{10}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[fac()]{factorialNumberSystem}
-{Factorial number system}.
-\newblock Dosegljivo: \url{https://en.wikipedia.org/wiki/Factorial_number_system}.
-\newblock [Dostopano: 18. 1. 2023].
+\bibitem[Arnavut(2004)]{inversionCoding}
+Ziya Arnavut.
+\newblock Inversion coding.
+\newblock \emph{The Computer Journal}, 47\penalty0 (1):\penalty0 46--57, 2004.
 
 \bibitem[Brualdi and Dahl(2023)]{weakBruhatOrder}
 Richard~A Brualdi and Geir Dahl.
@@ -19,6 +19,12 @@ Richard~A Brualdi and Geir Dahl.
 Regino Criado, Esther Garc{\'\i}a, Francisco Pedroche, and Miguel Romance.
 \newblock On graphs associated to sets of rankings.
 \newblock \emph{Journal of computational and applied mathematics}, 291:\penalty0 497--508, 2016.
+
+\bibitem[del Vigna()]{factorialNumberSystem}
+Alessio del Vigna.
+\newblock {The factorial number system}.
+\newblock Dosegljivo: \url{http://www.phc.pisa.it/~delvigna/maths/factorial-base.pdf}.
+\newblock [Dostopano: 18. 1. 2023].
 
 \bibitem[Gervacio et~al.(2013)Gervacio, Rapanut, and Ramos]{charectarizationPermutationGraphs}
 Severino~V Gervacio, Teofina~A Rapanut, and Phoebe Chloe~F Ramos.
