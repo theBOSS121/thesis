@@ -474,7 +474,6 @@ Ta zapis nam pove, da je:
 
 \begin{primer}
     Naj bo $\pi \in S_5$, $\pi(1) = 3$, $\pi(2) = 5$, $\pi(3) = 1$, $\pi(4) = 4$ in $\pi(5) = 2$ (slika \ref{bijektivna_preslikava_n_n}). 
-
     \begin{figure}[h]
         \begin{center}        
             \begin{tikzpicture}[shorten >=1pt,-]
@@ -491,8 +490,7 @@ Ta zapis nam pove, da je:
         \caption{Primer bijektivne preslikave (permutacije) $\pi = (3, 5, 1, 4, 2)$.}
         \label{bijektivna_preslikava_n_n}
     \end{figure}
-
-    Permutacijo $\pi$ zapišemo z vodoravno tabelo in enovrstičnim zapisom na naslednji način:
+    Na naslednji način zapišemo permutacijo $\pi$ z vodoravno tabelo in enovrstičnim zapisom:
     \[
         \pi = \begin{pmatrix}
             1 & 2 & 3 & 4 & 5 \\
@@ -599,7 +597,7 @@ V tem podpoglavju bomo najprej definirali inverzijo permutacije, ki je par eleme
 
 Urejena permutacija $id = (1, 2, ..., n)$ nima inverzij. Največ inverzij ima permutacija $(n, n-1, ..., 1)$. V tem primeru je vsak par različnih števil v inverziji. Število izborov dveh elementov izmed $n$ je ravno $\binom{n}{2}$, torej je $|I_{(n, n-1, ..., 1)}| = \binom{n}{2}$.
 
-Število inverzij je enako številu presečišč v puščičnem diagramu permutacije (slika \ref{permutacija_4213}). To je res, saj vsaka inverzija $(a_i, a_j)$ ustreza presečišču puščic, ki izhajajata iz $i, j$ in gresta proti $a_i, a_j$, saj je $a_i > a_j$ in $i < j$.
+Število inverzij je enako številu presečišč v puščičnem diagramu permutacije (slika \ref{permutacija_4213}). To je res, saj vsaka inverzija $(a_i, a_j)$ ustreza presečišču puščic, ki izhajajata iz $i$ in $j$ ter gresta proti $a_i$ in $a_j$, kjer je $a_i > a_j$ in $i < j$.
 
 Standardne primerjalne algoritme razvrščanja, kot je na primer merge sort, lahko prilagodimo tako, da izračunamo število inverzij neke permutacije iz $S_n$ v času $O(n \cdot \log(n))$ \cite{algorithmDesign}.
 
@@ -761,7 +759,7 @@ Sedaj iz permutacije iz $S_1$ naredimo permutacijo iz $S_2$ tako, da vstavimo dv
 \[
     f_2(x) = 1 + x = 1 \cdot (1 + x).
 \]
-Sedaj iz permutacije iz $S_2$ na podoben način naredimo permutacijo iz $S_3$. Imamo dve različni permutaciji iz $S_2$. Permutacija $(1, 2)$ je brez inverzij. Ko vstavimo trojko na poljubno mesto, tako ustvarimo permutacijo z dvema, eno ali nič inverzijami. Druga permutacija je $(2, 1)$ z eno inverzijo. Ko vstavimo trojko na poljubno mesto, tako ustvarimo permutacijo s tremi, dvema ali eno inverzijo. Tako dobimo rodovno funkcijo:
+Sedaj iz permutacije iz $S_2$ na podoben način naredimo permutacijo iz $S_3$. Imamo dve različni permutaciji iz $S_2$. Permutacija $(1, 2)$ je brez inverzij. Ko vstavimo trojko na poljubno mesto, ustvarimo permutacijo z dvema, eno ali nič inverzijami. Druga permutacija je $(2, 1)$ z eno inverzijo. Ko vstavimo trojko na poljubno mesto, ustvarimo permutacijo s tremi, dvema ali eno inverzijo. Tako dobimo rodovno funkcijo:
 \[
     f_3(x) = 1 + 2x + 2x^2 + x^3 = 1 \cdot (1 + x + x^2) + x \cdot (1 + x + x^2) = 1 \cdot (1 + x) \cdot (1 + x + x^2).
 \]
@@ -781,17 +779,16 @@ Naslednja formula iz \cite{generatingFunction} nam pove, kako je Donald Knuth iz
 Števila $u_j = \frac{j(3j-1)}{2}$ so petkotniška števila. Če je v binomskem simbolu spodaj negativno število, je vrednost binomskega simbola enaka $0$. Zato je vsota končna.
 
 \section{ Lehmerjeva koda in vektor inverzij}
-Množico $S_n$ lahko uredimo na različne načine. Zato lahko vsaki permutaciji iz množice $S_n$ dodelimo celo število $N$, kjer je $0 \leq N \leq n!$. To je ravno njena zaporedna številka v neki ureditvi. V tem podpoglavju si bomo pogledali ureditvi s pomočjo Lehmerjeve kode in vektorja inverzij. Lehmerjeva koda in vektor inverzij sta števili zapisani v faktorskem številskem sistemu. Uporabimo ju kot vmesni korak med pretvarjanjem števila v permutacijo in obratno (slika \ref{pretvarjanje_permutacija_stevilo}).
-
+Množico $S_n$ lahko uredimo na različne načine. Zato lahko vsaki permutaciji iz množice $S_n$ dodelimo celo število $N$, kjer je $0 \leq N \leq n!$. To je ravno njena zaporedna številka v neki ureditvi. V tem podpoglavju si bomo pogledali ureditvi s pomočjo Lehmerjeve kode in vektorja inverzij. Lehmerjeva koda in vektor inverzij sta zapisa števil v faktorskem številskem sistemu. Uporabimo ju kot vmesni korak med pretvarjanjem števila v permutacijo in obratno (slika \ref{pretvarjanje_permutacija_stevilo}).
 \begin{figure}[h]
     \begin{center}        
         \begin{tikzpicture}[shorten >=1pt,-]
             \tikzstyle{vertex}=[circle,draw=black!0,fill=white!25,minimum size=20pt,inner sep=0pt]
             
-            \node[vertex] (V-1) at (0, 1) {Permutacija};
+            \node[vertex] (V-1) at (0, 0.75) {Permutacija};
             \node[vertex] (V-2a) at (4, 0) {Lehmerjeva koda};
-            \node[vertex] (V-2b) at (4, 2) {Vektor inverzij};
-            \node[vertex] (V-3) at (8, 1) {Število};
+            \node[vertex] (V-2b) at (4, 1.5) {Vektor inverzij};
+            \node[vertex] (V-3) at (8, 0.75) {Število};
         
             \foreach \from/\to in {1/2a, 2a/3, 1/2b, 2b/3}
                 \draw[latex-latex] (V-\from) -- (V-\to);
@@ -852,7 +849,7 @@ kjer je $x^{(3)} < x^{(2)}$ in $r_2 < 2$. Na ta način nadaljujemo rekurzijo, ki
 kjer je $0 \leq r_i < i$ za $i = 1, 2, ..., n$. Se pravi $d_i = r_i$. Tako dobimo faktorski zapis števila $x$.
 
 \subsection{ Pretvorba med Lehmerjevo kodo ali vektorjem inverzij in številom }
-Lehmerjeva koda in vektor inverzij sta zapisa števila v faktorskem številskem sistemu, zato je pretvorba med Lehmerjevo kodo ali vektorjem inverzij in številom ravno pretvorba med faktorskim in desetiškim številskim sistemom.
+Lehmerjeva koda in vektor inverzij sta zapisa števil v faktorskem številskem sistemu, zato je pretvorba med Lehmerjevo kodo ali vektorjem inverzij in številom ravno pretvorba med faktorskim in desetiškim številskim sistemom.
 
 \subsection{ Pretvorba med Lehmerjevo kodo ali vektorjem inverzij in permutacijo }
 Poglejmo si najprej pretvorbi permutacije v Lehmerjevo kodo in vektor inverzij. Naj bo $\sigma = (\sigma_1, \sigma_2, ..., \sigma_n) \in S_n$ in $d_nd_{n-1}...d_2d_1$ zapis števila v faktorskem številskem sistemu (Lehmerjeva koda ali vektor inverzij).
@@ -863,7 +860,7 @@ Vektor inverzij permutacije $\sigma$ je podoben zapis. $d_{n-j+1}$ nam pove, kol
 
 Obe kodiranji lahko prikažemo z Rothejevim diagramom, kjer so pike postavljene na pozicijah $(i, \sigma_i)$, križi pa predstavljajo inverzije permutacije. Lehmerjeva koda nam šteje število križev v vsaki vrstici, vektor inverzij pa nam šteje število križev v vsakem stolpcu. Ker ima inverzna permutacija ravno transponiran Rothejev diagram, sledi, da je vektor inverzij ravno Lehmerjeva koda inverzne permutacije in Lehmerjeva koda je ravno vektor inverzij inverzne permutacije. Primer Rothejevega diagrama je prikazan v tabeli \ref{tbl:rothejev_diagram}.
 
-\begin{table}
+\begin{table}[h]
     \begin{center}
         \begin{tabular}{ |c|c|c|c|c|c|c|c|c|c|c| } 
         \hline
@@ -897,11 +894,10 @@ Obe kodiranji lahko prikažemo z Rothejevim diagramom, kjer so pike postavljene 
 
 Sedaj si poglejmo še pretvorbi Lehmerjeve kode in vektora inverzij v permutacijo (primeri za permutacije iz $S_4$ so v tabeli \ref{tbl:permutacije4vektorji}).
 
-Da bi pretvorili Lehmerjevo kodo $d_nd_{n-1}...d_1$ v permutacijo, najprej uredimo števila $1, 2, ..., n$ v vrsto. $\sigma_1$ je enak elementu v vrsti, ki je za $d_{n}$ elementi. Nato ta element izbrišemo iz vrste. $\sigma_2$ je enak elementu v spremenjeni vrsti, ki je za $d_{n-1}$ elementi. Nato ta element izbrišemo iz vrste in ponovimo postopek za $\sigma_3, ..., \sigma_n$ (primer \ref{primer_lehmerjeva_koda_permutacija}).
+Da bi pretvorili Lehmerjevo kodo $d_nd_{n-1}...d_1$ v permutacijo, najprej uredimo števila $1, 2, ..., n$ v vrsto. $\sigma_1$ je enak elementu v vrsti, ki je za $d_{n}$ elementi. Nato ta element izbrišemo iz vrste. $\sigma_2$ je enak elementu v spremenjeni vrsti, ki je za $d_{n-1}$ elementi. Nato ta element izbrišemo iz vrste in ponovimo postopek za $\sigma_3, ..., \sigma_n$ (primer \ref{primer_lehmerjeva_koda_permutacija}). Ta postopek je inverzen prej opisanemu, saj ko izberemo element za $\sigma_i$, bo ta element vedno imel natanko $d_{n-i+1}$ elementov, ki so manjši od $\sigma_i$ in so v inverziji s $\sigma_i$.
 
-Da bi pretvorili tabelo inverzij $d_nd_{n-1}...d_1$ v permutacijo, imejmo najprej prazno vrsto. Najprej vzemimo $n$ in ga vstavimo v vrsto za $d_1$ elementi (vedno $0$). Nato vzamemo $n-1$ in ga vstavimo v vrsto za $d_{2}$ elementi, ..., vzamemo $1$ in ga vstavimo v vrsto za $d_{n}$ elementi (primer \ref{primer_vektor_inverzij_permutacija}).
+Da bi pretvorili tabelo inverzij $d_nd_{n-1}...d_1$ v permutacijo, imejmo najprej prazno vrsto. Najprej vzemimo $n$ in ga vstavimo v vrsto za $d_1$ elementi (vedno $0$). Nato vzamemo $n-1$ in ga vstavimo v vrsto za $d_{2}$ elementi, ..., vzamemo $1$ in ga vstavimo v vrsto za $d_{n}$ elementi (primer \ref{primer_vektor_inverzij_permutacija}). Ta postopek je inverzen prej opisanemu, saj ko vstavimo element $j$ za $d_{n-j+1}$ elementi, bo $j$ vedno v inverziji oblike $(i, j)$ z natanko $d_{n-j+1}$ elementi, kjer je $j$ manjša vrednost para števil v inverziji.
 
-Vsota števk v Lehmerjevi kodi ali vektorju inverzij nam pove število inverzij permutacije, saj vsak križ v Rothejevem diagramu predstavlja ravno eno inverzijo in vsota števk Lehmerjeve kode ali vekorja inverzij je ravno vsota vseh križev v Rothejevem diagramu. 
 
 \begin{primer}
 \label{primer_lehmerjeva_koda_permutacija}
@@ -931,14 +927,16 @@ je $\sigma = (6, 3, 8, 1, 4, 9, 7, 2, 5)$ permutacija Lehmerjeve kode 525013200.
         &d_6 = 2& \ &\Rightarrow& \ &[ \ 6, \ 8, \ 4, \ 9, \ 7, \ 5 \ ], \notag \\
         &d_7 = 1& \ &\Rightarrow& \ &[ \ 6, \ 3, \ 8, \ 4, \ 9, \ 7, \ 5 \ ], \notag \\
         &d_8 = 6& \ &\Rightarrow& \ &[ \ 6, \ 3, \ 8, \ 4, \ 9, \ 7, \ 2, \ 5 \ ], \notag \\
-        &d_9 = 3& \ &\Rightarrow& \ &[ \ 6, \ 3, \ 8, \ 1, \ 4, \ 9, \ 7, \ 2, \ 5 \ ], \notag \\
+        &d_9 = 3& \ &\Rightarrow& \ &[ \ 6, \ 3, \ 8, \ 1, \ 4, \ 9, \ 7, \ 2, \ 5 \ ], \notag
     \end{align}
     je $\sigma = (6, 3, 8, 1, 4, 9, 7, 2, 5)$ permutacija vektorja inverzij 361240200.
 \end{primer}
 
+Vsota števk v Lehmerjevi kodi ali vektorju inverzij nam pove število inverzij permutacije, saj vsak križ v Rothejevem diagramu predstavlja ravno eno inverzijo in vsota števk Lehmerjeve kode ali vekorja inverzij je ravno vsota vseh križev v Rothejevem diagramu. 
+
 
 %Parnost vsote pa nam pove znak permutacije.
-\begin{table}
+\begin{table}[h]
     \begin{center}
         \begin{tabular}{ |c|c|c|c| } 
         \hline
