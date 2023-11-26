@@ -203,7 +203,7 @@
     INTERDISCIPLINARNI UNIVERZITETNI\\ ŠTUDIJSKI PROGRAM PRVE STOPNJE\\ RAČUNALNIŠTVO IN MATEMATIKA}\par}%
     \vfill\null%
 % izberite pravi habilitacijski naziv mentorja!
-    {\large \textsc{Mentor}: izr. prof. dr. Polona Oblak\par}%
+    {\large \textsc{Mentorica}: izr. prof. dr. Polona Oblak\par}%
 %    {\large \textsc{Somentor}:  viš. pred./doc./izr. prof./prof. dr.  Martin Krpan \par}%
     {\vskip 2em \large Ljubljana, 2023 \par}%
 \end{center}
@@ -374,41 +374,44 @@ A proper abstract should contain around 100 words which makes this one way too s
 
 \chapter {Uvod}
 
-Inverzija permutacije je par elementov, ki sta v obratnem vrstem redu kot v permutaciji $(1, 2,..., n)$. Število inverzij nam meri stopnjo neurejenosti oziroma oddaljenost permutacije od urejenega zaporedja. Permutacijski graf je graf z vozlišči $\{ 1, 2, ..., n \}$, kjer je $xy$ povezava natanko tedaj, ko je par elementov $(x, y)$ ali $(y, x)$ inverzija permutacije. 
+Inverzija permutacije je par elementov, ki sta v obratnem vrstem redu kot v permutaciji $(1, 2,\dots, n)$. Število inverzij nam meri stopnjo neurejenosti oziroma oddaljenost permutacije od urejenega zaporedja števil $1, 2, \dots, n$. Permutacijski graf permutacije $\pi$ je graf z vozlišči $\{ 1, 2, \dots, n \}$, kjer je $xy$ povezava natanko tedaj, ko je par elementov $(x, y)$ ali $(y, x)$ inverzija permutacije $\pi$. 
 
-Leta 2012 so Gervacio, Rapanut in Ramos ~\cite{charectarizationPermutationGraphs} karakterizirali permutacijske grafe s pomočjo kohezivnega zaporedja vozlišč. Poleg tega so pokazali, da so gosenice edina drevesa, ki so permutacijski grafi ter kako lahko na enostaven način konstruiramo permutacijske grafe. Leta 2023 sta Brualdi in Dahl ~\cite{weakBruhatOrder} pokazala, da obstajata natanko dve permutaciji iz $S_n$, katerih permutacijski graf je izomorfen neki gosenici na $n$ vozliščih ($n \geq 3$). Poleg tega pokažeta tudi kako so permutacije delno urejene v šibki Bruhatovi delni urejenosti. Definicija Bruhatove delne urejenosti na permutacijah je podana v članku ~\cite{bruhatOrder}. V ~\cite{generatingFunction} Margolius prikaže kako pridemo do rodovne funkcije za število permutacij dolžine $n$ z $i$ inverzijami.
+Leta 2012 so Gervacio, Rapanut in Ramos ~\cite{charectarizationPermutationGraphs} karakterizirali permutacijske grafe s pomočjo kohezivnega zaporedja vozlišč. Poleg tega so pokazali, da so gosenice edina drevesa, ki so permutacijski grafi ter kako lahko na enostaven način konstruiramo permutacijske grafe. Leta 2023 sta Brualdi in Dahl ~\cite{weakBruhatOrder} pokazala, da obstajata natanko dve permutaciji iz $S_n$, katerih permutacijski graf je izomorfen neki dani gosenici na $n$ vozliščih ($n \geq 3$). Poleg tega pokažeta tudi, kako so permutacije urejene v šibki Bruhatovi delni urejenosti. Definicija Bruhatove delne urejenosti na permutacijah je podana v članku ~\cite{bruhatOrder}. V ~\cite{generatingFunction} Margolius prikaže, kakšna je rodovne funkcije za število permutacij dolžine $n$ z $i$ inverzijami.
 
-Tekmovalnostni graf je generiran z množico permutacij oziroma rangiranj $R$. Vozlišča tekmovalnostnega grafa so $\{ 1, 2, ..., n \}$, kjer je $xy$ povezava natanko tedaj, ko je par elementov $(x, y)$ v dveh permutacijah iz $R$ v različnem vrstnem redu. Vsak permutacijski graf je tudi tekmovalnostni.
+Vsak permutacijski graf je tudi tekmovalnostni. Tekmovalnostni graf je generiran z množico permutacij oziroma rangiranj $R$. Vozlišča tekmovalnostnega grafa so $\{ 1, 2, \dots, n \}$, kjer je $xy$ povezava natanko tedaj, ko je par elementov $(x, y)$ v dveh permutacijah iz $R$ v različnem vrstnem redu. 
 
-Leta 2015 so Criado, García, Pedroche in Romance v ~\cite{setsOfRankings} predstavijo in analizirajo nekaj pomembnih množic vozlišč tekmovalnostnega grafa. Na primer množica tekmovalcev je množica vozlišč, kjer vsako vozlišče iz množice tekmuje z vsemi ostalimi vozlišči iz množice in množica posrednih in neposrednih tekmovalcev je množica vozlišč, kjer vsako vozlišče iz množice posredno ali neposredno tekmuje z vsemi vozlišči iz množice preko neke poti v grafu, kjer med seboj tekmujeta vsaki sosednji vozlišči na poti. Poleg tega predstavijo algoritem, ki ne potrebuje konstrukcije tekmovalnostnega grafa, za izračun množic posrednih in neposrednih tekmovalcev.
+Leta 2015 so Criado, García, Pedroche in Romance v ~\cite{setsOfRankings} predstavili in analizirali nekaj pomembnih množic vozlišč tekmovalnostnega grafa. Na primer, množica tekmovalcev je množica vozlišč, kjer vsako vozlišče iz množice tekmuje z vsemi ostalimi vozlišči iz množice. Množica posrednih in neposrednih tekmovalcev je množica vozlišč, kjer vsako vozlišče iz množice posredno ali neposredno tekmuje z vsemi vozlišči iz množice preko neke poti v grafu, kjer med seboj tekmujeta vsaki sosednji vozlišči na poti. Poleg tega predstavijo algoritem za izračun množic posrednih in neposrednih tekmovalcev, ki ne potrebuje konstrukcije tekmovalnostnega grafa.
 
-Ostale informacije o permutacijah, inverzijah, permutacijskih grafih in faktorskem številskem sistemu so bile pridobiljene iz \cite{dsSkripta}, \cite{inversionCoding} in \cite{factorialNumberSystem}.
+Ostale informacije o permutacijah, inverzijah, permutacijskih grafih in faktorskem številskem sistemu so bile pridobiljene iz \cite{dsSkripta, inversionCoding, factorialNumberSystem}.
+
+V drugem poglavju bomo predstavili permutacije in inverzije permutacij. Pogledali si bomo njihove lastnosti ter različne urejenosti množice permutacij $S_n$. V tretjem poglavju bomo definirali permutacijske grafe in jih karakterizirali s pomočjo kohezivnega zaporedja vozlišč. Pokazali bomo, da so gosenice edina drevesa, ki so permutacijski grafi. V četrtem poglavju bomo predstavili tekmovalnostne grafe, množice tekmovalcev, množice posrednih in neposrednih tekmovalcev ter algoritem za izračun množice posrednih in neposrednih tekmovalcev, ki ne potebuje konstrukcije tekmovalnostega grafa.
 
 % Našteti viri, da se pokažejo v literaturi:
 %  Karakterizacija in konstrukcija permutacijskih grafov~\cite{charectarizationPermutationGraphs}, Permutacijski grafi in šibka Bruhatova urejenost~\cite{weakBruhatOrder}, O Bruhatovi urejenosti in njeni ljuplivost~\cite{bruhatOrder}, O grafih povezanih z množicami rangiranj~\cite{setsOfRankings}, rodovna funkcija~\cite{generatingFunction}. Na spletnih straneh ~\cite{permutation}~\cite{inversion}~\cite{permutationGraph}~\cite{permutationGroup}~\cite{factorialNumberSystem}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{ Notacija, oznake in definicije }
+\section{ Splošne oznake in definicije }
 
-Graf $G = (V(G), E(G))$ ima množico vozlišč $V(G)$ in množico povezav $E(G)$. Premer grafa je najdaljša pot med dvema vozliščema. Disjunktna unija grafov je združitev dveh grafov v večji graf tako, da naredimo disjunktno unijo množic vozlišč in povezav. Komplement grafa $G$ označimo z $\overline{G}$ (nepovezave grafa $G$ so povezave grafa $\overline{G}$). $K_n$ je poln graf na $n$ vozliščih, $\overline{K_n}$ je nepovezan graf na $n$ vozliščih, $P_n$ je pot na $n$ vozliščih, $K_{n, k}$ je dvodelen graf z $n$ vozlišči v eni in $k$ vozlišči v drugi množici. Določiti smer povezave $uv$ grafa $G$ pomeni spremeniti $uv$ v urejen par $(u, v)$ ali $(v, u)$. Orientacija grafa $G$ je usmerjen graf pridobljen tako, da vsaki povezavi grafa $G$ določimo smer.
+V delu bomo uporabili naslednje oznake in definicije.
+Graf $G = (V(G), E(G))$ ima množico vozlišč $V(G)$ in množico povezav $E(G)$. Premer grafa je najdaljša pot med dvema vozliščema. Disjunktna unija grafov je združitev dveh grafov v večji graf tako, da naredimo disjunktno unijo množic vozlišč in disjunktno unijo množic povezav. Komplement grafa $G$ označimo z $\overline{G}$ (nepovezave grafa $G$ so povezave grafa $\overline{G}$). $K_n$ je poln graf na $n$ vozliščih, $\overline{K_n}$ je nepovezan graf na $n$ vozliščih, $P_n$ je pot na $n$ vozliščih, $K_{m, n}$ je dvodelen graf z $m$ vozlišči v eni in $n$ vozlišči v drugi množici. Določiti smer povezave $uv$ grafa $G$ pomeni spremeniti $uv$ v urejen par $(u, v)$ ali $(v, u)$. Usmerjen graf je graf, ki ima vse povezave usmerjene. Orientacija grafa $G$ je usmerjen graf, ki je pridobljen tako, da vsaki povezavi grafa $G$ določimo smer.
 
-Relacija $R$ na neprazni množici $A$ je množica urejenih parov elementov iz $A$, to pomeni $R\subseteq A\times A, A\neq\emptyset$. $(x, y) \in R$ preberemo kot $x$ je v relaciji $R$ z $y$, kar označimo z $xRy$. Relacija $R$ je:
+Relacija $R$ na neprazni množici $A$ je množica urejenih parov elementov iz $A$, to pomeni $R\subseteq A\times A$. Oznako $(x, y) \in R$ preberemo kot $x$ je v relaciji $R$ z $y$, kar označimo z $xRy$. Relacija $R$ je:
 \begin{itemize}
     \item refleksivna, če $xRx$ za vsak $x\in A$,
     \item irefleksivna, če $\neg xRx$ za vsak $x\in A$,
-    \item simetrična, če iz $xRy$ sledi, da $yRx$ za vsaka $x,y\in A$,
-    \item asimetrična, če iz $xRy$ sledi, da $\neg yRx$ za vsaka $x,y\in A$,
-    \item antisimetrična, če iz xRy sledi, da $x = y$ ali $\neg yRx$ za vsaka $x,y\in A$,
-    \item tranzitivna, če iz $xRy$ in $yRz$ sledi, da $xRz$ za vsake $x,y,z\in A$,
+    \item simetrična, če iz $xRy$ sledi, $yRx$ za vsaka $x,y\in A$,
+    \item asimetrična, če iz $xRy$ sledi, $\neg yRx$ za vsaka $x,y\in A$,
+    \item antisimetrična, če iz $xRy$ sledi, da je $x = y$ ali $\neg yRx$ za vsaka $x,y\in A$,
+    \item tranzitivna, če iz $xRy$ in $yRz$ sledi, da je $xRz$ za vse $x,y,z\in A$,
     \item sovisna, če iz $x \neq y$ sledi, da $xRy$ ali $yRx$ za vsaka $x,y\in A$,
-    \item strogosovisna, če $xRy$ ali $yRx$ za vsaka $x,y\in A$.
+    \item strogo sovisna, če $xRy$ ali $yRx$ za vsaka $x,y\in A$.
 \end{itemize}
 Za relacijo $R$ rečemo, da je:
 \begin{itemize}
     \item delna urejenost, če je $R$ refleksivna, antisimetrična in tranzitivna,
     \item linearna urejenost, če je $R$ antisimetrična, strogosovisna, transitivna,
-    \item stroga delna urejenost, če je $R$ asimetrična in tranzitivna (irefleksivna),
+    \item stroga delna urejenost, če je $R$ asimetrična in tranzitivna,
     \item stroga linearna urejenost, če je $R$ asimetrična, sovisna in transitivna.
 \end{itemize}
 Če je $R$ linearna urejenost, potem je delna urejenost. Če je $R$ stroga linearna urejenost, potem je stroga delna urejenost.
@@ -431,19 +434,18 @@ Za relacijo $R$ rečemo, da je:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{ Permutacije in inverzije }
 
-V tem poglavju bomo definirali permutacije, pogledali kako jih lahko predstavimo in pokazali, da so permutacije množice $[n]$ skupaj s kompozitumom grupa. Nato bomo definirali inverzije permutacije, pogledali kako sta definirani Bruhatovi delni urejenosti, pokazali, kako zapišemo rodovno funkcijo za število permutacij množice $[n]$ z $i$ inverzijami, in si ogledali, kako lahko uredimo množico $S_n$ in tako permutacije identificiramo s celimi števili.
+V tem poglavju bomo definirali permutacije, pogledali kako jih lahko predstavimo in pokazali, da so permutacije množice $[n] = \{ 1, 2,\dots, n\}$ skupaj z operacijo kompozitum grupa. Nato bomo definirali inverzije permutacije, pogledali kako sta definirani Bruhatovi delni urejenosti, pokazali, kako zapišemo rodovno funkcijo za število permutacij množice $[n]$ z $i$ inverzijami, in si ogledali, kako lahko uredimo množico $S_n$ in tako permutacije identificiramo s celimi števili.
 
 \section{ Permutacije }
 
-Množico naravnih števil od 1 do n označimo z $[n] = \{ 1, 2,..., n\}$.
-Permutacije so prerazporeditve elementov neke končne množice. Elemente te množice lahko oštevilčimo s števili $1, 2, ..., n$, zato bomo brez škode za splošnost permutacije gledali na množici $[n]$. 
-$S_n$ je množica vseh permutacij na množici $[n]$.
+Množico naravnih števil od $1$ do $n$ označimo z $[n] = \{ 1, 2,\dots, n\}$.
+Permutacije so prerazporeditve elementov neke končne množice. Elemente te množice lahko oštevilčimo s števili $1, 2, \dots, n$, za nek n, zato bomo brez škode za splošnost permutacije gledali na množici $[n]$. 
 Permutacije so pomembne v matematiki, računalništvu in na številnih drugih področjih. 
 
 
 
 \begin{definicija}
-Bijektivni preslikavi $\pi: [n] \rightarrow [n]$ rečemo permutacija.
+Bijektivni preslikavi $\pi: [n] \rightarrow [n]$ rečemo permutacija. $S_n$ je množica vseh permutacij na množici $[n]$.
 \end{definicija}
 
 \subsection{ Zapis permutacij }
@@ -495,10 +497,7 @@ Ta zapis nam pove, da je:
         \pi = \begin{pmatrix}
             1 & 2 & 3 & 4 & 5 \\
             3 & 5 & 1 & 4 & 2
-        \end{pmatrix},
-    \]
-    \[
-        \pi = (3, 5, 1, 4, 2).
+        \end{pmatrix} = (3, 5, 1, 4, 2).
     \]
     Če so vsi elementi permutacije manjši od 10, bomo med številkami izpustili vejice. Včasih izpustimo tudi oklepaje. Pri tem moramo vedeti, da to ni zapis permutacije z disjunktnimi cikli.
     \[
@@ -508,13 +507,13 @@ Ta zapis nam pove, da je:
     \[
         \pi = (1 3)(2 5)(4).
     \]
-    Če vemo koliko elementov ima permutacija, lahko cikle dolžine ena izpustimo. 
+    Če vemo koliko elementov ima permutacija, lahko cikle dolžine ena izpustimo: 
     \[
-        \pi = (1 3)(2 5)
+        \pi = (1 3)(2 5).
     \]
-    Zapis permutacije $\pi$ kot produkt disjunktnih ciklov ni enoličen, saj lahko na začetek vsakega cikla postavimo poljuben element iz tega cikla.
+    Zapis permutacije $\pi$ kot produkt disjunktnih ciklov ni enoličen, saj lahko na začetek vsakega cikla postavimo poljuben element iz tega cikla, poleg tega pa disjunktni cikli komutirajo:
     \[
-        \pi = (3 1)(5 2)
+        \pi = (3 1)(5 2) = (5 2)(3 1).
     \]
 \end{primer}
 
@@ -531,23 +530,23 @@ Kompozitum preslikav, ki ga označimo z $\circ$, je operacija na množici presli
 \end{trditev}
 \begin{dokaz}
     \begin{enumerate}
-        \item Asociativnost: Naj bodo $\pi, \sigma, \tau \in S_n$. Za vsak $i \in [n]$ 
+        \item Asociativnost: Naj bodo $\pi, \sigma, \tau \in S_n$. Za vsak $i \in [n]$ velja: 
         \[
-            ((\pi \circ \sigma) \circ \tau)(i) = (\pi \circ \sigma)(\tau(i)) = \pi(\sigma(\tau(i)))
+            ((\pi \circ \sigma) \circ \tau)(i) = (\pi \circ \sigma)(\tau(i)) = \pi(\sigma(\tau(i))),
         \]
         \[
-            (\pi \circ (\sigma \circ \tau))(i) = \pi((\sigma \circ \tau)(i)) = \pi(\sigma(\tau(i))) 
+            (\pi \circ (\sigma \circ \tau))(i) = \pi((\sigma \circ \tau)(i)) = \pi(\sigma(\tau(i))).
         \]
         \item Obstoj enote: Za vsaka $\pi \in S_n$ in $i \in [n]$ velja:
         \[
-            (\pi \circ id)(i) = \pi(id(i)) = \pi(i)
+            (\pi \circ id)(i) = \pi(id(i)) = \pi(i),
         \]
         \[
-            (id \circ \pi)(i) = id(\pi(i)) = \pi(i)
+            (id \circ \pi)(i) = id(\pi(i)) = \pi(i).
         \]
-        \item Obstoj inverza: Naj bo $\pi \in S_n$. Ker je $\pi$ bijekcija, obstaja $\pi^{-1} \in S_n$.
+        \item Obstoj inverza: Naj bo $\pi \in S_n$. Ker je $\pi$ bijekcija, obstaja $\pi^{-1} \in S_n$:
         \[
-            \pi \circ \pi^{-1} = \pi^{-1} \circ \pi = id
+            \pi \circ \pi^{-1} = \pi^{-1} \circ \pi = id.
         \]
     \end{enumerate}
     S pomočjo zgornjih lastnosti smo pokazali, da je $(S_n, \circ)$ grupa.
@@ -565,7 +564,8 @@ Po Cayleyevem izreku \cite{dsSkripta} je vsaka grupa izomorfna neki permutacijsk
 V tem podpoglavju bomo najprej definirali inverzijo permutacije, ki je par elementov, ki sta v obratnem vrstem redu kot v identični permutaciji. Število inverzij nam meri stopnjo neurejenosti permutacije oziroma oddaljenost permutacije od identične permutacije. 
 
 \begin{definicija}
-    Inverzija permutacije $\sigma = (a_1, a_2,... a_n) \in S_n$ je urejen par $(a_i, a_j)$, kjer je $i < j$ in $a_i > a_j$. Množico vseh inverzij permutacije $\sigma$ označimo z $I_{\sigma}$. Pozicijski zapis inverzije $(a_i, a_j)$ je $(i, j)$.
+\label{definicija_inverzije}
+    Inverzija permutacije $\sigma = (a_1, a_2,\dots a_n) \in S_n$ je urejen par $(a_i, a_j)$, kjer je $i < j$ in $a_i > a_j$. Množico vseh inverzij permutacije $\sigma$ označimo z $I_{\sigma}$. Pozicijski zapis inverzije $(a_i, a_j)$ je $(i, j)$.
 \end{definicija}
 
 \begin{figure}[h]
@@ -577,11 +577,17 @@ V tem podpoglavju bomo najprej definirali inverzijo permutacije, ki je par eleme
             \foreach \num/\y in {1/1, 2/2, 3/3, 4/4}
                 \node[vertex] (VV-\num) at (4, 4-\y) {$\num$};
         
+            
+            \node[vertex] (V-0) at (0,3.5) {};
+            \node[vertex] (VV-0) at (4,3.5) {};
+            \node[vertex] (V-5) at (0,-0.5) {};
+            \node[vertex] (VV-5) at (4,-0.5) {};
+
             \foreach \from/\to in {1/4, 2/2, 3/1, 4/3}
                 \draw[latex-latex] (V-\from) -- (VV-\to);
 
-            \draw[-latex] (V-1) .. controls (1, 3.75) and (3, 3.75) .. (VV-1) node[midway, above]{$\sigma$};
-            \draw[latex-] (V-4) .. controls (1, -0.5) and (3, -0.5) .. (VV-4) node[midway, above]{$\sigma^{-1}$};
+            \draw[-latex] (V-0) .. controls (1, 4.5) and (3, 4.5) .. (VV-0) node[midway, above]{$\sigma$};
+            \draw[latex-] (V-5) .. controls (1, -1.5) and (3, -1.5) .. (VV-5) node[midway, above]{$\sigma^{-1}$};
 
         \end{tikzpicture}
     \end{center}
@@ -589,17 +595,23 @@ V tem podpoglavju bomo najprej definirali inverzijo permutacije, ki je par eleme
     \label{permutacija_4213}
 \end{figure}
 
-Število inverzij permutacije $\sigma$ je enako številu inverzij permutacije $\sigma^{-1}$. Še več, če ima $\sigma$ inverzije $(a_{i_1}, a_{j_1}), ..., (a_{i_k}, a_{j_k})$, potem ima $\sigma^{-1}$ inverzije $(j_1, i_1), ...., (j_k, i_k)$. Iz dejstva, da je $(a_i, a_j)$ inverzija permutacije $\sigma$ sledi, da je $\sigma^{-1}(a_i) = i < j = \sigma^{-1}(a_j)$ in $\sigma(i) = a_i > a_j = \sigma(j)$. Torej je $(j, i)$ inverzija permutacije $\sigma^{-1}$.
+Naj bo $(a_i, a_j)$ inverzija permutacije $\sigma$. Potem je po definiciji \ref{definicija_inverzije} veljata pogoja: 
+\[
+    \sigma^{-1}(a_i) = i < j = \sigma^{-1}(a_j), \quad \sigma(i) = a_i > a_j = \sigma(j).
+\]
+Torej je $(j, i)$ inverzija permutacije $\sigma^{-1}$.
+Še več, če ima permutacija $\sigma$ inverzije $(a_{i_1}, a_{j_1}), \dots, (a_{i_k}, a_{j_k})$, potem ima $\sigma^{-1}$ inverzije $(j_1, i_1), \dots, (j_k, i_k)$. 
+Število inverzij permutacije $\sigma$ je enako številu inverzij permutacije $\sigma^{-1}$.
 
 \begin{primer}
     Naj bo $\sigma = (4, 2, 1, 3)$ kot na sliki \ref{permutacija_4213}. Inverzije permutacije $\sigma$ so $(4, 2), (4, 1), (4, 3), (2, 1)$. Pozicijski zapisi inverzij permutacije $\sigma$ so $(1, 2), (1, 3), (1, 4), (2, 3)$. Inverz permutacije $\sigma$ je $\sigma^{-1} = (3, 2, 4, 1)$. Inverzije permutacije $\sigma^{-1}$ so $(3, 2), (3, 1), (2, 1), (4, 1)$. To so ravno obrnjeni pozicijski zapisi inverzij permutacije $\sigma$.
 \end{primer}
 
-Urejena permutacija $id = (1, 2, ..., n)$ nima inverzij. Največ inverzij ima permutacija $(n, n-1, ..., 1)$. V tem primeru je vsak par različnih števil v inverziji. Število izborov dveh elementov izmed $n$ je ravno $\binom{n}{2}$, torej je $|I_{(n, n-1, ..., 1)}| = \binom{n}{2}$.
+Identična permutacija $id = (1, 2, \dots, n)$ nima inverzij. Največ inverzij ima permutacija $(n, n-1, \dots, 1)$. V tem primeru je vsak par različnih števil v inverziji. Število izborov dveh elementov izmed $n$ je ravno $\binom{n}{2}$, torej je $|I_{(n, n-1, \dots, 1)}| = \binom{n}{2}$.
 
 Število inverzij je enako številu presečišč v puščičnem diagramu permutacije (slika \ref{permutacija_4213}). To je res, saj vsaka inverzija $(a_i, a_j)$ ustreza presečišču puščic, ki izhajajata iz $i$ in $j$ ter gresta proti $a_i$ in $a_j$, kjer je $a_i > a_j$ in $i < j$.
 
-Standardne primerjalne algoritme razvrščanja, kot je na primer merge sort, lahko prilagodimo tako, da izračunamo število inverzij neke permutacije iz $S_n$ v času $O(n \cdot \log(n))$ \cite{algorithmDesign}.
+Standardne primerjalne algoritme razvrščanja, kot je na primer merge sort, lahko prilagodimo tako, da izračunamo število inverzij neke permutacije iz $S_n$ v času $O(n \cdot \log(n))$, \cite{algorithmDesign}.
 
 \section{ Bruhatovi delni urejenosti permutacij}
 
@@ -626,7 +638,7 @@ Standardne primerjalne algoritme razvrščanja, kot je na primer merge sort, lah
             \foreach \num/\x in {4321/5}
                 \node[vertex] (V-\num) at (\x, 12) {$\num$};
 
-            \foreach \from/\to in {1234/1243, 1234/1324, 1234/2134, 1243/1423, 1243/2143, 1324/1342, 1324/3124, 2134/2143, 2134/2314, 1423/1432, 1423/4123, 1342/1432, 1342/3142, 2143/2413, 3124/3142, 3124/3214, 2314/3214, 2314/2341, 1432/4132, 4123/4132, 4123/4213, 2413/4213, 2413/2431, 3142/3412, 3214/3241, 2341/2431, 2341/3241, 4132/4312, 4213/4231, 3412/4312, 3412/3421, 2431/4231, 3241/3421, 4312/4321, 4231/4321, 3421/4321, 1243/1342, 1324/1423, 1324/2314, 2134/3124, 1423/2413, 1342/2341, 2143/4123, 2143/3142, 2143/2341, 3124/4123, 2314/2413, 1432/3412, 1432/2431, 2413/3412, 3142/4132, 3142/3241, 3214/4132, 3214/3412, 4132/4231, 4213/4312, 2431/3421, 3241/4231}
+            \foreach \from/\to in {1234/1243, 1234/1324, 1234/2134, 1243/1423, 1243/2143, 1324/1342, 1324/3124, 2134/2143, 2134/2314, 1423/1432, 1423/4123, 1342/1432, 1342/3142, 2143/2413, 3124/3142, 3124/3214, 2314/3214, 2314/2341, 1432/4132, 4123/4132, 4123/4213, 2413/4213, 2413/2431, 3142/3412, 3214/3241, 2341/2431, 2341/3241, 4132/4312, 4213/4231, 3412/4312, 3412/3421, 2431/4231, 3241/3421, 4312/4321, 4231/4321, 3421/4321, 1243/1342, 1324/1423, 1324/2314, 2134/3124, 1423/2413, 1342/2341, 2143/4123, 2143/3142, 2143/2341, 3124/4123, 2314/2413, 1432/3412, 1432/2431, 2413/3412, 3142/4132, 3142/3241, 3214/4213, 3214/3412, 4132/4231, 4213/4312, 2431/3421, 3241/4231}
                 \draw (V-\from) -- (V-\to);
         \end{tikzpicture}     
     \end{center}
@@ -694,7 +706,7 @@ Iz definicije \ref{definicija_sibke_bruhatove_urejenosti} sledi, da lahko $\sigm
 Naslednja lema nam pove, kaj se zgodi z množicami inverzij $I_{\pi}$ in $I_{\sigma}$ permutacij $\pi$ in $\sigma$, kjer eno pridobimo iz druge s poljubno transpozicijo.
 
 \begin{lema}
-    Naj bo $1 \leq k < l \leq n$, $\pi = (i_1, ..., i_{k-1}, i_k, ..., i_l, i_{l+1}, ..., i_n) \in S_n$, kjer je $i_k > i_l$, in $\sigma = (i_1, ..., i_{k-1}, i_l, ..., i_k, i_{l+1}, ..., i_n) \in S_n$, pridobljena iz $\pi$ s transpozicijo elementov $i_k$ in $i_l$. Poglejmo si particijo množice $L = \{ k, k+ 1, ...., l\}$ v množice $L_1, L_2, L_3$ in $\{ k, l \}$, kjer so:
+    Naj bo $\pi = (i_1, \dots, i_{k-1}, i_k, \dots, i_l, i_{l+1}, \dots, i_n) \in S_n$, kjer je $i_k > i_l$ in $1 \leq k < l \leq n$, in $\sigma = (i_1, \dots, i_{k-1}, i_l, \dots, i_k, i_{l+1}, \dots, i_n) \in S_n$, pridobljena iz $\pi$ s transpozicijo elementov $i_k$ in $i_l$. Poglejmo si particijo množice $L = \{ k, k+ 1, \dots, l\}$ v množice $L_1, L_2, L_3$ in $\{ k, l \}$, kjer so:
     \[
         L_1 = \{ s \in L: i_s > i_k \}, L_2 = \{ s \in L: i_k > i_s > i_l \}, L_3 = \{ s \in L: i_s < i_l \}.
     \]
@@ -706,7 +718,7 @@ Naslednja lema nam pove, kaj se zgodi z množicami inverzij $I_{\pi}$ in $I_{\si
     Vidimo, da je $\sigma \preceq_b \pi$ ($I_{\sigma} \subseteq I_{\pi}$) natanko tedaj, ko za vsak $s$, kjer je $k < s < l$, velja $i_k > i_s > i_l$ ($I_{\sigma} \setminus I_{\pi} = \emptyset$). Zato je $\sigma \preceq_b \pi$ natanko tedaj, ko lahko pridobimo $\sigma$ iz $\pi$ z zaporedjem transpozicij sosednjih elementov, ki zmanjšajo število inverzij za ena.
 \end{lema}
 \begin{dokaz}
-    Naj bo $1 \leq k < l \leq n$, $\pi = (i_1, ..., i_{k-1}, i_k, ..., i_l, i_{l+1}, ..., i_n) \in S_n$, kjer je $i_k > i_l$, in $\sigma = (i_1, ..., i_{k-1}, i_l, ..., i_k, i_{l+1}, ..., i_n) \in S_n$, pridobljena iz $\pi$ s transpozicijo elementov $i_k$ in $i_l$. Inverzije oblike $(i_a, i_b), (i_{b_1}, i_{b_2})$ in $(i_b, i_c)$, kjer je $a < k$, $k \leq b \leq l$, $k < b_1 < l$, $k < b_2 < l$ in $l < c$, so v obeh permutacijah. Zato jih v razlikah $I_{\pi} \setminus I_{\sigma}$ in $I_{\sigma} \setminus I_{\pi}$ ni. Razliki sta zato ravno:
+    Naj bo $1 \leq k < l \leq n$, $\pi = (i_1, \dots, i_{k-1}, i_k, \dots, i_l, i_{l+1}, \dots, i_n) \in S_n$, kjer je $i_k > i_l$, in $\sigma = (i_1, \dots, i_{k-1}, i_l, \dots, i_k, i_{l+1}, \dots, i_n) \in S_n$, pridobljena iz $\pi$ s transpozicijo elementov $i_k$ in $i_l$. Inverzije oblike $(i_a, i_b), (i_{b_1}, i_{b_2})$,  $(i_b, i_c)$ in $(i_a, i_c)$, kjer je $a < k$, $k \leq b \leq l$, $k < b_1 < l$, $k < b_2 < l$ in $l < c$, so v obeh permutacijah. Zato jih v razlikah $I_{\pi} \setminus I_{\sigma}$ in $I_{\sigma} \setminus I_{\pi}$ ni. Razliki sta zato ravno:
     \begin{align}
         I_{\pi} \setminus I_{\sigma} &= \{ (i_k, i_l) \} \cup \{ (i_k, i_s): s \in L_2 \cup L_3 \} \cup \{ (i_s, i_l): s \in L_1 \cup L_2 \}, \notag \\
         I_{\sigma} \setminus I_{\pi} &= \{ (i_l, i_s): s \in L_3 \} \cup \{ (i_s, i_k): s \in L_1 \}. \notag
@@ -757,13 +769,13 @@ Sedaj si poglejmo, kako rekurzivno konstruiramo rodovno funkcijo $f_n(x)$. Začn
 \]
 Sedaj iz permutacije iz $S_1$ naredimo permutacijo iz $S_2$ tako, da vstavimo dvojko na prvo ali drugo mesto. Vidimo da, če jo vstavimo na prvo mesto, dobimo permutacijo $(2, 1)$, ki ima eno inverzijo. V drugem primeru pa dobimo permutacijo $(1, 2)$, ki nima inverzij. Tako dobimo rodovno funkcijo:
 \[
-    f_2(x) = 1 + x = 1 \cdot (1 + x).
+    f_2(x) = 1 + x = f_1(x) \cdot (1 + x).
 \]
-Sedaj iz permutacije iz $S_2$ na podoben način naredimo permutacijo iz $S_3$. Imamo dve različni permutaciji iz $S_2$. Permutacija $(1, 2)$ je brez inverzij. Ko vstavimo trojko na poljubno mesto, ustvarimo permutacijo z dvema, eno ali nič inverzijami. Druga permutacija je $(2, 1)$ z eno inverzijo. Ko vstavimo trojko na poljubno mesto, ustvarimo permutacijo s tremi, dvema ali eno inverzijo. Tako dobimo rodovno funkcijo:
+Sedaj iz permutacije iz $S_2$ na podoben način naredimo permutacijo iz $S_3$. Imamo dve različni permutaciji iz $S_2$. Permutacija $(1, 2)$ je brez inverzij. Ko vstavimo trojko na poljubno mesto, ustvarimo permutacijo z dvema, eno ali nič inverzijami. Druga permutacija je $(2, 1)$ z eno inverzijo. Ko vstavimo trojko na poljubno mesto, ustvarimo permutacijo s tremi, dvema ali eno inverzijo, torej zopet dve, eno ali nič novih inverzij. Tako dobimo rodovno funkcijo:
 \[
-    f_3(x) = 1 + 2x + 2x^2 + x^3 = 1 \cdot (1 + x + x^2) + x \cdot (1 + x + x^2) = 1 \cdot (1 + x) \cdot (1 + x + x^2).
+    f_3(x) = 1 + 2x + 2x^2 + x^3 = 1 \cdot (1 + x + x^2) + x \cdot (1 + x + x^2) = f_2(x) \cdot (1 + x + x^2).
 \]
-Vidimo da, ko v permutacijo iz $S_{n-1}$ vstavimo element $n$, lahko naredimo med $0$ in $n-1$ novih inverzij ($1 + x + \cdot\cdot\cdot + x^{n-1}$) odvisno od tega, kam vstavimo element $n$. Prav tako vse inverzije, ki so bile del permutacije iz $S_{n-1}$, ostanejo. Tako iz $a_i$ permutacij iz $S_{n-1}$ z $i$ inverzijami dobimo $a_i$ permutacij iz $S_n$ z $i$ inverzijami (vstavimo $n$ na zadnje mesto), $a_i$ permutacij iz $S_n$ z $i+1$ inverzijami (vstavimo $n$ na predzadnje mesto), ..., $a_i$ permutacij iz $S_n$ z $i+n-1$ inverzijami (vstavimo $n$ na prvo mesto). Se pravi iz člena $a_i x^i$ v rodovni funkciji $f_{n-1}$ dobimo člene $a_i x^i \cdot (1 + x + \cdot\cdot\cdot + x^{n-1})$ v rodovni funkciji $f_n$.
+Vidimo da, ko v permutacijo iz $S_{n-1}$ vstavimo element $n$, lahko naredimo med $0$ in $n-1$ novih inverzij ($1 + x + \cdot\cdot\cdot + x^{n-1}$) odvisno od tega, kam vstavimo element $n$. Prav tako vse inverzije, ki so bile del permutacije iz $S_{n-1}$, ostanejo. Tako iz $a_i$ permutacij iz $S_{n-1}$ z $i$ inverzijami dobimo $a_i$ permutacij iz $S_n$ z $i$ inverzijami (vstavimo $n$ na zadnje mesto), $a_i$ permutacij iz $S_n$ z $i+1$ inverzijami (vstavimo $n$ na predzadnje mesto), $\dots$, $a_i$ permutacij iz $S_n$ z $i+n-1$ inverzijami (vstavimo $n$ na prvo mesto). Se pravi iz člena $a_i x^i$ v rodovni funkciji $f_{n-1}$ dobimo člene $a_i x^i \cdot (1 + x + \cdot\cdot\cdot + x^{n-1})$ v rodovni funkciji $f_n$.
 Zato, velja rekurzivna zveza:
 \[
     f_n(x) = f_{n-1}(x) \cdot (1 + x + \cdot\cdot\cdot + x^{n-1}).
@@ -774,23 +786,24 @@ In tako dobimo eksplicitno formulo za rodovno funkcijo:
 \]
 Naslednja formula iz \cite{generatingFunction} nam pove, kako je Donald Knuth izrazil koeficient $a_i$ iz rodovne funkcije $f_n$:
 \[
-    a_i = \binom{n+i-1}{i} + \sum_{j=1}^{\infty} (-1)^j (\binom{n+i-u_j-j-1}{i-u_j-j} + \binom{n+i-u_j-1}{i-u_j}).
+    a_i = \binom{n+i-1}{i} + \sum_{j=1}^{\infty} (-1)^j \left( \binom{n+i-u_j-j-1}{i-u_j-j} + \binom{n+i-u_j-1}{i-u_j} \right),
 \]
-Števila $u_j = \frac{j(3j-1)}{2}$ so petkotniška števila. Če je v binomskem simbolu spodaj negativno število, je vrednost binomskega simbola enaka $0$. Zato je vsota končna.
+kjer so $u_j = \frac{j(3j-1)}{2}$ petkotniška števila. Če je v binomskem simbolu spodaj negativno število, je vrednost binomskega simbola enaka $0$. Zato je vsota končna.
 
 \section{ Lehmerjeva koda in vektor inverzij}
 Množico $S_n$ lahko uredimo na različne načine. Zato lahko vsaki permutaciji iz množice $S_n$ dodelimo celo število $N$, kjer je $0 \leq N \leq n!$. To je ravno njena zaporedna številka v neki ureditvi. V tem podpoglavju si bomo pogledali ureditvi s pomočjo Lehmerjeve kode in vektorja inverzij. Lehmerjeva koda in vektor inverzij sta zapisa števil v faktorskem številskem sistemu. Uporabimo ju kot vmesni korak med pretvarjanjem števila v permutacijo in obratno (slika \ref{pretvarjanje_permutacija_stevilo}).
 \begin{figure}[h]
     \begin{center}        
         \begin{tikzpicture}[shorten >=1pt,-]
-            \tikzstyle{vertex}=[circle,draw=black!0,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \tikzstyle{vertex}=[rectangle,draw=black!0,fill=white!25,minimum size=20pt,inner sep=0pt]
             
-            \node[vertex] (V-1) at (0, 0.75) {Permutacija};
-            \node[vertex] (V-2a) at (4, 0) {Lehmerjeva koda};
-            \node[vertex] (V-2b) at (4, 1.5) {Vektor inverzij};
-            \node[vertex] (V-3) at (8, 0.75) {Število};
+            \node[vertex] (V-1) at (0, 1.5) {Permutacija};
+            \node[vertex] (V-3) at (5, 1.5) {Faktorski številski sistem};
+            \node[vertex] (V-2a) at (5, 0) {Lehmerjeva koda};
+            \node[vertex] (V-2b) at (5, 3) {Vektor inverzij};
+            \node[vertex] (V-4) at (10, 1.5) {Število};
         
-            \foreach \from/\to in {1/2a, 2a/3, 1/2b, 2b/3}
+            \foreach \from/\to in {1/2a, 2a/3, 1/2b, 2b/3, 3/4}
                 \draw[latex-latex] (V-\from) -- (V-\to);
 
         \end{tikzpicture}     
@@ -801,7 +814,7 @@ Množico $S_n$ lahko uredimo na različne načine. Zato lahko vsaki permutaciji 
 
 \subsection{ Faktorski številski sistem }
 
-Faktorski številski sistem je številski sistem, kjer teže pozicije števk niso geometrična vrsta nekega števila, temveč so fakultete naravnih števil (primer \ref{primer_faktorski_stevilski_sistem1}). Naj ima število v faktorskem številskem sistemu zapis $d_nd_{n-1}...d_2d_1$, potem ima števka $d_i$ na poziciji $i$ težo $(i-1)!$. Števka $d_i$ je nenegativno celo število manjše od $i$ (pri tem lahko izpustimo $d_1$, saj je $d_1$ vedno $0$). 
+Faktorski številski sistem je številski sistem, kjer teže pozicije števk niso geometriska vrsta nekega števila, temveč so fakultete naravnih števil (primer \ref{primer_faktorski_stevilski_sistem1}). Naj ima število v faktorskem številskem sistemu zapis $d_nd_{n-1}...d_2d_1$, potem ima števka $d_i$ na poziciji $i$ težo $(i-1)!$. Števka $d_i$ je nenegativno celo število manjše od $i$ (pri tem lahko izpustimo $d_1$, saj je $d_1$ vedno $0$). 
 
 Število zapisano v faktorskem številskem sistemu pretvorimo v desetiški številski sistem tako, da seštejemo produkt vseh števk s pripadajočo težo pozicije števke (primer \ref{primer_faktorski_stevilski_sistem1}).
 
@@ -814,7 +827,29 @@ Faktorski številski sistem je številski sistem, kjer teže pozicije števk nis
     je $341010_{!} = 463_{10}$
 \end{primer}
 
-Pretvorbo iz desetiškega v faktorski številski sistem pa naredimo tako, da število zaporedoma delimo s števili $1, 2, 3...$ in si zapisujemo ostanke pri deljenju, dokler ne dobimo $0$ kot rezultat deljenja. Zapis števila so ostanki pri deljenju od zadnjega deljenja proti prvemu (primer \ref{primer_faktorski_stevilski_sistem2}). 
+Naj bo $x$ pozitivno celo število zapisano v desetiškem številskem sistemu. Število $x$ bi radi zapisali v faktorskem številskem sistemu kot
+\[
+    x = \sum_{i=1}^{n} d_i \cdot (i-1)!
+\]
+Če $x$ delimo z 1, potem je 
+\[
+    x = r_1 + 1 \cdot x^{(1)},
+\]
+kjer je $x = x^{(1)}$ in $r_1 = 0 < 1$. Potem lahko rekurzivno delimo $x^{(1)}$ z 2 in dobimo
+\[
+    x^{(1)} = r_2 + 2 \cdot x^{(2)}
+\]
+in zato
+\[
+    x = r_1 + 1 \cdot (r_2 + 2 \cdot x^{(2)}),
+\]
+kjer je $x^{(2)} < x^{(1)}$ in $r_2 < 2$. Na ta način nadaljujemo rekurzijo, ki ima končno število korakov in dobimo:
+\[
+    x = r_1 + 1 \cdot (r_2 + 2 \cdot(r_3 + 3 \cdot(\cdot\cdot\cdot + (n-1) \cdot r_n))),
+\]
+kjer je $0 \leq r_i < i$ za $i = 1, 2, \dots, n$. Se pravi $d_i = r_i$. Tako dobimo faktorski zapis števila $x$.
+
+Pretvorbo iz desetiškega v faktorski številski sistem torej naredimo tako, da število zaporedoma delimo s števili $1, 2, 3, \dots$ in si zapisujemo ostanke pri deljenju, dokler ne dobimo $0$ kot rezultat deljenja. Zapis števila so ostanki pri deljenju v vrstem redu od zadnjega deljenja proti prvemu (primer \ref{primer_faktorski_stevilski_sistem2}). 
 
 \begin{primer}
 \label{primer_faktorski_stevilski_sistem2}
@@ -830,31 +865,14 @@ Pretvorbo iz desetiškega v faktorski številski sistem pa naredimo tako, da št
     je $463_{10} = 341010_{!}$
 \end{primer}
 
-Naj bo x pozitivno celo število zapisano v desetiškem številskem sistemu. Število x bi radi zapisali v faktorskem številskem sistemu: 
-\[
-    x = \sum_{i=1}^{n} d_i \cdot (i-1)!
-\]
-Naj bo $x = x^{(1)}$. Če $x^{(1)}$ delimo z 1, potem je 
-\[
-    x^{(1)} = r_1 + 1 \cdot x^{(2)},
-\]
-kjer je $x^{(2)} = x^{(1)}$ in $r_1 = 0$ $(r_1 < 1)$. Potem lahko rekurzivno delimo $x^{(2)}$ z 2 in dobimo 
-\[
-    x^{(2)} = r_1 + 1 \cdot (r_2 + 2 \cdot x^{(3)}),
-\]
-kjer je $x^{(3)} < x^{(2)}$ in $r_2 < 2$. Na ta način nadaljujemo rekurzijo, ki ima končno število korakov in dobimo:
-\[
-    x = r_1 + 1 \cdot (r_2 + 2 \cdot(r_3 + 3 \cdot(\cdot\cdot\cdot + (n-1) \cdot r_n))),
-\]
-kjer je $0 \leq r_i < i$ za $i = 1, 2, ..., n$. Se pravi $d_i = r_i$. Tako dobimo faktorski zapis števila $x$.
 
 \subsection{ Pretvorba med Lehmerjevo kodo ali vektorjem inverzij in številom }
 Lehmerjeva koda in vektor inverzij sta zapisa števil v faktorskem številskem sistemu, zato je pretvorba med Lehmerjevo kodo ali vektorjem inverzij in številom ravno pretvorba med faktorskim in desetiškim številskim sistemom.
 
 \subsection{ Pretvorba med Lehmerjevo kodo ali vektorjem inverzij in permutacijo }
-Poglejmo si najprej pretvorbi permutacije v Lehmerjevo kodo in vektor inverzij. Naj bo $\sigma = (\sigma_1, \sigma_2, ..., \sigma_n) \in S_n$ in $d_nd_{n-1}...d_2d_1$ zapis števila v faktorskem številskem sistemu (Lehmerjeva koda ali vektor inverzij).
+Poglejmo si najprej pretvorbi permutacije v Lehmerjevo kodo in vektor inverzij. Naj bo $\sigma = (\sigma_1, \sigma_2, \dots, \sigma_n) \in S_n$ in $d_nd_{n-1}...d_2d_1$ zapis števila v faktorskem številskem sistemu (Lehmerjeva koda ali vektor inverzij), ki pripada permutaciji $\sigma$.
 
-V Lehmerjevi kodi permutacije $\sigma$ števka $d_n$ predstavlja $\sigma_1 - 1$. To je število elementov manjših od $\sigma_1$, ki so v inverziji s $\sigma_1$. Števka $d_{n-1}$ predstavlja število elementov, ki so manjši od $\sigma_2$ in so v inverziji s $\sigma_2$,... V splošnem, števka $d_{n-i+1}$ predstavlja število elementov, ki so manjši od $\sigma_i$ in so v inverziji s $\sigma_i$.
+V Lehmerjevi kodi permutacije $\sigma$ števka $d_n$ predstavlja $\sigma_1 - 1$. To je število elementov manjših od $\sigma_1$, ki so v inverziji s $\sigma_1$. Števka $d_{n-1}$ predstavlja število elementov, ki so manjši od $\sigma_2$ in so v inverziji s $\sigma_2$. V splošnem, števka $d_{n-i+1}$ predstavlja število elementov, ki so manjši od $\sigma_i$ in so v inverziji s $\sigma_i$.
 
 Vektor inverzij permutacije $\sigma$ je podoben zapis. $d_{n-j+1}$ nam pove, koliko je inverzij oblike $(i, j)$, kjer je $j$ manjša vrednost para števil v inverziji.
 
@@ -892,11 +910,11 @@ Obe kodiranji lahko prikažemo z Rothejevim diagramom, kjer so pike postavljene 
     \label{tbl:rothejev_diagram}
 \end{table}
 
-Sedaj si poglejmo še pretvorbi Lehmerjeve kode in vektora inverzij v permutacijo (primeri za permutacije iz $S_4$ so v tabeli \ref{tbl:permutacije4vektorji}).
+Sedaj si poglejmo še pretvorbi Lehmerjeve kode in vektorja inverzij v permutacijo (primeri za permutacije iz $S_4$ so v tabeli \ref{tbl:permutacije4vektorji}).
 
-Da bi pretvorili Lehmerjevo kodo $d_nd_{n-1}...d_1$ v permutacijo, najprej uredimo števila $1, 2, ..., n$ v vrsto. $\sigma_1$ je enak elementu v vrsti, ki je za $d_{n}$ elementi. Nato ta element izbrišemo iz vrste. $\sigma_2$ je enak elementu v spremenjeni vrsti, ki je za $d_{n-1}$ elementi. Nato ta element izbrišemo iz vrste in ponovimo postopek za $\sigma_3, ..., \sigma_n$ (primer \ref{primer_lehmerjeva_koda_permutacija}). Ta postopek je inverzen prej opisanemu, saj ko izberemo element za $\sigma_i$, bo ta element vedno imel natanko $d_{n-i+1}$ elementov, ki so manjši od $\sigma_i$ in so v inverziji s $\sigma_i$.
+Da bi pretvorili Lehmerjevo kodo $d_nd_{n-1}...d_1$ v permutacijo, najprej uredimo števila $1, 2, \dots, n$ v vrsto. $\sigma_1$ je enak elementu v vrsti, ki je za $d_{n}$ elementi. Nato ta element izbrišemo iz vrste. $\sigma_2$ je enak elementu v spremenjeni vrsti, ki je za $d_{n-1}$ elementi. Nato ta element izbrišemo iz vrste in ponovimo postopek za $\sigma_3, \dots, \sigma_n$ (primer \ref{primer_lehmerjeva_koda_permutacija}). Ta postopek je inverzen prej opisanemu, saj ko izberemo element za $\sigma_i$, bo ta element vedno imel natanko $d_{n-i+1}$ elementov, ki so manjši od $\sigma_i$ in so v inverziji s $\sigma_i$.
 
-Da bi pretvorili tabelo inverzij $d_nd_{n-1}...d_1$ v permutacijo, imejmo najprej prazno vrsto. Najprej vzemimo $n$ in ga vstavimo v vrsto za $d_1$ elementi (vedno $0$). Nato vzamemo $n-1$ in ga vstavimo v vrsto za $d_{2}$ elementi, ..., vzamemo $1$ in ga vstavimo v vrsto za $d_{n}$ elementi (primer \ref{primer_vektor_inverzij_permutacija}). Ta postopek je inverzen prej opisanemu, saj ko vstavimo element $j$ za $d_{n-j+1}$ elementi, bo $j$ vedno v inverziji oblike $(i, j)$ z natanko $d_{n-j+1}$ elementi, kjer je $j$ manjša vrednost para števil v inverziji.
+Da bi pretvorili tabelo inverzij $d_nd_{n-1}...d_1$ v permutacijo, imejmo najprej prazno vrsto. Najprej vzemimo $n$ in ga vstavimo v vrsto za $d_1$ elementi (vedno $0$). Nato vzamemo $n-1$ in ga vstavimo v vrsto za $d_{2}$ elementi, $\dots$, vzamemo $1$ in ga vstavimo v vrsto za $d_{n}$ elementi (primer \ref{primer_vektor_inverzij_permutacija}). Ta postopek je inverzen prej opisanemu, saj ko vstavimo element $j$ za $d_{n-j+1}$ elementi, bo $j$ vedno v inverziji oblike $(i, j)$ z natanko $d_{n-j+1}$ elementi, kjer je $j$ manjša vrednost para števil v inverziji.
 
 \begin{primer}
 \label{primer_lehmerjeva_koda_permutacija}
@@ -931,7 +949,7 @@ je $\sigma = (6, 3, 8, 1, 4, 9, 7, 2, 5)$ permutacija Lehmerjeve kode 525013200.
     je $\sigma = (6, 3, 8, 1, 4, 9, 7, 2, 5)$ permutacija vektorja inverzij 361240200.
 \end{primer}
 
-Vsota števk v Lehmerjevi kodi ali vektorju inverzij nam pove število inverzij permutacije, saj vsak križ v Rothejevem diagramu predstavlja ravno eno inverzijo in vsota števk Lehmerjeve kode ali vekorja inverzij je ravno vsota vseh križev v Rothejevem diagramu. 
+Vsota števk v Lehmerjevi kodi ali vektorju inverzij nam pove število inverzij permutacije, saj vsak križ v Rothejevem diagramu predstavlja ravno eno inverzijo in vsota števk Lehmerjeve kode ali vekorja inverzij je ravno število vseh križev v Rothejevem diagramu. 
 
 
 %Parnost vsote pa nam pove znak permutacije.
@@ -1029,7 +1047,7 @@ V tem poglavju bomo definirali permutacijske grafe in si ogledali njihovo karakt
                 \draw (V-4) .. controls (1, 2.5) and (13, 2.5) .. (V-3);
         \end{tikzpicture}        
     \end{center}
-    \caption{Primer grafa inverzij.}
+    \caption{Primer grafa inverzij permutacije $\sigma = (4, 2, 5, 1, 7, 6, 3)$.}
     \label{graf_inverzij}
 \end{figure}
 
@@ -1038,10 +1056,10 @@ V tem poglavju bomo definirali permutacijske grafe in si ogledali njihovo karakt
 \begin{definicija}[Kohezivno zaporedje grafa]
 \label{def_kohezivno_zaporedje}
     Naj bo $G$ neusmerjen graf na $n$ vozliščih. 
-    Zaporedju vozlišč $l = (v_1, v_2, ..., v_n)$ rečemo kohezivno vozliščno zaporedje grafa $G$ (ali enostavneje kohezivno zaporedje grafa $G$), če sta izpolnjena naslednja pogoja (slika \ref{graf_kohezivno_zaporedje_ab}):
+    Zaporedju vozlišč $l = (v_1, v_2, \dots, v_n)$ rečemo kohezivno vozliščno zaporedje grafa $G$ (ali enostavneje kohezivno zaporedje grafa $G$), če sta za poljubne $i, j, k$, kjer je $1 \leq i < k < j \leq n$, izpolnjena naslednja pogoja (slika \ref{graf_kohezivno_zaporedje_ab}):
     \begin{enumerate}[label=(\alph*)]
-        \item Če je $i < k < j$ in $v_iv_k$, $v_kv_j \in E(G)$, potem je $v_iv_j \in E(G)$.
-        \item Če je $i < k < j$ in $v_iv_j \in E(G)$, potem je $v_iv_k \in E(G)$ ali $v_kv_j \in E(G)$.
+        \item Če je $v_iv_k \in E(G)$, $v_kv_j \in E(G)$, potem je $v_iv_j \in E(G)$.
+        \item Če je $v_iv_j \in E(G)$, potem je $v_iv_k \in E(G)$ ali $v_kv_j \in E(G)$.
     \end{enumerate}
 \end{definicija}
 
@@ -1073,9 +1091,9 @@ V tem poglavju bomo definirali permutacijske grafe in si ogledali njihovo karakt
     Naj bo $G$ graf. Zaporedje vozlišč $l$ je kohezivno zaporedje grafa $G$ natanko tedaj, ko je $l$ kohezivno zaporedje grafa $\overline{G}$. 
 \end{lema}
 \begin{dokaz}
-    $(\Rightarrow)$ Naj bo $l = (v_1, v_2, ..., v_n)$ kohezivno zaporedje grafa $G$. Trdimo, da je $l$ kohezivno zaporedje grafa $\overline{G}$. 
+    $(\Rightarrow)$ Naj bo $l = (v_1, v_2, \dots, v_n)$ kohezivno zaporedje grafa $G$. Trdimo, da je $l$ kohezivno zaporedje grafa $\overline{G}$. 
     \begin{enumerate}[label=(\alph*)]
-        \item Naj bosta $v_iv_k, v_kv_j \in E(\overline{G})$ taki povezavi, da $i < k < j$. Potem, po definiciji komplementa $v_iv_k, v_kv_j \notin E(G)$. Če pogoj (b) iz definicije \ref{def_kohezivno_zaporedje} negiramo ($i < k < j$ in $v_iv_k, v_kv_j \notin E(G) \Rightarrow v_iv_j \notin E(G)$), sledi, da $v_iv_j \notin E(G)$. Kar pomeni $v_iv_j \in E(\overline{G})$.
+        \item Naj bosta $v_iv_k, v_kv_j \in E(\overline{G})$ taki povezavi, da $i < k < j$. Potem, po definiciji komplementa $v_iv_k, v_kv_j \notin E(G)$. Če pogoj (b) iz definicije \ref{def_kohezivno_zaporedje} negiramo ($v_iv_k, v_kv_j \notin E(G) \Rightarrow v_iv_j \notin E(G)$), sledi, da $v_iv_j \notin E(G)$. Kar pomeni $v_iv_j \in E(\overline{G})$.
         \item Naj bo $v_iv_j \in E(\overline{G})$ taka povezava, da $i < j$ in $k$ tako naravno število, da je $i < k < j$. Potem $v_iv_j \notin E(G)$. Če pogoj (a) iz definicije \ref{def_kohezivno_zaporedje} negiramo, vidimo, da $v_iv_k \notin E(G)$ ali $v_kv_j \notin E(G)$. Zato sledi, da je $v_iv_k \in E(\overline{G})$ ali $v_kv_j \in E(\overline{G})$. 
     \end{enumerate}
 
@@ -1084,19 +1102,21 @@ V tem poglavju bomo definirali permutacijske grafe in si ogledali njihovo karakt
 
 \begin{izrek}
 \label{izrek_sigma_kohezivno_zaporedje}
-    Naj bo $\sigma \in S_n$. $\sigma = (\sigma(1), \sigma(2), ..., \sigma(n))$ je kohezivno zaporedje permutacijskega grafa $G_{\sigma}$.
+    Naj bo $\sigma \in S_n$. Zaporedje vozlišč $\sigma = (\sigma(1), \sigma(2), \dots, \sigma(n))$ je kohezivno zaporedje permutacijskega grafa $G_{\sigma}$.
 \end{izrek}
 \begin{dokaz}
-    Naj bo $\sigma = (\sigma(1), \sigma(2), ..., \sigma(n)) \in S_n$. Trdimo, da je $\sigma$ kohezivno zaporedje grafa $G_{\sigma}$. 
+    Naj bo $\sigma = (\sigma(1), \sigma(2), \dots, \sigma(n)) \in S_n$. Trdimo, da je $\sigma$ kohezivno zaporedje grafa $G_{\sigma}$. 
     \begin{enumerate}[label=(\alph*)]
         \item Če je $i < k < j$ in $\sigma(i)\sigma(k), \sigma(k)\sigma(j) \in E(G_{\sigma})$, potem sta $(\sigma(i),\sigma(k))$ in $(\sigma(k),\sigma(j))$ inverziji permutacije $\sigma$. To pomeni $\sigma(i) > \sigma(k) > \sigma(j)$. Zato je tudi $(\sigma(i),\sigma(j))$ inverzija permutacije $\sigma$ in $\sigma(i)\sigma(j) \in E(G_{\sigma})$.        
 
-        \item Naj bo $\sigma(i)\sigma(j) \in E(G_{\sigma})$ in $k$ tak, da $i < k < j$. Potem je $(\sigma(i),\sigma(j))$ inverzija permutacije $\sigma$ in $\sigma(i) > \sigma(j)$. Če je $\sigma(i) > \sigma(k)$ je $(\sigma(i),\sigma(k))$ inverzija permutacije $\sigma$ in $\sigma(i)\sigma(k) \in E(G_{\sigma})$. Če je $\sigma(k) > \sigma(j)$ je $(\sigma(k), \sigma(j))$ inverzija permutacije $\sigma$ in $\sigma(k)\sigma(j) \in E(G_{\sigma})$. To pomeni, da je 
+        \item Naj bo $\sigma(i)\sigma(j) \in E(G_{\sigma})$ in $k$ tak, da $i < k < j$. Potem je $(\sigma(i),\sigma(j))$ inverzija permutacije $\sigma$ in $\sigma(i) > \sigma(j)$. Če je $\sigma(i) > \sigma(k)$ je $(\sigma(i),\sigma(k))$ inverzija permutacije $\sigma$ in $\sigma(i)\sigma(k) \in E(G_{\sigma})$. Če je $\sigma(k) > \sigma(i)$, potem je tudi $\sigma(k) > \sigma(j)$ in je $(\sigma(k), \sigma(j))$ inverzija permutacije $\sigma$ in $\sigma(k)\sigma(j) \in E(G_{\sigma})$. To pomeni, da je 
         $\sigma(i)\sigma(k) \in E(G_{\sigma})$ ali $\sigma(k)\sigma(j) \in E(G_{\sigma})$.
     \end{enumerate}
 \end{dokaz}
 
-Zaporedje vozlišč $(v_1, v_2, ..., v_n)$ je kohezivno zaporedje grafa $G$ natanko tedaj, ko je zaporedje vozlišč $(v_n, v_{n-1}, ..., v_1)$ kohezivno zaporedje grafa $G$.
+Zaporedje vozlišč $(v_1, v_2, \dots, v_n)$ je kohezivno zaporedje grafa $G$ natanko tedaj, ko je zaporedje vozlišč $(v_n, v_{n-1}, \dots, v_1)$ kohezivno zaporedje grafa $G$, saj sta oba pogoja (a) in (b) iz definicije \ref{def_kohezivno_zaporedje} hkrati izpolnjena ali neizpolnjena za obe zaporedji.
+
+Pri dokazu izreka \ref{izrek_permutacijski_graf_kohezivno_zaporedje} bomo uporabili tranzitivne turnirje, zato si poglejmo, kaj je turnir in kaj je tranzitiven graf.
 
 Za usmerjen graf $D$ rečemo, da je tranzitiven, če je $(x, z)$ usmerjena povezava grafa $D$, kadar sta $(x, y)$ in $(y, z)$ usmerjeni povezavi grafa $D$. 
 
@@ -1127,7 +1147,7 @@ Polnemu orientiranemu grafu rečemo turnir. Rezultat vozlišča $x$ v turnirju j
     \label{graf_turnirja_in_tranzitivnega_turnirja}
 \end{figure}
 
-Obstaja samo en tranzitiven turnir na $n$ vozliščih (do izomorfizma natančno), ki je izomorfen grafu permutacije $\sigma = (n, n-1, ..., 1)$ z usmerjenimi povezavami $x \rightarrow y$, če je $(x, y)$ inverzija. Opazimo tudi, da v tranzitivnem turnirju ni usmerjenih ciklov. 
+Obstaja samo en tranzitiven turnir na $n$ vozliščih (do izomorfizma natančno). Ta je izomorfen grafu permutacije $\sigma = (n, n-1, \dots, 1)$ z usmerjenimi povezavami $x \rightarrow y$, če je $(x, y)$ inverzija. Opazimo tudi, da v tranzitivnem turnirju ni usmerjenih ciklov. 
 
 \begin{izrek}
 \label{izrek_tranzitiven_turnir}
@@ -1136,11 +1156,11 @@ Obstaja samo en tranzitiven turnir na $n$ vozliščih (do izomorfizma natančno)
         \item $T$ je tranzitiven.
         \item Za vsaka $x,y \in V(T)$ velja, da če je $(x, y)$ usmerjena povezava v $T$, potem je $s(x) > s(y)$.
         \item Za vsaka $x,y \in V(T)$  velja, da če je $s(x) > s(y)$, potem je $(x, y)$ usmerjena povezava v $T$.
-        \item Rezultatsko zaporedje turnirja $T$ je $(0, 1, 2, ..., n-1)$.
+        \item Rezultatsko zaporedje turnirja $T$ je $(0, 1, 2, \dots, n-1)$.
     \end{enumerate}
 \end{izrek}
 \begin{dokaz}
-    Tranzitiven turnir $T$ na $n$ vozliščih je izomorfen grafu permutacije $\sigma = (n, n-1, ..., 1)$ z usmerjenimi povezavami $x \rightarrow y$, če je $(x, y)$ inverzija. Če uredimo vozlišča od leve proti desni tako, kot so v permutaciji $\sigma$, vidimo, da ima vsako vozlišče povezave do vseh vozlišč desno od njega (slika \ref{graf_turnirja_in_tranzitivnega_turnirja}). Iz tega sledijo vse lastnosti iz izreka.
+    Tranzitiven turnir $T$ na $n$ vozliščih je izomorfen grafu permutacije $\sigma = (n, n-1, \dots, 1)$ z usmerjenimi povezavami $x \rightarrow y$, če je $(x, y)$ inverzija. Če uredimo vozlišča od leve proti desni tako, kot so v permutaciji $\sigma$, vidimo, da ima vsako vozlišče povezave do vseh vozlišč desno od njega (slika \ref{graf_turnirja_in_tranzitivnega_turnirja} desno). Iz tega sledijo vse lastnosti iz izreka.
 \end{dokaz}
 
 \begin{izrek}
@@ -1148,7 +1168,7 @@ Obstaja samo en tranzitiven turnir na $n$ vozliščih (do izomorfizma natančno)
     Graf $G$ je permutacijski graf natanko tedaj, ko ima kohezivno zaporedje.
 \end{izrek}
 \begin{dokaz}
-    $(\Rightarrow)$ Vsak permutacijski graf $G$ je izomorfen nekemu grafu $G_{\sigma}$ za neko permutacijo $\sigma$. Po izreku \ref{izrek_sigma_kohezivno_zaporedje} je $\sigma = (\sigma(1), ..., \sigma(n))$ kohezivno zaporedje grafa $G_{\sigma}$. Naj bo $f$ izomorfizem, ki graf $G$ slika v graf $G_{\sigma}$. Potem je $g = f^{-1}$ izomorfizem, ki graf $G_{\sigma}$ slika v graf $G$. Sledi, da je $\pi = (g(\sigma(1)), ..., g(\sigma(n)))$ kohezivno zaporedje grafa $G$, saj je $\sigma$ kohezivno zaporedje grafa $G_{\sigma}$ (slika \ref{graf_izomorfizem_f_k3}).
+    $(\Rightarrow)$ Vsak permutacijski graf $G$ je po definiciji izomorfen nekemu grafu $G_{\sigma}$ za neko permutacijo $\sigma$. Po izreku \ref{izrek_sigma_kohezivno_zaporedje} je $\sigma = (\sigma(1), \dots, \sigma(n))$ kohezivno zaporedje grafa $G_{\sigma}$. Naj bo $f$ izomorfizem, ki graf $G$ slika v graf $G_{\sigma}$. Potem je $g = f^{-1}$ izomorfizem, ki graf $G_{\sigma}$ slika v graf $G$. Sledi, da je $\pi = (g(\sigma(1)), \dots, g(\sigma(n)))$ kohezivno zaporedje grafa $G$, saj je $\sigma$ kohezivno zaporedje grafa $G_{\sigma}$ (slika \ref{graf_izomorfizem_f_k3}).
 
     \begin{figure}[h]
         \begin{center}        
@@ -1174,7 +1194,7 @@ Obstaja samo en tranzitiven turnir na $n$ vozliščih (do izomorfizma natančno)
         \label{graf_izomorfizem_f_k3}
     \end{figure}
 
-    $(\Leftarrow)$ Naj bo $G$ graf s kohezivnim zaporedjem $\pi = (v_1, v_2, ..., v_n)$ (slika \ref{graf_s_kohezivnim_zaporedjem}). 
+    $(\Leftarrow)$ Naj bo $G$ graf s kohezivnim zaporedjem $\pi = (v_1, v_2, \dots, v_n)$ (slika \ref{graf_s_kohezivnim_zaporedjem}). 
     \begin{figure}[h]
         \begin{center}
             \begin{tikzpicture}[shorten >=1pt,-]
@@ -1191,7 +1211,7 @@ Obstaja samo en tranzitiven turnir na $n$ vozliščih (do izomorfizma natančno)
         \caption{Graf $G$ s kohezivnim zaporedjem $(v_1, v_2, v_3, v_4)$.}
         \label{graf_s_kohezivnim_zaporedjem}
     \end{figure}
-    Orientirajmo graf $G$ tako, da vse povezave usmerimo od vozlišča z manjšim indeksom proti vozlišču z večjim indeksom. Če je $v_iv_j \in E(G)$ in $i < j$, potem dobimo $(v_i, v_j)$. Označimo usmerjen graf, ki ga na ta način dobimo z $D$. Spomnimo se, da je zaradi pogoja $(a)$ iz \ref{def_kohezivno_zaporedje} graf $D$ tranzitiven. Orientirajmo še komplement $\overline{G}$ grafa $G$. Povezave $v_iv_j \in E(\overline{G})$, kjer je $i < j$, usmerimo od večjega indeksa k manjšemu in tako dobimo $(v_j, v_i)$. Označimo dobljeni graf z $\overline{D}$. Zaradi leme \ref{lema0} je $\pi$ kohezivno zaporedje grafa $\overline{G}$. Zato je tudi usmerjen graf $\overline{D}$ tranzitiven. Unija grafov $T = D \cup \overline{D}$ je turnir, to je orientacija polnega grafa $G \cup \overline{G}$ (slika \ref{graf_tranzitivni_turnir}).
+    Orientirajmo graf $G$ tako, da vse povezave usmerimo od vozlišča z manjšim indeksom proti vozlišču z večjim indeksom. Če je $v_iv_j \in E(G)$ in $i < j$, potem dobimo $(v_i, v_j)$. Označimo usmerjen graf, ki ga na ta način dobimo z $D$. Spomnimo se, da je zaradi pogoja $(a)$ iz definicije \ref{def_kohezivno_zaporedje} graf $D$ tranzitiven. Orientirajmo še komplement $\overline{G}$ grafa $G$. Povezave $v_iv_j \in E(\overline{G})$, kjer je $i < j$, usmerimo od večjega indeksa k manjšemu in tako dobimo $(v_j, v_i)$. Označimo dobljeni graf z $\overline{D}$. Po lemi \ref{lema0} je $\pi$ kohezivno zaporedje grafa $\overline{G}$. Po definiciji \ref{def_kohezivno_zaporedje} je tudi usmerjen graf $\overline{D}$ tranzitiven. Unija grafov $T = D \cup \overline{D}$ je turnir, to je orientacija polnega grafa $G \cup \overline{G}$ (slika \ref{graf_tranzitivni_turnir}).
     \begin{figure}[h]
         \begin{center}
             \begin{tikzpicture}[shorten >=1pt,-]
@@ -1212,7 +1232,9 @@ Obstaja samo en tranzitiven turnir na $n$ vozliščih (do izomorfizma natančno)
         \caption{ Tranzitiven turnir $T$.}
         \label{graf_tranzitivni_turnir}
     \end{figure}
-    Radi bi pokazali, da je $T$ tranzitiven turnir. Naj bosta $(x, y)$ in $(y, z)$ usmerjeni povezavi v grafu $T$. Če bi obe pripadali enemu od $D$ ali $\overline{D}$, bi sledilo, da je $(x, z)$ usmerjena povezava v $T$, saj sta $D$ in $\overline{D}$ tranzitivna. Zato brez škode za splošnost privzamimo, da $(x, y) \in E(D) $ in $(y, z) \in E(\overline{D})$. Če je $(x, z) \in E(D)$ smo končali, saj je potem $(x, z) \in E(T)$. Zato privzamimo da $(x, z) \notin E(D)$. Poglejmo, ali je lahko $(z, x) \in E(D)$. Zaradi tranzitivnosti grafa $D$ bi to pomenilo, da je tudi $(z, y) \in E(D)$, kar je v protislovju s tem, da je  $(y, z) \in E(\overline{D})$. Potem je $(z, x) \in E(\overline{D})$ ali $(x, z) \in E(\overline{D})$. Če je $(z, x) \in E(\overline{D})$, potem zaradi tranzitivnosti $\overline{D}$ in $(y, z), (z, x) \in E(\overline{D})$ sledi, da je $(y, x) \in E(\overline{D})$. To je v protislovju z $(x, y) \in E(D)$. Se pravi, nam ostane $(x, z) \in E(\overline{D})$. Sledi, da je $(x, z) \in E(T)$ in $T$ je tranzitiven turnir. Po izreku \ref{izrek_tranzitiven_turnir} je rezultatsko zaporedje tranzitivnega turnirja $T$ enako $(0, 1, 2, ..., n-1)$. 
+    Radi bi pokazali, da je $T$ tranzitiven turnir. 
+    
+    Naj bosta $(x, y)$ in $(y, z)$ usmerjeni povezavi v grafu $T$. Če bi obe pripadali istemu grafu $D$ ali $\overline{D}$, bi sledilo, da je $(x, z)$ usmerjena povezava v $T$, saj sta $D$ in $\overline{D}$ tranzitivna. Zato brez škode za splošnost privzamimo, da $(x, y) \in E(D) $ in $(y, z) \in E(\overline{D})$. Če je $(x, z) \in E(D)$ smo končali, saj je potem $(x, z) \in E(T)$. Zato privzamimo da $(x, z) \notin E(D)$. Poglejmo, ali je lahko $(z, x) \in E(D)$. Zaradi tranzitivnosti grafa $D$ bi to pomenilo, da je tudi $(z, y) \in E(D)$, kar je v protislovju s tem, da je  $(y, z) \in E(\overline{D})$. Potem je $(z, x) \in E(\overline{D})$ ali $(x, z) \in E(\overline{D})$. Če je $(z, x) \in E(\overline{D})$, potem zaradi tranzitivnosti $\overline{D}$ in $(y, z), (z, x) \in E(\overline{D})$ sledi, da je $(y, x) \in E(\overline{D})$. To je v protislovju z $(x, y) \in E(D)$. Zato je $(x, z) \in E(\overline{D})$. Sledi, da je $(x, z) \in E(T)$ in $T$ je tranzitiven turnir. Po izreku \ref{izrek_tranzitiven_turnir} je rezultatsko zaporedje tranzitivnega turnirja $T$ enako $(0, 1, 2, \dots, n-1)$. 
     \begin{figure}[h]
         \begin{center}
             \begin{tikzpicture}[shorten >=1pt,-]
@@ -1233,95 +1255,39 @@ Obstaja samo en tranzitiven turnir na $n$ vozliščih (do izomorfizma natančno)
         \caption{Permutacijski graf $G_\sigma$, $\sigma = (3, 1, 4, 2)$.}
         \label{graf_permutacije3142}
     \end{figure}
-    $s(v_i)$ je rezultat vozlišča $v_i$ tranzitivnega turnirja $T$ (slika \ref{graf_tranzitivni_turnir}).
+    Rezultat vozlišča $v_i$ tranzitivnega turnirja $T$ je $s(v_i)$ (slika \ref{graf_tranzitivni_turnir}).
+    
     Naj bo $\sigma(i) = 1 + s(v_i)$ (slika \ref{graf_permutacije3142}). Radi bi pokazali, da je $f: v_i \rightarrow 1 + s(v_i) = \sigma(i)$ izomorfizem, ki slika graf $G$ v graf $G_{\sigma}$. Preslikava $f$ je bijektivna, saj imajo vozlišča različne rezultate. Pokazati moramo še, da $f$ ohranja sosednosti vozlišč. Naj bo $v_iv_j \in E(G)$, kjer je $i < j$. Potem je $(v_i, v_j) \in E(D)$. Ker je $T$ tranzitiven turnir, je $s(v_i) > s(v_j)$ (izrek \ref{izrek_tranzitiven_turnir}). Sledi, da je $\sigma(v_i) = 1 + s(v_i) > 1 + s(v_j) = \sigma(v_j)$. Zato je $(\sigma(i), \sigma(j))$ inverzija v $\sigma$ in $f(v_i)f(v_j) \in E(G_{\sigma})$. Obratno, naj bo $xy \in E(G_{\sigma})$. Potem je $(x, y)$ ali $(y, x)$ inverzija v $\sigma$. Privzemimo, da je $(x, y)$ inverzija v $\sigma$. Potem je $x = \sigma(i) = 1 + s(v_i)$ in $y = \sigma(j) = 1 + s(v_j)$, $i < j$. Ker je $(x, y)$ inverzija, je $x > y$. Potem je tudi $s(v_i) > s(v_j)$ in $(v_i, v_j) \in E(T)$ (izrek \ref{izrek_tranzitiven_turnir}). Ker je $i < j$, je $(v_i, v_j) \in E(D)$ in posledično $v_iv_j \in E(G)$.
 \end{dokaz}
 
 
 \begin{izrek}
 \label{izrek_ekvivalentne_trditve_permutacijski_graf}
-    Naj bo $G$ graf. Naslednje trditve so ekvivalentne:
+    Naj bo $G$ neusmerjen graf. Naslednje trditve so ekvivalentne:
     \begin{enumerate}[label=(\alph*)]
         \item $G$ je permutacijski graf.
-        \item $\overline{G}$ je permutaciski graf.
+        \item $\overline{G}$ je permutacijski graf.
         \item Vsak induciran podgraf grafa $G$ je permutacijski graf.
         \item Vsaka povezana komponenta grafa $G$ je permutacijski graf.
     \end{enumerate}
 \end{izrek}
 \begin{dokaz}
-    Ekvivalentnost trditve $(a)$ in $(b)$ sledi iz leme \ref{lema0} in izreka \ref{izrek_permutacijski_graf_kohezivno_zaporedje}. Naj bo $(v_1, v_2, ..., v_n)$ kohezivno zaporedje grafa $G$. Induciran podgraf z vozlišči $\{ v_{i_1}, v_{i_2}, ..., v_{i_k} \}$, kjer $i_1 < i_2 < \cdot\cdot\cdot < i_k$, ima kohezivno zaporedje $(v_{i_1}, v_{i_2}, ..., v_{i_k})$ (izpolnjeni sta $(a)$ in $(b)$ iz definicije \ref{def_kohezivno_zaporedje}). Torej induciran podgraf je permutacijski in iz $(a)$ sledi $(c)$. Iz $(c)$ sledi $(d)$, saj je vsaka povezana komponenta induciran podgraf. Pokazati moramo še, da iz $(d)$ sledi $(a)$. Naj bo $G$ graf, ki ima povezane komponente $G_1, G_2, ..., G_k$. $G_i$ naj ima $n_i$ vozlišč. Ker je vsaka povezana komponenta grafa $G$ permutacijski graf, ima kohezivno zaporedje. Naj bo $l_i = (v_1^i, v_2^i, ..., v_{n_i}^i)$ kohezivno zaporedje povezane komponente $G_i$. Potem je 
+    Ekvivalentnost trditve $(a)$ in $(b)$ sledi iz leme \ref{lema0} in izreka \ref{izrek_permutacijski_graf_kohezivno_zaporedje}. Naj bo $G$ permutacijski graf. Po izreku \ref{izrek_permutacijski_graf_kohezivno_zaporedje} ima graf $G$ kohezivno zaporedje $(v_1, v_2, \dots, v_n)$. Induciran podgraf z vozlišči $\{ v_{i_1}, v_{i_2}, \dots, v_{i_k} \}$, kjer $i_1 < i_2 < \cdot\cdot\cdot < i_k$, ima kohezivno zaporedje $(v_{i_1}, v_{i_2}, \dots, v_{i_k})$, saj sta izpolnjena pogoja $(a)$ in $(b)$ iz definicije \ref{def_kohezivno_zaporedje}. Torej induciran podgraf je permutacijski in iz $(a)$ sledi $(c)$. Iz $(c)$ sledi $(d)$, saj je vsaka povezana komponenta induciran podgraf. Pokazati moramo še, da iz $(d)$ sledi $(a)$. Naj bo $G$ graf, ki ima povezane komponente $G_1, G_2, \dots, G_k$. Naj bo $n_i$ število vozlišč grafa $G_i$. Ker je vsaka povezana komponenta grafa $G$ permutacijski graf, ima kohezivno zaporedje. Naj bo $l_i = (v_1^i, v_2^i, \dots, v_{n_i}^i)$ kohezivno zaporedje povezane komponente $G_i$. Potem je 
     \[
-        l = (l_1, l_2, ..., l_k) = (v_1^1, v_2^1, ..., v_{n_1}^1, v_1^2, v_2^2, ..., v_{n_2}^2, ..., v_1^k, v_2^k, ..., v_{n_k}^k)
+        l = (l_1, l_2, \dots, l_k) = (v_1^1, v_2^1, \dots, v_{n_1}^1, v_1^2, v_2^2, \dots, v_{n_2}^2, \dots, v_1^k, v_2^k, \dots, v_{n_k}^k)
     \]
          kohezivno zaporedje grafa $G$ in graf $G$ permutacijski. 
 \end{dokaz}
 
-\section{ Gosenice }
+\section{ Drevesa }
 
-Grafi poti $P_n$ in zvezd $K_{1,n}$ so permutacijski grafi, saj imajo kohezivno zaporedje (sliki \ref{graf_kohezivnega_zaporedja_pot} in \ref{graf_kohezivnega_zaporedja_zvezda}). Kohezivni zaporedji za pot $P_{13}$ sta permutaciji:
-\[
-    \sigma_1 = (3, 1, 5, 2, 7, 4, 9, 6, 11, 8, 13, 10, 12)
-\] 
-in 
-\[
-    \sigma_2 = (2, 4, 1, 6, 3, 8, 5, 10, 7, 12, 9, 13, 11).
-\]
-Kohezivno zaporedje za zvezdo $K_{1, n}$ pa je permutacija: 
-\[
-    \pi = (n+1, 1, 2, ..., n).
-\]
-\begin{figure}[h]
-    \begin{center}        
-        \begin{tikzpicture}[shorten >=1pt,-]
-            \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
-            \foreach \num/\x in {3/1, 1/2, 5/3, 2/4, 7/5, 4/6, 9/7, 6/8, 11/9, 8/10, 10/12}
-                    \node[vertex] (V-\num) at (\x,0) {$\num$};
-        
-                \foreach \from/\to in {3/1, 5/2, 7/4, 9/6, 11/8}
-                    \draw (V-\from) -- (V-\to);
-        
-                \draw (V-3) .. controls (1.5, 0.75) and (3.5, 0.75) .. (V-2);
-                \draw (V-5) .. controls (3.5, 0.75) and (5.5, 0.75) .. (V-4);
-                \draw (V-7) .. controls (5.5, 0.75) and (7.5, 0.75) .. (V-6);
-                \draw (V-9) .. controls (7.5, 0.75) and (9.5, 0.75) .. (V-8);
-                \draw (V-11) .. controls (9.5, 0.75) and (11.5, 0.75) .. (V-10);
-                % \draw (V-13) .. controls (11.5, 0.75) and (12.5, 0.75) .. (V-12);
-                
-                \filldraw [black] (11,0) circle (.5pt);
-                \filldraw [black] (11.33,0) circle (.5pt);
-                % \filldraw [black] (11.5,0) circle (.5pt);
-                % \filldraw [black] (12.5,0) circle (.5pt);
-                % \filldraw [black] (12.75,0) circle (.5pt);
-                % \filldraw [black] (13,0) circle (.5pt);
-                
-                \filldraw [black] (11,0) circle (.5pt);
-                \filldraw [black] (11.6,0.53) circle (.5pt);
-                \filldraw [black] (12.2,0.63) circle (.5pt);
-                \filldraw [black] (12.8,0.63) circle (.5pt);
-                \filldraw [black] (13.4,0.53) circle (.5pt);
-                \filldraw [black] (14,0) circle (.5pt);
-        \end{tikzpicture}     
-    \end{center}
-    \caption{Primer kohezivnega zaporedja za pot $P_n$.}
-    \label{graf_kohezivnega_zaporedja_pot}
-\end{figure}
-
-
-% \begin{tikzpicture}[shorten >=1pt,-]
-%     \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
-%     \foreach \num/\x in {2/1, 4/2, 1/3, 6/4, 3/5, 8/6, 5/7, 10/8, 7/9, 12/10, 9/11, 13/12, 11/13}
-%             \node[vertex] (V-\num) at (\x,0) {$\num$};
-
-%         \foreach \from/\to in {4/1, 6/3, 8/5, 10/7, 12/9, 13/11}
-%             \draw (V-\from) -- (V-\to);
-
-%         \draw (V-2) .. controls (1.5, 0.75) and (2.5, 0.75) .. (V-1);
-%         \draw (V-4) .. controls (2.5, 0.75) and (4.5, 0.75) .. (V-3);
-%         \draw (V-6) .. controls (4.5, 0.75) and (6.5, 0.75) .. (V-5);
-%         \draw (V-8) .. controls (6.5, 0.75) and (8.5, 0.75) .. (V-7);
-%         \draw (V-10) .. controls (8.5, 0.75) and (10.5, 0.75) .. (V-9);
-%         \draw (V-12) .. controls (10.5, 0.75) and (12.5, 0.75) .. (V-11);
-% \end{tikzpicture}
+\begin{trditev}
+\label{trditev_zvezde_permutacijski_graf}
+    Graf zvezde $K_{1,n}$ je permutacijski graf.
+\end{trditev}
+\begin{dokaz}
+    Permutacija $\pi = (n+1, 1, 2, \dots, n)$ je kohezivno zaporedje zvezde $K_{1, n}$ (slika \ref{graf_kohezivnega_zaporedja_zvezda}), saj sta pogoja $(a)$ in $(b)$ iz definicije kohezivnega zaporedja \ref{def_kohezivno_zaporedje} izpolnjena.
+\end{dokaz}
 
 \begin{figure}[h]
     \begin{center}        
@@ -1347,7 +1313,111 @@ Kohezivno zaporedje za zvezdo $K_{1, n}$ pa je permutacija:
     \label{graf_kohezivnega_zaporedja_zvezda}
 \end{figure}
 
-Vidimo, da je pogoj $(a)$ iz definicije kohezivnega zaporedja \ref{def_kohezivno_zaporedje} za poti $P_n$ na prazno izpolnjen, saj ni dveh povezav $v_iv_k$ in $v_kv_j$, kjer so $i < k < j$. Pogoj $(b)$ pa je izpolnjen, saj je vedno, ko je $v_iv_j$ povezava in $k$ tak, da $i < k < j$, v grafu ena od povezav $v_iv_k$ ali $v_kv_j$. Podobno je pogoj $(a)$ izpolnjen na prazno za zvezde. Pogoj $(b)$ pa je izpolnjen, saj so vse povezave v grafu oblike $v_{n+1}v_k$ za $k \in \{ 1, 2, ..., n \}$. Zato katerokoli povezavo vzamemo, bodo vsa vozlišča med krajiščema izbrane povezave $v_{n+1}v_k$ povezana z vozliščem $v_{n+1}$.
+\begin{trditev}
+\label{trditev_pot_permutacijski_graf}
+    Graf poti $P_n$ je permutacijski graf.
+\end{trditev}
+\begin{dokaz}
+    Naj bo $P_n$ pot na $n$ vozliščih. Naj bo prvo vozlišče na poti označeno z $v_1$, drugo z $v_2$, $\dots$, in zadnje z $v_n$ (slika \ref{graf_kohezivnega_zaporedja_pot}). Če je $n$ sodo število, potem je $(v_2, v_1, v_4, v_3,\dots,v_{n}, v_{n-1})$ kohezivno zaporedje poti $P_n$. Če je $n$ liho število, potem je $(v_2, v_1, v_4, v_3,\dots,v_{n-1}, v_{n-2}, v_{n})$ kohezivno zaporedje poti $P_n$. To je res, saj sta pogoja $(a)$ in $(b)$ iz definicije \ref{def_kohezivno_zaporedje} izpolnjena.
+\end{dokaz}
+
+\begin{figure}[h]
+    \begin{center}        
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \foreach \num/\x in {v_2/1, v_1/3, v_4/5, v_3/7, v_6/9, v_5/11}
+                    \node[vertex] (V-\num) at (\x,0) {$\num$};
+                    
+                \foreach \from/\to in {v_2/v_1, v_4/v_3, v_6/v_5}
+                    \draw (V-\from) -- (V-\to);
+        
+                \draw (V-v_2) .. controls (1.5, 1.5) and (6.5, 1.5) .. (V-v_3);
+                \draw (V-v_4) .. controls (5.5, 1.5) and (10.5, 1.5) .. (V-v_5);
+                
+                \filldraw [black] (9.2,0.5) circle (1pt);
+                \filldraw [black] (9.6,0.8) circle (1pt);
+                \filldraw [black] (10.1,1) circle (1pt);
+                \filldraw [black] (10.6,1.1) circle (1pt);
+                \filldraw [black] (11.1,1.18) circle (1pt);
+                \filldraw [black] (11.6,1.1) circle (1pt);
+                \filldraw [black] (12.1,1) circle (1pt);
+                \filldraw [black] (12.6,0.8) circle (1pt);
+                \filldraw [black] (13,0.5) circle (1pt);
+        \end{tikzpicture}     
+    \end{center}
+    \caption{Primer kohezivnega zaporedja za pot $P_n$.}
+    \label{graf_kohezivnega_zaporedja_pot}
+\end{figure}
+% \begin{figure}[h]
+%     \begin{center}        
+%         \begin{tikzpicture}[shorten >=1pt,-]
+%             \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
+%             \foreach \num/\x in {3/1, 1/2, 5/3, 2/4, 7/5, 4/6, 9/7, 6/8, 11/9, 8/10, 10/12}
+%                     \node[vertex] (V-\num) at (\x,0) {$\num$};
+        
+%                 \foreach \from/\to in {3/1, 5/2, 7/4, 9/6, 11/8}
+%                     \draw (V-\from) -- (V-\to);
+        
+%                 \draw (V-3) .. controls (1.5, 0.75) and (3.5, 0.75) .. (V-2);
+%                 \draw (V-5) .. controls (3.5, 0.75) and (5.5, 0.75) .. (V-4);
+%                 \draw (V-7) .. controls (5.5, 0.75) and (7.5, 0.75) .. (V-6);
+%                 \draw (V-9) .. controls (7.5, 0.75) and (9.5, 0.75) .. (V-8);
+%                 \draw (V-11) .. controls (9.5, 0.75) and (11.5, 0.75) .. (V-10);
+%                 % \draw (V-13) .. controls (11.5, 0.75) and (12.5, 0.75) .. (V-12);
+                
+%                 \filldraw [black] (11,0) circle (.5pt);
+%                 \filldraw [black] (11.33,0) circle (.5pt);
+%                 % \filldraw [black] (11.5,0) circle (.5pt);
+%                 % \filldraw [black] (12.5,0) circle (.5pt);
+%                 % \filldraw [black] (12.75,0) circle (.5pt);
+%                 % \filldraw [black] (13,0) circle (.5pt);
+                
+%                 \filldraw [black] (11,0) circle (.5pt);
+%                 \filldraw [black] (11.6,0.53) circle (.5pt);
+%                 \filldraw [black] (12.2,0.63) circle (.5pt);
+%                 \filldraw [black] (12.8,0.63) circle (.5pt);
+%                 \filldraw [black] (13.4,0.53) circle (.5pt);
+%                 \filldraw [black] (14,0) circle (.5pt);
+%         \end{tikzpicture}     
+%     \end{center}
+%     \caption{Primer kohezivnega zaporedja za pot $P_n$.}
+%     \label{graf_kohezivnega_zaporedja_pot}
+% \end{figure}
+
+
+% Grafi poti $P_n$ in zvezd $K_{1,n}$ so permutacijski grafi, saj imajo kohezivno zaporedje (sliki \ref{graf_kohezivnega_zaporedja_pot} in \ref{graf_kohezivnega_zaporedja_zvezda}). 
+\begin{primer}
+Kohezivni zaporedji poti $P_{13}$ sta permutaciji:
+\[
+    \sigma_1 = (3, 1, 5, 2, 7, 4, 9, 6, 11, 8, 13, 10, 12)
+\] 
+in 
+\[
+    \sigma_2 = (2, 4, 1, 6, 3, 8, 5, 10, 7, 12, 9, 13, 11).
+\]
+Vidimo, da obstajata vsaj dve permutaciji, katerih permutacijski graf je pot $P_{13}$. V izreku \ref{izrek_dve_permutaciji_poti} bomo pokazali, da sta to tudi edini permutaciji, katerih permutacijski graf je pot $P_{13}$.
+\end{primer}
+% Vidimo, da je pogoj $(a)$ iz definicije kohezivnega zaporedja \ref{def_kohezivno_zaporedje} za poti $P_n$ na prazno izpolnjen, saj ni dveh povezav $v_iv_k$ in $v_kv_j$, kjer so $i < k < j$. Pogoj $(b)$ pa je izpolnjen, saj je vedno, ko je $v_iv_j$ povezava in $k$ tak, da $i < k < j$, v grafu ena od povezav $v_iv_k$ ali $v_kv_j$. Podobno je pogoj $(a)$ izpolnjen na prazno za zvezde. Pogoj $(b)$ pa je izpolnjen, saj so vse povezave v grafu oblike $v_{n+1}v_k$ za $k \in \{ 1, 2, \dots, n \}$. Zato katerokoli povezavo vzamemo, bodo vsa vozlišča med krajiščema izbrane povezave $v_{n+1}v_k$ povezana z vozliščem $v_{n+1}$.
+
+
+
+% \begin{tikzpicture}[shorten >=1pt,-]
+%     \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
+%     \foreach \num/\x in {2/1, 4/2, 1/3, 6/4, 3/5, 8/6, 5/7, 10/8, 7/9, 12/10, 9/11, 13/12, 11/13}
+%             \node[vertex] (V-\num) at (\x,0) {$\num$};
+
+%         \foreach \from/\to in {4/1, 6/3, 8/5, 10/7, 12/9, 13/11}
+%             \draw (V-\from) -- (V-\to);
+
+%         \draw (V-2) .. controls (1.5, 0.75) and (2.5, 0.75) .. (V-1);
+%         \draw (V-4) .. controls (2.5, 0.75) and (4.5, 0.75) .. (V-3);
+%         \draw (V-6) .. controls (4.5, 0.75) and (6.5, 0.75) .. (V-5);
+%         \draw (V-8) .. controls (6.5, 0.75) and (8.5, 0.75) .. (V-7);
+%         \draw (V-10) .. controls (8.5, 0.75) and (10.5, 0.75) .. (V-9);
+%         \draw (V-12) .. controls (10.5, 0.75) and (12.5, 0.75) .. (V-11);
+% \end{tikzpicture}
+
+
 
 Poti in zvezde so drevesa. Ampak niso vsa drevesa permutacijski grafi. Drevo $K_{1,3}^*$, pridobljeno s subdivizijo vseh povezav zvezde $K_{1,3}$ (slika \ref{graf_subdivizija_k13}), ni permutacijski graf.
 
@@ -1383,7 +1453,7 @@ Poti in zvezde so drevesa. Ampak niso vsa drevesa permutacijski grafi. Drevo $K_
 
 
 \begin{definicija}
-    Gosenica je drevo, ki po odstranitvi vseh listov postane pot (slika \ref{graf_gosenice_10_listov}).
+    Gosenica je drevo, ki po odstranitvi vseh listov postane pot.
 \end{definicija}
 
 \begin{figure}[h]
@@ -1416,10 +1486,11 @@ Poti in zvezde so drevesa. Ampak niso vsa drevesa permutacijski grafi. Drevo $K_
 
 
 \begin{lema}
+\label{lema_gosenica_ne_vsebuje_k13}
     Drevo je gosenica natanko tedaj, ko ne vsebuje podgrafa $K_{1,3}^*$.
 \end{lema}
 \begin{dokaz}
-    Če je drevo gosenica, potem po odstranitvi vseh listov dobimo pot. Če drevesu $K_{1,3}^*$ odstranimo vse liste, ne dobimo poti. Torej tudi če drevo vsebuje $K_{1,3}^*$ kot podgraf, nam po odstranitvi listov ostane graf, ki ni pot. Torej gosenica ne vsebuje podgrafa $K_{1,3}^*$. Če drevo ne vsebuje podgrafa $K_{1,3}^*$, potem ima vsako vozlišče največ dva soseda, ki nista lista. Prav tako graf ne vsebuje ciklov, saj je drevo. Po odstranitvi listov drevesa vedno dobimo povezan graf, zato po odstranitvi listov tako dobimo pot. Torej je drevo, ki ne vsebuje podgrafa $K_{1,3}^*$, gosenica.
+    Če je drevo gosenica, potem po odstranitvi vseh listov dobimo pot. Če drevesu $K_{1,3}^*$ odstranimo vse liste, ne dobimo poti. Torej tudi če drevo vsebuje $K_{1,3}^*$ kot podgraf, nam po odstranitvi listov ostane graf, ki ni pot. Torej gosenica ne vsebuje podgrafa $K_{1,3}^*$. Če drevo ne vsebuje podgrafa $K_{1,3}^*$, potem ima vsako vozlišče največ dva soseda, ki nista lista. Prav tako graf ne vsebuje ciklov, saj je drevo. Po odstranitvi listov drevesa vedno dobimo povezan graf in stopnja vsakega vozlišča je $\leq 2$, zato po odstranitvi listov tako dobimo pot. Torej je drevo, ki ne vsebuje podgrafa $K_{1,3}^*$, gosenica.
 \end{dokaz}
 
 % \begin{figure}[h]
@@ -1450,21 +1521,21 @@ Poti in zvezde so drevesa. Ampak niso vsa drevesa permutacijski grafi. Drevo $K_
     \begin{center}        
         \begin{tikzpicture}[shorten >=1pt,-]
             \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
-            \foreach \num/\x in {l_1/0, 2/1, 1/2, l_2/3, l_3/4, 4/5, 3/6, l_4/7, l_5/8, 6/9, 5/10, l_6/11}
+            \foreach \num/\x in {l_1/0, v_2/1, v_1/2, l_2/3, l_3/4, v_4/5, v_3/6, l_4/7, l_5/8, v_6/9, v_5/10, l_6/11}
                     \node[vertex] (V-\num) at (\x,0) {$\num$};
         
-                \foreach \from/\to in {2/1, 4/3, 6/5}
+                \foreach \from/\to in {v_2/v_1, v_4/v_3, v_6/v_5}
                     \draw (V-\from) -- (V-\to);
         
-                \draw[dashed] (V-l_1) .. controls (0.5, 0.75) and (1.5, 0.75) .. (V-1);
-                \draw[dashed] (V-l_3) .. controls (4.5, 0.75) and (5.5, 0.75) .. (V-3);
-                \draw[dashed] (V-l_5) .. controls (8.5, 0.75) and (9.5, 0.75) .. (V-5);
+                \draw[dashed] (V-l_1) .. controls (0.5, 0.75) and (1.5, 0.75) .. (V-v_1);
+                \draw[dashed] (V-l_3) .. controls (4.5, 0.75) and (5.5, 0.75) .. (V-v_3);
+                \draw[dashed] (V-l_5) .. controls (8.5, 0.75) and (9.5, 0.75) .. (V-v_5);
     
-                \draw[dashed] (V-2) .. controls (1.5, 0.75) and (2.5, 0.75) .. (V-l_2);
-                \draw[dashed] (V-4) .. controls (5.5, 0.75) and (6.5, 0.75) .. (V-l_4);
-                \draw[dashed] (V-6) .. controls (9.5, 0.75) and (10.5, 0.75) .. (V-l_6);
-                \draw (V-2) .. controls (1.5, 1.33) and (5.5, 1.33) .. (V-3);
-                \draw (V-4) .. controls (5.5, 1.33) and (9.5, 1.33) .. (V-5);
+                \draw[dashed] (V-v_2) .. controls (1.5, 0.75) and (2.5, 0.75) .. (V-l_2);
+                \draw[dashed] (V-v_4) .. controls (5.5, 0.75) and (6.5, 0.75) .. (V-l_4);
+                \draw[dashed] (V-v_6) .. controls (9.5, 0.75) and (10.5, 0.75) .. (V-l_6);
+                \draw (V-v_2) .. controls (1.5, 1.33) and (5.5, 1.33) .. (V-v_3);
+                \draw (V-v_4) .. controls (5.5, 1.33) and (9.5, 1.33) .. (V-v_5);
         \end{tikzpicture}
     \end{center}
     \caption{Primer kohezivnega zaporedja gosenice.}
@@ -1475,18 +1546,19 @@ Poti in zvezde so drevesa. Ampak niso vsa drevesa permutacijski grafi. Drevo $K_
     Drevo je permutacijski graf natanko tedaj, ko je gosenica.
 \end{izrek}
 \begin{dokaz}
-    $(\Rightarrow)$ Če drevo ni gosenica, potem vsebuje $K_{1,3}^*$ kot podgraf. Drevo, ki vsebuje $K_{1,3}^*$, ni permutacijski graf, saj $K_{1,3}^*$ ni permutacijski graf. 
+    $(\Rightarrow)$ Če drevo ni gosenica, potem po lemi \ref{lema_gosenica_ne_vsebuje_k13} vsebuje $K_{1,3}^*$ kot podgraf. Drevo, ki vsebuje $K_{1,3}^*$, ni permutacijski graf, saj $K_{1,3}^*$ ni permutacijski graf. 
     
-    $(\Leftarrow)$ Potrebno je še pokazati, da je gosenica permutacijski graf. To bomo pokazali tako, da bomo gosenici našli kohezivno zaporedje. Naj bo $C$ gosenica in naj bo $P_n$ pot, ki jo pridobimo iz $C$ tako, da odstranimo liste. Če je $n=1$, potem je $C$ zvezda $K_{1,k}$ za nek $k \geq 0$ ali pa trivialen graf $K_1$. Ker so zvezde in trivialen graf permutacijski grafi, predpostavimo, da je $n \geq 2$. Zgradimo kohezivno zaporedje poti $P_n$ kot na primeru od prej. Vse liste lihega vozlišča $i$ na poti vstavimo levo od vozlišče $i+1$ na poti $P_n$. Vse liste sodega vozlišča $i$ na poti vstavimo desno od vozlišča $i-1$ na poti $P_n$. Rezultat je kohezivno zaporedje (slika \ref{graf_kohezivnega_zaporedja_gosenice}). Zato je gosenica $C$ res permutacijski graf.    
+    $(\Leftarrow)$ Potrebno je še pokazati, da je gosenica permutacijski graf. 
+    Po izreku \ref{izrek_permutacijski_graf_kohezivno_zaporedje} je graf permutacijski graf natanko tedaj, ko ima kohezivno zaporedje, zato bomo pokazali, da ima gosenica kohezivno zaporedje. Naj bo $C$ gosenica in naj bo $P_n$ pot, ki jo pridobimo iz $C$ tako, da odstranimo liste. Če je $n=1$, potem je $C$ zvezda $K_{1,k}$ za nek $k \geq 0$ ali pa trivialen graf $K_1$. Po trditvi \ref{trditev_zvezde_permutacijski_graf} so zvezde in trivialen graf permutacijski grafi. Zato predpostavimo, da je $n \geq 2$. Kohezivno zaporedje poti $P_n$ je $(v_2, v_1, v_4, v_3, \dots)$, kot v dokazu trditve \ref{trditev_pot_permutacijski_graf}. Liste lihega vozlišča $v_i$ na poti ($i$ je liho število) vstavimo levo od vozlišče $v_{i+1}$ na poti $P_n$. Vse liste sodega vozlišča $v_i$ na poti ($i$ je sodo število) vstavimo desno od vozlišča $v_{i-1}$ na poti $P_n$. Rezultat je kohezivno zaporedje $(l_1, v_2, v_1, l_2, l_3, v_4, v_3, l_4, \dots)$, kjer $l_i$ predstavlja liste vozlišča $v_i$ (slika \ref{graf_kohezivnega_zaporedja_gosenice}). Zato je gosenica $C$ res permutacijski graf.    
 \end{dokaz}
 
-Imejmo tako gosenico, da ko ji odstranimo vse liste dobimo pot na $k$ vozliščih. Vozlišče na poti $u_i$ naj ima $m_i$ listov. Označimo tako gosenico z $C_k(m_1, m_2, ..., m_k)$.
+Imejmo tako gosenico, da ko ji odstranimo vse liste, dobimo pot na $k$ vozliščih. Vozlišče $u_i$ na poti naj ima $m_i$ listov. Označimo tako gosenico s $C_k(m_1, m_2, \dots, m_k)$.
 
 \begin{figure}[h]
     \begin{center}        
         \begin{tikzpicture}[shorten >=1pt,-]
             \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
-            \tikzstyle{vertex2}=[circle,draw=black!50,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \tikzstyle{vertex2}=[circle,draw=black!,fill=black!10,minimum size=20pt,inner sep=0pt]
             \foreach \num/\x in {5/1, 1/2, 8/5, 4/6}
                     \node[vertex] (V-\num) at (\x,0) {$\num$};
             \foreach \num/\x in {2/0, 3/3, 6/4, 7/7}
@@ -1504,7 +1576,7 @@ Imejmo tako gosenico, da ko ji odstranimo vse liste dobimo pot na $k$ vozlišči
         \end{tikzpicture}\\\quad\\                    
         \begin{tikzpicture}[shorten >=1pt,-]
             \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
-            \tikzstyle{vertex2}=[circle,draw=black!50,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \tikzstyle{vertex2}=[circle,draw=black!,fill=black!10,minimum size=20pt,inner sep=0pt]
             \foreach \num/\x in {3/0, 7/3, 2/4, 6/7}
                     \node[vertex] (V-\num) at (\x,0) {$\num$};
             \foreach \num/\x in {1/1, 4/2, 5/5, 8/6}
@@ -1520,7 +1592,7 @@ Imejmo tako gosenico, da ko ji odstranimo vse liste dobimo pot na $k$ vozlišči
                 \draw[-latex] (V-7) .. controls (3.5, 1.1) and (6.5, 1.1) .. (V-6);
         \end{tikzpicture}
     \end{center}
-    \caption{Tranzitivni orientaciji gosenice $C_4(1, 1, 1, 1)$.}
+    \caption{Tranzitivni orientaciji gosenice $C_4(1, 1, 1, 1)$ na osmih vozliščih. Gosenica $C_4(1, 1, 1, 1)$ je permutacijski graf permutacij $(2, 5, 1, 3, 6, 8, 4, 7)$ in $(3, 1, 4, 7, 2, 5, 8, 6)$. }
     \label{tranzitivni_orientaciji_gosenice}
 \end{figure}
 
@@ -1563,7 +1635,7 @@ Imejmo tako gosenico, da ko ji odstranimo vse liste dobimo pot na $k$ vozlišči
         % \end{tikzpicture}\\\quad\\
         \begin{tikzpicture}[shorten >=1pt,-]
             \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
-            \tikzstyle{vertex2}=[circle,draw=black!50,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \tikzstyle{vertex2}=[circle,draw=black!,fill=black!10,minimum size=20pt,inner sep=0pt]
             \foreach \num/\x in {5/1, 1/2, 9/5, 4/6, 8/9}
                     \node[vertex] (V-\num) at (\x,0) {$\num$};
             \foreach \num/\x in {2/0, 3/3, 6/4, 7/7, 10/8}
@@ -1583,7 +1655,7 @@ Imejmo tako gosenico, da ko ji odstranimo vse liste dobimo pot na $k$ vozlišči
         \end{tikzpicture}\\\quad\\                    
         \begin{tikzpicture}[shorten >=1pt,-]
             \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
-            \tikzstyle{vertex2}=[circle,draw=black!50,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \tikzstyle{vertex2}=[circle,draw=black!,fill=black!10,minimum size=20pt,inner sep=0pt]
             \foreach \num/\x in {3/0, 7/3, 2/4, 10/7, 6/8}
                     \node[vertex] (V-\num) at (\x,0) {$\num$};
             \foreach \num/\x in {1/1, 4/2, 5/5, 8/6, 9/9}
@@ -1600,9 +1672,15 @@ Imejmo tako gosenico, da ko ji odstranimo vse liste dobimo pot na $k$ vozlišči
                 \draw (V-3) .. controls (0.5, 1.1) and (3.5, 1.1) .. (V-2);
                 \draw (V-7) .. controls (3.5, 1.33) and (7.5, 1.33) .. (V-6);
         \end{tikzpicture}\\\quad\\
+    \end{center}
+    \caption{Gosenica $C_5(1, 1, 1, 1, 1)$ je permutacijski graf na desetih vozliščih permutacij $(2, 5, 1, 3, 6, 9, 4, 7, 10, 8)$ in $(3, 1, 4, 7, 2, 5, 8, 10, 6, 9)$.}
+    \label{gosenica_dve_permutaciji1}
+\end{figure}
+\begin{figure}[h]
+    \begin{center}
         \begin{tikzpicture}[shorten >=1pt,-]
             \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
-            \tikzstyle{vertex2}=[circle,draw=black!50,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \tikzstyle{vertex2}=[circle,draw=black!,fill=black!10,minimum size=20pt,inner sep=0pt]
             \foreach \num/\x in {5/1, 1/2, 9/5, 4/6, 12/9, 8/10}
                     \node[vertex] (V-\num) at (\x,0) {$\num$};
             \foreach \num/\x in {2/0, 3/3, 6/4, 7/7, 10/8, 11/11}
@@ -1624,7 +1702,7 @@ Imejmo tako gosenico, da ko ji odstranimo vse liste dobimo pot na $k$ vozlišči
         \end{tikzpicture}\\\quad\\                    
         \begin{tikzpicture}[shorten >=1pt,-]
             \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
-            \tikzstyle{vertex2}=[circle,draw=black!50,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \tikzstyle{vertex2}=[circle,draw=black!,fill=black!10,minimum size=20pt,inner sep=0pt]
             \foreach \num/\x in {3/0, 7/3, 2/4, 11/7, 6/8, 10/11}
                     \node[vertex] (V-\num) at (\x,0) {$\num$};
             \foreach \num/\x in {1/1, 4/2, 5/5, 8/6, 9/9, 12/10}
@@ -1643,17 +1721,21 @@ Imejmo tako gosenico, da ko ji odstranimo vse liste dobimo pot na $k$ vozlišči
                 \draw (V-11) .. controls (7.5, 1.1) and (10.5, 1.1) .. (V-10);
         \end{tikzpicture}
     \end{center}
-    \caption{Permutacije gosenic.}
-    \label{gosenica_dve_permutaciji}
+    \caption{ Gosenica $C_6(1, 1, 1, 1, 1, 1)$ je permutacijski graf permutacij $(2, 5, 1, 3, 6, 9, 4, 7, 10, 12, 8, 11)$ in $(3, 1, 4, 7, 2, 5, 8, 11, 6, 9, 12, 10)$.}
+    \label{gosenica_dve_permutaciji2}
 \end{figure}
 
-\begin{izrek}
-\label{izrek_gosenica_vsaj_dve_permutaciji}
-    Gosenica $C_k(m_1, m_2, ..., m_k)$ je permutacijski graf vsaj dveh permutacij.
-\end{izrek}
+\begin{trditev}
+\label{trditev_gosenica_vsaj_dve_permutaciji}
+    Gosenica $C_k(m_1, m_2, \dots, m_k)$ je permutacijski graf vsaj dveh permutacij.
+\end{trditev}
 \begin{dokaz}
-    Vsako drevo, z vsaj eno povezavo ima natanko dve tranzitivni orientaciji. To sledi iz dejstva, da ko usmerimo eno povezavo smo že določili tranzitivno orientacijo drevesa. Zato ima tudi gosenica $C_k(m_1, m_2, ..., m_k)$ natanko dve tranizitivni orientaciji (slika \ref{tranzitivni_orientaciji_gosenice}).
-    Naj bo $n = k + m_1 + m_2 + \cdot\cdot\cdot + m_k$ število vozlišč grafa $C_k(m_1, m_2, ..., m_k)$. Priredimo števila $1, 2, ..., n$ vozliščem grafa. To naredimo tako, da če je povezava $uv$ orientirana od $u$ proti $v$, potem mora biti število, ki ga priredimo vozlišču $u$, večje od števila, ki ga priredimo vozlišču $v$ (slika \ref{tranzitivni_orientaciji_gosenice}). To bomo naredili induktivno na dva načina (sliki \ref{tranzitivni_orientaciji_gosenice} in \ref{gosenica_dve_permutaciji}). (1. način) Če je $k = 1$ priredimo število $1$ vozlišču $u_1$ in števila $2, 3, ..., m_1+1$ listom, ki so sosedi vozlišča $u_1$. To nam da permutacijo $(2, 3, ..., m_1+1, 1)$. Naj bo k sodo število in si poglejmo kako iz $C_k(m_1, m_2, ..., m_k)$ naredimo $C_{k+1}(m_1, m_2, ..., m_{k+1})$. Povečamo število $p$, ki je prirejeno vozlišču $u_k$ na $p+1$ in priredimo število $p$ vozlišču $u_{k+1}$. Števila $p+2, p+3, ..., p+m_{k+1}+1$ priredimo listom, ki so sosedi vozlišča $u_{k+1}$. Se pravi smo permutacijo posodobili tako, da najprej nakoncu zaporedja prejšne permutacije priključimo nova števila v zaporedju $p+2, p+3, ..., p+m_{k+1}+1, p+1$ in dobimo $(\cdot\cdot\cdot, p, \cdot\cdot\cdot, p+2, p+3, ..., p+m_{k+1}+1, p+1)$, potem pa zamenjamo števili $p$ in $p+1$ in dobimo $(\cdot\cdot\cdot, p+1, \cdot\cdot\cdot, p+2, p+3, ..., p+m_{k+1}+1, p)$. Naj bo sedaj k liho število in si poglejmo kako iz $C_k(m_1, m_2, ..., m_k)$ naredimo $C_{k+1}(m_1, m_2, ..., m_{k+1})$. Naj bo $p_k = k + m_1 + m_2 + \cdot\cdot\cdot + m_k$. Priredimo števila $p_k+1, p_k+2, ..., p_k+m_{k+1}$ listom, ki so sosedi vozlšča $u_{k+1}$. Število $p_k+m_{k+1}+1$ pa priredimo vozlišču $u_{k+1}$. Se pravi smo permutacijo posodobili tako, da najprej nakoncu zaporedja prejšne permutacije priključimo nova števila v zaporedju $p_k + m_{k+1} + 1, p_k+1, p_k+2,...,p_k+m_{k+1}$ in dobimo $(\cdot\cdot\cdot, p_k - m_k - 1, \cdot\cdot\cdot, p_k + m_{k+1} + 1, p_k+1, p_k+2,...,p_k+m_{k+1})$, potem pa zamenjamo števili $p_k - m_k - 1$ in $p_k + m_{k+1} + 1$, ki pripadata vozliščema $u_k$ in $u_{k+1}$. (2. način) Če je $k = 1$ priredimo število $m_1 + 1$ vozlišču $u_1$ in števila $1, 2, ..., m_1$ listom, ki so sosedi vozlišča $u_1$. To nam da permutacijo $(m_1+1, 1, 2, ..., m_1)$. Naj bo k sodo število in si poglejmo kako iz $C_k(m_1, m_2, ..., m_k)$ naredimo $C_{k+1}(m_1, m_2, ..., m_{k+1})$. To naredimo na enak način, kot smo pri 1. načinu v primeru ko je bil k liho število. Naj bo k liho število in si poglejmo kako iz $C_k(m_1, m_2, ..., m_k)$ naredimo $C_{k+1}(m_1, m_2, ..., m_{k+1})$. To naredimo na enak način, kot smo pri 1. načinu v primeru ko je bil k sodo število. Tako smo pokazali, da je $C_k(m_1, m_2, ..., m_k)$ permutacijski graf vsaj dveh permutacij.
+    Vsako drevo, z vsaj eno povezavo ima natanko dve tranzitivni orientaciji. To sledi iz dejstva, da ko usmerimo eno povezavo smo že določili tranzitivno orientacijo drevesa. Zato ima tudi gosenica $C_k(m_1, m_2, \dots, m_k)$ natanko dve tranizitivni orientaciji (slika \ref{tranzitivni_orientaciji_gosenice}).
+    Naj bo $n = k + m_1 + m_2 + \cdot\cdot\cdot + m_k$ število vozlišč grafa $C_k(m_1, m_2, \dots, m_k)$. Priredimo števila $1, 2, \dots, n$ vozliščem grafa tako, da če je povezava $uv$ orientirana od $u$ proti $v$, potem mora biti število, ki ga priredimo vozlišču $u$, večje od števila, ki ga priredimo vozlišču $v$ (primer sliki \ref{tranzitivni_orientaciji_gosenice}). To bomo naredili induktivno na dva načina (slike \ref{tranzitivni_orientaciji_gosenice}, \ref{gosenica_dve_permutaciji1}, \ref{gosenica_dve_permutaciji1}). 
+    
+    (1. način) Če je $k = 1$ priredimo števila $2, 3,\dots, m_1+1$ listom, ki so sosedi vozlišča $u_1$ in  število $1$ vozlišču $u_1$. Na ta način dobimo permutacijo $(2, 3,\dots, m_1+1, 1)$, katere permutacijski graf je gosenica $C_1(m_1)$ . Naj bo $k$ sodo število in si poglejmo, kako iz $C_k(m_1, m_2, \dots, m_k)$ konstruiramo $C_{k+1}(m_1, m_2, \dots, m_{k+1})$. Število $p$, ki je prirejeno vozlišču $u_k$ povečamo na $p+1$ in priredimo število $p$ vozlišču $u_{k+1}$. Števila $p+2, p+3, \dots, p+m_{k+1}+1$ priredimo listom, ki so sosedi vozlišča $u_{k+1}$. Se pravi, da smo permutacijo posodobili tako, da najprej na koncu zaporedja prejšne permutacije priključimo nova števila v zaporedju $p+2, p+3, \dots, p+m_{k+1}+1, p+1$ in dobimo $(\dots, p, \dots, p+2, p+3, \dots, p+m_{k+1}+1, p+1)$, potem pa zamenjamo števili $p$ in $p+1$ in dobimo $(\dots, p+1, \dots, p+2, p+3, \dots, p+m_{k+1}+1, p)$. Naj bo sedaj $k$ liho število in si poglejmo, kako iz $C_k(m_1, m_2, \dots, m_k)$ konstruiramo $C_{k+1}(m_1, m_2, \dots m_{k+1})$. Naj bo $p_k = k + m_1 + m_2 + \cdot\cdot\cdot + m_k$. Priredimo števila $p_k+1, p_k+2, \dots, p_k+m_{k+1}$ listom, ki so sosedi vozlšča $u_{k+1}$. Število $p_k+m_{k+1}+1$ pa priredimo vozlišču $u_{k+1}$. Se pravi, da smo permutacijo posodobili tako, da najprej na koncu zaporedja prejšne permutacije priključimo nova števila v zaporedju $p_k + m_{k+1} + 1, p_k+1, p_k+2, \dots,p_k+m_{k+1}$ in dobimo $(\dots, p_k - m_k - 1, \dots, p_k + m_{k+1} + 1, p_k+1, p_k+2,\dots,p_k+m_{k+1})$, potem pa zamenjamo števili $p_k - m_k - 1$ in $p_k + m_{k+1} + 1$, ki pripadata vozliščema $u_k$ in $u_{k+1}$. 
+
+    (2. način) Če je $k = 1$ priredimo število $m_1 + 1$ vozlišču $u_1$ in števila $1, 2, \dots, m_1$ listom, ki so sosedi vozlišča $u_1$. Na ta način dobimo permutacijo $(m_1+1, 1, 2, \dots, m_1)$. Naj bo $k$ sodo število in si poglejmo, kako iz $C_k(m_1, m_2, \dots, m_k)$ konstruiramo $C_{k+1}(m_1, m_2, \dots, m_{k+1})$. To naredimo na enak način kot pri 1. načinu v primeru, ko je bilo $k$ liho število. Naj bo $k$ liho število in si poglejmo, kako iz $C_k(m_1, m_2, \dots, m_k)$ konstruiramo $C_{k+1}(m_1, m_2, \dots, m_{k+1})$. To naredimo na enak način kot pri 1. načinu v primeru, ko je bilo $k$ sodo število. Tako smo pokazali, da je $C_k(m_1, m_2, \dots, m_k)$ permutacijski graf vsaj dveh permutacij.
 
 \end{dokaz}
 
@@ -1662,19 +1744,19 @@ Imejmo tako gosenico, da ko ji odstranimo vse liste dobimo pot na $k$ vozlišči
     Za $n \geq 3$ obstajata natanko dve permutaciji iz $S_n$, katerih permutacijski graf je pot na $n$ vozliščih.
 \end{izrek}
 \begin{dokaz}
-    Naj bo $n \geq 3$ in $\sigma = (\sigma_1, \sigma_2,..., \sigma_n) \in S_n$ takšna permutacija, da je $G_{\sigma} = P_n$. Opazimo naslednje lastnosti permutacije $\sigma$:
+    Naj bo $n \geq 3$ in $\sigma = (\sigma_1, \sigma_2,\dots, \sigma_n) \in S_n$ takšna permutacija, da je $G_{\sigma} = P_n$. Opazimo naslednje lastnosti permutacije $\sigma$:
     \begin{enumerate}[label=(\alph*)]
-        \item $(\sigma_1, \sigma_2, ..., \sigma_k) \notin S_k$ za $k < n$.
+        \item $(\sigma_1, \sigma_2, \dots, \sigma_k) \notin S_k$ za $k < n$.
         \item $i-2 \leq \sigma_i \leq i+2$ za $i \leq n$
     \end{enumerate}
     
-    Dokaz lastnosti (a): Naj bo $k < n$. Če je $(\sigma_1, \sigma_2, ..., \sigma_k) \in S_k$, potem graf $G_{\sigma}$ ni povezan. To je v nasprotju s tem, da je $G_{\sigma}$ pot.
+    Dokaz lastnosti (a): Naj bo $k < n$. Če je $(\sigma_1, \sigma_2, \dots, \sigma_k) \in S_k$, potem graf $G_{\sigma}$ ni povezan. To je v nasprotju s tem, da je $G_{\sigma}$ pot.
     
-    Dokaz lastnosti (b): Če je $\sigma_i \leq i-3$, potem je največ $i-4$ števil, ki so manjše od $\sigma_i$, med $i-1$ števili pred $\sigma_i$ v permutaciji $\sigma$. Zato so vsaj 3 števila pred $\sigma_i$ v permutaciji $\sigma$ večja od $\sigma_i$. To pomeni, de ima $\sigma_i$ vsaj $3$ sosede, kar pa je v protislovju s tem, da je $G_{\sigma}$ pot. Podobno če je $\sigma_i \geq i+3$, potem so za $\sigma_i$ v permutaciji $\sigma$ vsaj 3 števila, ki so manjša od $\sigma_i$. Kar zopet pomeni, de ima $\sigma_i$ vsaj $3$ sosede, kar pa je v protislovju s tem, da je $G_{\sigma}$ pot.
+    Dokaz lastnosti (b): Če je $\sigma_i \leq i-3$, potem je največ $i-4$ števil, ki so manjše od $\sigma_i$, (med $i-1$ števili) pred $\sigma_i$ v permutaciji $\sigma$. Zato so vsaj 3 števila pred $\sigma_i$ v permutaciji $\sigma$ večja od $\sigma_i$. To pomeni, da ima $\sigma_i$ vsaj $3$ sosede v grafu $G_{\sigma}$, kar pa je v protislovju s tem, da je $G_{\sigma}$ pot. Simetrično, če je $\sigma_i \geq i+3$, potem so za $\sigma_i$ v permutaciji $\sigma$ vsaj 3 števila, ki so manjša od $\sigma_i$. Kar zopet pomeni, da ima $\sigma_i$ vsaj $3$ sosede v grafu $G_{\sigma}$, kar pa je v protislovju s tem, da je $G_{\sigma}$ pot.
 
-    Zaradi lastnosti (a) in (b) je $\sigma_1 \in \{ 2, 3\}$. Poglejmo si najprej primer, ko je $\sigma_1 = 2$. Zaradi lastnosti (a) in (b) je $\sigma_2 \in \{ 3, 4 \}$. Če je $\sigma_2 = 3$, potem graf vsebuje pot na vozliščih $2, 3, 1$, kjer imata vozlišči $3$ in $1$ stopnjo enako $1$, kar se lahko zgodi samo, če je $n = 3$ (v nasprotnem primeru bi bil graf $G_{\sigma}$ nepovezan). Če je $\sigma_2 = 4$, potem mora biti $\sigma_3 = 1$ (drugače bi imelo vozlišče $1$ stopnjo vsaj $3$), se pravi $\sigma = (2, 4, 1, ...)$. Zaradi lastnosti (a) in (b) je $\sigma_4 \in \{ 5, 6 \}$. Če je $\sigma_4 = 5$, potem ima stopnjo 1, kar se lahko zgodi samo ko je $n = 5$ in $\sigma = (2, 4, 1, 5, 3)$. Sicer je $\sigma_4 = 6$ in $\sigma_5 = 3$ (drugače bi imelo vozlišče $3$ stopnjo vsaj $3$), se pravi $\sigma = (2, 4, 1, 6, 3,...)$. Tako lahko nadaljujemo do poljubne dolžine. Induktivno lahko pokažemo, da je $\sigma$ unikatno določena. 
+    Zaradi lastnosti (a) in (b) je $\sigma_1 \in \{ 2, 3\}$. Poglejmo si najprej primer, ko je $\sigma_1 = 2$. Zaradi lastnosti (a) in (b) je $\sigma_2 \in \{ 3, 4 \}$. Če je $\sigma_2 = 3$, potem graf $G_{\sigma}$ vsebuje pot na vozliščih $2, 3, 1$, kjer imata vozlišči $2$ in $3$ stopnjo enako $1$, kar se lahko zgodi samo, če je $n = 3$ in $\sigma = (2, 3, 1)$ (v nasprotnem primeru bi bil graf $G_{\sigma}$ nepovezan). Če je $\sigma_2 = 4$, potem mora biti $\sigma_3 = 1$ (drugače bi imelo vozlišče $1$ stopnjo vsaj $3$), se pravi $\sigma = (2, 4, 1, \dots)$. Zaradi lastnosti (a) in (b) je $\sigma_4 \in \{ 5, 6 \}$. Če je $\sigma_4 = 5$, potem imata vozlišči $2$ in $5$ stopnjo enako $1$, kar se lahko zgodi samo ko je $n = 5$ in $\sigma = (2, 4, 1, 5, 3)$. Sicer je $\sigma_4 = 6$ in $\sigma_5 = 3$ (drugače bi imelo vozlišče $3$ stopnjo vsaj $3$), se pravi $\sigma = (2, 4, 1, 6, 3,\dots)$. Tako lahko nadaljujemo do poljubne dolžine. Induktivno lahko pokažemo, da je $\sigma$ unikatno določena. 
     
-    Pogljemo si sedaj še primer, ko je $\sigma_1 = 3$. Potem je $\sigma_2 \in \{ 1, 2, 4\}$. $\sigma \neq 2$, saj bi tako v permutaciji imeli podzaporedje $3, 2, 1$, kar nam da cikel dolžine 3. Prav tako $\sigma \neq 4$, saj bi tako permutacija vsebovala povezave $32, 31, 42, 41$, kar nam da cikel dolžine 4. Zato je $\sigma_2 = 1$. Zaradi lastnosti (a) in (b) je $\sigma_3 \in \{ 4, 5 \}$. Če je $\sigma_3 = 4$, potem je $\sigma_4 = 2$ (drugače bi imelo vozlišče $2$ stopnjo vsaj $3$). Se pravi $n = 4$ in $\sigma = (3, 1, 4, 2)$. Če je $\sigma_3 = 5$ potem je $\sigma_4 = 2$ in $\sigma = (3, 1, 5, 2,...)$. Podobno, kot prej lahko nadaljujemo do poljubne dolžine. Induktivno lahko pokažemo, da je $\sigma$ unikatno določena.
+    Pogljemo si sedaj še primer, ko je $\sigma_1 = 3$. Potem je $\sigma_2 \in \{ 1, 2, 4\}$. Element $\sigma_2 \neq 2$, saj bi tako v permutaciji imeli podzaporedje $3, 2, 1$, kar nam da cikel dolžine 3. Prav tako $\sigma_2 \neq 4$, saj bi tako permutacija vsebovala povezave $32, 31, 42, 41$, kar nam da cikel dolžine 4. Zato je $\sigma_2 = 1$. Zaradi lastnosti (a) in (b) je $\sigma_3 \in \{ 4, 5 \}$. Če je $\sigma_3 = 4$, potem je $\sigma_4 = 2$ (drugače bi imelo vozlišče $2$ stopnjo vsaj $3$). Se pravi $n = 4$ in $\sigma = (3, 1, 4, 2)$. Če je $\sigma_3 = 5$, potem je $\sigma_4 = 2$ in $\sigma = (3, 1, 5, 2,\dots)$. Podobno, kot prej lahko nadaljujemo do poljubne dolžine. Induktivno lahko pokažemo, da je $\sigma$ unikatno določena.
 
     Dobimo sklep, da obstajata natanko dve permutaciji iz $S_n$, katerih permutacijski graf je pot na $n$ vozliščih.
 \end{dokaz}
@@ -1683,20 +1765,20 @@ Imejmo tako gosenico, da ko ji odstranimo vse liste dobimo pot na $k$ vozlišči
     Naj bo $\sigma \in S_n$ taka, da je njen permutacijski graf pot na $n$ vozliščih. Potem nam zaporedje vozlišč na poti da permutacijo $\sigma^*$, ki je sestavljena iz sosednjih transpozicij. Še več $\sigma^* \preceq_b \sigma$.
 \end{posledica}
 \begin{dokaz}
-    Po izreku \ref{izrek_dve_permutaciji_poti} imata edini dve poti na $n$ vozliščih permutaciji $\sigma_1 = (2, 4, 1, 6, 3,...)$ in $\sigma_2 = (3, 1, 5, 2, 7, 4,...)$. Zaporedja vozlišč na poti sta $\sigma_1^* = (2, 1, 4, 3,...)$ in $\sigma_2^* = (1, 3, 2, 5, 4,...)$. Vidimo, da je permutacija $\sigma^*$ pridobljena iz permutacije $\sigma$ z zaporedjem transpozicij sosednjih elementov, kjer vsaka transpozicija odstrani eno inverzjo.
+    Po izreku \ref{izrek_dve_permutaciji_poti} imata edini dve poti na $n$ vozliščih permutaciji $\sigma_1 = (2, 4, 1, 6, 3,\dots)$ in $\sigma_2 = (3, 1, 5, 2, 7, 4,\dots)$. Zaporedja vozlišč na poti sta $\sigma_1^* = (2, 1, 4, 3,\dots)$ in $\sigma_2^* = (1, 3, 2, 5, 4,\dots)$. Vidimo, da je permutacija $\sigma^*$ pridobljena iz permutacije $\sigma$ z zaporedjem transpozicij sosednjih elementov, kjer vsaka transpozicija odstrani eno inverzjo.
 \end{dokaz}
 
 \begin{posledica}    
     Naj bo $n \geq 3$ in $C$ gosenica na $n$ vozliščih. Potem obstajata natanko dve permutaciji iz $S_n$, katerih permutacijski graf je izomorfen grafu gosenice $C$.
 \end{posledica}
 \begin{dokaz}
-    Privzamimo, da ima pot gosenice maksimalno dolžino (se pravi $m_1 = m_k = 0$). Naj bo $N$ število permutacij iz $S_n$, katerih permutacijski graf je izomorfen grafu $C$. Po izreku \ref{izrek_gosenica_vsaj_dve_permutaciji} je $N \geq 2$. Naj bo $\pi$ perutacija, katere graf je izomorfen grafu $C$. Vidimo, da je $\pi$ unikatno določena z zaporedjem vozlišč na poti. To je res, saj morajo biti listi urejeni naraščujoče, da preprečimo dodatne inverzije v permutaciji. Po izreku \ref{izrek_dve_permutaciji_poti} obstajata natanko dve zaporedji vozlišč na poti. Torej je $N \leq 2$. Zato je $N = 2$.
+    Privzamimo, da ima pot gosenice maksimalno dolžino (se pravi $m_1 = m_k = 0$). Naj bo $N$ število permutacij iz $S_n$, katerih permutacijski graf je izomorfen grafu $C$. Po trditvi \ref{trditev_gosenica_vsaj_dve_permutaciji} je $N \geq 2$. Naj bo $\pi$ perutacija, katere graf je izomorfen grafu $C$. Vidimo, da je $\pi$ unikatno določena z zaporedjem vozlišč na poti. To je res, saj morajo biti listi urejeni naraščujoče, da preprečimo dodatne inverzije v permutaciji. Po izreku \ref{izrek_dve_permutaciji_poti} obstajata natanko dve zaporedji vozlišč na poti. Torej je $N \leq 2$. Zato je $N = 2$.
 \end{dokaz}
 
 \section{ Konstrukcija permutacijskih grafov}
 
 \begin{definicija}
-    Naj bo $G$ graf z množico vozlišč $V(G) = \{x_1, x_2, ..., x_n\}$ in naj bodo $H_1, H_2, ..., H_n$ poljubni grafi. Kompozicija grafov $H_1, H_2, ..., H_n$ z grafom $G$, označena z $G(H_1, H_2, ..., H_n)$, je graf sestavljen iz disjunktne unije $H_1, H_2, ..., H_n$ in dodanih povezav $a_ib_j$, kjer je $a_i \in V(H_i)$ in $b_j \in V(H_j)$, kadar je $x_ix_j \in E(G)$ (sliki \ref{graf_kompozicija_primer1} in \ref{graf_kompozicija_primer2}). Če je $H_i$ fiksen graf $H$, potem kompozicijo označimo z $G(H)$. 
+    Naj bo $G$ graf z množico vozlišč $V(G) = \{x_1, x_2, \dots, x_n\}$ in naj bodo $H_1, H_2, \dots, H_n$ poljubni grafi. Kompozicija grafov $H_1, H_2, \dots, H_n$ z grafom $G$, označena z $G(H_1, H_2, \dots, H_n)$, je graf sestavljen iz disjunktne unije $H_1, H_2, \dots, H_n$ in dodanih povezav $a_ib_j$, kjer je $a_i \in V(H_i)$ in $b_j \in V(H_j)$, kadar je $x_ix_j \in E(G)$ (sliki \ref{graf_kompozicija_primer1} in \ref{graf_kompozicija_primer2}). Če je $H_i$ fiksen graf $H$, potem kompozicijo označimo z $G(H)$. 
 \end{definicija}
 
 \begin{figure}[h]
@@ -1720,20 +1802,20 @@ Imejmo tako gosenico, da ko ji odstranimo vse liste dobimo pot na $k$ vozlišči
     \label{graf_kompozicija_primer1}
 \end{figure}
 
-Vsota grafov $L$ in $M$, označena z $L + M$, je sestavljena iz disjunktne unije grafov $L$ in $M$ ter dodanih povezav $ab$, kjer $a \in V(L)$ in $b \in V(M)$. Se pravi, kompozicija $G(H_1, H_2, ..., H_n)$ je sestavljena iz disjunktne unije grafov $H_i$ in potem iz vsote $H_i + H_j$ za vsako pripadajočo povezavo $x_ix_j \in E(G)$.
+Vsota grafov $L$ in $M$, označena z $L + M$, je sestavljena iz disjunktne unije grafov $L$ in $M$ ter dodanih povezav $ab$, kjer $a \in V(L)$ in $b \in V(M)$. Se pravi, kompozicija $G(H_1, H_2, \dots, H_n)$ je sestavljena iz disjunktne unije grafov $H_i$ in potem iz vsote $H_i + H_j$ za vsako pripadajočo povezavo $x_ix_j \in E(G)$.
 
 \begin{izrek}
 \label{izrek_konstrukcija_permutacijskega_grafa}
-    Naj bo $G$ graf z $n$ vozlišči in naj bodo $H_1, H_2, ..., H_n$ poljubni grafi. Potem je $G(H_1, H_2, ..., H_n)$ permutacijski graf natanko tedaj, ko so $G, H_1, H_2, ..., H_n$ permutacijski grafi.
+    Naj bo $G$ graf z $n$ vozlišči in naj bodo $H_1, H_2, \dots, H_n$ poljubni grafi. Potem je $G(H_1, H_2, \dots, H_n)$ permutacijski graf natanko tedaj, ko so $G, H_1, H_2, \dots, H_n$ permutacijski grafi.
 \end{izrek}
 \begin{dokaz}
-    $(\Rightarrow)$ Privzamimo, da je $G(H_1, H_2, ..., H_n)$ permutacijski graf. Ker so $H_1, H_2, ..., H_n$ inducirani podgrafi grafa $G(H_1, H_2, ..., H_n)$, so permutacijski grafi po izreku \ref{izrek_ekvivalentne_trditve_permutacijski_graf}. Prav tako lahko vzamemo eno vozlišče iz vsakega od grafov $H_i$ in ga označimo z $x_i$. Tako dobimo induciran podgraf izomorfen grafu $G$. To pomeni, da je tudi $G$ permutacijski. 
+    $(\Rightarrow)$ Privzamimo, da je $G(H_1, H_2, \dots, H_n)$ permutacijski graf. Ker so $H_1, H_2, \dots, H_n$ inducirani podgrafi grafa $G(H_1, H_2, \dots, H_n)$, so permutacijski grafi po izreku \ref{izrek_ekvivalentne_trditve_permutacijski_graf}. Prav tako lahko vzamemo eno vozlišče iz vsakega od grafov $H_i$ in ga označimo z $x_i$. Tako dobimo induciran podgraf izomorfen grafu $G$. To pomeni, da je tudi $G$ permutacijski. 
     
-    $(\Leftarrow)$ Obratno privzamemo, da so $G, H_1, H_2, ..., H_n$ permutacijski grafi. Potem je $(v_1, v_2, ..., v_n)$ kohezivno zaporedje grafa $G$. Grafe $H_1, H_2, ..., H_n$ ustrezno preimenujemo tako, da je graf, ki pripada vozlišču $v_1$, poimenovan $H_1$, graf, ki pripada vozlišču $v_2$, poimenovan $H_2$, ..., graf, ki pripada vozlišču $v_n$, poimenovan $H_n$. Z $n_i$ označimo število vozlišč grafa $H_i$. Potem ima graf $H_i$ kohezivno zaporedje $l_i = (x_1^i, x_2^i, ..., x_{n_i}^i)$. Se pravi je 
+    $(\Leftarrow)$ Obratno privzamemo, da so $G, H_1, H_2, \dots, H_n$ permutacijski grafi. Potem je $(v_1, v_2, \dots, v_n)$ kohezivno zaporedje grafa $G$. Grafe $H_1, H_2, \dots, H_n$ ustrezno preimenujemo tako, da je graf, ki pripada vozlišču $v_1$, poimenovan $H_1$, graf, ki pripada vozlišču $v_2$, poimenovan $H_2$, $\dots$, graf, ki pripada vozlišču $v_n$, poimenovan $H_n$. Z $n_i$ označimo število vozlišč grafa $H_i$. Potem ima graf $H_i$ kohezivno zaporedje $l_i = (x_1^i, x_2^i, \dots, x_{n_i}^i)$. Se pravi je 
     \[
-        l = (l_1, l_2, ..., l_n) = (x_1^1, x_2^1, ..., x_{n_1}^1, x_1^2, x_2^2, ..., x_{n_2}^2, ..., x_1^n, x_2^n, ..., x_{n_n}^n)
+        l = (l_1, l_2, \dots, l_n) = (x_1^1, x_2^1, \dots, x_{n_1}^1, x_1^2, x_2^2, \dots, x_{n_2}^2, \dots, x_1^n, x_2^n, \dots, x_{n_n}^n)
     \]
-    kohezivno zaporedje grafa $G(H_1, H_2, ..., H_n)$ in $G(H_1, H_2, ..., H_n)$ je permutacijski graf.
+    kohezivno zaporedje grafa $G(H_1, H_2, \dots, H_n)$ in $G(H_1, H_2, \dots, H_n)$ je permutacijski graf.
 \end{dokaz}
 
 Izrek \ref{izrek_konstrukcija_permutacijskega_grafa} nam podaja enostaven način konstrukcije permutacijskih grafov. Naj bo $G$ polni graf $K_3$. Poglejmo si kompozicijo $K_3(P_2, C_3, P_1)$ (slika \ref{graf_kompozicija_primer2}). Ker so $K_3, P_2, C_3, P_1$ polni grafi dobimo polni graf $K_6$.
@@ -1761,7 +1843,7 @@ Izrek \ref{izrek_konstrukcija_permutacijskega_grafa} nam podaja enostaven način
 
 Vsi grafi na največ $4$ vozliščih so permutacijski grafi. Zato sta grafa $P_3(P_2, P_3, P_1)$ in $K_3(P_2, C_3, P_1)$ permutacijska (sliki \ref{graf_kompozicija_primer1} in \ref{graf_kompozicija_primer2}).
 
-Vsak graf $G$ z $n$ vozlišči se lahko zapiše kot $G(\overset{n}{\overline{P_1, ..., P_1}})$ in $K_1(G)$. Če sta to edina načina za zapis grafa $G$ kot kompozicija, potem je graf primaren.
+Vsak graf $G$ z $n$ vozlišči se lahko zapiše kot $G(\overset{n}{\overline{P_1, \dots, P_1}})$ in $K_1(G)$. Če sta to edina načina za zapis grafa $G$ kot kompozicija, potem je graf primaren.
 
 Med polnimi grafi sta primarna samo grafa $K_1$ in $K_2$.
 
@@ -1841,16 +1923,16 @@ Med drevesi s premerom, ki ni večji od 3 (slika \ref{graf_dreves_premer_leq3}),
 \begin{dokaz}
     Ker smo že pogledali drevesa s premeri, ki ne presegajo $3$, privzamimo, da imamo drevo $T$ s premerom vsaj $4$. 
     
-    $(\Rightarrow)$ Naj bo $T$ drevo z $n$ vozlišči. Privzemimo, da je $T$ primaren permutacijski graf. Po izreku \ref{izrek_gosenica_permutacijski_graf} je $T$ gosenica. Predpostavimo, da imamo dva lista $x_1$ in $x_2$ z istim sosedom $y$. Naj bo $G$ graf, ki ga dobimo, če identificiramo ti dve vozlišči ($x_1$ in $x_2$ zamenjamo z enim listom $y_1$, ki je povezan s sosedom vozlišč $x_1$ in $x_2$). Naj bodo $y_1, y_2, ..., y_{n-1}$ vozlišča grafa $G$. Recimo, da je $y_1$ vozlišče pridobljeno z identifikacijo vozlišč $x_1$ in $x_2$. Naj bo $H_1 = \overline{K_2}$ in $H_i$ trivialen graf za $i = 2, 3, ..., n-1$. Potem je $T = G(H_1, H_2, ..., H_n)$. To je v protislovju s tem, da je $T$ primaren. 
+    $(\Rightarrow)$ Naj bo $T$ drevo z $n$ vozlišči. Privzemimo, da je $T$ primaren permutacijski graf. Po izreku \ref{izrek_gosenica_permutacijski_graf} je $T$ gosenica. Predpostavimo, da imamo dva lista $x_1$ in $x_2$ z istim sosedom $y$. Naj bo $G$ graf, ki ga dobimo, če identificiramo ti dve vozlišči ($x_1$ in $x_2$ zamenjamo z enim listom $y_1$, ki je povezan s sosedom vozlišč $x_1$ in $x_2$). Naj bodo $y_1, y_2, \dots, y_{n-1}$ vozlišča grafa $G$. Recimo, da je $y_1$ vozlišče pridobljeno z identifikacijo vozlišč $x_1$ in $x_2$. Naj bo $H_1 = \overline{K_2}$ in $H_i$ trivialen graf za $i = 2, 3, \dots, n-1$. Potem je $T = G(H_1, H_2, \dots, H_n)$. To je v protislovju s tem, da je $T$ primaren. 
     
-    $(\Leftarrow)$ Privzemimo zdaj, da je $T$ gosenica brez dveh listov z istim sosednim vozliščem, in predpostavimo, da $T$ ni primaren permutacijski graf. Potem je za nek netrivialen graf $G$ z vozlišči $y_1, y_2, ..., y_k$ $T = G(H_1, H_2, ..., H_k)$. Brez izgube splošnosti lahko privzamemo, da ima $H_1$ vsaj $2$ vozlišči. Ker je drevo $T$ povezan graf, mora biti tudi graf $G$ povezan. Zato mora $y_1$ imeti soseda. Privzemimo, da sta $y_1$ in $y_2$ sosednji vozlišči. Potem je $H_1 + H_2$ podgraf grafa $T$. Če bi $H_2$ imel vsaj $2$ vozlišči, bi graf $H_1 + H_2$ vseboval cikel, kar je v protislovju s tem, da je $T$ drevo. Torej ima $H_2$ samo eno vozlišče. Če bi $y_1$ imel še kakšnega soseda v grafu $G$, bi graf $T$ tako imel cikel dolžine $4$. Prav tako v $H_1$ ne sme biti povezav, saj bi tako podgraf $H_1 + H_2$ vseboval cikel dolžine $3$. Ampak potem so vsa vozlišča grafa $H_1$ listi grafa $T$ s skupnim sosedom, ki je edino vozlišče grafa $H_2$. To je v protislovju s predpostavko, da je $T$ gosenica brez dveh listov z istim sosedom. Torej je $T$ primaren permutacijski graf.
+    $(\Leftarrow)$ Privzemimo zdaj, da je $T$ gosenica brez dveh listov z istim sosednim vozliščem, in predpostavimo, da $T$ ni primaren permutacijski graf. Potem je za nek netrivialen graf $G$ z vozlišči $y_1, y_2, \dots, y_k$ $T = G(H_1, H_2, \dots, H_k)$. Brez izgube splošnosti lahko privzamemo, da ima $H_1$ vsaj $2$ vozlišči. Ker je drevo $T$ povezan graf, mora biti tudi graf $G$ povezan. Zato mora $y_1$ imeti soseda. Privzemimo, da sta $y_1$ in $y_2$ sosednji vozlišči. Potem je $H_1 + H_2$ podgraf grafa $T$. Če bi $H_2$ imel vsaj $2$ vozlišči, bi graf $H_1 + H_2$ vseboval cikel, kar je v protislovju s tem, da je $T$ drevo. Torej ima $H_2$ samo eno vozlišče. Če bi $y_1$ imel še kakšnega soseda v grafu $G$, bi graf $T$ tako imel cikel dolžine $4$. Prav tako v $H_1$ ne sme biti povezav, saj bi tako podgraf $H_1 + H_2$ vseboval cikel dolžine $3$. Ampak potem so vsa vozlišča grafa $H_1$ listi grafa $T$ s skupnim sosedom, ki je edino vozlišče grafa $H_2$. To je v protislovju s predpostavko, da je $T$ gosenica brez dveh listov z istim sosedom. Torej je $T$ primaren permutacijski graf.
 \end{dokaz}
 
 \begin{izrek}
-    Naj bo $G$ sestavljen permutacijski graf. Potem obstajajo takšni netrivialen primaren permutacijski graf $U$ in permutacijski grafi $H_1, H_2, ..., H_k$, ki so podgrafi grafa $G$, da je $G = U(H_1, H_2, ..., H_k)$.
+    Naj bo $G$ sestavljen permutacijski graf. Potem obstajajo takšni netrivialen primaren permutacijski graf $U$ in permutacijski grafi $H_1, H_2, \dots, H_k$, ki so podgrafi grafa $G$, da je $G = U(H_1, H_2, \dots, H_k)$.
 \end{izrek}
 \begin{dokaz}
-    Naj bo $G = U(H_1, H_2, ..., H_k)$, kjer je $U$ netrivialen. Če vzamemo eno vozlišče $x_i$ iz vsakega izmed $H_i$, potem je induciran podgraf izomorfen grafu $U$. Zato mora biti $U$ permutacijski po izreku \ref{izrek_ekvivalentne_trditve_permutacijski_graf}. Prav tako so grafi $H_i$ permutacijski, saj so inducirani podgrafi grafa $G$. Privzemimo, da ima $U$ najmanjše število vozlišč med vsemi takimi kompozicijami. Dokazali bi radi, da je $U$ primaren. Privzemimo, da $U$ ni primaren. Naj bo $U = V(L_1, L_2, ..., L_p)$ kompozicija, kjer je $V$ netrivialen. Ker je $U$ kompozicija in vozlišča grafa $U$ predstavljajo inducirane podgrafe $H_i$ v grafu $G$, potem vsak $L_i$ predstavlja neko podmnožico $A_i \subset \{ H_1, H_2, ..., H_k \}$. $A_i$ je tako tudi induciran podgraf grafa $G$. Zato je $G = V(A_1, A_2, ..., A_p)$. Ampak to predstavlja protislovje z izborom grafa $U$. Torej je $U$ primaren.
+    Naj bo $G = U(H_1, H_2, \dots, H_k)$, kjer je $U$ netrivialen. Če vzamemo eno vozlišče $x_i$ iz vsakega izmed $H_i$, potem je induciran podgraf izomorfen grafu $U$. Zato mora biti $U$ permutacijski po izreku \ref{izrek_ekvivalentne_trditve_permutacijski_graf}. Prav tako so grafi $H_i$ permutacijski, saj so inducirani podgrafi grafa $G$. Privzemimo, da ima $U$ najmanjše število vozlišč med vsemi takimi kompozicijami. Dokazali bi radi, da je $U$ primaren. Privzemimo, da $U$ ni primaren. Naj bo $U = V(L_1, L_2, \dots, L_p)$ kompozicija, kjer je $V$ netrivialen. Ker je $U$ kompozicija in vozlišča grafa $U$ predstavljajo inducirane podgrafe $H_i$ v grafu $G$, potem vsak $L_i$ predstavlja neko podmnožico $A_i \subset \{ H_1, H_2, \dots, H_k \}$. $A_i$ je tako tudi induciran podgraf grafa $G$. Zato je $G = V(A_1, A_2, \dots, A_p)$. Ampak to predstavlja protislovje z izborom grafa $U$. Torej je $U$ primaren.
 \end{dokaz}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1863,7 +1945,7 @@ V tem poglavju bomo spoznali kaj so rangiranja, tekmovalnostni grafi, primerljiv
 \section{ Tekmovalnostni grafi ter množice posrednih in neposrednih tekmovalcev }
 
 \begin{definicija}
-    Rangiranje $c = (i_1, ..., i_n)$ množice $[n]$ je permutacija iz $S_n$. Pisali bomo $i \prec_c j$, kadar se vozlišče $i$ pojavi pred vozliščem $j$ v vektorju rangiranja $c$, to je, ko $c^{-1}(i) < c^{-1}(j)$. Zato rangiranje $c$ definira zaporedje (urejenost) množice $[n]$:
+    Rangiranje $c = (i_1, \dots, i_n)$ množice $[n]$ je permutacija iz $S_n$. Pisali bomo $i \prec_c j$, kadar se vozlišče $i$ pojavi pred vozliščem $j$ v vektorju rangiranja $c$, to je, ko $c^{-1}(i) < c^{-1}(j)$. Zato rangiranje $c$ definira zaporedje (urejenost) množice $[n]$:
     \[
         c(1) = i_1 \prec_c c(2) = i_2 \prec_c \cdot\cdot\cdot \prec_c c(n) = i_n.
     \]
@@ -1871,7 +1953,7 @@ V tem poglavju bomo spoznali kaj so rangiranja, tekmovalnostni grafi, primerljiv
 
 \begin{definicija}
 \label{def_tekmovalnosti}
-    Naj bo $R = \{c_1, c_2, ..., c_r\}$ končna množica rangiranj. Potem rečemo, da par vozlišč $(i, j) \in [n] \times [n]$ (neposredno) tekmuje, če obstajata takšni rangiranji $c_s, c_t \in R$, da je $i \prec_{c_s} j$ ampak $j \prec_{c_t} i$, to je $i$ in $j$ zamenjata svoji relativni poziciji v rangiranjih $c_s$ in $c_t$ (slika \ref{tekmovalnost_ij}).
+    Naj bo $R = \{c_1, c_2, \dots, c_r\}$ končna množica rangiranj. Potem rečemo, da par vozlišč $(i, j) \in [n] \times [n]$ (neposredno) tekmuje, če obstajata takšni rangiranji $c_s, c_t \in R$, da je $i \prec_{c_s} j$ ampak $j \prec_{c_t} i$, to je $i$ in $j$ zamenjata svoji relativni poziciji v rangiranjih $c_s$ in $c_t$ (slika \ref{tekmovalnost_ij}).
 
     Tekmovalnost med dvema vozliščema $i, j \in [n]$ je močno povezano z dejstvom, da je $(i, j)$ inverzija rangiranja množice. Spomnimo se, da je inverzija v rangiranju $c$ par vozlišč $(i, j)$ tako, da je $(i-j)(c^{-1}(i) - c^{-1}(j)) < 0$.
 \end{definicija}
@@ -1949,11 +2031,11 @@ V tem poglavju bomo spoznali kaj so rangiranja, tekmovalnostni grafi, primerljiv
 \end{figure}
 
 \begin{lema}
-    Če imamo podano končno množico $R = \{ c_1, c_2, ..., c_r \}$ rangiranj, so naslednje trditve ekvivalentne:
+    Če imamo podano končno množico $R = \{ c_1, c_2, \dots, c_r \}$ rangiranj, so naslednje trditve ekvivalentne:
     \begin{enumerate}[label=(\roman*)]
         \item Par vozlišč $(i, j)$ tekmuje.
-        \item Obstaja tak $c_s \in \{ c_1, ..., c_{r-1} \}$, da $i$ in $j$ zamenjata svoji relativni poziciji med rangiranji $c_s$ in $c_{s+1}$.
-        \item Obstaja preimenovanje vozlišč tako, da je $c_1 = id$ (slika \ref{preimenovanje_vozlisc_id}) in nek $c_s \in \{c_2, ..., c_r\}$ z inverzijo $(i, j)$.
+        \item Obstaja tak $c_s \in \{ c_1, \dots, c_{r-1} \}$, da $i$ in $j$ zamenjata svoji relativni poziciji med rangiranji $c_s$ in $c_{s+1}$.
+        \item Obstaja preimenovanje vozlišč tako, da je $c_1 = id$ (slika \ref{preimenovanje_vozlisc_id}) in nek $c_s \in \{c_2, \dots, c_r\}$ z inverzijo $(i, j)$.
     \end{enumerate}
 \end{lema}
 \begin{dokaz}
@@ -1965,7 +2047,7 @@ V tem poglavju bomo spoznali kaj so rangiranja, tekmovalnostni grafi, primerljiv
 \end{dokaz}
 
 \begin{definicija}
-    Naj bo $R = \{ c_1, c_2, ..., c_r \}$ množica rangiranj množice $[n]$. Definirajmo tekmovalnostni graf množice rangiranj $R$ kot neusmerjen graf $G_c(R) = ([n], E)$, kjer je množica povezav $E$ podana na nasledni način: med $i$ in $j$ je povezava, če $(i, j)$ tekmujeta.
+    Naj bo $R = \{ c_1, c_2, \dots, c_r \}$ množica rangiranj množice $[n]$. Definirajmo tekmovalnostni graf množice rangiranj $R$ kot neusmerjen graf $G_c(R) = ([n], E)$, kjer je množica povezav $E$ podana na nasledni način: med $i$ in $j$ je povezava, če $(i, j)$ tekmujeta.
 \end{definicija}
 
 \begin{primer}
@@ -1996,7 +2078,7 @@ V tem poglavju bomo spoznali kaj so rangiranja, tekmovalnostni grafi, primerljiv
 
 
 \begin{definicija}
-    Če vzamemo množico rangiranj $R = \{ c_1, ..., c_r \}$ množice $[n]$ in fiksiramo $i \in [n]$, je tekmovalnostna množica $C(i)$ vozlišča $i$ enaka množici elementov množice $[n]$, ki tekmuje z $i$ vključno z $i$:
+    Če vzamemo množico rangiranj $R = \{ c_1, \dots, c_r \}$ množice $[n]$ in fiksiramo $i \in [n]$, je tekmovalnostna množica $C(i)$ vozlišča $i$ enaka množici elementov množice $[n]$, ki tekmuje z $i$ vključno z $i$:
     \[
         C(i) = \{ j \in [n] \ | \ (i, j) \ tekmujeta \} \cup \{ i \}.
     \]
@@ -2010,7 +2092,7 @@ V tem poglavju bomo spoznali kaj so rangiranja, tekmovalnostni grafi, primerljiv
 \end{primer}
 
 \begin{definicija}
-    Naj bo $R = \{ c_1, c_2, ..., c_r\}$ množica rangiranj množice $[n]$. Množici  vozlišč $C \subseteq [n]$ rečemo množica tekmovalcev, če je maksimalna množica glede na lastnost tekmovalnosti svojih elementov. To pomeni, da vsaka dva elementa $i, j \in C$ tekmujeta in $C$ je maksimalna glede na to lastnost.
+    Naj bo $R = \{ c_1, c_2, \dots, c_r\}$ množica rangiranj množice $[n]$. Množici  vozlišč $C \subseteq [n]$ rečemo množica tekmovalcev, če je maksimalna množica glede na lastnost tekmovalnosti svojih elementov. To pomeni, da vsaka dva elementa $i, j \in C$ tekmujeta in $C$ je maksimalna glede na to lastnost.
 \end{definicija}
 
 \begin{opomba}
@@ -2018,7 +2100,7 @@ V tem poglavju bomo spoznali kaj so rangiranja, tekmovalnostni grafi, primerljiv
 \end{opomba}
 
 \begin{definicija}
-    Če vzamemo množico rangiranj $R = \{ c_1, ..., c_r\}$ množice $[n]$, rečemo, da par vozlišč $(i, j) \in [n] \times [n]$ posredno ali neposredno tekmuje, če obstaja tak $k \in \mathbb{N}$ in vozlišča $i_1, ..., i_k \in [n]$, da $(i, i_1)$ tekmujeta, $(i_1, i_2)$ tekmujeta, ..., in $(i_k, j)$ tekmujeta.
+    Če vzamemo množico rangiranj $R = \{ c_1, \dots, c_r\}$ množice $[n]$, rečemo, da par vozlišč $(i, j) \in [n] \times [n]$ posredno ali neposredno tekmuje, če obstaja tak $k \in \mathbb{N}$ in vozlišča $i_1, \dots, i_k \in [n]$, da $(i, i_1)$ tekmujeta, $(i_1, i_2)$ tekmujeta, $\dots$, in $(i_k, j)$ tekmujeta.
 
     Množici vozlišč $D \subseteq [n]$ rečemo množica posrednih in neposrednih tekmovalcev, če je maksimalna množica glede na lastnost posredne ali neposredne tekmovalnosti med svojimi elementi.
 \end{definicija}
@@ -2059,10 +2141,10 @@ Medtem, ko je pogoj $(a)$ iz definicije \ref{def_kohezivno_zaporedje} povezan s 
 
 \begin{lema}
 \label{lema_algoritem_posredni_tekmovalci_1}
-    Naj bo $R = \{ c_1, ..., c_r \}$ množica rangiranj množice $[n]$. Če je $D \subseteq [n]$ množica posrednih in neposrednih tekmovalcev in $a, b \in D$, potem za vsak $x \in [n]$ in vsako rangiranje $c_m \in R$ tako, da je $a \prec_{c_m} x \prec_{c_m} b$, sledi $x \in D$.
+    Naj bo $R = \{ c_1, \dots, c_r \}$ množica rangiranj množice $[n]$. Če je $D \subseteq [n]$ množica posrednih in neposrednih tekmovalcev in $a, b \in D$, potem za vsak $x \in [n]$ in vsako rangiranje $c_m \in R$ tako, da je $a \prec_{c_m} x \prec_{c_m} b$, sledi $x \in D$.
 \end{lema}
 \begin{dokaz}
-    Če vozlišči $(a, b)$ tekmujeta, potem zaradi delne kohezivnosti tekmovalnostnega grafa tekmujeta tudi $(a, x)$ ali $(x, b)$, se pravi $x \in D$. Če vozlišči $(a, b)$ ne tekmujeta, potem obstaja tak $k \in \mathbb{N}$ in vozlišča $i_1, ..., i_k \in [n]$, da $(a, i_1)$ tekmujeta, $(i_1, i_2)$ tekmujeta, ... in $(i_k, b)$ tekmujeta, saj sta $a,b \in D$. Če $a \prec_{c_m} x \prec_{c_m} i_1$, potem $x \in D$, ker $(a, i_1)$ tekmujeta. V nasprotnem primeru je $i_1 \prec_{c_m} x \prec_{c_m} b$. Če $i_1 \prec_{c_m} x \prec_{c_m} i_2$, potem $x \in D$, ker $(i_1, i_2)$ tekmujeta. V nasprotnem primeru je $i_2 \prec_{c_m} x \prec_{c_m} b$... Če $i_{k-1} \prec_{c_m} x \prec_{c_m} i_k$, potem $x \in D$, ker $(i_{k-1}, i_k)$ tekmujeta. V nasprotnem primeru je $i_k \prec_{c_m} x \prec_{c_m} b$. Ker $(i_k, b)$ tekmujeta, sledi $x \in D$.
+    Če vozlišči $(a, b)$ tekmujeta, potem zaradi delne kohezivnosti tekmovalnostnega grafa tekmujeta tudi $(a, x)$ ali $(x, b)$, se pravi $x \in D$. Če vozlišči $(a, b)$ ne tekmujeta, potem obstaja tak $k \in \mathbb{N}$ in vozlišča $i_1, \dots, i_k \in [n]$, da $(a, i_1)$ tekmujeta, $(i_1, i_2)$ tekmujeta, $\dots$, in $(i_k, b)$ tekmujeta, saj sta $a,b \in D$. Če $a \prec_{c_m} x \prec_{c_m} i_1$, potem $x \in D$, ker $(a, i_1)$ tekmujeta. V nasprotnem primeru je $i_1 \prec_{c_m} x \prec_{c_m} b$. Če $i_1 \prec_{c_m} x \prec_{c_m} i_2$, potem $x \in D$, ker $(i_1, i_2)$ tekmujeta. V nasprotnem primeru je $i_2 \prec_{c_m} x \prec_{c_m} b$... Če $i_{k-1} \prec_{c_m} x \prec_{c_m} i_k$, potem $x \in D$, ker $(i_{k-1}, i_k)$ tekmujeta. V nasprotnem primeru je $i_k \prec_{c_m} x \prec_{c_m} b$. Ker $(i_k, b)$ tekmujeta, sledi $x \in D$.
 \end{dokaz}
 
 \begin{primer}
@@ -2077,7 +2159,7 @@ Medtem, ko je pogoj $(a)$ iz definicije \ref{def_kohezivno_zaporedje} povezan s 
 
 \begin{lema}
 \label{lema_algoritem_posredni_tekmovalci_2}
-    Naj bo $R = \{ c_1, ..., c_r \}$ množica rangiranj množice $[n]$. Če je $D \subseteq [n]$ množica posrednih in neposrednih tekmovalcev ter obstajata taka $a \in D$ in  $c_m \in R$, da je $c_m^{-1}(a) = 1$ (element $a$ se pojavi na prvi poziciji v rangiranju $c_m$), potem 
+    Naj bo $R = \{ c_1, \dots, c_r \}$ množica rangiranj množice $[n]$. Če je $D \subseteq [n]$ množica posrednih in neposrednih tekmovalcev ter obstajata taka $a \in D$ in  $c_m \in R$, da je $c_m^{-1}(a) = 1$ (element $a$ se pojavi na prvi poziciji v rangiranju $c_m$), potem 
     \[
         \{ x \in [n] \ | \ c_s^{-1}(x) = 1 \ za \ nek \ c_s \in R \} \subseteq D.    
     \]
@@ -2088,7 +2170,7 @@ Medtem, ko je pogoj $(a)$ iz definicije \ref{def_kohezivno_zaporedje} povezan s 
 \end{dokaz}
 
 \begin{izrek}
-    Naj bo $R = \{ c_1, ..., c_r \}$ množica rangiranj vozlišč $[n]$. Množico posrednih in neposrednih tekmovalcev lahko identificiramo z zaprtimi intervali naravnih števil $[p, q]$ na naslednji način: 
+    Naj bo $R = \{ c_1, \dots, c_r \}$ množica rangiranj vozlišč $[n]$. Množico posrednih in neposrednih tekmovalcev lahko identificiramo z zaprtimi intervali naravnih števil $[p, q]$ na naslednji način: 
     \[
         D_{[p, q]} = \{ x \in [n] \ | \ c_s^{-1}(x) \in [p, q] \ za \ nek \ c_s \in R\}.
     \]
@@ -2113,7 +2195,7 @@ Medtem, ko je pogoj $(a)$ iz definicije \ref{def_kohezivno_zaporedje} povezan s 
     \[
         D_{[1, 1]} \subset D_{[1, p_1]} \subset D_{[1, p_2]} \subset \cdot\cdot\cdot    
     \]
-    stabilizira za nek $D_{[1, p_m]} \subseteq D$. Še več $D \subseteq D_{[1, p_m]}$: po hipotezi je $a \in D$, zato za vsak drug elemet $x \in D$ obstaja takšno končno število elementov $a_1, a_2, ..., a_k$, da $(a, a_1),(a_1, a_2), ..., (a_k, x)$ tekmujejo. Zaradi dejstva, da je $a \in D_{[1, 1]}$ in $(a, a_1)$ tekmujeta, dobimo, da je $a_1 \in D_{[1, p_1]}$, podobno ker $a_1 \in D_{[1, p_1]}$ in $(a_1, a_2)$ tekmujeta, dobimo, da je $a_2 \in D_{[1, p_2]}$, ... in ker $a_{k} \in D_{[1, p_k]}$ in $(a_k, x)$ tekmujeta, dobimo, da je $x \in D_{[1, p_{k+1}]} \subseteq D_{[1, p_m]}$.
+    stabilizira za nek $D_{[1, p_m]} \subseteq D$. Še več $D \subseteq D_{[1, p_m]}$: po hipotezi je $a \in D$, zato za vsak drug elemet $x \in D$ obstaja takšno končno število elementov $a_1, a_2, \dots, a_k$, da $(a, a_1),(a_1, a_2), \dots, (a_k, x)$ tekmujejo. Zaradi dejstva, da je $a \in D_{[1, 1]}$ in $(a, a_1)$ tekmujeta, dobimo, da je $a_1 \in D_{[1, p_1]}$, podobno ker $a_1 \in D_{[1, p_1]}$ in $(a_1, a_2)$ tekmujeta, dobimo, da je $a_2 \in D_{[1, p_2]}$, $\dots$, in ker $a_{k} \in D_{[1, p_k]}$ in $(a_k, x)$ tekmujeta, dobimo, da je $x \in D_{[1, p_{k+1}]} \subseteq D_{[1, p_m]}$.
 
     Izbrišimo elemente iz $[n]$, ki se pojavijo v $D$, in ponovimo postopek, da odkrijemo ostale množice posrednih in neposrednih tekmovalcev.
 \end{dokaz}
@@ -2152,8 +2234,8 @@ Dokaz zadnjega izreka nam podaja algoritem za izračun množice posrednih in nep
     posrednih in neposrednih tekmovalcev:
 
     Vhod:
-    $N = \{1, ..., n \}$ končna množica vozlišč
-    $R = \{c_1, ..., c_r \}$ končna množica rangiranj
+    $N = \{1, \dots, n \}$ končna množica vozlišč
+    $R = \{c_1, \dots, c_r \}$ končna množica rangiranj
     
     begin
         $j:= 1$;
@@ -2177,12 +2259,12 @@ Dokaz zadnjega izreka nam podaja algoritem za izračun množice posrednih in nep
     
     Izhod: 
     Množice posrednih in neposrednih 
-    tekmovalcev $D_1, ..., D_k$
+    tekmovalcev $D_1, \dots, D_k$
 \end{lstlisting}
 \end{minipage}
 
 \begin{definicija}
-    Naj bo $R = \{ c_1, ..., c_r \}$ množica $r$ rangiranj $(r \geq 2)$ množice $[n]$. Definirajmo usmerjen graf $G_d(R)$  na naslednji način:
+    Naj bo $R = \{ c_1, \dots, c_r \}$ množica $r$ rangiranj $(r \geq 2)$ množice $[n]$. Definirajmo usmerjen graf $G_d(R)$  na naslednji način:
     \begin{enumerate}[label=(\roman*)]
         \item Vozlišča grafa $G_d(R)$ so elementi množice $[n]$.
         \item Če $i, j \in [n]$, $i \neq j$ potem je $(i, j)$ usmerjena povezava v grafu $G_d(R)$, če obstaja takšno rangiranje $c_m \in R$, da je $i \preceq_{c_m} j$.
@@ -2211,14 +2293,14 @@ Dokaz zadnjega izreka nam podaja algoritem za izračun množice posrednih in nep
 
     \begin{enumerate}
         \item Pokazali bomo, da, če je $a \in D_1$, $b_1, b_2 \in D_2$, par $(b_1, b_2)$ tekmuje in obstaja usmerjena povezava od $a$ do $b_1$, potem obstaja usmerjena povezava od $a$ do $b_2$. Po hipotezi obstaja takšno rangiranje $c_m$, da je $a \prec_{c_m} b_1$. Če $a \prec_{c_m} b_2$, potem smo pokazali, kar smo hoteli, sicer $b_2 \prec_{c_m} a \prec_{c_m} b_1$. Ampak, ker $(b_1, b_2)$ tekmujeta, obstaja takšno rangiranje $c_{m'}$, da $b_1 \prec_{c_{m'}} b_2$, in ker $a$ ne tekmuje z $b_1$, mora biti $a \prec_{c_{m'}} b_1 \prec_{c_{m'}} b_2$, kar pomeni, da $(a, b_2)$ tekmujeta. To je protislovje in zato $a \prec_{c_m} b_2$.
-        \item Pokazali bomo, da, če je $a \in D_1$, $b \in D_2$ in obstaja usmerjena povezava od $a$ proti $b$, potem za vsak $b' \in D_2$ obstaja povezava od $a$ do $b$. Ker sta $b, b' \in D_2$, obstaja tak $k \in \mathbb{N}$ in $b_1, ..., b_k \in D_2$, da $(b, b_1)$ tekmujeta, $(b_1, b_2)$ tekmujeta, ..., $(b_k, b')$ tekmujeta. Vozlišča $a, b, b_1$ so v takem razmerju kot v koraku $1.$, zato obstaja povezava od $a$ do $b_1$, podobno vozlišča $a, b_1, b_2$, zato obstaja povezava $a$ do $b_2$, ..., podobno vozlišča $a, b_k, b'$, zato obstaja povezava od $a$ do $b'$.
+        \item Pokazali bomo, da, če je $a \in D_1$, $b \in D_2$ in obstaja usmerjena povezava od $a$ proti $b$, potem za vsak $b' \in D_2$ obstaja povezava od $a$ do $b$. Ker sta $b, b' \in D_2$, obstaja tak $k \in \mathbb{N}$ in $b_1, \dots, b_k \in D_2$, da $(b, b_1)$ tekmujeta, $(b_1, b_2)$ tekmujeta, $\dots$, $(b_k, b')$ tekmujeta. Vozlišča $a, b, b_1$ so v takem razmerju kot v koraku $1.$, zato obstaja povezava od $a$ do $b_1$, podobno vozlišča $a, b_1, b_2$, zato obstaja povezava $a$ do $b_2$, $\dots$, podobno vozlišča $a, b_k, b'$, zato obstaja povezava od $a$ do $b'$.
         \item $(i) \Rightarrow (ii)$. Če od elementa $a \in D_1$ obstaja povezava do elementa v $D_2$, potem po koraku $2.$ obstaja povezava od $a$ do vseh elementov v $D_2$. Zdaj fiksirajmo nek element iz $D_2$ in dva elementa iz $D_1$. Uporabimo podoben premislek, kot smo ga v korakih $1$ in $2$ in dobimo, da obstaja povezava od vsakega elementa iz $D_1$ do fiksiranega elementa.
     \end{enumerate}
 \end{dokaz}
 
 \begin{definicija}
 \label{definicija_relacije_mnozic_posrednih_tekmovalcev}
-    Naj bo $R = \{ c_1, ..., c_r \}$ množica r rangiranj $(r \geq 2)$ vozlišč $[n]$, katerih množice posrednih in neposrednih tekmovalcev označimo z $D_1, ..., D_k$. Definirajmo binarno relacijo $\rightarrow$ med dvema množicama posrednih in neposrednih tekmovalcev na nasledni način:
+    Naj bo $R = \{ c_1, \dots, c_r \}$ množica r rangiranj $(r \geq 2)$ vozlišč $[n]$, katerih množice posrednih in neposrednih tekmovalcev označimo z $D_1, \dots, D_k$. Definirajmo binarno relacijo $\rightarrow$ med dvema množicama posrednih in neposrednih tekmovalcev na nasledni način:
     \begin{enumerate}[label=(\roman*)]
         \item $D_i \rightarrow D_i$ za vsako množico posrednih in neposrednih tekmovalcev $D_i$.
         \item za vsaki različni množici $D_i, D_j$ posrednih in neposrednih tekmovalcev, je $D_i \rightarrow D_j$ natanko tedaj, ko velja katerakoli od trditev iz \ref{trditev_ekvivalenc_mnozic_posrednih_tekmovalcev}.
@@ -2789,17 +2871,17 @@ Poglejmo si še en pristop. Dirkače označimo z zaporedno številko glede na to
 
 \chapter{Sklep}
 
-V diplomskem delu smo si pogledali kaj so inverzije permutacij, njihove lastnosti in kako definirajo permutacijske in tekmovalnostne grafe.
+V diplomskem delu smo si pogledali, kaj so inverzije permutacij, njihove lastnosti in kako definirajo permutacijske in tekmovalnostne grafe.
 
-Diplomsko delo smo začeli s ponovitvijo nekaterih osnovnih pojmov, notacij in definicij, s področja teorije grafov, algebre in teorije množic, ki so ključni za nadaljno razumevanje.
+Diplomsko delo smo začeli s ponovitvijo nekaterih osnovnih pojmov, notacij in definicij s področja teorije grafov, algebre in teorije množic, ki so ključni za nadaljno razumevanje.
 
-Nato smo definirali permutacije in pokazali nekaj načinov kako jih lahko zapišemo. Povedali smo, da je množica vseh permutacij z $n$ elementi skupaj z operacijo kompozitum simetrična grupa. Permutacijska grupa je vsaka podgrupa simetrične grupe ter po Cayleyevem izreku je vsaka grupa izomorfna neki permutacijski grupi.
+Nato smo definirali permutacije in pokazali nekaj načinov, kako jih lahko zapišemo. Povedali smo, da je množica vseh permutacij z $n$ elementi skupaj z operacijo kompozitum simetrična grupa. Permutacijska grupa je vsaka podgrupa simetrične grupe ter po Cayleyevem izreku je vsaka grupa izomorfna neki permutacijski grupi.
 
-V nadaljevanju smo povedali kaj so inverzije neke permutacije. Pokazali smo kako lahko permutacije delno uredimo s pomočjo Bruhatovih delnih urejenosti. Šibka Bruhatova delna urejenost nam pove, da lahko vsako permutacijo z $i$ inverzijami uredimo, z natanko $i$ transpozicijami sosednih elementov. Zatem smo pokazali kako pridemo do rodovne funkcije, ki nam šteje število permutacij množice $[n]$ z $i$ inverzijami. Potem smo pokazali kako lahko množico permutacij $S_n$ uredimo in tako vsaki permutaciji iz množice $S_n$ dodelimo celo število $N$, kjer je $0 \leq N \leq n!$. To lahko naredimo s pomočjo Lehmerjeve kode ali vektorja inverzij.
+V nadaljevanju smo povedali kaj so inverzije neke permutacije. Pokazali smo kako lahko permutacije delno uredimo s pomočjo Bruhatovih delnih urejenosti. Šibka Bruhatova delna urejenost nam pove, da lahko vsako permutacijo z $i$ inverzijami uredimo z natanko $i$ transpozicijami sosednih elementov. Zatem izračunamo rodovno funkcijo, ki nam šteje število permutacij množice $[n]$ z $i$ inverzijami. Potem smo pokazali kako lahko množico permutacij $S_n$ uredimo in tako vsaki permutaciji iz množice $S_n$ dodelimo celo število $N$, kjer je $0 \leq N \leq n!$. To lahko denimo naredimo s pomočjo Lehmerjeve kode ali vektorja inverzij.
 
-V naslednjem delu smo se posvetili permutacijskim grafom. Najprej smo jih karakterizirali s pomočjo kohezivnega zaporedja grafa. Potem smo se osredotočili na drevesa, ki so permutacijski grafi. Ugotovili smo, da so to ravno gosenice. Pokazali smo, da obstajata natanko dve permutaciji iz $S_n$, ki imata permutacijski graf izomorfen neki gosenici na $n \geq 3$ vozliščih. Nato smo predstavili kako lahko konstruiramo permutacijske grafe s pomočjo kompozicije grafov.
+V tretjem poglavju smo se posvetili permutacijskim grafom. Najprej smo jih karakterizirali s pomočjo kohezivnega zaporedja grafa. Potem smo se osredotočili na drevesa, ki so permutacijski grafi. Ugotovili smo, da so to ravno gosenice. Pokazali smo, da obstajata natanko dve permutaciji iz $S_n$, ki imata permutacijski graf izomorfen neki gosenici na $n \geq 3$ vozliščih. Nato smo predstavili, kako lahko konstruiramo permutacijske grafe s pomočjo kompozicije grafov.
 
-V zadnjem delu smo si pogledali kaj so tekmovalnostni grafi. Povedali smo kaj so rangiranja, kdaj par vozlišč tekmuje, kako je tekmovalnost dveh vozlišč povezana z inverzijami permutacij, kaj je tekmovalnostna množica, kaj je množica tekmovalcev ter kaj je množica posrednih in neposrednih tekmovalcev. Nato smo povedali kaj so primerljivostni grafi in ugotovili, da so permutacijski grafi tako primerljivosti kot tekmovalnostni grafi. Definirali smo tudi delno kohezivno zaporedje vozlišč ter pokazali, da je vsak tekmovalnostni graf delno koheziven. Zatem smo predstavili algoritem za izračun množice posrednih in neposrednih tekmovalcev direktno iz množice rangiranj brez predhodnega izračuna tekmovalnostnega grafa. Pokazali smo tudi kako so množice posrednih in neposrednih tekmovalcev urejene. Na koncu smo algoritem uporabili na resničnih podatkih. Ker so bili podatki iz špotra, kjer so velike spremembe rangiranj pogoste, smo ugotovili, da če želimo pridobiti uporabne informacije, moramo algoritem uporabiti na manjšem številu rangiranj. Prvi prikazan način je izbira nekaterih rangiranj. Drugi prikazan način pa je izbira nekaj zaporednih rangiranj. Pri drugem načinu tako lahko vidimo formo športkov skozi čas. Treba pa je povdariti, da sta oba načina pomanjkliva. Pri prvem je težava, da dobimo informacije iz neke podmnožice rangiranj. Te informacije so lahko zelo variabilne. Pri drugem načinu je težava v tem, da ne dobimo veliko informacij o športnikih, ki so v tem zaporedju imeli en slab rezultat. Rezultate algoritma bi morda lahko izboljšali s pomočjo predprocesiranja podatkov. Na primer v primeru odstopa športnika, ga lahko kaznujemo z uvrstitvijo na njegovo rahlo podpovprečno mesto, namesto da ga diskvalifikaciramo.
+V zadnjem delu smo si pogledali kaj so tekmovalnostni grafi. Povedali smo, kaj so rangiranja, kdaj par vozlišč tekmuje, kako je tekmovalnost dveh vozlišč povezana z inverzijami permutacij, kaj je tekmovalnostna množica, kaj je množica tekmovalcev ter kaj je množica posrednih in neposrednih tekmovalcev. Nato smo povedali, kaj so primerljivostni grafi in ugotovili, da so permutacijski grafi tako primerljivostni kot tekmovalnostni grafi. Definirali smo tudi delno kohezivno zaporedje vozlišč ter pokazali, da je vsak tekmovalnostni graf delno koheziven. Zatem smo predstavili algoritem za izračun množice posrednih in neposrednih tekmovalcev direktno iz množice rangiranj brez predhodnega izračuna tekmovalnostnega grafa. Pokazali smo tudi, kako so množice posrednih in neposrednih tekmovalcev urejene. Na koncu smo algoritem uporabili na resničnih podatkih. Ker so bili podatki iz špotra, kjer so velike spremembe rangiranj pogoste, smo ugotovili, da če želimo pridobiti uporabne informacije, moramo algoritem uporabiti na manjšem številu rangiranj. Prvi prikazani način je izbira nekaterih rangiranj. Drugi prikazani način pa je izbira nekaj zaporednih rangiranj. Pri drugem načinu tako lahko vidimo formo športkov skozi čas. Treba pa je poudariti, da sta oba načina pomanjkliva. Pri prvem je težava, da dobimo informacije iz neke podmnožice rangiranj. Te informacije so lahko zelo variabilne. Pri drugem načinu je težava v tem, da ne dobimo veliko informacij o športnikih, ki so v tem zaporedju imeli en slab rezultat. Rezultate algoritma bi morda lahko izboljšali s pomočjo predprocesiranja podatkov. Na primer, v primeru odstopa športnika, ga lahko kaznujemo z uvrstitvijo na njegovo rahlo podpovprečno mesto, namesto da ga diskvalifikaciramo.
 
 \cleardoublepage
 \addcontentsline{toc}{chapter}{Literatura}
