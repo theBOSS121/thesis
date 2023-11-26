@@ -1739,6 +1739,64 @@ Imejmo tako gosenico, da ko ji odstranimo vse liste, dobimo pot na $k$ vozlišč
 
 \end{dokaz}
 
+\begin{figure}[h]
+    \begin{center}        
+        \begin{tikzpicture}[shorten >=1pt,-]
+            \tikzstyle{vertex}=[circle,draw=black!0,fill=white!25,minimum size=20pt,inner sep=0pt]
+            
+            \node[vertex] (V-0) at (3.5, 8) {$\sigma$};
+            \node[vertex] (V-12) at (3, 7) {$2$};
+            \node[vertex] (V-23) at (2, 6) {$3$};
+            \node[vertex] (V-24) at (3, 6) {$4$};
+            \node[vertex] (V-31l) at (2, 5) {$1$};
+            \node[vertex] (V-31d) at (3, 5) {$1$};
+            \node[vertex] (V-45) at (2, 4) {$5$};
+            \node[vertex] (V-43) at (1, 4) {$3$};
+            \node[vertex] (V-46) at (3, 4) {$6$};
+            \node[vertex] (V-53l) at (2, 3) {$3$};
+            \node[vertex] (V-53d) at (3, 3) {$3$};
+            \node[vertex] (V-68) at (3, 2) {$8$};
+            \node[vertex] (V-67) at (2, 2) {$7$};
+            \node[vertex] (V-65) at (1, 2) {$5$};
+            \node[vertex] (V-75l) at (2, 1) {$5$};
+            \node[vertex] (V-75d) at (3, 1) {$5$};
+            \node[vertex] (V-80) at (3, 0) {};
+            \node[vertex] (V-800) at (2, 0) {};
+            \node[vertex] (V-8000) at (1, 0) {};
+
+            \node[vertex] (V-13) at (4, 7) {$3$};
+            \node[vertex] (V-21) at (4, 6) {$1$};
+            \node[vertex] (V-35) at (4, 5) {$5$};
+            \node[vertex] (V-34) at (5, 5) {$4$};
+            \node[vertex] (V-32) at (6, 5) {$2$};
+            \node[vertex] (V-42l) at (4, 4) {$2$};
+            \node[vertex] (V-42d) at (5, 4) {$2$};
+            \node[vertex] (V-57) at (4, 3) {$7$};
+            \node[vertex] (V-56) at (5, 3) {$6$};
+            \node[vertex] (V-54) at (6, 3) {$4$};
+            \node[vertex] (V-64l) at (4, 2) {$4$};
+            \node[vertex] (V-64d) at (5, 2) {$4$};
+            \node[vertex] (V-70) at (4, 1) {};
+            \node[vertex] (V-700) at (5, 1) {};
+            \node[vertex] (V-7000) at (6, 1) {};
+            
+
+            \foreach \from/\to in {0/12, 0/13, 12/23, 12/24, 23/31l, 24/31d, 31d/43, 31d/45, 31d/46, 45/53l, 46/53d, 53d/65, 53d/67, 53d/68, 67/75l, 68/75d, 
+            13/21, 21/35, 21/34, 21/32, 35/42l, 34/42d, 42l/56, 42l/57, 42l/54, 57/64l, 56/64d}
+                \draw (V-\from) -- (V-\to);
+
+            \draw[dotted] (V-75d) -- (V-80);
+            \draw[dotted] (V-75d) -- (V-800);
+            \draw[dotted] (V-75d) -- (V-8000);
+            \draw[dotted] (V-64l) -- (V-70);
+            \draw[dotted] (V-64l) -- (V-700);
+            \draw[dotted] (V-64l) -- (V-7000);
+            \end{tikzpicture}     
+    \end{center}
+    \caption{Permutaciji $(2, 4, 1, 6, 3, 8, 5, \dots)$ in $(3, 1, 5, 2, 7, 4, \dots)$ imata permutacijski graf $P_n$.}
+    \label{dve_permutaciji_poti}
+\end{figure}
+
 \begin{izrek}
 \label{izrek_dve_permutaciji_poti}
     Za $n \geq 3$ obstajata natanko dve permutaciji iz $S_n$, katerih permutacijski graf je pot na $n$ vozliščih.
@@ -1754,9 +1812,9 @@ Imejmo tako gosenico, da ko ji odstranimo vse liste, dobimo pot na $k$ vozlišč
     
     Dokaz lastnosti (b): Če je $\sigma_i \leq i-3$, potem je največ $i-4$ števil, ki so manjše od $\sigma_i$, (med $i-1$ števili) pred $\sigma_i$ v permutaciji $\sigma$. Zato so vsaj 3 števila pred $\sigma_i$ v permutaciji $\sigma$ večja od $\sigma_i$. To pomeni, da ima $\sigma_i$ vsaj $3$ sosede v grafu $G_{\sigma}$, kar pa je v protislovju s tem, da je $G_{\sigma}$ pot. Simetrično, če je $\sigma_i \geq i+3$, potem so za $\sigma_i$ v permutaciji $\sigma$ vsaj 3 števila, ki so manjša od $\sigma_i$. Kar zopet pomeni, da ima $\sigma_i$ vsaj $3$ sosede v grafu $G_{\sigma}$, kar pa je v protislovju s tem, da je $G_{\sigma}$ pot.
 
-    Zaradi lastnosti (a) in (b) je $\sigma_1 \in \{ 2, 3\}$. Poglejmo si najprej primer, ko je $\sigma_1 = 2$. Zaradi lastnosti (a) in (b) je $\sigma_2 \in \{ 3, 4 \}$. Če je $\sigma_2 = 3$, potem graf $G_{\sigma}$ vsebuje pot na vozliščih $2, 3, 1$, kjer imata vozlišči $2$ in $3$ stopnjo enako $1$, kar se lahko zgodi samo, če je $n = 3$ in $\sigma = (2, 3, 1)$ (v nasprotnem primeru bi bil graf $G_{\sigma}$ nepovezan). Če je $\sigma_2 = 4$, potem mora biti $\sigma_3 = 1$ (drugače bi imelo vozlišče $1$ stopnjo vsaj $3$), se pravi $\sigma = (2, 4, 1, \dots)$. Zaradi lastnosti (a) in (b) je $\sigma_4 \in \{ 5, 6 \}$. Če je $\sigma_4 = 5$, potem imata vozlišči $2$ in $5$ stopnjo enako $1$, kar se lahko zgodi samo ko je $n = 5$ in $\sigma = (2, 4, 1, 5, 3)$. Sicer je $\sigma_4 = 6$ in $\sigma_5 = 3$ (drugače bi imelo vozlišče $3$ stopnjo vsaj $3$), se pravi $\sigma = (2, 4, 1, 6, 3,\dots)$. Tako lahko nadaljujemo do poljubne dolžine. Induktivno lahko pokažemo, da je $\sigma$ unikatno določena. 
+    Zaradi lastnosti (a) in (b) je $\sigma_1 \in \{ 2, 3\}$ (slika \ref{dve_permutaciji_poti}). Poglejmo si najprej primer, ko je $\sigma_1 = 2$. Zaradi lastnosti (a) in (b) je $\sigma_2 \in \{ 3, 4 \}$. Če je $\sigma_2 = 3$, potem graf $G_{\sigma}$ vsebuje pot na vozliščih $2, 3, 1$, kjer imata vozlišči $2$ in $3$ stopnjo enako $1$, kar se lahko zgodi samo, če je $n = 3$ in $\sigma = (2, 3, 1)$ (v nasprotnem primeru bi bil graf $G_{\sigma}$ nepovezan). Če je $\sigma_2 = 4$, potem mora biti $\sigma_3 = 1$ (drugače bi imelo vozlišče $1$ stopnjo vsaj $3$), se pravi $\sigma = (2, 4, 1, \dots)$. Če je $n = 4$, potem je $\sigma = (2, 4, 1, 3)$. Sicer je $n > 4$ in zaradi lastnosti (a) in (b) je $\sigma_4 \in \{ 5, 6 \}$. Če je $\sigma_4 = 5$, potem imata vozlišči $2$ in $5$ stopnjo enako $1$, kar se lahko zgodi samo ko je $n = 5$ in $\sigma = (2, 4, 1, 5, 3)$. Sicer je $\sigma_4 = 6$ in $\sigma_5 = 3$ (drugače bi imelo vozlišče $3$ stopnjo vsaj $3$), se pravi $\sigma = (2, 4, 1, 6, 3,\dots)$. Tako lahko nadaljujemo do poljubne dolžine. Induktivno lahko pokažemo, da je $\sigma$ unikatno določena. Prvi element je $\sigma_1 = 2$, sodi elementi so $\sigma_{2i} = 2i + 2$, kjer je $i > 0$, lihi elementi so $\sigma_{2i + 1} = 2i - 1$, kjer je $i > 0$. Če je $n$ sodo število, potem je zadnji element $\sigma_n = n-1$. Če je $n$ liho število, potem je predzadnji element $\sigma_{n-1} = n$. 
     
-    Pogljemo si sedaj še primer, ko je $\sigma_1 = 3$. Potem je $\sigma_2 \in \{ 1, 2, 4\}$. Element $\sigma_2 \neq 2$, saj bi tako v permutaciji imeli podzaporedje $3, 2, 1$, kar nam da cikel dolžine 3. Prav tako $\sigma_2 \neq 4$, saj bi tako permutacija vsebovala povezave $32, 31, 42, 41$, kar nam da cikel dolžine 4. Zato je $\sigma_2 = 1$. Zaradi lastnosti (a) in (b) je $\sigma_3 \in \{ 4, 5 \}$. Če je $\sigma_3 = 4$, potem je $\sigma_4 = 2$ (drugače bi imelo vozlišče $2$ stopnjo vsaj $3$). Se pravi $n = 4$ in $\sigma = (3, 1, 4, 2)$. Če je $\sigma_3 = 5$, potem je $\sigma_4 = 2$ in $\sigma = (3, 1, 5, 2,\dots)$. Podobno, kot prej lahko nadaljujemo do poljubne dolžine. Induktivno lahko pokažemo, da je $\sigma$ unikatno določena.
+    Poglejmo si sedaj še primer, ko je $\sigma_1 = 3$. Potem je $\sigma_2 \in \{ 1, 2, 4\}$. Element $\sigma_2 \neq 2$, saj bi tako v permutaciji imeli podzaporedje $3, 2, 1$, kar nam da cikel dolžine 3. Prav tako $\sigma_2 \neq 4$, saj bi tako permutacija vsebovala povezave $32, 31, 42, 41$, kar nam da cikel dolžine 4. Zato je $\sigma_2 = 1$. Če je $n = 3$, potem je $\sigma = (3, 1, 2)$. Sicer je $n > 3$ in zaradi lastnosti (a) in (b) je $\sigma_3 \in \{ 4, 5 \}$. Če je $\sigma_3 = 4$, potem je $\sigma_4 = 2$ (drugače bi imelo vozlišče $2$ stopnjo vsaj $3$). Se pravi $n = 4$ in $\sigma = (3, 1, 4, 2)$. Če je $\sigma_3 = 5$, potem je $\sigma_4 = 2$ (drugače bi imelo vozlišče $2$ stopnjo vsaj $3$) in $\sigma = (3, 1, 5, 2,\dots)$. Podobno, kot prej lahko nadaljujemo do poljubne dolžine. Induktivno lahko pokažemo, da je $\sigma$ unikatno določena. Drugi element je $\sigma_2 = 1$, sodi elementi so $\sigma_{2i} = 2i - 2$, kjer je $i > 1$, lihi elementi so $\sigma_{2i - 1} = 2i + 1$, kjer je $i > 0$. Če je $n$ sodo število, potem je predzadnji element $\sigma_{n-1} = n$. Če je $n$ liho število, potem je zadnji element $\sigma_n = n-1$. 
 
     Dobimo sklep, da obstajata natanko dve permutaciji iz $S_n$, katerih permutacijski graf je pot na $n$ vozliščih.
 \end{dokaz}
@@ -1765,14 +1823,14 @@ Imejmo tako gosenico, da ko ji odstranimo vse liste, dobimo pot na $k$ vozlišč
     Naj bo $\sigma \in S_n$ taka, da je njen permutacijski graf pot na $n$ vozliščih. Potem nam zaporedje vozlišč na poti da permutacijo $\sigma^*$, ki je sestavljena iz sosednjih transpozicij. Še več $\sigma^* \preceq_b \sigma$.
 \end{posledica}
 \begin{dokaz}
-    Po izreku \ref{izrek_dve_permutaciji_poti} imata edini dve poti na $n$ vozliščih permutaciji $\sigma_1 = (2, 4, 1, 6, 3,\dots)$ in $\sigma_2 = (3, 1, 5, 2, 7, 4,\dots)$. Zaporedja vozlišč na poti sta $\sigma_1^* = (2, 1, 4, 3,\dots)$ in $\sigma_2^* = (1, 3, 2, 5, 4,\dots)$. Vidimo, da je permutacija $\sigma^*$ pridobljena iz permutacije $\sigma$ z zaporedjem transpozicij sosednjih elementov, kjer vsaka transpozicija odstrani eno inverzjo.
+    Po dokazu izreka \ref{izrek_dve_permutaciji_poti} imata edini dve poti na $n$ vozliščih permutaciji $\sigma_1 = (2, 4, 1, 6, 3,\dots)$ in $\sigma_2 = (3, 1, 5, 2, 7, 4,\dots)$. Zaporedja vozlišč na poti sta $\sigma_1^* = (2, 1, 4, 3,\dots)$ in $\sigma_2^* = (1, 3, 2, 5, 4,\dots)$. Vidimo, da je permutacija $\sigma^*$ pridobljena iz permutacije $\sigma$ z zaporedjem transpozicij sosednjih elementov, kjer vsaka transpozicija odstrani eno inverzjo.
 \end{dokaz}
 
-\begin{posledica}    
+\begin{izrek}    
     Naj bo $n \geq 3$ in $C$ gosenica na $n$ vozliščih. Potem obstajata natanko dve permutaciji iz $S_n$, katerih permutacijski graf je izomorfen grafu gosenice $C$.
-\end{posledica}
+\end{izrek}
 \begin{dokaz}
-    Privzamimo, da ima pot gosenice maksimalno dolžino (se pravi $m_1 = m_k = 0$). Naj bo $N$ število permutacij iz $S_n$, katerih permutacijski graf je izomorfen grafu $C$. Po trditvi \ref{trditev_gosenica_vsaj_dve_permutaciji} je $N \geq 2$. Naj bo $\pi$ perutacija, katere graf je izomorfen grafu $C$. Vidimo, da je $\pi$ unikatno določena z zaporedjem vozlišč na poti. To je res, saj morajo biti listi urejeni naraščujoče, da preprečimo dodatne inverzije v permutaciji. Po izreku \ref{izrek_dve_permutaciji_poti} obstajata natanko dve zaporedji vozlišč na poti. Torej je $N \leq 2$. Zato je $N = 2$.
+    Privzamimo, da ima pot gosenice maksimalno dolžino (se pravi $m_1 = m_k = 0$). Naj bo $N$ število permutacij iz $S_n$, katerih permutacijski graf je izomorfen grafu $C$. Po trditvi \ref{trditev_gosenica_vsaj_dve_permutaciji} je $N \geq 2$. Naj bo $\pi$ permutacija, katere graf je izomorfen grafu $C$. Vidimo, da je $\pi$ unikatno določena z zaporedjem vozlišč na poti. To je res, saj morajo biti listi urejeni naraščajoče, da preprečimo dodatne inverzije v permutaciji. Po izreku \ref{izrek_dve_permutaciji_poti} obstajata natanko dve zaporedji vozlišč na poti. Torej je $N \leq 2$. Zato je $N = 2$.
 \end{dokaz}
 
 \section{ Konstrukcija permutacijskih grafov}
@@ -1811,78 +1869,83 @@ Vsota grafov $L$ in $M$, označena z $L + M$, je sestavljena iz disjunktne unije
 \begin{dokaz}
     $(\Rightarrow)$ Privzamimo, da je $G(H_1, H_2, \dots, H_n)$ permutacijski graf. Ker so $H_1, H_2, \dots, H_n$ inducirani podgrafi grafa $G(H_1, H_2, \dots, H_n)$, so permutacijski grafi po izreku \ref{izrek_ekvivalentne_trditve_permutacijski_graf}. Prav tako lahko vzamemo eno vozlišče iz vsakega od grafov $H_i$ in ga označimo z $x_i$. Tako dobimo induciran podgraf izomorfen grafu $G$. To pomeni, da je tudi $G$ permutacijski. 
     
-    $(\Leftarrow)$ Obratno privzamemo, da so $G, H_1, H_2, \dots, H_n$ permutacijski grafi. Potem je $(v_1, v_2, \dots, v_n)$ kohezivno zaporedje grafa $G$. Grafe $H_1, H_2, \dots, H_n$ ustrezno preimenujemo tako, da je graf, ki pripada vozlišču $v_1$, poimenovan $H_1$, graf, ki pripada vozlišču $v_2$, poimenovan $H_2$, $\dots$, graf, ki pripada vozlišču $v_n$, poimenovan $H_n$. Z $n_i$ označimo število vozlišč grafa $H_i$. Potem ima graf $H_i$ kohezivno zaporedje $l_i = (x_1^i, x_2^i, \dots, x_{n_i}^i)$. Se pravi je 
+    $(\Leftarrow)$ Obratno privzamemo, da so $G, H_1, H_2, \dots, H_n$ permutacijski grafi. Naj bo $(v_1, v_2, \dots, v_n)$ kohezivno zaporedje grafa $G$. Naj bo $n_i$ število vozlišč grafa $H_j$, ki pripada vozlišču $v_i$. Potem ima graf $H_j$, ki pripada vozlišču $v_i$, kohezivno zaporedje $l_i = (x_1^i, x_2^i, \dots, x_{n_i}^i)$. Se pravi je 
     \[
         l = (l_1, l_2, \dots, l_n) = (x_1^1, x_2^1, \dots, x_{n_1}^1, x_1^2, x_2^2, \dots, x_{n_2}^2, \dots, x_1^n, x_2^n, \dots, x_{n_n}^n)
     \]
-    kohezivno zaporedje grafa $G(H_1, H_2, \dots, H_n)$ in $G(H_1, H_2, \dots, H_n)$ je permutacijski graf.
+    kohezivno zaporedje grafa $G(H_1, H_2, \dots, H_n)$ in graf $G(H_1, H_2, \dots, H_n)$ je permutacijski graf.
 \end{dokaz}
 
-Izrek \ref{izrek_konstrukcija_permutacijskega_grafa} nam podaja enostaven način konstrukcije permutacijskih grafov. Naj bo $G$ polni graf $K_3$. Poglejmo si kompozicijo $K_3(P_2, C_3, P_1)$ (slika \ref{graf_kompozicija_primer2}). Ker so $K_3, P_2, C_3, P_1$ polni grafi dobimo polni graf $K_6$.
+Izrek \ref{izrek_konstrukcija_permutacijskega_grafa} nam podaja enostaven način konstrukcije permutacijskih grafov. Naj bo $G$ polni graf $K_3$. Poglejmo si kompozicijo $K_3(K_2, K_3, K_1)$ (slika \ref{graf_kompozicija_primer2}). Ker so $K_3, K_2, K_1$ polni grafi dobimo polni graf $K_6$.
 
 \begin{figure}[h]
     \begin{center}        
         \begin{tikzpicture}[shorten >=1pt,-]
             \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
-                    \node[vertex] (V-0) at (1.5, 0){$1_{P_2}$};
-                    \node[vertex] (V-1) at (-0.5, 1){$2_{P_2}$};
+                    \node[vertex] (V-0) at (1.5, 0){$1_{K_2}$};
+                    \node[vertex] (V-1) at (-0.5, 1){$2_{K_2}$};
         
-                    \node[vertex] (V-2) at (2, 2){$3_{C_3}$};
-                    \node[vertex] (V-3) at (3, 3){$4_{C_3}$};
-                    \node[vertex] (V-4) at (4, 2){$5_{C_3}$};
+                    \node[vertex] (V-2) at (2, 2){$3_{K_3}$};
+                    \node[vertex] (V-3) at (3, 3){$4_{K_3}$};
+                    \node[vertex] (V-4) at (4, 2){$5_{K_3}$};
                     
-                    \node[vertex] (V-5) at (4.5, 0){$6_{P_1}$};
+                    \node[vertex] (V-5) at (4.5, 0){$6_{K_1}$};
                     
                 \foreach \from/\to in {0/1, 2/3, 3/4, 4/2, 0/2, 0/3, 0/4, 1/2, 1/3, 1/4, 2/5, 3/5, 4/5, 0/5, 1/5}
                     \draw (V-\from) -- (V-\to);
         \end{tikzpicture}
     \end{center}
-    \caption{Graf $K_3(P_2, C_3, P_2)$.}
+    \caption{Graf $K_3(K_2, K_3, K_2)$.}
     \label{graf_kompozicija_primer2}
 \end{figure}
 
-Vsi grafi na največ $4$ vozliščih so permutacijski grafi. Zato sta grafa $P_3(P_2, P_3, P_1)$ in $K_3(P_2, C_3, P_1)$ permutacijska (sliki \ref{graf_kompozicija_primer1} in \ref{graf_kompozicija_primer2}).
+Vsi grafi na največ $4$ vozliščih so permutacijski grafi. Zato sta grafa $P_3(P_2, P_3, P_1)$ in $K_3(K_2, K_3, K_1)$ permutacijska (sliki \ref{graf_kompozicija_primer1} in \ref{graf_kompozicija_primer2}).
 
-Vsak graf $G$ z $n$ vozlišči se lahko zapiše kot $G(\overset{n}{\overline{P_1, \dots, P_1}})$ in $K_1(G)$. Če sta to edina načina za zapis grafa $G$ kot kompozicija, potem je graf primaren.
+% Vsak graf $G$ z $n$ vozlišči se lahko zapiše kot $G(\overset{n}{\overline{P_1, \dots, P_1}})$ in $K_1(G)$. Če sta to edina načina za zapis grafa $G$ kot kompozicija, potem je graf primaren.
+Vsak graf $G$ z $n$ vozlišči se lahko zapiše kot $G(K_1, \dots, K_1)$ in $K_1(G)$.
 
-Med polnimi grafi sta primarna samo grafa $K_1$ in $K_2$.
+\begin{definicija}
+    Graf $G$ je primaren, če sta $G(K_1, \dots, K_1)$ in $K_1(G)$ edina načina za zapis grafa $G$ kot kompozicija.
+\end{definicija}
 
-Med drevesi s premerom, ki ni večji od 3 (slika \ref{graf_dreves_premer_leq3}), lahko pokažemo, da so primarni grafi samo poti $P_1, P_2$ in $P_4$. To so vse gosenice, ki nimajo dveh listov z istim sosednjim vozliščem. Graf $P_3$ ni primaren, saj ima dva lista, ki imata isto sosednje vozlišče. Poleg trivialnih kompozicij ima pot na treh vozliščih tudi kompozicijo $P_3 = P_2(P_1, \overline{K_2})$ (slika \ref{graf_P3_graf_kompozicije_P3_P1_P1_P1_K2c}).
+Med polnimi grafi sta primarna samo grafa $K_1$ in $K_2$. Graf $K_3$ ni primaren, saj je $K_3 = K_2(K_2, K_1)$. Vsak polni graf $K_n$, kjer je $n > 2$, vsebuje $K_3$ kot induciran podgraf. 
+
+Med drevesi s premerom, ki ni večji od 3 (slika \ref{graf_dreves_premer_leq3}), lahko pokažemo, da so primarni grafi samo poti $P_1, P_2$ in $P_4$. To so vse gosenice, ki nimajo dveh listov z istim sosednjim vozliščem. Graf $P_3$ ni primaren, saj ima dva lista, ki imata isto sosednje vozlišče. Poleg trivialnih kompozicij ima pot na treh vozliščih tudi kompozicijo $P_3 = K_2(K_1, \overline{K_2})$ (slika \ref{graf_P3_graf_kompozicije_P3_P1_P1_P1_K2c}). Prav tako nobena zvezda $K_{1,n}$ ni primarna, saj ima kompozicijo $K_{1,n} = K_2(K_1, \overline{K_n})$. Na podoben način se prepričamo tudi, da noben graf s polmerom $3$, razen $P_4$, ni primaren. Nasledni izrek \ref{izrek_primarna_drevesa} nam karakterizira drevesa, ki so primarni grafi.
 
 \begin{figure}[h]
     \begin{center}        
         \begin{tikzpicture}[shorten >=1pt,-]
             \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
-                \node[vertex] (V-1) at (0, 0){};
+                \node[vertex] (V-1) at (0, 3){};
         
-                \node[vertex] (V-2) at (6, 0){};
-                \node[vertex] (V-3) at (6, 2){};
+                \node[vertex] (V-2) at (2, 2){};
+                \node[vertex] (V-3) at (2, 4){};
                 
-                \node[vertex] (V-4) at (2, 2){};
-                \node[vertex] (V-5) at (4, 3){};
-                \node[vertex] (V-6) at (4, 1){};
+                \node[vertex] (V-4) at (5, 2){};
+                \node[vertex] (V-5) at (4, 4){};
+                \node[vertex] (V-6) at (6, 4){};
                 
-                \node[vertex] (V-7) at (0, 4){};
-                \node[vertex] (V-8) at (0, 6){};
-                \node[vertex] (V-9) at (2, 5){};
-                \node[vertex] (V-10) at (4, 5){};
-                \node[vertex] (V-11) at (6, 4){};
-                \node[vertex] (V-12) at (6, 6){};
+                \node[vertex] (V-7) at (8, 0){};
+                \node[vertex] (V-8) at (10, 0){};
+                \node[vertex] (V-9) at (9, 2){};
+                \node[vertex] (V-10) at (9, 4){};
+                \node[vertex] (V-11) at (8, 6){};
+                \node[vertex] (V-12) at (10, 6){};
                     
                 \foreach \from/\to in {2/3, 4/5, 4/6, 7/9, 8/9, 9/10, 10/11, 10/12}
                     \draw (V-\from) -- (V-\to);
         
                     
-                \filldraw [black] (4,1.8) circle (1pt);
-                \filldraw [black] (4,2) circle (1pt);
-                \filldraw [black] (4,2.2) circle (1pt);
+                \filldraw [black] (4.8,4) circle (1pt);
+                \filldraw [black] (5,4) circle (1pt);
+                \filldraw [black] (5.2,4) circle (1pt);
         
-                \filldraw [black] (0,4.8) circle (1pt);
-                \filldraw [black] (0,5) circle (1pt);
-                \filldraw [black] (0,5.2) circle (1pt);
-                \filldraw [black] (6,4.8) circle (1pt);
-                \filldraw [black] (6,5) circle (1pt);
-                \filldraw [black] (6,5.2) circle (1pt);
+                \filldraw [black] (8.8,0) circle (1pt);
+                \filldraw [black] (9,0) circle (1pt);
+                \filldraw [black] (9.2,0) circle (1pt);
+                \filldraw [black] (8.8,6) circle (1pt);
+                \filldraw [black] (9,6) circle (1pt);
+                \filldraw [black] (9.2,6) circle (1pt);
         \end{tikzpicture}
     \end{center}
     \caption{Grafi dreves s premerom $\leq 3$.}
@@ -1913,27 +1976,31 @@ Med drevesi s premerom, ki ni večji od 3 (slika \ref{graf_dreves_premer_leq3}),
                     \draw (V-\from) -- (V-\to);            
         \end{tikzpicture}
     \end{center}
-    \caption{Neprimarna grafa $P_3 = P_2(P_1, \overline{K_2})$ in $P_3(P_1, P_1, P_1, \overline{K_2})$.}
+    \caption{Neprimarna grafa $P_3 = K_2(K_1, \overline{K_2})$ in $P_3(K_1, K_1, K_1, \overline{K_2})$.}
     \label{graf_P3_graf_kompozicije_P3_P1_P1_P1_K2c}
 \end{figure}
 
 \begin{izrek}
+\label{izrek_primarna_drevesa}
     Drevo je primaren permutacijski graf natanko tedaj, ko je gosenica brez dveh listov z istim sosednjim vozliščem.
 \end{izrek}
 \begin{dokaz}
     Ker smo že pogledali drevesa s premeri, ki ne presegajo $3$, privzamimo, da imamo drevo $T$ s premerom vsaj $4$. 
     
-    $(\Rightarrow)$ Naj bo $T$ drevo z $n$ vozlišči. Privzemimo, da je $T$ primaren permutacijski graf. Po izreku \ref{izrek_gosenica_permutacijski_graf} je $T$ gosenica. Predpostavimo, da imamo dva lista $x_1$ in $x_2$ z istim sosedom $y$. Naj bo $G$ graf, ki ga dobimo, če identificiramo ti dve vozlišči ($x_1$ in $x_2$ zamenjamo z enim listom $y_1$, ki je povezan s sosedom vozlišč $x_1$ in $x_2$). Naj bodo $y_1, y_2, \dots, y_{n-1}$ vozlišča grafa $G$. Recimo, da je $y_1$ vozlišče pridobljeno z identifikacijo vozlišč $x_1$ in $x_2$. Naj bo $H_1 = \overline{K_2}$ in $H_i$ trivialen graf za $i = 2, 3, \dots, n-1$. Potem je $T = G(H_1, H_2, \dots, H_n)$. To je v protislovju s tem, da je $T$ primaren. 
+    $(\Rightarrow)$ Naj bo $T$ drevo z $n$ vozlišči. Privzemimo, da je $T$ primaren permutacijski graf. Po izreku \ref{izrek_gosenica_permutacijski_graf} je $T$ gosenica. Predpostavimo, da imamo dva lista $x_1$ in $x_2$ z istim sosedom $y$. Naj bo $G$ graf, ki ga dobimo, če identificiramo ti dve vozlišči ($x_1$ in $x_2$ zamenjamo z enim listom $y_1$, ki je povezan s sosedom vozlišč $x_1$ in $x_2$). Naj bodo $y_1, y_2, \dots, y_{n-1}$ vozlišča grafa $G$. Naj bo $H_1 = \overline{K_2}$ in $H_i$ trivialen graf za $i = 2, 3, \dots, n-1$. Potem je $T = G(H_1, H_2, \dots, H_n)$. To je v protislovju s tem, da je $T$ primaren. 
     
-    $(\Leftarrow)$ Privzemimo zdaj, da je $T$ gosenica brez dveh listov z istim sosednim vozliščem, in predpostavimo, da $T$ ni primaren permutacijski graf. Potem je za nek netrivialen graf $G$ z vozlišči $y_1, y_2, \dots, y_k$ $T = G(H_1, H_2, \dots, H_k)$. Brez izgube splošnosti lahko privzamemo, da ima $H_1$ vsaj $2$ vozlišči. Ker je drevo $T$ povezan graf, mora biti tudi graf $G$ povezan. Zato mora $y_1$ imeti soseda. Privzemimo, da sta $y_1$ in $y_2$ sosednji vozlišči. Potem je $H_1 + H_2$ podgraf grafa $T$. Če bi $H_2$ imel vsaj $2$ vozlišči, bi graf $H_1 + H_2$ vseboval cikel, kar je v protislovju s tem, da je $T$ drevo. Torej ima $H_2$ samo eno vozlišče. Če bi $y_1$ imel še kakšnega soseda v grafu $G$, bi graf $T$ tako imel cikel dolžine $4$. Prav tako v $H_1$ ne sme biti povezav, saj bi tako podgraf $H_1 + H_2$ vseboval cikel dolžine $3$. Ampak potem so vsa vozlišča grafa $H_1$ listi grafa $T$ s skupnim sosedom, ki je edino vozlišče grafa $H_2$. To je v protislovju s predpostavko, da je $T$ gosenica brez dveh listov z istim sosedom. Torej je $T$ primaren permutacijski graf.
+    $(\Leftarrow)$ Privzemimo zdaj, da je $T$ gosenica brez dveh listov z istim sosednim vozliščem, in predpostavimo, da $T$ ni primaren permutacijski graf. Potem je za nek netrivialen graf $G$ z vozlišči $y_1, y_2, \dots, y_k$ graf $T$ enak kompoziciji $T = G(H_1, H_2, \dots, H_k)$. Brez izgube splošnosti lahko privzamemo, da ima $H_1$ vsaj $2$ vozlišči. Ker je drevo $T$ povezan graf, mora biti tudi graf $G$ povezan. Zato mora $y_1$ imeti soseda. Privzemimo, da sta $y_1$ in $y_2$ sosednji vozlišči. Potem je $H_1 + H_2$ podgraf grafa $T$. Če bi $H_2$ imel vsaj $2$ vozlišči, bi graf $H_1 + H_2$ vseboval cikel, kar je v protislovju s tem, da je $T$ drevo. Torej ima $H_2$ samo eno vozlišče. Če bi $y_1$ imel še kakšnega soseda v grafu $G$, bi graf $T$ tako imel cikel dolžine $4$. Prav tako v $H_1$ ne sme biti povezav, saj bi tako podgraf $H_1 + H_2$ vseboval cikel dolžine $3$. Ampak potem so vsa vozlišča grafa $H_1$ listi grafa $T$ s skupnim sosedom, ki je edino vozlišče grafa $H_2$. To je v protislovju s predpostavko, da je $T$ gosenica brez dveh listov z istim sosedom. Torej je $T$ primaren permutacijski graf.
 \end{dokaz}
 
 \begin{izrek}
-    Naj bo $G$ sestavljen permutacijski graf. Potem obstajajo takšni netrivialen primaren permutacijski graf $U$ in permutacijski grafi $H_1, H_2, \dots, H_k$, ki so podgrafi grafa $G$, da je $G = U(H_1, H_2, \dots, H_k)$.
+\label{izrek_neprimaren_graf_je_kompozicija_z_primarnim}
+    Naj bo $G$ sestavljen (neprimaren) permutacijski graf. Potem obstajajo takšni netrivialen primaren permutacijski graf $U$ in permutacijski grafi $H_1, H_2, \dots, H_k$, ki so podgrafi grafa $G$, da je $G = U(H_1, H_2, \dots, H_k)$.
 \end{izrek}
 \begin{dokaz}
-    Naj bo $G = U(H_1, H_2, \dots, H_k)$, kjer je $U$ netrivialen. Če vzamemo eno vozlišče $x_i$ iz vsakega izmed $H_i$, potem je induciran podgraf izomorfen grafu $U$. Zato mora biti $U$ permutacijski po izreku \ref{izrek_ekvivalentne_trditve_permutacijski_graf}. Prav tako so grafi $H_i$ permutacijski, saj so inducirani podgrafi grafa $G$. Privzemimo, da ima $U$ najmanjše število vozlišč med vsemi takimi kompozicijami. Dokazali bi radi, da je $U$ primaren. Privzemimo, da $U$ ni primaren. Naj bo $U = V(L_1, L_2, \dots, L_p)$ kompozicija, kjer je $V$ netrivialen. Ker je $U$ kompozicija in vozlišča grafa $U$ predstavljajo inducirane podgrafe $H_i$ v grafu $G$, potem vsak $L_i$ predstavlja neko podmnožico $A_i \subset \{ H_1, H_2, \dots, H_k \}$. $A_i$ je tako tudi induciran podgraf grafa $G$. Zato je $G = V(A_1, A_2, \dots, A_p)$. Ampak to predstavlja protislovje z izborom grafa $U$. Torej je $U$ primaren.
+    Naj bo $G = U(H_1, H_2, \dots, H_k)$ (neprimaren) permutacijski graf, kjer je $U$ netrivialen. Če vzamemo eno vozlišče $x_i$ iz vsakega izmed $H_i$, potem je induciran podgraf izomorfen grafu $U$. Zato mora biti $U$ permutacijski graf po izreku \ref{izrek_ekvivalentne_trditve_permutacijski_graf}. Prav tako so grafi $H_i$ permutacijski, saj so inducirani podgrafi grafa $G$. Privzemimo, da ima $U$ najmanjše število vozlišč med vsemi takimi kompozicijami. Dokazali bi radi, da je $U$ primaren. Denimo, da $U$ ni primaren. Naj bo $U = V(L_1, L_2, \dots, L_p)$ kompozicija, kjer je $V$ netrivialen. Ker je $U$ kompozicija in vozlišča grafa $U$ predstavljajo inducirane podgrafe $H_i$ v grafu $G$, potem vsak $L_i$ predstavlja neko disjunktno unijo podmnožice grafov $\{ H_1, H_2, \dots, H_k \}$. Označimo to disjunktno unijo grafov z $A_i$. Graf $A_i$ je tako tudi induciran podgraf grafa $G$. Zato je $G = V(A_1, A_2, \dots, A_p)$. Ampak to predstavlja protislovje z izborom grafa $U$, saj smo našli graf $V$, ki ima manj vozlišč, kot graf $U$. Torej je $U$ primaren.
 \end{dokaz}
+
+Izrek \ref{izrek_neprimaren_graf_je_kompozicija_z_primarnim} nam opiše strukturo permutacijskih grafov. Vsak permutacijski graf je primaren ali neprimaren. Če je neprimaren je kompozicija permutacijskih grafov z primarnim permutacijskim grafom. Vidimo, da lahko vsak permutacijski graf izrazimo s kompozicijami in primarnimi grafi.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{ Tekmovalnostni grafi }
