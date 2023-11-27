@@ -21,3 +21,7 @@ https://users.fmf.uni-lj.si/skreko/Gradiva/DS1-skripta.pdf
 
 
 Algorithmic graph theory and perfect graphs - Martin Charles Golumbic (np poln problem največji podgraf, ki je polni graf permutacijski graf)
+
+K_{1,3}^* => reference & explanation
+wikipedija inversions?
+refrences fixes
