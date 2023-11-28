@@ -13,7 +13,8 @@ Ziya Arnavut.
 \bibitem[Brualdi and Dahl(2023)]{weakBruhatOrder}
 Richard~A Brualdi and Geir Dahl.
 \newblock Permutation graphs and the weak {B}ruhat order.
-\newblock \emph{The Art of Discrete and Applied Mathematics}, 2023.
+\newblock \emph{The Art of Discrete and Applied Mathematics}, 6\penalty0 (3), 2023.
+\newblock Article P3.01, 20 pp.
 
 \bibitem[Criado et~al.(2016)Criado, Garc{\'\i}a, Pedroche, and Romance]{setsOfRankings}
 Regino Criado, Esther Garc{\'\i}a, Francisco Pedroche, and Miguel Romance.
@@ -34,7 +35,7 @@ Severino~V Gervacio, Teofina~A Rapanut, and Phoebe Chloe~F Ramos.
 \bibitem[Golumbic(1980)]{algorithmGraphTheoryAndPerfectGraphs}
 Martin~Charles Golumbic.
 \newblock \emph{Algorithmic graph theory and perfect graphs}.
-\newblock Elsevier, 1980.
+\newblock Academic Press, New York, 1980.
 
 \bibitem[Kleinberg and Tardos(2005)]{algorithmDesign}
 Jon Kleinberg and Éva Tardos.
@@ -46,17 +47,18 @@ Jon Kleinberg and Éva Tardos.
 Barbara~H Margolius.
 \newblock Permutations with inversions.
 \newblock \emph{Journal of Integer Sequences}, 4\penalty0 (2), 2001.
-
-\bibitem[Skrekovski(2010)]{dsSkripta}
-Riste Skrekovski.
-\newblock Diskretne strukture {II} [{E}lektronski vir] : zapiski predavanj.
-\newblock Dosegljivo: \url{https://users.fmf.uni-lj.si/skreko/Gradiva/DS2-skripta.pdf}, 2010.
-\newblock [Dostopano: 18. 11. 2023].
+\newblock Article 01.2.4, 13 pp. (electronic).
 
 \bibitem[Zhao(2007)]{bruhatOrder}
 Yufei Zhao.
 \newblock On the {B}ruhat order of the symmetric group and its shellability.
 \newblock Dosegljivo: \url{https://web.mit.edu/yufeiz/www/papers/bruhat.pdf}, 2007.
+\newblock [Dostopano: 18. 11. 2023].
+
+\bibitem[Škrekovski(2010)]{dsSkripta}
+Riste Škrekovski.
+\newblock Diskretne strukture {II} [{E}lektronski vir] : zapiski predavanj.
+\newblock Dosegljivo: \url{https://users.fmf.uni-lj.si/skreko/Gradiva/DS2-skripta.pdf}, 2010.
 \newblock [Dostopano: 18. 11. 2023].
 
 \end{thebibliography}
