@@ -23,6 +23,7 @@
 \usepackage{soul}       % dodal Solina
 \usepackage[numbers]{natbib}  % dodal Solina
 
+\usepackage[lined, ruled]{algorithm2e}
 \usepackage{longtable}
 \usepackage{tikz}
 \usepackage{enumitem}
@@ -47,8 +48,8 @@
 \newcommand{\tsubject}{\ttitle}
 \newcommand{\tsubjectEn}{\ttitleEn}
 \newcommand{\tauthor}{Luka Uranič}
-\newcommand{\tkeywords}{permutacije, inverzije permutacij, Bruhatovi delni urejenosti permutacij, rodovne funkcije permutacij, Lehmerjeva koda, vektor inverzij, faktorski številski sistem, rangiranja, permutacijski grafi, tekmovalnostni grafi, primerljivostni grafi, kohezivno zaporedje grafa, gosenica, množica posrednih in neposrednih tekmovalcev}
-\newcommand{\tkeywordsEn}{permutations,  inversions of permutations, Bruhat partial orders, generating function of permutations, Lehmer code, Inversion vector, factorial number system, rankings, permutation graphs, competitivity graphs, comparability graphs, cohesive order of a graph, caterpillar, set of eventual competitors}
+\newcommand{\tkeywords}{permutacije, inverzije permutacij, rangiranja, permutacijski grafi, tekmovalnostni grafi}
+\newcommand{\tkeywordsEn}{permutations, inversions of permutations, rankings, permutation graphs, competitivity graphs}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -245,16 +246,14 @@ Za objavo in koriščenje rezultatov diplomske naloge je potrebno pisno privolje
 
 \bigskip
 \noindent\textbf{Opis:}\\
-Besedilo teme diplomskega dela študent prepiše iz študijskega informacijskega sistema, kamor ga je vnesel mentor. 
-V nekaj stavkih bo opisal, kaj pričakuje od kandidatovega diplomskega dela. 
-Kaj so cilji, kakšne metode naj uporabi, morda bo zapisal tudi ključno literaturo.
+V delu preučimo različne kombinatorične interpretacije inverzij permutacij. Za permutacijo predstavimo njen graf inverzij in karakteriziramo permutacijske grafe. Nato si ogledamo njihovo posplošitev, tekmovalnostne grafe, in se ogledamo, kako bi jih lahko uporabili za gručenje tekmovalcev.
 
 \bigskip
 \noindent\textbf{Title:} \ttitleEn
 
 \bigskip
 \noindent\textbf{Description:}\\
-opis diplome v angleščini
+We present different combinatorial interpretations of inversions of permutations. We introduce a permutation graph, in which the edges correspond to the inversions of a given permutation. We characterise permutation graphs. We also present competitivity graphs and see how they could be used to cluster the competitors.
 
 \vfill
 
@@ -359,8 +358,8 @@ Nato pokažemo kako permutacije predstavimo s permutacijskimi grafi, karakterizi
 \bigskip
 
 %\noindent\textbf{Abstract:} 
-\noindent This sample document presents an approach to typesetting your BSc thesis using \LaTeX. 
-A proper abstract should contain around 100 words which makes this one way too short.
+\noindent 
+In the thesis, we first examine inversions of permutations, their properties, the generating function for the number of permutations of the set $[n]$ with $i$ inversions, and Bruhat partial orders. Then, we demonstrate how permutations can be represented with permutation graphs, characterize permutation graphs using a cohesive vertex-set order, show that caterpillars are the only trees that are permutation graphs, and prove that for $n \geq 3$, there are exactly two permutations that generate a permutation graph isomorphic to a caterpillar on $n$ vertices. Next, we explore competitivity graphs, sets of competitors, sets of eventual competitors, and an algorithm that does not require the construction of a competitivity graph to calculate the sets of eventual competitors. Finally, we apply the algorithm to a concrete example featuring real-world data.
 \bigskip
 
 \noindent\textbf{Keywords:} \tkeywordsEn.
@@ -391,7 +390,7 @@ V drugem poglavju bomo predstavili permutacije in inverzije permutacij. Pogledal
 \section{ Splošne oznake in definicije }
 
 V delu bomo uporabili naslednje oznake in definicije.
-Graf $G = (V(G), E(G))$ ima množico vozlišč $V(G)$ in množico povezav $E(G)$. Premer grafa je najdaljša pot med dvema vozliščema. Disjunktna unija grafov je združitev dveh grafov v večji graf tako, da naredimo disjunktno unijo množic vozlišč in disjunktno unijo množic povezav. Komplement grafa $G$ označimo z $\overline{G}$ (nepovezave grafa $G$ so povezave grafa $\overline{G}$). $K_n$ je poln graf na $n$ vozliščih, $\overline{K_n}$ je nepovezan graf na $n$ vozliščih, $P_n$ je pot na $n$ vozliščih, $K_{m, n}$ je dvodelen graf z $m$ vozlišči v eni in $n$ vozlišči v drugi množici. Določiti smer povezave $uv$ grafa $G$ pomeni spremeniti $uv$ v urejen par $(u, v)$ ali $(v, u)$. Usmerjen graf je graf, ki ima vse povezave usmerjene. Orientacija grafa $G$ je usmerjen graf, ki je pridobljen tako, da vsaki povezavi grafa $G$ določimo smer.
+Graf $G = (V(G), E(G))$ ima množico vozlišč $V(G)$ in množico povezav $E(G)$. Premer grafa je najdaljša pot med dvema vozliščema. Disjunktna unija grafov je združitev dveh grafov v večji graf tako, da naredimo disjunktno unijo množic vozlišč in disjunktno unijo množic povezav. Komplement grafa $G$ označimo z $\overline{G}$ (nepovezave grafa $G$ so povezave grafa $\overline{G}$). $K_n$ je poln graf na $n$ vozliščih, $\overline{K_n}$ je nepovezan graf na $n$ vozliščih, $P_n$ je pot na $n$ vozliščih, $K_{m, n}$ je dvodelen graf z $m$ vozlišči v eni in $n$ vozlišči v drugi množici. Drevo je neusmerjen povezan graf brez ciklov. Določiti smer povezave $uv$ grafa $G$ pomeni spremeniti povezavo $uv$ v urejen par $(u, v)$ ali $(v, u)$. Usmerjen graf je graf, ki ima vse povezave usmerjene. Orientacija grafa $G$ je usmerjen graf, ki je pridobljen tako, da vsaki povezavi grafa $G$ določimo smer.
 
 Relacija $R$ na neprazni množici $A$ je množica urejenih parov elementov iz $A$, to pomeni $R\subseteq A\times A$. Oznako $(x, y) \in R$ preberemo kot $x$ je v relaciji $R$ z $y$, kar označimo z $xRy$. Relacija $R$ je:
 \begin{itemize}
@@ -568,22 +567,22 @@ V tem podpoglavju bomo najprej definirali inverzijo permutacije, ki je par eleme
     \begin{center}
         \begin{tikzpicture}[shorten >=1pt,-]
             \tikzstyle{vertex}=[circle,draw=black!0,fill=white!25,minimum size=20pt,inner sep=0pt]
-            \foreach \num/\y in {1/1, 2/2, 3/3, 4/4}
+            \foreach \num/\y in {1/1, 2/1.8, 3/2.6, 4/3.4}
                 \node[vertex] (V-\num) at (0,4-\y) {$\num$};
-            \foreach \num/\y in {1/1, 2/2, 3/3, 4/4}
+            \foreach \num/\y in {1/1, 2/1.8, 3/2.6, 4/3.4}
                 \node[vertex] (VV-\num) at (4, 4-\y) {$\num$};
         
             
             \node[vertex] (V-0) at (0,3.5) {};
             \node[vertex] (VV-0) at (4,3.5) {};
-            \node[vertex] (V-5) at (0,-0.5) {};
-            \node[vertex] (VV-5) at (4,-0.5) {};
+            \node[vertex] (V-5) at (0,0) {};
+            \node[vertex] (VV-5) at (4,0) {};
 
             \foreach \from/\to in {1/4, 2/2, 3/1, 4/3}
                 \draw[latex-latex] (V-\from) -- (VV-\to);
 
-            \draw[-latex] (V-0) .. controls (1, 4.5) and (3, 4.5) .. (VV-0) node[midway, above]{$\sigma$};
-            \draw[latex-] (V-5) .. controls (1, -1.5) and (3, -1.5) .. (VV-5) node[midway, above]{$\sigma^{-1}$};
+            \draw[-latex] (V-0) .. controls (1.25, 4.4) and (2.75, 4.4) .. (VV-0) node[midway, above]{$\sigma$};
+            \draw[latex-] (V-5) .. controls (1.25, -0.9) and (2.75, -0.9) .. (VV-5) node[midway, above]{$\sigma^{-1}$};
 
         \end{tikzpicture}
     \end{center}
@@ -593,7 +592,7 @@ V tem podpoglavju bomo najprej definirali inverzijo permutacije, ki je par eleme
 
 Naj bo $(a_i, a_j)$ inverzija permutacije $\sigma$. Potem po definiciji \ref{definicija_inverzije} veljata pogoja: 
 \[
-    \sigma^{-1}(a_i) = i < j = \sigma^{-1}(a_j), \quad \sigma(i) = a_i > a_j = \sigma(j).
+    \sigma^{-1}(a_i) = i < j = \sigma^{-1}(a_j) \quad \text{in} \quad \sigma(i) = a_i > a_j = \sigma(j).
 \]
 Torej je $(j, i)$ inverzija permutacije $\sigma^{-1}$.
 Še več, če ima permutacija $\sigma$ inverzije $(a_{i_1}, a_{j_1}), \dots, (a_{i_k}, a_{j_k})$, potem ima $\sigma^{-1}$ inverzije $(j_1, i_1), \dots, (j_k, i_k)$. 
@@ -810,7 +809,7 @@ Množico $S_n$ lahko uredimo na različne načine. Zato lahko vsaki permutaciji 
 
 \subsection{ Faktorski številski sistem }
 
-Faktorski številski sistem je številski sistem, kjer teže pozicije števk niso geometriska vrsta nekega števila, temveč so fakultete naravnih števil (primer \ref{primer_faktorski_stevilski_sistem1}). Naj ima število v faktorskem številskem sistemu zapis $d_nd_{n-1}...d_2d_1$, potem ima števka $d_i$ na poziciji $i$ težo $(i-1)!$. Števka $d_i$ je nenegativno celo število manjše od $i$ (pri tem lahko izpustimo $d_1$, saj je $d_1$ vedno $0$). 
+Faktorski številski sistem je številski sistem, kjer teže pozicije števk niso geometrijska vrsta nekega števila, temveč so fakultete naravnih števil (primer \ref{primer_faktorski_stevilski_sistem1}). Naj ima število v faktorskem številskem sistemu zapis $d_nd_{n-1}...d_2d_1$, potem ima števka $d_i$ na poziciji $i$ težo $(i-1)!$. Števka $d_i$ je nenegativno celo število manjše od $i$ (pri tem lahko izpustimo $d_1$, saj je $d_1$ vedno $0$). 
 
 Število zapisano v faktorskem številskem sistemu pretvorimo v desetiški številski sistem tako, da seštejemo produkt vseh števk s pripadajočo težo pozicije števke (primer \ref{primer_faktorski_stevilski_sistem1}).
 
@@ -1099,7 +1098,7 @@ V tem poglavju bomo definirali permutacijske grafe in si ogledali njihovo karakt
 
 \begin{izrek}
 \label{izrek_sigma_kohezivno_zaporedje}
-    Naj bo $\sigma \in S_n$. Zaporedje vozlišč $\sigma = (\sigma(1), \sigma(2), \dots, \sigma(n))$ je kohezivno zaporedje permutacijskega grafa $G_{\sigma}$.
+    Naj bo $\sigma \in S_n$. Zaporedje vozlišč $(\sigma(1), \sigma(2), \dots, \sigma(n))$ je kohezivno zaporedje permutacijskega grafa $G_{\sigma}$.
 \end{izrek}
 \begin{dokaz}
     Naj bo $\sigma = (\sigma(1), \sigma(2), \dots, \sigma(n)) \in S_n$. Trdimo, da je $\sigma$ kohezivno zaporedje grafa $G_{\sigma}$. 
@@ -1278,12 +1277,14 @@ Obstaja samo en tranzitiven turnir na $n$ vozliščih (do izomorfizma natančno)
 
 \section{ Drevesa }
 
+V tem podpoglavju si bomo pogledali katera drevesa so permutacijski grafi. Pokazali bomo, da za $n \geq 3$ obstajata natanko dve permutaciji iz $S_n$, katerih permutacijski graf je pot na $n$ vozliščih.
+
 \begin{trditev}
 \label{trditev_zvezde_permutacijski_graf}
     Zvezda $K_{1,n}$ je permutacijski graf.
 \end{trditev}
 \begin{dokaz}
-    Permutacija $\pi = (n+1, 1, 2, \dots, n)$ je kohezivno zaporedje zvezde $K_{1, n}$ (slika \ref{graf_kohezivnega_zaporedja_zvezda}), saj sta izpolnjena pogoja $(a)$ in $(b)$ iz definicije kohezivnega zaporedja \ref{def_kohezivno_zaporedje}.
+    Permutacija $\pi = (n+1, 1, 2, \dots, n)$ je kohezivno zaporedje zvezde $K_{1, n}$ (slika \ref{graf_kohezivnega_zaporedja_zvezda}), saj sta izpolnjena pogoja $(a)$ in $(b)$ iz definicije kohezivnega zaporedja \ref{def_kohezivno_zaporedje}. Po izreku \ref{izrek_permutacijski_graf_kohezivno_zaporedje} je zvezda $K_{1, n}$ permutacijski graf, saj ima kohezivno zaporedje.
 \end{dokaz}
 
 \begin{figure}[h]
@@ -1315,7 +1316,7 @@ Obstaja samo en tranzitiven turnir na $n$ vozliščih (do izomorfizma natančno)
     Pot $P_n$ je permutacijski graf.
 \end{trditev}
 \begin{dokaz}
-    Naj bo $P_n$ pot na $n$ vozliščih. Naj bo prvo vozlišče na poti označeno z $v_1$, drugo z $v_2$, $\dots$, in zadnje z $v_n$ (slika \ref{graf_kohezivnega_zaporedja_pot}). Če je $n$ sodo število, potem je $(v_2, v_1, v_4, v_3,\dots,v_{n}, v_{n-1})$ kohezivno zaporedje poti $P_n$. Če je $n$ liho število, potem je $(v_2, v_1, v_4, v_3,\dots,v_{n-1}, v_{n-2}, v_{n})$ kohezivno zaporedje poti $P_n$. To je res, saj sta izpolnjena pogoja $(a)$ in $(b)$ iz definicije \ref{def_kohezivno_zaporedje}.
+    Naj bo $P_n$ pot na $n$ vozliščih. Naj bo prvo vozlišče na poti označeno z $v_1$, drugo z $v_2$, $\dots$, in zadnje z $v_n$ (slika \ref{graf_kohezivnega_zaporedja_pot}). Če je $n$ sodo število, potem je $(v_2, v_1, v_4, v_3,\dots,v_{n}, v_{n-1})$ kohezivno zaporedje poti $P_n$. Če je $n$ liho število, potem je $(v_2, v_1, v_4, v_3,\dots,v_{n-1}, v_{n-2}, v_{n})$ kohezivno zaporedje poti $P_n$. To je res, saj sta izpolnjena pogoja $(a)$ in $(b)$ iz definicije \ref{def_kohezivno_zaporedje}. 
 \end{dokaz}
 
 \begin{figure}[h]
@@ -1384,15 +1385,12 @@ Obstaja samo en tranzitiven turnir na $n$ vozliščih (do izomorfizma natančno)
 
 % Grafi poti $P_n$ in zvezd $K_{1,n}$ so permutacijski grafi, saj imajo kohezivno zaporedje (sliki \ref{graf_kohezivnega_zaporedja_pot} in \ref{graf_kohezivnega_zaporedja_zvezda}). 
 \begin{primer}
-Kohezivni zaporedji poti $P_{13}$ sta permutaciji:
+Kohezivni zaporedji poti $P_{11}$ sta permutaciji:
 \[
-    \sigma_1 = (3, 1, 5, 2, 7, 4, 9, 6, 11, 8, 13, 10, 12)
-\] 
-in 
-\[
-    \sigma_2 = (2, 4, 1, 6, 3, 8, 5, 10, 7, 12, 9, 13, 11).
+    \sigma = (3, 1, 5, 2, 7, 4, 9, 6, 11, 8, 10) \quad \text{in} \quad \pi = (2, 4, 1, 6, 3, 8, 5, 10, 7, 11, 9). 
 \]
-Vidimo, da obstajata vsaj dve permutaciji, katerih permutacijski graf je pot $P_{13}$. V izreku \ref{izrek_dve_permutaciji_poti} bomo pokazali, da sta to tudi edini permutaciji, katerih permutacijski graf je pot $P_{13}$.
+Permutacijski graf permutacije $\sigma$ je tak, kot v dokazu izreka \ref{trditev_pot_permutacijski_graf}. Permutacijski graf permutacije $\pi$ je zrcalna slika permutacijskega graf permutacije $\sigma$.
+Vidimo, da obstajata vsaj dve permutaciji, katerih permutacijski graf je pot $P_{11}$. V izreku \ref{izrek_dve_permutaciji_poti} bomo pokazali, da sta to tudi edini permutaciji, katerih permutacijski graf je pot $P_{11}$.
 \end{primer}
 % Vidimo, da je pogoj $(a)$ iz definicije kohezivnega zaporedja \ref{def_kohezivno_zaporedje} za poti $P_n$ na prazno izpolnjen, saj ni dveh povezav $v_iv_k$ in $v_kv_j$, kjer so $i < k < j$. Pogoj $(b)$ pa je izpolnjen, saj je vedno, ko je $v_iv_j$ povezava in $k$ tak, da $i < k < j$, v grafu ena od povezav $v_iv_k$ ali $v_kv_j$. Podobno je pogoj $(a)$ izpolnjen na prazno za zvezde. Pogoj $(b)$ pa je izpolnjen, saj so vse povezave v grafu oblike $v_{n+1}v_k$ za $k \in \{ 1, 2, \dots, n \}$. Zato katerokoli povezavo vzamemo, bodo vsa vozlišča med krajiščema izbrane povezave $v_{n+1}v_k$ povezana z vozliščem $v_{n+1}$.
 
@@ -1449,10 +1447,6 @@ Poti in zvezde so drevesa. Ampak niso vsa drevesa permutacijski grafi. Drevo $K_
 \end{figure}
 
 
-\begin{definicija}
-    Drevo je gosenica, če po odstranitvi vseh listov dobimo pot.
-\end{definicija}
-
 \begin{figure}[h]
     \begin{center}        
         \begin{tikzpicture}[shorten >=1pt,-]
@@ -1477,9 +1471,13 @@ Poti in zvezde so drevesa. Ampak niso vsa drevesa permutacijski grafi. Drevo $K_
                     \draw (V-\from) -- (V-\to);
         \end{tikzpicture}
     \end{center}
-    \caption{Graf gosenice z $10$ listi.}
+    \caption{Primer gosenice z $10$ listi.}
     \label{graf_gosenice_10_listov}
 \end{figure}
+
+\begin{definicija}
+    Drevo je gosenica, če po odstranitvi vseh listov dobimo pot.
+\end{definicija}
 
 
 \begin{lema}
@@ -1947,9 +1945,6 @@ Med polnimi grafi sta primarna samo grafa $K_1$ in $K_2$. Graf $K_3$ ni primaren
     \label{graf_dreves_premer_leq3}
 \end{figure}
 
-Med drevesi s premerom, ki ni večji od 3 (slika \ref{graf_dreves_premer_leq3}), lahko pokažemo, da so primarni grafi samo poti $P_1, P_2$ in $P_4$. To so vse gosenice, ki nimajo dveh listov z istim sosednjim vozliščem. Graf $P_3$ ni primaren, saj ima dva lista, ki imata isto sosednje vozlišče. Poleg trivialnih kompozicij ima pot na treh vozliščih tudi kompozicijo $P_3 = K_2(K_1, \overline{K_2})$ (slika \ref{graf_P3_graf_kompozicije_P3_P1_P1_P1_K2c}). Prav tako nobena zvezda $K_{1,n}$ ni primarna, saj ima kompozicijo $K_{1,n} = K_2(K_1, \overline{K_n})$. Na podoben način se prepričamo tudi, da noben graf s polmerom $3$, razen $P_4$, ni primaren. Nasledni izrek \ref{izrek_primarna_drevesa} nam karakterizira drevesa, ki so primarni grafi.
-
-
 \begin{figure}[h]
     \begin{center}        
         \begin{tikzpicture}[shorten >=1pt,-]
@@ -1978,6 +1973,8 @@ Med drevesi s premerom, ki ni večji od 3 (slika \ref{graf_dreves_premer_leq3}),
     \label{graf_P3_graf_kompozicije_P3_P1_P1_P1_K2c}
 \end{figure}
 
+Med drevesi s premerom, ki ni večji od 3 (slika \ref{graf_dreves_premer_leq3}), lahko pokažemo, da so primarni grafi samo poti $P_1, P_2$ in $P_4$. To so vse gosenice, ki nimajo dveh listov z istim sosednjim vozliščem. Graf $P_3$ ni primaren, saj ima dva lista, ki imata isto sosednje vozlišče. Poleg trivialnih kompozicij ima pot na treh vozliščih tudi kompozicijo $P_3 = K_2(K_1, \overline{K_2})$ (slika \ref{graf_P3_graf_kompozicije_P3_P1_P1_P1_K2c}). Prav tako nobena zvezda $K_{1,n}$ ni primarna, saj ima kompozicijo $K_{1,n} = K_2(K_1, \overline{K_n})$. Na podoben način se prepričamo tudi, da noben graf s polmerom $3$, razen $P_4$, ni primaren. Nasledni izrek \ref{izrek_primarna_drevesa} nam karakterizira drevesa, ki so primarni grafi.
+
 \begin{izrek}
 \label{izrek_primarna_drevesa}
     Drevo je primaren permutacijski graf natanko tedaj, ko je gosenica brez dveh listov z istim sosednjim vozliščem.
@@ -2004,36 +2001,37 @@ Izrek \ref{izrek_neprimaren_graf_je_kompozicija_z_primarnim} nam opiše struktur
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{ Tekmovalnostni grafi }
 
-Tekmovalnostni grafi so razširitev permutacijskih grafov v smislu, da je vsak tekmovalnostni graf, ki je generiran z dvema permutacijama $\pi$ in $\sigma$ izomorfen ravno permutacijskemu grafu permutacije $\pi^{-1} \circ \sigma$. 
+Tekmovalnostni graf je generiran z množico permutacij $R$. Ima množico vozlišč $[n]$ in povezave med vozlišči, ki sta v različnem vrstem redu med poljubnima permutacijama iz $R$.
+
+Tekmovalnostni grafi so razširitev permutacijskih grafov, saj je vsak tekmovalnostni graf, ki je generiran z dvema permutacijama $\pi$ in $\sigma$ izomorfen ravno permutacijskemu grafu permutacije $\pi^{-1} \circ \sigma$. 
 
 V tem poglavju bomo spoznali kaj so rangiranja, tekmovalnostni grafi, primerljivostni grafi, množice tekmovalcev, množice posrednih in neposrednih tekmovalcev. Nato si bomo ogledali algoritem za izračun množice posrednih in neposrednih tekmovalcev ter kako lahko množice posrednih in neposrednih tekmovalcev uredimo. Na koncu si bomo pogledali še primer na resničnih podatkih.
 
 \section{ Tekmovalnostni grafi ter množice posrednih in neposrednih tekmovalcev }
 
 \begin{definicija}
-    Rangiranje $c = (i_1, \dots, i_n)$ množice $[n]$ je permutacija iz $S_n$. Pisali bomo $i \prec_c j$, kadar se vozlišče $i$ pojavi pred vozliščem $j$ v vektorju rangiranja $c$, to je, ko $c^{-1}(i) < c^{-1}(j)$. Zato rangiranje $c$ definira zaporedje (urejenost) množice $[n]$:
-    \[
-        c(1) = i_1 \prec_c c(2) = i_2 \prec_c \cdot\cdot\cdot \prec_c c(n) = i_n.
-    \]
+    Rangiranje $c = (i_1, \dots, i_n)$ množice $[n]$ je permutacija iz $S_n$. Pisali bomo $i \prec_c j$, kadar se vozlišče $i$ pojavi pred vozliščem $j$ v vektorju rangiranja $c$, to je, ko $c^{-1}(i) < c^{-1}(j)$. Zato rangiranje $c$ definira zaporedje (urejenost) množice $[n]$: $i_1 \prec_c i_2 \prec_c \cdot\cdot\cdot \prec_c i_n$.
+    
 \end{definicija}
 
 \begin{definicija}
 \label{def_tekmovalnosti}
-    Naj bo $R = \{c_1, c_2, \dots, c_r\}$ končna množica rangiranj. Potem rečemo, da par vozlišč $(i, j) \in [n] \times [n]$ (neposredno) tekmuje, če obstajata takšni rangiranji $c_s, c_t \in R$, da je $i \prec_{c_s} j$ ampak $j \prec_{c_t} i$, to je $i$ in $j$ zamenjata svoji relativni poziciji v rangiranjih $c_s$ in $c_t$ (slika \ref{tekmovalnost_ij}).
-
-    Tekmovalnost med dvema vozliščema $i, j \in [n]$ je močno povezano z dejstvom, da je $(i, j)$ inverzija rangiranja množice. Spomnimo se, da je inverzija v rangiranju $c$ par vozlišč $(i, j)$ tako, da je $(i-j)(c^{-1}(i) - c^{-1}(j)) < 0$.
+    Naj bo $R = \{c_1, c_2, \dots, c_r\}$ končna množica rangiranj. Potem rečemo, da par vozlišč $(i, j) \in [n] \times [n]$ (neposredno) tekmuje, če obstajata takšni rangiranji $c_s, c_t \in R$, da je $i \prec_{c_s} j$ ampak $j \prec_{c_t} i$ (slika \ref{tekmovalnost_ij}).
 \end{definicija}
+
+Če par vozlišč $(i, j)$ tekmuje, potem tekmuje tudi par vozlišč $(j, i)$.
+Tekmovalnost med dvema vozliščema $i, j \in [n]$ je močno povezano z dejstvom, da je $(i, j)$ inverzija rangiranja množice. Spomnimo se, da je inverzija v rangiranju $c$ par vozlišč $(i, j)$ tako, da je $(i-j)(c^{-1}(i) - c^{-1}(j)) < 0$.
 
 \begin{figure}[h]
     \begin{center}        
         \begin{tikzpicture}[shorten >=1pt,-]
-            \tikzstyle{vertex}=[circle,draw=black!0,fill=white!25,minimum size=20pt,inner sep=0pt]
+            \tikzstyle{vertex}=[rectangle,draw=black!0,fill=white!25,minimum size=20pt,inner sep=0pt]
             
-            \node[vertex] (V-cs) at (0, 1) {$c_s:$};
+            \node[vertex] (V-cs) at (0, 1.1) {$c_s:$};
             \node[vertex] (V-ct) at (0, 0) {$c_t:$};
 
             \foreach \num/\x in {1/1, 2/2, i/3, j/4, n/5}
-                \node[vertex] (V-\num) at (\x, 1) {$\num$};
+                \node[vertex] (V-\num) at (\x, 1.1) {$\num$};
             \foreach \num/\x in {1/1, 2/2, j/3, i/4, n/5}
                 \node[vertex] (VV-\num) at (\x, 0) {$\num$};
         
@@ -2044,21 +2042,21 @@ V tem poglavju bomo spoznali kaj so rangiranja, tekmovalnostni grafi, primerljiv
             \filldraw [black] (2.4, 0) circle (.2pt);
             \filldraw [black] (2.5, 0) circle (.2pt);
             \filldraw [black] (2.6, 0) circle (.2pt);
-            \filldraw [black] (2.4, 1) circle (.2pt);
-            \filldraw [black] (2.5, 1) circle (.2pt);
-            \filldraw [black] (2.6, 1) circle (.2pt);
+            \filldraw [black] (2.4, 1.1) circle (.2pt);
+            \filldraw [black] (2.5, 1.1) circle (.2pt);
+            \filldraw [black] (2.6, 1.1) circle (.2pt);
             \filldraw [black] (3.5, 0) circle (.2pt);
             \filldraw [black] (3.4, 0) circle (.2pt);
             \filldraw [black] (3.6, 0) circle (.2pt);
-            \filldraw [black] (3.4, 1) circle (.2pt);
-            \filldraw [black] (3.5, 1) circle (.2pt);
-            \filldraw [black] (3.6, 1) circle (.2pt);
+            \filldraw [black] (3.4, 1.1) circle (.2pt);
+            \filldraw [black] (3.5, 1.1) circle (.2pt);
+            \filldraw [black] (3.6, 1.1) circle (.2pt);
             \filldraw [black] (4.4, 0) circle (.2pt);
             \filldraw [black] (4.5, 0) circle (.2pt);
             \filldraw [black] (4.6, 0) circle (.2pt);
-            \filldraw [black] (4.4, 1) circle (.2pt);
-            \filldraw [black] (4.5, 1) circle (.2pt);
-            \filldraw [black] (4.6, 1) circle (.2pt);
+            \filldraw [black] (4.4, 1.1) circle (.2pt);
+            \filldraw [black] (4.5, 1.1) circle (.2pt);
+            \filldraw [black] (4.6, 1.1) circle (.2pt);
         \end{tikzpicture}     
     \end{center}
     \caption{Par vozlišč $(i, j)$ tekmuje.}
@@ -2105,15 +2103,15 @@ V tem poglavju bomo spoznali kaj so rangiranja, tekmovalnostni grafi, primerljiv
     \end{enumerate}
 \end{lema}
 \begin{dokaz}
-    $((ii) \Rightarrow (i))$ To sledi iz definicije \ref{def_tekmovalnosti}. 
+    $((ii) \Leftrightarrow (i))$ To sledi iz definicije \ref{def_tekmovalnosti}. 
     
     $((i) \Rightarrow (iii))$ Preimenujmo vozlišča tako, da bo $c_1 = id$. Naj $i$ in $j$ zamenjata svoji relativni poziciji med rangiranji $c_s$ in $c_t$. Potem je v enem izmed $c_s$ ali $c_t$ inverzija $(i, j)$. 
     
-    $((iii) \Rightarrow (ii))$ Preimenujmo vozlišča, tako da $c_1 = id$. Imamo inverzijo $(i, j)$ v $c_s$. Potem $i$ in $j$ zamenjata relativno pozicijo med $c_s$ in $c_{s-1}$ ali pa $c_{s-1}$ prav tako vsebuje inverzijo $(i, j)$ in se zamenjava zgodi prej. To sledi iz dejstva, da je $R$ končna množica.
+    $((iii) \Rightarrow (ii))$ Preimenujmo vozlišča tako, da je $c_1 = id$ in je $(i, j)$ inverzija v $c_s$. Potem $i$ in $j$ zamenjata relativno pozicijo med $c_s$ in $c_{s-1}$ ali pa $c_{s-1}$ prav tako vsebuje inverzijo $(i, j)$ in se zamenjava zgodi prej. To sledi iz dejstva, da je $R$ končna množica.
 \end{dokaz}
 
 \begin{definicija}
-    Naj bo $R = \{ c_1, c_2, \dots, c_r \}$ množica rangiranj množice $[n]$. Definirajmo tekmovalnostni graf množice rangiranj $R$ kot neusmerjen graf $G_c(R) = ([n], E)$, kjer je množica povezav $E$ podana na nasledni način: med $i$ in $j$ je povezava, če $(i, j)$ tekmujeta.
+    Naj bo $R = \{ c_1, c_2, \dots, c_r \}$ množica rangiranj množice $[n]$. Tekmovalnostni graf množice rangiranj $R$ definiramo kot neusmerjen graf $G_c(R) = ([n], E)$, kjer je množica povezav $E$ podana na nasledni način: med $i$ in $j$ je povezava, če $(i, j)$ tekmujeta.
 \end{definicija}
 
 \begin{primer}
@@ -2144,60 +2142,76 @@ V tem poglavju bomo spoznali kaj so rangiranja, tekmovalnostni grafi, primerljiv
 
 
 \begin{definicija}
-    Če vzamemo množico rangiranj $R = \{ c_1, \dots, c_r \}$ množice $[n]$ in fiksiramo $i \in [n]$, je tekmovalnostna množica $C(i)$ vozlišča $i$ enaka množici elementov množice $[n]$, ki tekmuje z $i$ vključno z $i$:
+    Če vzamemo množico rangiranj $R = \{ c_1, \dots, c_r \}$ množice $[n]$ in fiksiramo $i \in [n]$, je tekmovalnostna množica $C[i]$ vozlišča $i$ enaka množici elementov množice $[n]$, ki tekmuje z $i$ vključno z $i$ (to je zaprta soseščina $N_{G_c(R)}[i]$ vozlišča $i$ v grafu $G_c(R)$):
     \[
-        C(i) = \{ j \in [n] \ | \ (i, j) \ tekmujeta \} \cup \{ i \}.
+        C[i] = \{ j \in [n] \ | \ (i, j) \ tekmujeta \} \cup \{ i \} = N_{G_c(R)}[i].
     \]
 \end{definicija}
 
 \begin{primer}
     Naj bo $R$ tak kot v primeru \ref{primer_tekmovalnostni_graf}. Potem je:
     \[
-        C(1) = \{ 1, 3 \}, \ C(2) = \{ 2, 3 \}, \ C(3) = \{ 1, 2, 3, 4 \}, \ C(4) = \{ 3, 4 \}.
+        C[1] = \{ 1, 3 \}, \ C[2] = \{ 2, 3 \}, \ C[3] = \{ 1, 2, 3, 4 \}, \ C[4] = \{ 3, 4 \}.
     \]
 \end{primer}
 
 \begin{definicija}
-    Naj bo $R = \{ c_1, c_2, \dots, c_r\}$ množica rangiranj množice $[n]$. Množici  vozlišč $C \subseteq [n]$ rečemo množica tekmovalcev, če je maksimalna množica glede na lastnost tekmovalnosti svojih elementov. To pomeni, da vsaka dva elementa $i, j \in C$ tekmujeta in $C$ je maksimalna glede na to lastnost.
+    Naj bo $R = \{ c_1, c_2, \dots, c_r\}$ množica rangiranj množice $[n]$. Množici  vozlišč $C \subseteq [n]$ rečemo množica tekmovalcev, če vsaka dva elementa $i, j \in C$ tekmujeta in $C$ je maksimalna glede na to lastnost.
 \end{definicija}
 
 \begin{opomba}
     Množice tekmovalcev so ravno največji polni podgrafi grafa $G_c(R)$. Opazimo, da dve vozlišči tekmujeta natanko tedaj, ko pripadata isti množici tekmovalcev. Še več, lahko preverimo, da je množica vozlišč $C \subseteq [n]$ množica tekmovalcev natanko tedaj, ko je $C = \underset{i \in C}{\cap}C(i)$.
 \end{opomba}
 
+\begin{primer}
+    Naj bo $R$ tak kot v primeru \ref{primer_tekmovalnostni_graf}. Največji polni podgraf grafa $G_c(R)$ je $K_2$, zato imajo množice tekmovalcev grafa $G_c(R)$ dva elementa. Množice tekmovalcev grafa $G_c(R)$ so:
+    \[
+        C_1 = \{ 1, 3 \}, \ C_2 = \{ 2, 3 \}, \ C_3 = \{ 3, 4 \}.
+    \]
+\end{primer}
+
 \begin{definicija}
     Če vzamemo množico rangiranj $R = \{ c_1, \dots, c_r\}$ množice $[n]$, rečemo, da par vozlišč $(i, j) \in [n] \times [n]$ posredno ali neposredno tekmuje, če obstaja tak $k \in \mathbb{N}$ in vozlišča $i_1, \dots, i_k \in [n]$, da $(i, i_1)$ tekmujeta, $(i_1, i_2)$ tekmujeta, $\dots$, in $(i_k, j)$ tekmujeta.
 
-    Množici vozlišč $D \subseteq [n]$ rečemo množica posrednih in neposrednih tekmovalcev, če je maksimalna množica glede na lastnost posredne ali neposredne tekmovalnosti med svojimi elementi.
+    Množici vozlišč $D \subseteq [n]$ rečemo množica posrednih in neposrednih tekmovalcev, če vsaka dva elementa $i, j \in D$ posredno ali neposredno tekmujeta in $D$ je maksimalna glede na to lastnost.
 \end{definicija}
 
 \begin{opomba}
     Očitno je, da, če par vozlišč $(i, j)$ tekmuje, potem tudi posredno ali neposredno tekmuje. Še več par $(i, j)$ posredno ali neposredno tekmuje natanko tedaj, ko sta $i$ in $j$ povezana s potjo v grafu $G_c(R)$. Opazimo, da so množice posrednih ali neposrednih tekmovalcev iz $[n]$ povezane komponente grafa $G_c(R)$ in dve vozlišči posredno ali neposredno tekmujeta natanko tedaj, ko pripadata isti množici posrednih in neposrednih tekmovalcev. Seveda dve vozlišči, ki pripadata različnim množicam posrednih in neposrednih tekmovalcev, ne moreta tekmovati.
 \end{opomba}
 
-\begin{definicija}
-    Delno urejeni množici $(N, \preceq)$ lahko priredimo usmerjen graf $G_{\preceq}$ tako, da je množica vozlišč enaka $N$, vozlišči $i$ in $j$ pa sta povezani, če $i \neq j$ in $i \preceq j$.
-    Graf $G = (N, E)$ je primerljivostni graf, če je neusmerjen graf pridobljen po odstranitvi orientacije grafa $G_{\preceq}$ za neko delno urejenost $\preceq$  množice $N$.
-\end{definicija}
-Graf $G = (N, E)$ je primerljivosten natanko tedaj, ko dopušča tranzitivno orientacijo svojih povezav. To pomeni, da je usmerjen graf $\overset{\rightarrow}{G} = (N, \overset{\rightarrow}{E})$ pridobljen iz $G$ z orientiacijo vseh povezav v $E$, tako da če sta $(i, j), (j, k) \in \overset{\rightarrow}{E}$, potem je $(i, k) \in \overset{\rightarrow}{E}$.
-
-Uporabna karakterizacija permutacijskih grafov je dejstvo, da sta $G$ in $\overline{G}$ primerljivostna grafa, to je, dovoljujeta tranzitivno orientazijo svojih povezav. 
-
-Opazimo, da so permutacijski grafi tako primerljivostni grafi kot tekmovalnostni (imamo dve rangiranji/permutaciji $c_1 = id$ in $c_2$, ki predstavlja permutacijski graf).
+\begin{primer}
+    Naj bo $R$ tak kot v primeru \ref{primer_tekmovalnostni_graf}. Graf $G_c(R)$ je povezan graf, zato vsi pari vozlišč posredno ali neposredno tekmujejo. Edina množica posrednih in neposrednih tekmovalcev grafa $G_c(R)$ je množica:
+    \[
+        D = \{ 1, 2, 3, 4 \}.
+    \]
+\end{primer}
 
 \begin{definicija}
-    Graf $G$ ima delno kohezivno zaporedje vozlišč (ali enostavneje delno kohezivno zaporedje), če obstaja takošno preimenovanje vozlišč, da velja $(b)$ iz definicije \ref{def_kohezivno_zaporedje}, to je, če obstaja povezava $ab$, kjer $a < b$, potem mora za vsak $x$, za katerega velja $a < x < b$ obstajati povezava $ax$ ali $xb$. Graf $G$ je delno koheziven, če ima delno kohezivno zaporedje.
+    Delno urejeni množici $(N, \preceq)$ lahko priredimo usmerjen graf $G_{\preceq}$ tako, da je množica vozlišč enaka $N$, vozlišči $i$ in $j$ pa sta povezani s povezavo $(i, j)$, če $i \neq j$ in $i \preceq j$.
+    Graf $G = (N, E)$ delno urejene množice $N$ je primerljivostni graf, če je neusmerjen graf pridobljen po odstranitvi orientacije grafa $G_{\preceq}$ za neko delno urejenost $\preceq$  množice $N$.
+\end{definicija}
+Graf $G = (N, E)$ je primerljivosten natanko tedaj, ko dopušča tranzitivno orientacijo svojih povezav. To pomeni, da je usmerjen graf $\overset{\rightarrow}{G} = (N, \overset{\rightarrow}{E})$ pridobljen iz $G$ s takšno orientacijo vseh povezav v $E$, da če sta povezavi $(i, j), (j, k) \in \overset{\rightarrow}{E}$, potem je povezava $(i, k) \in \overset{\rightarrow}{E}$.
+
+Permutacijski grafi so karakterizirani tudi s primerljivostnimi grafi. Graf $G$ je permutacijski graf natanko tedaj ko sta grafa $G$ in $\overline{G}$ primerljivostna grafa, to je, dovoljujeta tranzitivno orientacijo svojih povezav.
+
+Opazimo, da so permutacijski grafi tako primerljivostni grafi kot tekmovalnostni. Namreč permutacijski graf permutacije $\sigma$ je ravno tekmovalnostni graf generiran z množico rangiranj $R = \{ c_1, c_2 \} = \{ id, \sigma\}$.
+
+\begin{definicija}
+    Graf $G$ ima delno kohezivno zaporedje vozlišč (ali enostavneje delno kohezivno zaporedje), če obstaja takšno preimenovanje vozlišč, da velja $(b)$ iz definicije \ref{def_kohezivno_zaporedje}, to je, če obstaja povezava $ab$, kjer $a < b$, potem mora za vsak $x$, za katerega velja $a < x < b$ obstajati povezava $ax$ ali $xb$. Graf $G$ je delno koheziven, če ima delno kohezivno zaporedje.
 \end{definicija}
 
-Medtem, ko je pogoj $(a)$ iz definicije \ref{def_kohezivno_zaporedje} povezan s primerljivostnimi grafi, je pogoj $(b)$ (delna kohezivnost) povezan s tekmovalnostnimi grafi, kot pokaže nasledni izrek.
+Medtem, ko je pogoj $(a)$ iz definicije \ref{def_kohezivno_zaporedje} povezan s primerljivostnimi grafi, je pogoj $(b)$ (delna kohezivnost) povezan s tekmovalnostnimi grafi, kot pokaže izrek \ref{tekmovalnosni_graf_delno_koheziven}.
 
 \begin{izrek}
 \label{tekmovalnosni_graf_delno_koheziven}
     Vsak tekmovalnostni graf je delno koheziven.
 \end{izrek}
 \begin{dokaz}
-    Naj bo $G_c(R)$ tekmovalnostni graf, ki je generiran z množico rangiranj $R$. Brez izgube splošnosti privzemimo, da rangiranje $id \in R$. Naj bo $ab \in E(G_c(R))$, kjer $a < b$ in $x \in [n]$ tak, da je $a < x < b$. Ker je $ab$ povezava, vozlišči $(a, b)$ tekmujeta. To pomeni, da obstaja tako rangiranje $c_m \in R$, da je $b \prec_{c_m} a$. Če $x \prec_{c_m} a$, potem tekmujeta $(x, a)$ in je $ax \in E(G_c(R))$, v nasprotnem primeru je $b \prec_{c_m} a \prec_{c_m} x$, kar pomeni, da tekmujeta $(b, x)$ in $xb \in E(G_c(R))$.
+    Naj bo $G_c(R)$ tekmovalnostni graf, ki je generiran z množico rangiranj $R$. Brez izgube splošnosti privzemimo, da je rangiranje $id \in R$. Naj bo $ab \in E(G_c(R))$, kjer $a \prec_{id} b$ in $x \in [n]$ tak, da je $a \prec_{id} x \prec_{id} b$. Ker je $ab$ povezava, vozlišči $(a, b)$ tekmujeta. To pomeni, da obstaja tako rangiranje $c_m \in R$, da je $b \prec_{c_m} a$. Če $x \prec_{c_m} a$, potem tekmujeta $(x, a)$ in je $ax \in E(G_c(R))$, v nasprotnem primeru je $b \prec_{c_m} a \prec_{c_m} x$, kar pomeni, da tekmujeta $(b, x)$ in $xb \in E(G_c(R))$.
 \end{dokaz}
+
+V \cite{setsOfRankings} avtorji domnevajo, da velja naslednja domneva.
 
 \begin{domneva}
     Izrek \ref{tekmovalnosni_graf_delno_koheziven} je karakterizacija tekmovalnostnih grafov, to pomeni $G$ je tekmovalnostni graf natanko tedaj, ko ima delno kohezivno zaporedje.
@@ -2207,32 +2221,32 @@ Medtem, ko je pogoj $(a)$ iz definicije \ref{def_kohezivno_zaporedje} povezan s 
 
 \begin{lema}
 \label{lema_algoritem_posredni_tekmovalci_1}
-    Naj bo $R = \{ c_1, \dots, c_r \}$ množica rangiranj množice $[n]$. Če je $D \subseteq [n]$ množica posrednih in neposrednih tekmovalcev in $a, b \in D$, potem za vsak $x \in [n]$ in vsako rangiranje $c_m \in R$ tako, da je $a \prec_{c_m} x \prec_{c_m} b$, sledi $x \in D$.
+    Naj bo $R = \{ c_1, \dots, c_r \}$ množica rangiranj množice $[n]$. Če je $D \subseteq [n]$ množica posrednih in neposrednih tekmovalcev in $a, b \in D$, potem za vsak $x \in [n]$ in vsako tako rangiranje $c_m \in R$, da je $a \prec_{c_m} x \prec_{c_m} b$, sledi $x \in D$.
 \end{lema}
 \begin{dokaz}
-    Če vozlišči $(a, b)$ tekmujeta, potem zaradi delne kohezivnosti tekmovalnostnega grafa tekmujeta tudi $(a, x)$ ali $(x, b)$, se pravi $x \in D$. Če vozlišči $(a, b)$ ne tekmujeta, potem obstaja tak $k \in \mathbb{N}$ in vozlišča $i_1, \dots, i_k \in [n]$, da $(a, i_1)$ tekmujeta, $(i_1, i_2)$ tekmujeta, $\dots$, in $(i_k, b)$ tekmujeta, saj sta $a,b \in D$. Če $a \prec_{c_m} x \prec_{c_m} i_1$, potem $x \in D$, ker $(a, i_1)$ tekmujeta. V nasprotnem primeru je $i_1 \prec_{c_m} x \prec_{c_m} b$. Če $i_1 \prec_{c_m} x \prec_{c_m} i_2$, potem $x \in D$, ker $(i_1, i_2)$ tekmujeta. V nasprotnem primeru je $i_2 \prec_{c_m} x \prec_{c_m} b$... Če $i_{k-1} \prec_{c_m} x \prec_{c_m} i_k$, potem $x \in D$, ker $(i_{k-1}, i_k)$ tekmujeta. V nasprotnem primeru je $i_k \prec_{c_m} x \prec_{c_m} b$. Ker $(i_k, b)$ tekmujeta, sledi $x \in D$.
+    Če vozlišči $(a, b)$ tekmujeta, potem zaradi delne kohezivnosti tekmovalnostnega grafa tekmujeta tudi $(a, x)$ ali $(x, b)$, se pravi $x \in D$. Če vozlišči $(a, b)$ ne tekmujeta, potem obstaja tak $k \in \mathbb{N}$ in vozlišča $i_1, \dots, i_k \in [n]$, da $(a, i_1)$ tekmujeta, $(i_1, i_2)$ tekmujeta, $\dots$, in $(i_k, b)$ tekmujeta, saj sta $a,b \in D$. Če $a \prec_{c_m} x \prec_{c_m} i_1$, potem $x \in D$, ker $(a, i_1)$ tekmujeta. V nasprotnem primeru je $i_1 \prec_{c_m} x \prec_{c_m} b$. Če $i_1 \prec_{c_m} x \prec_{c_m} i_2$, potem $x \in D$, ker $(i_1, i_2)$ tekmujeta. V nasprotnem primeru je $i_2 \prec_{c_m} x \prec_{c_m} b$. Razmislek nadaljujemo, če $i_{k-1} \prec_{c_m} x \prec_{c_m} i_k$, potem $x \in D$, ker $(i_{k-1}, i_k)$ tekmujeta. V nasprotnem primeru je $i_k \prec_{c_m} x \prec_{c_m} b$. Ker $(i_k, b)$ tekmujeta, sledi $x \in D$.
 \end{dokaz}
 
 \begin{primer}
-    Naj bo $R = \{ c_1, c_2, c_3\}$ množica rangiranj $[5]$.
+    Naj bo $R = \{ c_1, c_2, c_3\}$ množica rangiranj množice $[5]$.
     \begin{align}
         c_1 &= (1, 2, 3, 4, 5) \notag\\
         c_2 &= (2, 1, 3, 4, 5) \notag\\
         c_3 &= (1, 4, 2, 3, 5) \notag
     \end{align}
-    Vidimo, da par $(4, 1)$ posredno tekmujeta, saj $(1, 2)$ in $(2, 4)$ tekmujeta, zato sta v isti množici posrednih in neposrednih tekmovalcev. Ker je $3 \in [5]$ in $1 \prec_{c_1} 3 \prec_{c_1} 4$, je tudi $3$ v isti množici posrednih in neposrednih tekmovalcev. To je res, saj $2 \prec_{c_1} 3 \prec_{c_1} 4$ in $(2, 4)$ tekmujeta, iz delne kohezivnost sledi, da tekmujeta tudi $(2, 3)$ ali $(3, 4)$. Vidimo, da par $(3, 4)$ res tekmuje.
+    Vidimo, da par $(4, 1)$ posredno tekmujeta, saj $(1, 2)$ in $(2, 4)$ tekmujeta, zato sta v isti množici posrednih in neposrednih tekmovalcev. Ker je $1 \prec_{c_1} 3 \prec_{c_1} 4$, je tudi $3$ v isti množici posrednih in neposrednih tekmovalcev. To je res, saj $2 \prec_{c_1} 3 \prec_{c_1} 4$ in $(2, 4)$ tekmujeta. Iz delne kohezivnost sledi, da tekmujeta tudi $(2, 3)$ ali $(3, 4)$. Par $(3, 4)$ res tekmuje, saj je $4 \prec_{c_3} 3$. Vidimo, da je $3$ res v isti množici posrednih in neposrednih tekmovalcev, kot sta $4$ in $1$.
 \end{primer}
 
 \begin{lema}
 \label{lema_algoritem_posredni_tekmovalci_2}
-    Naj bo $R = \{ c_1, \dots, c_r \}$ množica rangiranj množice $[n]$. Če je $D \subseteq [n]$ množica posrednih in neposrednih tekmovalcev ter obstajata taka $a \in D$ in  $c_m \in R$, da je $c_m^{-1}(a) = 1$ (element $a$ se pojavi na prvi poziciji v rangiranju $c_m$), potem 
+    Naj bo $R = \{ c_1, \dots, c_r \}$ množica rangiranj množice $[n]$. Če je $D \subseteq [n]$ množica posrednih in neposrednih tekmovalcev ter obstajata taka $a \in D$ in  $c_m \in R$, da je $c_m^{-1}(a) = 1$, potem 
     \[
         \{ x \in [n] \ | \ c_s^{-1}(x) = 1 \ za \ nek \ c_s \in R \} \subseteq D.    
     \]
     To pomeni, da vsi elementi na prvi poziciji rangiranj iz $R$ pripadajo $D$.
 \end{lema}
 \begin{dokaz}
-    Če $c_m \neq c_s$,  $a \neq x$ in $c_m^{-1}(a) = 1 = c_s^{-1}(x)$, potem je $a \prec_{c_m} x$ in $x \prec_{c_s} a$, se pravi $(a, x)$ tekmujeta in $x \in D$. 
+    Če $c_m \neq c_s$, $a \in D$, $a \neq x$ in $c_m^{-1}(a) = 1 = c_s^{-1}(x)$, potem je $a \prec_{c_m} x$ in $x \prec_{c_s} a$, se pravi $(a, x)$ tekmujeta in $x \in D$. 
 \end{dokaz}
 
 \begin{izrek}
@@ -2243,91 +2257,133 @@ Medtem, ko je pogoj $(a)$ iz definicije \ref{def_kohezivno_zaporedje} povezan s 
     Še več, $p$ in $q$ sta prvi na levi in zadnji na desni poziciji elementov iz $D_{[p, q]}$ glede na vsa rangiranja.
 \end{izrek}
 \begin{dokaz}
-    Pokazali bomo, da ima vsaka množica posrednih in neposrednih tekmovalcev obliko $D_{[p, q]}$ za neki naravni števili $p$ in $q$. Naj bo $a \in [n]$, $c_m \in R$ tako, da $c_m^{-1}(a) = 1$, in naj bo $D$ množica posrednih in neposrednih tekmovalcev, ki vsebuje $a$. Iz leme \ref{lema_algoritem_posredni_tekmovalci_2} sledi, da je 
+    Pokazali bomo, da ima vsaka množica posrednih in neposrednih tekmovalcev obliko $D_{[p, q]}$ za neki naravni števili $p$ in $q$. Naj bo $a \in [n]$, $c_m \in R$ tako, da $c_m^{-1}(a) = 1$, in naj bo $D$ tista množica posrednih in neposrednih tekmovalcev, ki vsebuje $a$. Iz leme \ref{lema_algoritem_posredni_tekmovalci_2} sledi, da je 
     \[ 
         D_{[1,1]} = \{ x \in [n] \ | \ c_s^{-1}(x) = 1 \ za \ nek \ c_s \in R \} \subseteq D.
     \] 
-    Defirajmo 
+    Definirajmo zaporedje $p_1\!=\!1, p_2, p_3, \dots$, kjer je $p_{k+1}$ zadnja pozicija (na desni) vseh elementov $D_{[1, p_k]}$ v vseh rangiranjih. 
+    Pokazali bomo, da če 
     \[
-        D_{[1, p_k]} = \{ x \in [n] \ | \ c_s^{-1}(x) \in [1, p_k] \ za \ nek \ c_s \in R\}
-    \] 
-    in naj bo $p_{k+1}$ zadnja pozicija (na desni) vseh elementov $D_{[1, p_k]}$ v vseh rangiranjih. Trdimo, da če $D_{[1, p_k]} \subseteq D$ in 
-    \[
-        D_{[1, p_{k+1}]} = \{ x \in [n] \ | \ c_s^{-1}(x) \in [1, p_{k+1}] \ za \ nek \ c_s \in R\},
-    \] 
-    potem je $D_{[1, p_{k+1}]} \subseteq D$. Naj bo $x \in [n]$ z $c_s^{-1}(x) \in [1, p_{k+1}]$ za nek $c_s$. Potem je $c_s^{-1}(x) \in [1, p_k]$ in $x \in D_{[1, p_k]} \subseteq D$ (po predpostavki) ali pa je $c_s^{-1} \in [p_k + 1, p_{k+1}]$. V tem primeru naj bo $b$ element $D_{[1,p_k]}$, ki se pojavi na poziciji $p_{k+1}$ v nekem rangiranju $c_{m_b}$, to pomeni $c_{m_b}^{-1}(b) = p_{k+1}$. Če $x \prec_{c_{m_b}} b$, potem je po lemi \ref{lema_algoritem_posredni_tekmovalci_1} $x \in D$. Zato predpostavimo, da je $b \prec_{c_{m_b}} x$. Vsi elementi levo od $b$ v rangiranju $c_{m_b}$ pripadajo množici $D$ po lemi \ref{lema_algoritem_posredni_tekmovalci_1}. Naj bo teh elementov $t$. Če je $x \prec_{c_s} b$, potem $(c, b)$ tekmujeta in $x \in D$. Zato predpostavimo, da $b \prec_{c_s} x$. Na levi od $x$ v rangiranju $c_s$ je tako največ $t$ elementov, ampak en od njih je $b$, kar pomeni, da obstaja element $z$, za katerega velja $z \prec_{c_{m_b}} b \prec_{c_{m_b}} x$ in $b \prec_{c_s} x \prec_{c_s} z$. To pomeni, da $(x, z)$ tekmujeta, zato $x \in D$.
-
-    Ker je $[n]$ končna množica in $D_{[1, p_m]} \in [n]$, se veriga množic 
-    \[
-        D_{[1, 1]} \subset D_{[1, p_1]} \subset D_{[1, p_2]} \subset \cdot\cdot\cdot    
+        D_{[1, p_k]} = \{ x \in [n] \ | \ c_s^{-1}(x) \in [1, p_k] \ za \ nek \ c_s \in R\} \subseteq D,
     \]
-    stabilizira za nek $D_{[1, p_m]} \subseteq D$. Še več $D \subseteq D_{[1, p_m]}$: po hipotezi je $a \in D$, zato za vsak drug elemet $x \in D$ obstaja takšno končno število elementov $a_1, a_2, \dots, a_k$, da $(a, a_1),(a_1, a_2), \dots, (a_k, x)$ tekmujejo. Zaradi dejstva, da je $a \in D_{[1, 1]}$ in $(a, a_1)$ tekmujeta, dobimo, da je $a_1 \in D_{[1, p_1]}$, podobno ker $a_1 \in D_{[1, p_1]}$ in $(a_1, a_2)$ tekmujeta, dobimo, da je $a_2 \in D_{[1, p_2]}$, $\dots$, in ker $a_{k} \in D_{[1, p_k]}$ in $(a_k, x)$ tekmujeta, dobimo, da je $x \in D_{[1, p_{k+1}]} \subseteq D_{[1, p_m]}$.
+    potem je tudi 
+    \[
+        D_{[1, p_{k+1}]} = \{ x \in [n] \ | \ c_s^{-1}(x) \in [1, p_{k+1}] \ za \ nek \ c_s \in R\} \subseteq D.
+    \] 
+    
+    Naj bo $x \in D_{[1, p_{k+1}]}$, potem je $x \in [n]$ z $c_s^{-1}(x) \in [1, p_{k+1}]$ za nek $c_s$. Če je $c_s^{-1}(x) \in [1, p_k]$, sledi $x \in D_{[1, p_k]} \subseteq D$. V nasprotnem je $c_s^{-1} \in [p_k + 1, p_{k+1}]$. V tem primeru naj bo $b$ element $D_{[1,p_k]}$, ki se pojavi na poziciji $p_{k+1}$ v nekem rangiranju $c_{m_b}$, to pomeni $c_{m_b}^{-1}(b) = p_{k+1}$. Če $x \prec_{c_{m_b}} b$, potem je po lemi \ref{lema_algoritem_posredni_tekmovalci_1} element $x \in D$. V nasprotnem je $b \prec_{c_{m_b}} x$. Vsi elementi levo od $b$ v rangiranju $c_{m_b}$ pripadajo množici $D$ po lemi \ref{lema_algoritem_posredni_tekmovalci_1}. Naj bo teh elementov $t$. Če je $x \prec_{c_s} b$, potem $(c, b)$ tekmujeta in $x \in D$. Zato predpostavimo, da $b \prec_{c_s} x$. Na levi od $x$ v rangiranju $c_s$ je tako največ $t$ elementov, ampak en od njih je $b$, kar pomeni, da obstaja element $z$, za katerega velja $z \prec_{c_{m_b}} b \prec_{c_{m_b}} x$ in $b \prec_{c_s} x \prec_{c_s} z$. To pomeni, da $(x, z)$ tekmujeta, zato $x \in D$.
 
-    Izbrišimo elemente iz $[n]$, ki se pojavijo v $D$, in ponovimo postopek, da odkrijemo ostale množice posrednih in neposrednih tekmovalcev.
+    Ker je $[n]$ končna množica in $D_{[1, p_m]} \subseteq [n]$, se veriga množic 
+    \[
+        D_{[1, 1]} \subseteq D_{[1, p_1]} \subseteq D_{[1, p_2]} \subseteq \cdot\cdot\cdot \subseteq D
+    \]
+    stabilizira za nek $D_{[1, p_m]} \subseteq D$. To pomeni, da je $D_{[1, p_m]} = D_{[1, p_{m+1}]}$. Še več $D \subseteq D_{[1, p_m]}$: po hipotezi je element $a \in D$, zato za vsak drug elemet $x \in D$ obstaja takšno končno število elementov $a_1, a_2, \dots, a_k$, da pari $(a, a_1),(a_1, a_2), \dots, (a_k, x)$ tekmujejo. Zaradi dejstva, da je $a \in D_{[1, 1]}$ in $(a, a_1)$ tekmujeta, dobimo, da je $a_1 \in D_{[1, p_1]}$, podobno ker $a_1 \in D_{[1, p_1]}$ in $(a_1, a_2)$ tekmujeta, dobimo, da je $a_2 \in D_{[1, p_2]}$, $\dots$, in ker $a_{k} \in D_{[1, p_k]}$ in $(a_k, x)$ tekmujeta, dobimo, da je $x \in D_{[1, p_{k+1}]} \subseteq D_{[1, p_m]}$. Zato je $D \subseteq D_{[1, p_m]}$ in $D = D_{[1, p_m]}$.
+
+    Izbrišimo elemente iz $[n]$, ki se pojavijo v množici posrednih in neposrednih tekmovalcev $D = D_{[1, p_m]}$, in ponovimo postopek, da odkrijemo ostale množice posrednih in neposrednih tekmovalcev.
 \end{dokaz}
 
 \begin{primer}
-     Naj bo $R = \{ c_1, c_2, c_3\}$ množica rangiranj $[5]$.
+     Naj bo $R = \{ c_1, c_2, c_3\}$ množica rangiranj množice $[5]$.
     \begin{align}
         c_1 &= (1, 2, 3, 4, 5) \notag\\
         c_2 &= (2, 1, 3, 4, 5) \notag\\
         c_3 &= (1, 4, 2, 3, 5) \notag
     \end{align}
-    Poiščimo množice posrednih in neposrednih tekmovalcev. Najprej si poglejmo množico posrednih in neposrednih tekmovalcev $D_1$, ki vsebuje elemente, ki se v vsaj enem rangiranju pojavijo na prvem mestu.
+    Poiščimo množice posrednih in neposrednih tekmovalcev. Najprej si poglejmo množico posrednih in neposrednih tekmovalcev $D_1$, ki vsebuje elemente, ki se v vsaj enem rangiranju pojavijo na prvem mestu:
     \[
-        D_{[1,1]} = \{ x \in [n] \ | \ c_s^{-1}(x) = 1 \ za \ nek \ c_s \in R \} = \{ 1, 2 \} \subseteq D_1
+        D_{[1,1]} = \{ x \in [n] \ | \ c_s^{-1}(x) = 1 \ za \ nek \ c_s \in R \} = \{ 1, 2 \} \subseteq D_1.
     \]
-    Elementa $1$ in $2$ se v rangiranjih nahajata na $1., 2.$ in $3.$ mestu. Ker je $max\{ 1, 2, 3\} = 3$, si sedaj poglejmo $D_{[1, 3]}$.
+    Elementa $1$ in $2$ se v rangiranjih nahajata na $1., 2.$ in $3.$ mestu. Ker je $max\{ 1, 2, 3\} = 3$, si sedaj poglejmo $D_{[1, 3]}$:
     \[
-        D_{[1,1]} \subset D_{[1,3]} = \{ x \in [n] \ | \ c_s^{-1}(x) \in [1, 3] \ za \ nek \ c_s \in R \} = \{ 1, 2, 3, 4\} \subseteq D_1
+        D_{[1,1]} \subset D_{[1,3]} = \{ x \in [n] \ | \ c_s^{-1}(x) \in [1, 3] \ za \ nek \ c_s \in R \} = \{ 1, 2, 3, 4\} \subseteq D_1.
     \]
-    Elementi $1, 2, 3$ in $4$ se v rangiranjih nahajajo na $1., 2., 3.$ in $4.$ mestu. Ker je $max\{ 1, 2, 3, 4\} = 4$, si sedaj poglejmo $D_{[1, 4]}$.
+    Elementi $1, 2, 3$ in $4$ se v rangiranjih nahajajo na $1., 2., 3.$ in $4.$ mestu. Ker je $max\{ 1, 2, 3, 4\} = 4$, si sedaj poglejmo $D_{[1, 4]}$:
     \[
-        D_{[1,3]} = D_{[1,4]} = \{ x \in [n] \ | \ c_s^{-1}(x) \in [1, 4] \ za \ nek \ c_s \in R \} = \{ 1, 2, 3, 4\} = D_1
+        D_{[1,3]} = D_{[1,4]} = \{ x \in [n] \ | \ c_s^{-1}(x) \in [1, 4] \ za \ nek \ c_s \in R \} = \{ 1, 2, 3, 4\} = D_1.
     \]
-    Vidimo, da se je veriga stabilizirala in je $D_1 = D_{[1, 4]} = \{ 1, 2, 3, 4\}$. Sedaj si poglejmo množico posrednih in neposrednih tekmovalcev $D_2$, ki vsebuje vse elemente, ki se v vsaj enem rangiranju pojavijo na $5.$ mestu ($5 = 4 + 1$).
+    Vidimo, da se je veriga stabilizirala in je $D_1 = D_{[1, 4]} = \{ 1, 2, 3, 4\}$. Sedaj si poglejmo množico posrednih in neposrednih tekmovalcev $D_2$, ki vsebuje vse elemente, ki se v vsaj enem rangiranju pojavijo na $5.$ mestu ($5 = 4 + 1$):
     \[
-        D_{[5,5]} = \{ x \in [n] \ | \ c_s^{-1}(x) = 5 \ za \ nek \ c_s \in R \} = \{ 5 \} \subseteq D_2
+        D_{[5,5]} = \{ x \in [n] \ | \ c_s^{-1}(x) = 5 \ za \ nek \ c_s \in R \} = \{ 5 \} \subseteq D_2.
     \]
-    Element $5$ se v rangiranjih vedno nagaja na $5.$ mestu. Ker $max\{ 5 \} = 5$, se nam zgorna meja ne poveča. Zato je $D_2 = D_{[5, 5]} = \{ 5 \}$.
+    Element $5$ se v rangiranjih vedno nahaja na $5.$ mestu. Ker $max\{ 5 \} = 5$, se nam zgorna meja ne poveča. Zato je $D_2 = D_{[5, 5]} = \{ 5 \}$.
 \end{primer}
 
 Dokaz zadnjega izreka nam podaja algoritem za izračun množice posrednih in neposrednih tekmovalcev direktno iz množice rangiranj brez predhodnega izračuna tekmovalnostnega grafa.
 
-\begin{minipage}{\linewidth}    
-\begin{lstlisting} [language=Matlab, numbers=left, stepnumber=1, numbersep=10pt, tabsize=4, showspaces=false, showstringspaces=false]
-    Psevdo koda algoritma za izračun množic 
-    posrednih in neposrednih tekmovalcev:
+\begin{algorithm}[H]
+    \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
 
-    Vhod:
-    $N = \{1, \dots, n \}$ končna množica vozlišč
-    $R = \{c_1, \dots, c_r \}$ končna množica rangiranj
+    \BlankLine
+    \KwIn{
+        \\        
+        $N = \{1, \dots, n \}$ končna množica vozlišč\\
+        $R = \{c_1, \dots, c_r \}$ končna množica rangiranj\\
+    }
+    \BlankLine
+
+    \Begin{
+        $j:= 1$\;
+        $p_0 := 0$\;
+        $p_j := 1$\;
+        \While{$|N| > 0$}{            
+            $D_j := \emptyset$\;
+            $q_0 := p_{j-1}$\;
+            $q_1 := p_j$\;
+            $i := 0$\;
+            \While{ $q_i \neq q_{i+1}$ }{
+                $i := i + 1$\;
+                $D_j := D_{[p_j, q_i]}$\;
+                $q_{i+1} := \underset{x \in D_j, c \in R}{max} c^{-1}(x)$\;
+            }
+            $N := N \setminus D_j$\;
+            $j := j + 1$\;
+            $p_j := q_{i+1} + 1$\;
+        }   
+    }
+    \BlankLine
+    \KwOut{
+        \\
+        Disjunktne množice posrednih in neposrednih tekmovalcev $D_1, \dots, D_k$, kjer je $\underset{i \in [k]}{\cup}D_i = [n]$
+    }
+    \BlankLine
+    \caption{Psevdo koda algoritma za izračun množic 
+    posrednih in neposrednih tekmovalcev}
+\end{algorithm}
+
+% \begin{minipage}{\linewidth}    
+% \begin{lstlisting} [language=Matlab, numbers=left, stepnumber=1, numbersep=10pt, tabsize=4, showspaces=false, showstringspaces=false]
+%     Psevdo koda algoritma za izračun množic 
+%     posrednih in neposrednih tekmovalcev:
+
+%     Vhod:
+%     $N = \{1, \dots, n \}$ končna množica vozlišč
+%     $R = \{c_1, \dots, c_r \}$ končna množica rangiranj
     
-    begin
-        $j:= 1$;
-        $p_0 := 0$;
-        $p_j := 1$;
-        while $|N| > 0$ do
-            $D_j := \emptyset$;
-            $q_0 := p_{j-1}$;
-            $q_1 := p_j$;
-            $i := 0$;
-            while $q_i \neq q_{i+1}$ do
-                $i := i + 1$;
-                Construct $D_j := D_{[p_j, q_i]}$;
-                $q_{i+1} := \underset{x \in D_j, c \in R}{max} c^{-1}(x)$;
-            end
-            $N := N \setminus D_j$;
-            $j := j + 1$;
-            $p_j := q_i + 1$;
-        end
-    end
+%     begin
+%         $j:= 1$;
+%         $p_0 := 0$;
+%         $p_j := 1$;
+%         while $|N| > 0$ do
+%             $D_j := \emptyset$;
+%             $q_0 := p_{j-1}$;
+%             $q_1 := p_j$;
+%             $i := 0$;
+%             while $q_i \neq q_{i+1}$ do
+%                 $i := i + 1$;
+%                 Construct $D_j := D_{[p_j, q_i]}$;
+%                 $q_{i+1} := \underset{x \in D_j, c \in R}{max} c^{-1}(x)$;
+%             end
+%             $N := N \setminus D_j$;
+%             $j := j + 1$;
+%             $p_j := q_i + 1$;
+%         end
+%     end
     
-    Izhod: 
-    Množice posrednih in neposrednih 
-    tekmovalcev $D_1, \dots, D_k$
-\end{lstlisting}
-\end{minipage}
+%     Izhod: 
+%     Množice posrednih in neposrednih 
+%     tekmovalcev $D_1, \dots, D_k$
+% \end{lstlisting}
+% \end{minipage}
 
 \begin{definicija}
     Naj bo $R = \{ c_1, \dots, c_r \}$ množica $r$ rangiranj $(r \geq 2)$ množice $[n]$. Definirajmo usmerjen graf $G_d(R)$  na naslednji način:
@@ -2338,12 +2394,12 @@ Dokaz zadnjega izreka nam podaja algoritem za izračun množice posrednih in nep
 \end{definicija}
 
 \begin{opomba}
-    Opazimo, da se usmerjen graf $G_d(R)$ sklada z usmerjenim grafom $G_{\preceq}$, ki ga definiramo z (refleksivno in antisimetrično) relacijo $\preceq$ podano z:
+    Opazimo, da je usmerjen graf $G_d(R)$ izomorfen usmerjenemu grafu $G_{\preceq}$, ki ga definiramo z (refleksivno in antisimetrično) relacijo $\preceq$ podano z:
     \begin{enumerate}[label=(\roman*)]
         \item $i \preceq i$ za vsak $i \in [n]$
         \item $i \preceq j$ $(i,j \in [n], i \neq j)$, če obstaja takšno rangiranje $c_m \in R$, da je $i \preceq_{c_m} j$.
     \end{enumerate}
-    Tekmovalnostni graf $G_c(R)$ se sklada z neusmerjenim grafom z enakimi vozlišči kot graf $G_d(R)$ in povezavami med $(i, j)$, kadar sta usmerjeni povezavi $(i, j), (j, i) \in E(G_d(R))$.
+    Tekmovalnostni graf $G_c(R)$ je izomorfen neusmerjenemu grafu z enakimi vozlišči kot graf $G_d(R)$ in neusmerjenimi povezavami $ij \in E(G_c(R))$, kadar sta usmerjeni povezavi $(i, j), (j, i) \in E(G_d(R))$.
 \end{opomba}
 
 \begin{trditev}
@@ -2355,18 +2411,20 @@ Dokaz zadnjega izreka nam podaja algoritem za izračun množice posrednih in nep
     \end{enumerate}
 \end{trditev}
 \begin{dokaz}
-    $(ii) \Rightarrow (i)$ To je vedno res.
+    Trditev $(i)$ je posebni primer trditve $(ii)$, zato iz $(ii)$ sledi $(i)$. Pokažimo sedaj, da iz $(i)$ sledi $(ii)$. Najprej pokažimo nasledni dve trditvi.
 
     \begin{enumerate}
-        \item Pokazali bomo, da, če je $a \in D_1$, $b_1, b_2 \in D_2$, par $(b_1, b_2)$ tekmuje in obstaja usmerjena povezava od $a$ do $b_1$, potem obstaja usmerjena povezava od $a$ do $b_2$. Po hipotezi obstaja takšno rangiranje $c_m$, da je $a \prec_{c_m} b_1$. Če $a \prec_{c_m} b_2$, potem smo pokazali, kar smo hoteli, sicer $b_2 \prec_{c_m} a \prec_{c_m} b_1$. Ampak, ker $(b_1, b_2)$ tekmujeta, obstaja takšno rangiranje $c_{m'}$, da $b_1 \prec_{c_{m'}} b_2$, in ker $a$ ne tekmuje z $b_1$, mora biti $a \prec_{c_{m'}} b_1 \prec_{c_{m'}} b_2$, kar pomeni, da $(a, b_2)$ tekmujeta. To je protislovje in zato $a \prec_{c_m} b_2$.
-        \item Pokazali bomo, da, če je $a \in D_1$, $b \in D_2$ in obstaja usmerjena povezava od $a$ proti $b$, potem za vsak $b' \in D_2$ obstaja povezava od $a$ do $b$. Ker sta $b, b' \in D_2$, obstaja tak $k \in \mathbb{N}$ in $b_1, \dots, b_k \in D_2$, da $(b, b_1)$ tekmujeta, $(b_1, b_2)$ tekmujeta, $\dots$, $(b_k, b')$ tekmujeta. Vozlišča $a, b, b_1$ so v takem razmerju kot v koraku $1.$, zato obstaja povezava od $a$ do $b_1$, podobno vozlišča $a, b_1, b_2$, zato obstaja povezava $a$ do $b_2$, $\dots$, podobno vozlišča $a, b_k, b'$, zato obstaja povezava od $a$ do $b'$.
-        \item $(i) \Rightarrow (ii)$. Če od elementa $a \in D_1$ obstaja povezava do elementa v $D_2$, potem po koraku $2.$ obstaja povezava od $a$ do vseh elementov v $D_2$. Zdaj fiksirajmo nek element iz $D_2$ in dva elementa iz $D_1$. Uporabimo podoben premislek, kot smo ga v korakih $1$ in $2$ in dobimo, da obstaja povezava od vsakega elementa iz $D_1$ do fiksiranega elementa.
+        \item Pokazali bomo, da, če je $a \in D_1$, $b_1, b_2 \in D_2$, par $(b_1, b_2)$ tekmuje in obstaja usmerjena povezava od $a$ do $b_1$, potem obstaja usmerjena povezava od $a$ do $b_2$. Po hipotezi obstaja takšno rangiranje $c_m$, da je $a \prec_{c_m} b_1$. Če $a \prec_{c_m} b_2$, potem trditev velja. V nasprotnem primeru je $b_2 \prec_{c_m} a \prec_{c_m} b_1$. Ampak, ker $(b_1, b_2)$ tekmujeta, obstaja takšno rangiranje $c_{m'}$, da $b_1 \prec_{c_{m'}} b_2$, in ker $a$ ne tekmuje z $b_1$, mora biti $a \prec_{c_{m'}} b_1 \prec_{c_{m'}} b_2$, kar pomeni, da $(a, b_2)$ tekmujeta. To je protislovje in zato $a \prec_{c_m} b_2$.
+        \item Pokazali bomo, da, če je $a \in D_1$, $b \in D_2$ in obstaja usmerjena povezava od $a$ proti $b$, potem za vsak $b' \in D_2$ obstaja usmerjena povezava od $a$ do $b'$. Ker sta $b, b' \in D_2$, obstaja tak $k \in \mathbb{N}$ in $b_1, \dots, b_k \in D_2$, da $(b, b_1)$ tekmujeta, $(b_1, b_2)$ tekmujeta, $\dots$, $(b_k, b')$ tekmujeta. Vozlišča $a, b, b_1$ so v takem razmerju kot v koraku $1.$, zato obstaja usmerjena povezava od $a$ do $b_1$, podobno vozlišča $a, b_1, b_2$, zato obstaja usmerjena povezava $a$ do $b_2$, $\dots$, podobno vozlišča $a, b_k, b'$, zato obstaja usmerjena povezava od $a$ do $b'$.
     \end{enumerate}
+        
+    Predpostavimo sedaj trditev $(i)$, torej, da obstaja usmerjena povezava od $a \in D_1$ do $b \in D_2$. Po trditvi $2$ obstaja usmerjena povezava od $a$ do vseh elementov v $D_2$. 
+    Naj bo $a' \in D_1$ in $a \neq a'$. Elementa $a$ in $a'$ posredno ali neposredno tekmujeta. Če (neposredno) tekmujeta, potem po podobnem premisleku, kot v trditvi $1$, obstaja usmerjena povezava od $a'$ do $b$. Če posredno tekmujeta, potem po podobnem premisleku, kot v trditvi $2$, obstaja usmerjena povezava od $a'$ do $b$. Tako dobimo, da obstaja povezava od vsakega elementa iz $D_1$ do vsakega elementa iz $D_2$.
 \end{dokaz}
 
 \begin{definicija}
 \label{definicija_relacije_mnozic_posrednih_tekmovalcev}
-    Naj bo $R = \{ c_1, \dots, c_r \}$ množica r rangiranj $(r \geq 2)$ vozlišč $[n]$, katerih množice posrednih in neposrednih tekmovalcev označimo z $D_1, \dots, D_k$. Definirajmo binarno relacijo $\rightarrow$ med dvema množicama posrednih in neposrednih tekmovalcev na nasledni način:
+    Naj bo $R = \{ c_1, \dots, c_r \}$ množica r rangiranj vozlišč $[n]$, $r \geq 2$, katerih množice posrednih in neposrednih tekmovalcev označimo z $D_1, \dots, D_k$, kjer je$\underset{i \in [k]}{\cup} D_i = [n]$. Definirajmo binarno relacijo $\rightarrow$ med dvema množicama posrednih in neposrednih tekmovalcev na nasledni način:
     \begin{enumerate}[label=(\roman*)]
         \item $D_i \rightarrow D_i$ za vsako množico posrednih in neposrednih tekmovalcev $D_i$.
         \item za vsaki različni množici $D_i, D_j$ posrednih in neposrednih tekmovalcev, je $D_i \rightarrow D_j$ natanko tedaj, ko velja katerakoli od trditev iz \ref{trditev_ekvivalenc_mnozic_posrednih_tekmovalcev}.
@@ -2374,26 +2432,26 @@ Dokaz zadnjega izreka nam podaja algoritem za izračun množice posrednih in nep
 \end{definicija}
 
 \begin{lema}
-    Binarna relacija iz definicije \ref{definicija_relacije_mnozic_posrednih_tekmovalcev} je tranzitivna.
+    Binarna relacija $\rightarrow$ je tranzitivna.
 \end{lema}
 \begin{dokaz}
-    Predpostavimo, da je $D_1 \rightarrow D_2$ in $D_2 \rightarrow D_3$, ampak $D_3 \rightarrow D_1$. Vzamimo vozlišče $x \in D_1$. Ker je $D_3 \rightarrow D_1$, obstaja takšno rangiranje $c_m$ tako, da je $a \prec_{c_m} x$ za vse $a \in D_3$. Še več, ker $D_1 \rightarrow D_2$, $x \prec_{c_m} b$ za vsak $b \in D_2$ in zato $a \prec_{c_m} b$ za vse $a \in D_3$ in $b \in D_2$, kar pomeni $D_3 \rightarrow D_2$. To je protislovje.
+    Predpostavimo, da je $D_1 \rightarrow D_2$ in $D_2 \rightarrow D_3$. Radi bi pokazali, da je potem $D_1 \rightarrow D_3$. Predpostavimo, da je $D_3 \rightarrow D_1$ in pokažimo, da nas to privede do protislovja. Vzamimo vozlišče $x \in D_1$. Ker je $D_3 \rightarrow D_1$, obstaja takšno rangiranje $c_m$ tako, da je $a \prec_{c_m} x$ za vse $a \in D_3$. Še več, ker $D_1 \rightarrow D_2$, $x \prec_{c_m} b$ za vsak $b \in D_2$ in zato $a \prec_{c_m} b$ za vse $a \in D_3$ in $b \in D_2$, kar pomeni $D_3 \rightarrow D_2$. To je protislovje.
 \end{dokaz}
 
 \begin{posledica}
-    Binarna relacija, podana v definiciji \ref{definicija_relacije_mnozic_posrednih_tekmovalcev}, nam daje linearno urejenost med množicami posrednih in neposrednih tekmovalcev iz $[n]$.
+    Binarna relacija $\rightarrow$ je linearna urejenost množic posrednih in neposrednih tekmovalcev iz $[n]$.
 \end{posledica}
 
 
 \section{Uporaba algoritma na resničnih podatkih}
 
-Poglejmo si sezono 2014 v prvenstvu MotoGP. V tej sezoni je bil najboljši dirkač Marc Márquez. Zmagal je na prvih 10 dirkah sezone. V celi sezoni pa je zmagal na 13 od skupaj 18 dirk. Na 3 dirkah je padel, vendar se je v trenutku padca potegoval za zmago. Poleg tega je bil še enkrat drugi in enkrat četrti. Poleg Marca Márqueza so bili veliko boljši od ostalih še Valentino Rossi, Jorge Lorenzo in Dani Pedrosa. Na stopničkah so bili trije od njih (štirih) na 13 dirkah, vsaj dva na 17 dirkah, vsaj en pa na vseh 18 dirkah te sezone. Opazimo, da so se to sezono izoblikovale vsaj tri kakovostne skupine. V prvi skupini je Marc Márquez, ki je bil to sezono veliko boljši od ostalih. V drugi skupini so Valentino Rossi, Jorge Lorenzo in Dani Pedrosa. V ostalih skupinah pa so ostali dirkači.
+Poglejmo si sezono 2014 v prvenstvu MotoGP. V tej sezoni je bil najboljši dirkač Marc Márquez. Zmagal je na prvih desetih dirkah sezone. V celi sezoni pa je zmagal na trinajstih od skupaj osemnajst dirk. Na treh dirkah je padel, vendar se je v trenutku padca potegoval za zmago. Poleg tega je bil še enkrat drugi in enkrat četrti. Poleg Marca Márqueza so bili veliko boljši od ostalih še Valentino Rossi, Jorge Lorenzo in Dani Pedrosa. Na stopničkah so bili trije od njih (štirih) na trinajstih dirkah, vsaj dva na sedemnajstih dirkah, vsaj en pa na vseh osemnajstih dirkah te sezone. Opazimo, da so se to sezono izoblikovale vsaj tri kakovostne skupine. V prvi skupini je Marc Márquez, ki je bil to sezono veliko boljši od ostalih. V drugi skupini so Valentino Rossi, Jorge Lorenzo in Dani Pedrosa. V ostalih skupinah pa so ostali dirkači.
 
-Če bi uporabili algoritem za izračun množic posrednih in neposrednih tekmovalcev, kar direktno na rezultatih dirk, bi naleteli na težave. Ena od težav je, da ni na vsaki dirki tekmovalo enako tekmovalcev oziroma ni vsake dirke zaključilo enako število tekmovalcev. Zato rezultati dirk niso iz iste simetrične grupe $S_n$. Poleg tega opazimo, da je Marc Márquez bil na prvem in na zadnjem mestu (je odstopil), iz česar sledi, da tekmuje z vsemi ostalimi dirkači in imamo samo eno množico posrednih in neposrednih tekmovalcev.
+Če bi uporabili algoritem za izračun množic posrednih in neposrednih tekmovalcev na rezultatih vseh dirk sezone 2014, bi naleteli na težave. Ena od težav je, da ni na vseh dirkah tekmovalo enako tekmovalcev, oziroma ni vsake dirke zaključilo enako število tekmovalcev. Zato rezultati dirk niso iz iste simetrične grupe $S_n$. Poleg tega opazimo, da je Marc Márquez bil na prvem in na zadnjem mestu (je odstopil), iz česar sledi, da tekmuje z vsemi ostalimi dirkači in imamo samo eno množico posrednih in neposrednih tekmovalcev.
 
 Zato bomo izbrali neko podmnožico dirk $A$ in neko podmnožico dirkačev, ki so na vseh dirkah iz podmnožice $A$ dirko zaključili. Tako dobimo $|A|$ rangiranj/permutacij neke simetrične grupe.
 
-Izberimo 5 dirk iz te sezone. $R = \{ c_{arg}, c_{esp}, c_{cat}, c_{ger}, c_{gbr} \}$. Izberimo še vse dirkače, ki so na teh dirkah zaključili dirko. Teh dirkačev je $14$. Uredimo jih relativno glede na to, kako so bili na koncu sezone uvrščeni v skupnem vrstem redu. Tako dobimo dobimo vektor = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14) = (Marc Márquez, Valentino Rossi, Jorge Lorenzo, Dani Pedrosa, Andrea Dovizioso, Pol Espargaró, Aleix Espargaró, Bradley Smith, Stefan Bradl, Scott Redding, Hiroshi Aoyama, Yonny Hernández, Héctor Barberá, Broc Parkes). Sedaj si oglejmo rangiranja teh dirkačev na dirkah iz $R$:
+Izberimo dirke v Argentini ($c_{arg}$), Španiji ($c_{esp}$), Kataloniji ($c_{cat}$), Nemčiji ($c_{ger}$) in Veliki Britaniji ($c_{gbr}$). Izberimo še vse dirkače, ki so na teh dirkah zaključili dirko. Teh dirkačev je $14$. Uredimo jih relativno glede na to, kako so bili na koncu sezone uvrščeni v skupnem vrstem redu. Tako dobimo dobimo vektor = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14) = (Marc Márquez, Valentino Rossi, Jorge Lorenzo, Dani Pedrosa, Andrea Dovizioso, Pol Espargaró, Aleix Espargaró, Bradley Smith, Stefan Bradl, Scott Redding, Hiroshi Aoyama, Yonny Hernández, Héctor Barberá, Broc Parkes). Sedaj si oglejmo rangiranja teh dirkačev na dirkah iz $R = \{ c_{arg}, c_{esp}, c_{cat}, c_{ger}, c_{gbr} \}$:
 \begin{align}
     c_{arg} &= (1, 4, 3, 2, 9, 8, 6, 5, 11, 12, 10, 7, 13, 14) \notag\\
     c_{esp} &= (1, 2, 4, 3, 5, 7, 8, 6, 9, 11, 10, 12, 13, 14) \notag\\
@@ -2409,9 +2467,9 @@ Sedaj poženemo algoritem za izračun množice posrednih in neposrednih tekmoval
     D_2 &= \{ 2, 3, 4 \}, \notag\\
     D_3 &= \{ 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 \}. \notag
 \end{align}
-Tako vidimo, da so za to izbiro dirk in dirkačev, ki so zaključili te dirke dobimo pričakovane ugotovitve. Torej je Marc Márquez v svoji množici posrednih in neposrednih tekmovalcev, v drugi množici posrednih in neposrednih tekmovalcev so Valentino Rossi, Jorge Lorenzo in Dani Pedrosa. Ostali dirkači pa so v tretji množici posrednih in neposrednih tekmovalcev.
+Tako vidimo, da so za to izbiro dirk in dirkačev, ki so zaključili te dirke, dobimo pričakovane ugotovitve. Torej je Marc Márquez v svoji množici posrednih in neposrednih tekmovalcev, v drugi množici posrednih in neposrednih tekmovalcev so Valentino Rossi, Jorge Lorenzo in Dani Pedrosa. Ostali dirkači pa so v tretji množici posrednih in neposrednih tekmovalcev.
 
-Poglejmo si še en pristop. Dirkače označimo z zaporedno številko glede na to, kako so bili na koncu sezone uvrščeni v skupnem vrstem redu. Tako dobimo dobimo vektor = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29) = (Marc Márquez, Valentino Rossi, Jorge Lorenzo, Dani Pedrosa, Andrea Dovizioso, Pol Espargaró, Aleix Espargaró, Bradley Smith, Stefan Bradl, Andrea Iannone, Álvaro Bautista, Scott Redding, Cal Crutchlow, Hiroshi Aoyama, Yonny Hernández, Nicky Hayden, Karel Abraham, Héctor Barberá, Michele Pirro, Danilo Petrucci, Alex de Angelis, Colin Edwards, Broc Parkes, Michael Laverty, Mike Di Meglio, Katsuyuki Nakasuga, Leon Camier, Michel Fabrizio, Randy de Puniet). Tokrat si za podmnožice dirk izbirajmo po 3 zaporedne dirke in glejmo samo dirkače, ki so na vseh teh 3 dirkah zaključili dirko. Množice posrednih in neposrednih tekmovalcev so v tabeli \ref{tbl:tabelaPosrednihNeposrednihTekmovalcev3}. Ponovno vidimo, da se Marc Márquez velikokrat pojavi v prvi množici posrednih in neposrednih tekmovalcev, kot edini tekmovalec te množice. Dvakrat se nam kot samostojna množica pojavi množica najboljših štirih te sezone. Množice $\{ 24 \}$, $\{ 25 \}$, $\{ 18 \}$, $\{ 23 \}$ nam pokažejo, da nekateri dirkači to sezono niso bili prav zares konkurenčni ostalim dirkačem. Vidimo tudi, da se nam pri praktično vseh izbirah treh dirk ustvari nekaj množic posrednih in neposrednih tekmovalcev (to se ne zgodi samo takrat, ko je Marc Márquez padel, vendar nadeljeval dirko in jo zaključil na 15 oziroma 13 mestu), kar nam pove, da so dirkači v različnih množicah verjetno res različno konkurenčni. Na to seveda vpliva tudi to, da dirkajo na različno dobrih motorjih. 
+Poglejmo si še en pristop. Dirkače označimo z zaporedno številko glede na to, kako so bili na koncu sezone uvrščeni v skupnem vrstem redu. Tako dobimo dobimo vektor = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29) = (Marc Márquez, Valentino Rossi, Jorge Lorenzo, Dani Pedrosa, Andrea Dovizioso, Pol Espargaró, Aleix Espargaró, Bradley Smith, Stefan Bradl, Andrea Iannone, Álvaro Bautista, Scott Redding, Cal Crutchlow, Hiroshi Aoyama, Yonny Hernández, Nicky Hayden, Karel Abraham, Héctor Barberá, Michele Pirro, Danilo Petrucci, Alex de Angelis, Colin Edwards, Broc Parkes, Michael Laverty, Mike Di Meglio, Katsuyuki Nakasuga, Leon Camier, Michel Fabrizio, Randy de Puniet). Tokrat si za podmnožice dirk izbirajmo po 3 zaporedne dirke in glejmo samo dirkače, ki so na vseh teh 3 dirkah zaključili dirko. Množice posrednih in neposrednih tekmovalcev, ki jih dobimo z algoritmom za izračun množic posrednih in neposrednih tekmovalcev, so zbrane v tabeli \ref{tbl:tabelaPosrednihNeposrednihTekmovalcev3}. Ponovno vidimo, da se Marc Márquez velikokrat pojavi v prvi množici posrednih in neposrednih tekmovalcev, kot edini tekmovalec te množice. Dvakrat se nam kot samostojna množica pojavi množica najboljših štirih te sezone. Množice $\{ 24 \}$, $\{ 25 \}$, $\{ 18 \}$, $\{ 23 \}$ nam pokažejo, da nekateri dirkači to sezono niso bili prav zares konkurenčni ostalim dirkačem. Vidimo tudi, da se nam pri skoraj vseh izbirah treh zaporednih dirkah ustvari nekaj množic posrednih in neposrednih tekmovalcev. To se ne zgodi samo takrat, ko je Marc Márquez padel, vendar nadaljeval dirko in jo zaključil na 15 oziroma 13 mestu (dirki trinajst in štirinajst). To nam pove, da so dirkači v različnih množicah verjetno res različno konkurenčni. Na to seveda vpliva tudi to, da dirkajo z opremo različnih kvalitet. 
 
 % \begin{table}
 %     \begin{center}
@@ -2465,37 +2523,37 @@ Poglejmo si še en pristop. Dirkače označimo z zaporedno številko glede na to
         \hline
             dirke & Množice posrednih in neposrednih tekmovalcev \\ 
         \hline
-            [1,3] & $\{1\}, \{2, 4, 5, 7, 10, 14, 15, 16, 17\}, \{24\}, \{25\}$ \\ 
+            1,2,3 & $\{1\}, \{2, 4, 5, 7, 10, 14, 15, 16, 17\}, \{24\}, \{25\}$ \\ 
         \hline
-            [2,4] & $\{1\}, \{2, 3, 4, 5, 6, 7, 8, 9, 14, 15, 16\}, \{18\}, \{24\}$ \\ 
+            2,3,4 & $\{1\}, \{2, 3, 4, 5, 6, 7, 8, 9, 14, 15, 16\}, \{18\}, \{24\}$ \\ 
         \hline
-            [3,5] & $\{1\}, \{2, 3, 4, 5, 6, 7, 8, 9, 12, 14, 15\}, \{24\}, \{23\}$ \\ 
+            3,4,5 & $\{1\}, \{2, 3, 4, 5, 6, 7, 8, 9, 12, 14, 15\}, \{24\}, \{23\}$ \\ 
         \hline
-            [4,6] & $\{1\}, \{2, 3, 4, 5, 6, 7, 11\}, \{12, 14, 15\}, \{24\}, \{23\}$ \\ 
+            4,5,6 & $\{1\}, \{2, 3, 4, 5, 6, 7, 11\}, \{12, 14, 15\}, \{24\}, \{23\}$ \\ 
         \hline
-            [5,7] & $\{1\}, \{2, 3, 4, 5, 6, 7\}, \{12, 15\}, \{14\}, \{22, 23, 24\}$ \\ 
+            5,6,7 & $\{1\}, \{2, 3, 4, 5, 6, 7\}, \{12, 15\}, \{14\}, \{22, 23, 24\}$ \\ 
         \hline
-            [6,8] & $\{1\}, \{2, 3, 4, 5, 7, 10, 12, 14, 15, 22, 23, 24\}$ \\ 
+            6,7,8 & $\{1\}, \{2, 3, 4, 5, 7, 10, 12, 14, 15, 22, 23, 24\}$ \\ 
         \hline
-            [7,9] & $\{1\}, \{2, 3, 4, 5, 7, 8, 9, 10, 12, 14, 15, 16, 18, 22, 23\}$ \\ 
+            7,8,9 & $\{1\}, \{2, 3, 4, 5, 7, 8, 9, 10, 12, 14, 15, 16, 18, 22, 23\}$ \\ 
         \hline
-            [8,10] & $\{1\}, \{2, 3, 4, 5, 8, 12, 13, 14, 17, 22, 23, 25\}$ \\ 
+            8,9,10 & $\{1\}, \{2, 3, 4, 5, 8, 12, 13, 14, 17, 22, 23, 25\}$ \\ 
         \hline
-            [9,11] & $\{1, 2, 3, 4\}, \{5, 8, 12, 14, 17\}, \{23, 25\}$ \\ 
+            9,10,11 & $\{1, 2, 3, 4\}, \{5, 8, 12, 14, 17\}, \{23, 25\}$ \\ 
         \hline
-            [10,12] & $\{1, 2, 3, 4\}, \{5, 8, 12, 14, 17, 23, 25\}$ \\ 
+            10,11,12 & $\{1, 2, 3, 4\}, \{5, 8, 12, 14, 17, 23, 25\}$ \\ 
         \hline
-            [11,13] & $\{1, 2, 3, 4, 5, 8, 10, 12, 14, 17, 18, 21, 23, 27\}$ \\ 
+            11,12,13 & $\{1, 2, 3, 4, 5, 8, 10, 12, 14, 17, 18, 21, 23, 27\}$ \\ 
         \hline
-            [12,14] & $\{1, 3, 4, 6, 8, 12, 13, 14, 15, 18, 21, 23, 24\}$ \\ 
+            12,13,14 & $\{1, 3, 4, 6, 8, 12, 13, 14, 15, 18, 21, 23, 24\}$ \\ 
         \hline
-            [13,15] & $\{3\}, \{1, 4, 6, 8, 11, 12, 14, 18, 21, 23, 24\}$ \\ 
+            13,14,15 & $\{3\}, \{1, 4, 6, 8, 11, 12, 14, 18, 21, 23, 24\}$ \\ 
         \hline
-            [14,16] & $\{3\}, \{8\}, \{11, 12, 14, 16, 18, 21, 24, 25\}$ \\ 
+            14,15,16 & $\{3\}, \{8\}, \{11, 12, 14, 16, 18, 21, 24, 25\}$ \\ 
         \hline
-            [15,17] & $\{2, 3\}, \{5, 8\}, \{12, 14, 18\}, \{24\}, \{25\}$ \\ 
+            15,16,17 & $\{2, 3\}, \{5, 8\}, \{12, 14, 18\}, \{24\}, \{25\}$ \\ 
         \hline
-            [16,18] & $\{2\}, \{5, 8, 12, 18\}, \{14\}, \{24\}, \{25\}$ \\ 
+            16,17,18 & $\{2\}, \{5, 8, 12, 18\}, \{14\}, \{24\}, \{25\}$ \\ 
         \hline
     \end{tabular}
 \end{center}
@@ -2943,11 +3001,11 @@ Diplomsko delo smo začeli s ponovitvijo nekaterih osnovnih pojmov, oznak in def
 
 Nato smo definirali permutacije in pokazali nekaj načinov, kako jih lahko zapišemo. Povedali smo, da je množica vseh permutacij z $n$ elementi skupaj z operacijo kompozitum simetrična grupa. Permutacijska grupa je vsaka podgrupa simetrične grupe ter po Cayleyevem izreku je vsaka grupa izomorfna neki permutacijski grupi.
 
-V nadaljevanju smo povedali kaj so inverzije neke permutacije. Pokazali smo kako lahko permutacije delno uredimo s pomočjo Bruhatovih delnih urejenosti. Šibka Bruhatova delna urejenost nam pove, da lahko vsako permutacijo z $i$ inverzijami uredimo z natanko $i$ transpozicijami sosednih elementov. Zatem izračunamo rodovno funkcijo, ki nam šteje število permutacij množice $[n]$ z $i$ inverzijami. Potem smo pokazali, kako lahko množico permutacij $S_n$ uredimo in tako vsaki permutaciji iz množice $S_n$ dodelimo celo število $N$, kjer je $0 \leq N \leq n!$. To lahko denimo naredimo s pomočjo Lehmerjeve kode ali vektorja inverzij.
+V nadaljevanju smo povedali kaj so inverzije neke permutacije. Pokazali smo kako lahko permutacije delno uredimo s pomočjo Bruhatovih delnih urejenosti. Šibka Bruhatova delna urejenost nam pove, da lahko vsako permutacijo z $i$ inverzijami uredimo z natanko $i$ transpozicijami sosednih elementov. Zatem izračunamo rodovno funkcijo, ki nam šteje število permutacij množice $[n]$ z $i$ inverzijami. Pokazali smo, kako lahko množico permutacij $S_n$ uredimo in tako vsaki permutaciji iz množice $S_n$ dodelimo celo število $N$, kjer je $0 \leq N \leq n!$. To lahko denimo naredimo s pomočjo Lehmerjeve kode ali vektorja inverzij.
 
 V tretjem poglavju smo se posvetili permutacijskim grafom. Najprej smo jih karakterizirali s pomočjo kohezivnega zaporedja grafa. Potem smo se osredotočili na drevesa, ki so permutacijski grafi. Ugotovili smo, da so to ravno gosenice. Pokazali smo, da obstajata natanko dve permutaciji iz $S_n$, ki imata permutacijski graf izomorfen neki gosenici na $n \geq 3$ vozliščih. Nato smo predstavili, kako lahko konstruiramo permutacijske grafe s pomočjo kompozicije grafov.
 
-V zadnjem delu smo si pogledali kaj so tekmovalnostni grafi. Povedali smo, kaj so rangiranja, kdaj par vozlišč tekmuje, kako je tekmovalnost dveh vozlišč povezana z inverzijami permutacij, kaj je tekmovalnostna množica, kaj je množica tekmovalcev ter kaj je množica posrednih in neposrednih tekmovalcev. Nato smo povedali, kaj so primerljivostni grafi in ugotovili, da so permutacijski grafi tako primerljivostni kot tekmovalnostni grafi. Definirali smo tudi delno kohezivno zaporedje vozlišč ter pokazali, da je vsak tekmovalnostni graf delno koheziven. Zatem smo predstavili algoritem za izračun množice posrednih in neposrednih tekmovalcev direktno iz množice rangiranj brez predhodnega izračuna tekmovalnostnega grafa. Pokazali smo tudi, kako so množice posrednih in neposrednih tekmovalcev urejene. Na koncu smo algoritem uporabili na resničnih podatkih. Ker so bili podatki iz špotra, kjer so velike spremembe rangiranj pogoste, smo ugotovili, da če želimo pridobiti uporabne informacije, moramo algoritem uporabiti na manjšem številu rangiranj. Prvi prikazani način je izbira nekaterih rangiranj. Drugi prikazani način pa je izbira nekaj zaporednih rangiranj. Pri drugem načinu tako lahko vidimo formo športnikov skozi čas. Treba pa je poudariti, da sta oba načina pomanjkliva. Pri prvem je težava, da dobimo informacije iz neke podmnožice rangiranj. Te informacije so lahko zelo variabilne. Pri drugem načinu je težava v tem, da ne dobimo veliko informacij o športnikih, ki so v tem zaporedju imeli en slab rezultat. Rezultate algoritma bi morda lahko izboljšali s pomočjo predprocesiranja podatkov. Na primer, v primeru odstopa športnika, ga lahko kaznujemo z uvrstitvijo na njegovo rahlo podpovprečno mesto, namesto da ga diskvalifikaciramo.
+V zadnjem delu smo si pogledali kaj so tekmovalnostni grafi. Povedali smo, kaj so rangiranja, kdaj par vozlišč tekmuje, kako je tekmovalnost dveh vozlišč povezana z inverzijami permutacij, kaj je tekmovalnostna množica, kaj je množica tekmovalcev ter kaj je množica posrednih in neposrednih tekmovalcev. Nato smo povedali, kaj so primerljivostni grafi in ugotovili, da so permutacijski grafi tako primerljivostni kot tekmovalnostni grafi. Definirali smo tudi delno kohezivno zaporedje vozlišč ter pokazali, da je vsak tekmovalnostni graf delno koheziven. Zatem smo predstavili algoritem za izračun množice posrednih in neposrednih tekmovalcev direktno iz množice rangiranj brez predhodnega izračuna tekmovalnostnega grafa. Pokazali smo tudi, kako so množice posrednih in neposrednih tekmovalcev urejene. Na koncu smo algoritem uporabili na resničnih podatkih. Ker so bili podatki iz špotra, kjer so velike spremembe rangiranj pogoste, smo ugotovili, da če želimo pridobiti uporabne informacije, moramo algoritem uporabiti na manjšem številu rangiranj. Prvi prikazani način je izbira nekaterih rangiranj. Drugi prikazani način pa je izbira nekaj zaporednih rangiranj. Pri drugem načinu tako lahko vidimo formo športnikov skozi čas. Treba pa je poudariti, da sta oba načina pomanjkljiva. Pri prvem je težava, da dobimo informacije iz neke podmnožice rangiranj. Te informacije so lahko zelo variabilne. Pri drugem načinu je težava v tem, da ne dobimo veliko informacij o športnikih, ki so v tem zaporedju imeli en slab rezultat. Rezultate algoritma bi morda lahko izboljšali s pomočjo predprocesiranja podatkov. Na primer, v primeru odstopa športnika, ga lahko kaznujemo z uvrstitvijo na njegovo rahlo podpovprečno mesto, namesto da ga diskvalifikaciramo.
 
 \cleardoublepage
 \addcontentsline{toc}{chapter}{Literatura}
