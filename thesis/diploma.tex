@@ -246,7 +246,7 @@ Za objavo in koriščenje rezultatov diplomske naloge je potrebno pisno privolje
 
 \bigskip
 \noindent\textbf{Opis:}\\
-V delu preučimo različne kombinatorične interpretacije inverzij permutacij. Za permutacijo predstavimo njen graf inverzij in karakteriziramo permutacijske grafe. Nato si ogledamo njihovo posplošitev, tekmovalnostne grafe, in se ogledamo, kako bi jih lahko uporabili za gručenje tekmovalcev.
+V delu preučimo različne kombinatorične interpretacije inverzij permutacij. Za permutacijo predstavimo njen graf inverzij in karakteriziramo permutacijske grafe. Nato si ogledamo njihovo posplošitev, tekmovalnostne grafe, in si ogledamo, kako bi jih lahko uporabili za gručenje tekmovalcev.
 
 \bigskip
 \noindent\textbf{Title:} \ttitleEn
@@ -359,7 +359,7 @@ Nato pokažemo kako permutacije predstavimo s permutacijskimi grafi, karakterizi
 
 %\noindent\textbf{Abstract:} 
 \noindent 
-In the thesis, we first examine inversions of permutations, their properties, the generating function for the number of permutations of the set $[n]$ with $i$ inversions, and Bruhat partial orders. Then, we demonstrate how permutations can be represented with permutation graphs, characterize permutation graphs using a cohesive vertex-set order, show that caterpillars are the only trees that are permutation graphs, and prove that for $n \geq 3$, there are exactly two permutations that generate a permutation graph isomorphic to a caterpillar on $n$ vertices. Next, we explore competitivity graphs, sets of competitors, sets of eventual competitors, and an algorithm that does not require the construction of a competitivity graph to calculate the sets of eventual competitors. Finally, we apply the algorithm to a concrete example featuring real-world data.
+In the thesis, we first examine inversions of permutations, their properties, the generating function for the number of permutations of the set $[n]$ with $i$ inversions, and Bruhat partial orders. Then, we present how permutations can be represented with permutation graphs, characterize permutation graphs using a cohesive vertex-set order, show that caterpillars are the only trees that are permutation graphs, and prove that for $n \geq 3$, there are exactly two permutations that generate a permutation graph isomorphic to a caterpillar on $n$ vertices. Next, we explore competitivity graphs, sets of competitors, sets of eventual competitors, and an algorithm that does not require the construction of a competitivity graph to calculate the sets of eventual competitors. Finally, we apply the algorithm to a concrete example featuring real-world data.
 \bigskip
 
 \noindent\textbf{Keywords:} \tkeywordsEn.
@@ -376,11 +376,11 @@ In the thesis, we first examine inversions of permutations, their properties, th
 
 Inverzija permutacije je par elementov, ki sta v obratnem vrstem redu kot v permutaciji $(1, 2,\dots, n)$. Število inverzij nam meri stopnjo neurejenosti oziroma oddaljenost permutacije od urejenega zaporedja števil $1, 2, \dots, n$. Permutacijski graf permutacije $\pi$ je graf z vozlišči $\{ 1, 2, \dots, n \}$, kjer je $xy$ povezava natanko tedaj, ko je par elementov $(x, y)$ ali $(y, x)$ inverzija permutacije $\pi$. 
 
-Leta 2012 so Gervacio, Rapanut in Ramos ~\cite{charectarizationPermutationGraphs} karakterizirali permutacijske grafe s pomočjo kohezivnega zaporedja vozlišč. Poleg tega so pokazali, da so gosenice edina drevesa, ki so permutacijski grafi ter kako lahko na enostaven način konstruiramo permutacijske grafe. Leta 2023 sta Brualdi in Dahl ~\cite{weakBruhatOrder} pokazala, da obstajata natanko dve permutaciji iz $S_n$, katerih permutacijski graf je izomorfen neki dani gosenici na $n$ vozliščih ($n \geq 3$). Poleg tega pokažeta tudi, kako so permutacije urejene v šibki Bruhatovi delni urejenosti. Definicija (krepke) Bruhatove delne urejenosti na permutacijah je podana v članku ~\cite{bruhatOrder}. V ~\cite{generatingFunction} Margolius prikaže, kakšna je rodovna funkcija za število permutacij dolžine $n$ z $i$ inverzijami.
+Leta 2012 so Gervacio, Rapanut in Ramos \cite{charectarizationPermutationGraphs} karakterizirali permutacijske grafe s pomočjo kohezivnega zaporedja vozlišč. Poleg tega so pokazali, da so gosenice edina drevesa, ki so permutacijski grafi ter kako lahko na enostaven način konstruiramo permutacijske grafe. Leta 2023 sta Brualdi in Dahl \cite{weakBruhatOrder} pokazala, da obstajata natanko dve permutaciji iz $S_n$, katerih permutacijski graf je izomorfen neki dani gosenici na $n$ vozliščih ($n \geq 3$). Poleg tega pokažeta tudi, kako so permutacije urejene v šibki Bruhatovi delni urejenosti. Definicija (krepke) Bruhatove delne urejenosti na permutacijah je podana v članku \cite{bruhatOrder}. V \cite{generatingFunction} Margolius prikaže, kakšna je rodovna funkcija za število permutacij dolžine $n$ z $i$ inverzijami.
 
 Vsak permutacijski graf je tudi tekmovalnostni. Tekmovalnostni graf je generiran z množico permutacij oziroma rangiranj $R$. Vozlišča tekmovalnostnega grafa so $\{ 1, 2, \dots, n \}$, kjer je $xy$ povezava natanko tedaj, ko je par elementov $(x, y)$ v dveh permutacijah iz $R$ v različnem vrstnem redu. 
 
-Leta 2015 so Criado, García, Pedroche in Romance v ~\cite{setsOfRankings} predstavili in analizirali nekaj pomembnih množic vozlišč tekmovalnostnega grafa. Na primer, množica tekmovalcev je množica vozlišč, kjer vsako vozlišče iz množice tekmuje z vsemi ostalimi vozlišči iz množice. Množica posrednih in neposrednih tekmovalcev je množica vozlišč, kjer vsako vozlišče iz množice posredno ali neposredno tekmuje z vsemi vozlišči iz množice preko neke poti v grafu, kjer med seboj tekmujeta vsaki sosednji vozlišči na poti. Poleg tega predstavijo algoritem za izračun množic posrednih in neposrednih tekmovalcev, ki ne potrebuje konstrukcije tekmovalnostnega grafa.
+Leta 2015 so Criado, García, Pedroche in Romance v \cite{setsOfRankings} predstavili in analizirali nekaj pomembnih množic vozlišč tekmovalnostnega grafa. Na primer, množica tekmovalcev je množica vozlišč, kjer vsako vozlišče iz množice tekmuje z vsemi ostalimi vozlišči iz množice. Množica posrednih in neposrednih tekmovalcev je množica vozlišč, kjer vsako vozlišče iz množice posredno ali neposredno tekmuje z vsemi vozlišči iz množice preko neke poti v grafu, kjer med seboj tekmujeta vsaki sosednji vozlišči na poti. Poleg tega predstavijo algoritem za izračun množic posrednih in neposrednih tekmovalcev, ki ne potrebuje konstrukcije tekmovalnostnega grafa.
 
 Ostale informacije o permutacijah, inverzijah, permutacijskih grafih in faktorskem številskem sistemu so bile pridobiljene iz \cite{algorithmDesign, dsSkripta, inversionCoding, factorialNumberSystem, algorithmGraphTheoryAndPerfectGraphs}.
 
@@ -430,7 +430,7 @@ Za relacijo $R$ rečemo, da je:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{ Permutacije in inverzije }
 
-V tem poglavju bomo definirali permutacije, pogledali kako jih lahko predstavimo in pokazali, da so permutacije množice $[n] = \{ 1, 2, \dots, n\}$ skupaj z operacijo kompozitum grupa. Nato bomo definirali inverzije permutacije, pogledali kako sta definirani Bruhatovi delni urejenosti, pokazali, kako zapišemo rodovno funkcijo za število permutacij množice $[n]$ z $i$ inverzijami, in si ogledali, kako lahko uredimo množico $S_n$ in tako permutacije identificiramo s celimi števili.
+V tem poglavju bomo definirali permutacije, pogledali kako jih lahko predstavimo in pokazali, da so permutacije množice $[n] = \{ 1, 2, \dots, n\}$ skupaj z operacijo kompozitum grupa. Nato bomo definirali inverzije permutacije, pogledali, kako sta definirani Bruhatovi delni urejenosti, pokazali, kako zapišemo rodovno funkcijo za število permutacij množice $[n]$ z $i$ inverzijami, in si ogledali, kako lahko uredimo množico $S_n$ in tako permutacije identificiramo s celimi števili.
 
 \section{ Permutacije }
 
@@ -475,9 +475,9 @@ Ta zapis nam pove, da je:
         \begin{center}        
             \begin{tikzpicture}[shorten >=1pt,-]
                 \tikzstyle{vertex}=[circle,draw=black!0,fill=white!25,minimum size=20pt,inner sep=0pt]
-                \foreach \num/\y in {1/1, 2/2, 3/3, 4/4, 5/5}
+                \foreach \num/\y in {1/1.1, 2/2.2, 3/3.3, 4/4.4, 5/5.5}
                     \node[vertex] (V-\num) at (0,5-\y) {$\num$};
-                \foreach \num/\y in {1/1, 2/2, 3/3, 4/4, 5/5}
+                \foreach \num/\y in {1/1.1, 2/2.2, 3/3.3, 4/4.4, 5/5.5}
                     \node[vertex] (VV-\num) at (5, 5-\y) {$\num$};
             
                 \foreach \from/\to in {1/3, 2/5, 3/1, 4/4, 5/2}
@@ -516,7 +516,7 @@ V nadaljevanju bomo za zapis permutacije uporabljali enovrstični zapis razen, k
 
 \subsection{ Simetrična in permutacijska grupa }
 
-Naj bo $id \in S_n$ permutacija podana s predpisom $id(a) = a$ za vsak $a \in [n]$.
+Naj bo permutacija $id \in S_n$ podana s predpisom $id(a) = a$ za vsak $a \in [n]$.
 
 Kompozitum preslikav, ki ga označimo z $\circ$, je operacija na množici preslikav. Kompozitum preslikav $\pi \circ \sigma$ je taka preslikava, ki najprej element preslika z $\sigma$, nato pa dobljeni element preslika še s $\pi$.
 
@@ -573,10 +573,10 @@ V tem podpoglavju bomo najprej definirali inverzijo permutacije, ki je par eleme
                 \node[vertex] (VV-\num) at (4, 4-\y) {$\num$};
         
             
-            \node[vertex] (V-0) at (0,3.5) {};
-            \node[vertex] (VV-0) at (4,3.5) {};
-            \node[vertex] (V-5) at (0,0) {};
-            \node[vertex] (VV-5) at (4,0) {};
+            \node[vertex] (V-0) at (0.3,3.5) {};
+            \node[vertex] (VV-0) at (3.7,3.5) {};
+            \node[vertex] (V-5) at (0.3,0) {};
+            \node[vertex] (VV-5) at (3.7,0) {};
 
             \foreach \from/\to in {1/4, 2/2, 3/1, 4/3}
                 \draw[latex-latex] (V-\from) -- (VV-\to);
@@ -701,7 +701,7 @@ Iz definicije \ref{definicija_sibke_bruhatove_urejenosti} sledi, da lahko permut
 Naslednja lema nam pove, kaj se zgodi z množicami inverzij $I_{\pi}$ in $I_{\sigma}$ permutacij $\pi$ in $\sigma$, kjer eno pridobimo iz druge s poljubno transpozicijo.
 
 \begin{lema}
-    Naj bo $\pi = (i_1, \dots, i_{k-1}, i_k, \dots, i_l, i_{l+1}, \dots, i_n) \in S_n$, kjer je $i_k > i_l$ in $1 \leq k < l \leq n$, in $\sigma = (i_1, \dots, i_{k-1}, i_l, \dots, i_k, i_{l+1}, \dots, i_n) \in S_n$, pridobljena iz $\pi$ s transpozicijo elementov $i_k$ in $i_l$. Poglejmo si particijo množice $L = \{ k, k+ 1, \dots, l\}$ v množice $L_1, L_2, L_3$ in $\{ k, l \}$, kjer so:
+    Naj bo permutacija $\pi = (i_1, \dots, i_{k-1}, i_k, \dots, i_l, i_{l+1}, \dots, i_n) \in S_n$ in permutacija $\sigma = (i_1, \dots, i_{k-1}, i_l, \dots, i_k, i_{l+1}, \dots, i_n) \in S_n$, pridobljena iz $\pi$ s transpozicijo elementov $i_k$ in $i_l$, kjer je $i_k > i_l$ in $1 \leq k < l \leq n$. Poglejmo si particijo množice $L = \{ k, k+ 1, \dots, l\}$ v množice $L_1, L_2, L_3$ in $\{ k, l \}$, kjer so:
     \[
         L_1 = \{ s \in L: i_s > i_k \}, \ L_2 = \{ s \in L: i_k > i_s > i_l \}, \ L_3 = \{ s \in L: i_s < i_l \}.
     \]
@@ -869,7 +869,7 @@ Poglejmo si najprej pretvorbi permutacije v Lehmerjevo kodo in vektor inverzij. 
 
 V Lehmerjevi kodi permutacije $\sigma$ števka $d_n$ predstavlja $\sigma_1 - 1$. To je število elementov manjših od $\sigma_1$, ki so v inverziji s $\sigma_1$. Števka $d_{n-1}$ predstavlja število elementov, ki so manjši od $\sigma_2$ in so v inverziji s $\sigma_2$. V splošnem, števka $d_{n-i+1}$ predstavlja število elementov, ki so manjši od $\sigma_i$ in so v inverziji s $\sigma_i$.
 
-Vektor inverzij permutacije $\sigma$ je podoben zapis. $d_{n-j+1}$ nam pove, koliko je inverzij oblike $(i, j)$, kjer je $j$ manjša vrednost para števil v inverziji.
+Vektor inverzij permutacije $\sigma$ je podoben zapis. Števka $d_{n-j+1}$ nam pove, koliko je inverzij oblike $(i, j)$, kjer je $j$ manjša vrednost para števil v inverziji.
 
 Obe kodiranji lahko prikažemo z Rothejevim diagramom, kjer so pike postavljene na pozicijah $(i, \sigma_i)$, križi pa predstavljajo inverzije permutacije. Lehmerjeva koda nam šteje število križev v vsaki vrstici, vektor inverzij pa nam šteje število križev v vsakem stolpcu. Ker ima inverzna permutacija ravno transponiran Rothejev diagram, sledi, da je vektor inverzij ravno Lehmerjeva koda inverzne permutacije in Lehmerjeva koda je ravno vektor inverzij inverzne permutacije. Primer Rothejevega diagrama je prikazan v tabeli \ref{tbl:rothejev_diagram}.
 
@@ -1118,7 +1118,7 @@ Za usmerjen graf $D$ rečemo, da je tranzitiven, če je $(x, z)$ usmerjena povez
 
 Polnemu orientiranemu grafu rečemo turnir. Rezultat vozlišča $x$ v turnirju je izhodna stopnja vozlišča $x$. Označimo ga s $s(x)$. Rezultatsko zaporedje turnirja je zaporedje rezultatov vozlišč turnirja v nepadajočem vrstnem redu.
 
-Obstaja samo en tranzitiven turnir na $n$ vozliščih (do izomorfizma natančno). Ta je izomorfen grafu permutacije $\sigma = (n, n-1, \dots, 1)$ z usmerjenimi povezavami $x \rightarrow y$, če je $(x, y)$ inverzija. Opazimo tudi, da v tranzitivnem turnirju ni usmerjenih ciklov. 
+Obstaja natanko en tranzitiven turnir na $n$ vozliščih (do izomorfizma natančno). Tranzitiven turnir na $n$ vozliščih je izomorfen permutacijskemu grafu permutacije $\sigma = (n, n-1, \dots, 1)$ z usmerjenimi povezavami $x \rightarrow y$, če je $(x, y)$ inverzija. Opazimo tudi, da v tranzitivnem turnirju ni usmerjenih ciklov. 
 
 \begin{figure}[h]
     \begin{center}        
@@ -1170,12 +1170,12 @@ Obstaja samo en tranzitiven turnir na $n$ vozliščih (do izomorfizma natančno)
         \begin{center}        
             \begin{tikzpicture}[shorten >=1pt,-]
                 \tikzstyle{vertex}=[circle,draw=black,fill=white!25,minimum size=20pt,inner sep=0pt]
-                \foreach \num/\x in {1/1, 3/3.5}
+                \foreach \num/\x in {1/1, 3/3}
                     \node[vertex] (V-\num) at (\x,0) {$v_\num$};
                     
-                    \node[vertex] (V-2) at (2.25, 1.5) {$v_2$};
+                    \node[vertex] (V-2) at (2, 1.3) {$v_2$};
                 
-                \foreach \num/\x in {3/6, 2/7.5, 1/9}
+                \foreach \num/\x in {3/5.5, 2/7, 1/8.5}
                     \node[vertex] (VV-\num) at (\x,0) {$\num$};
     
                     \foreach \from/\to in {1/2, 2/3, 3/1}
@@ -1183,7 +1183,7 @@ Obstaja samo en tranzitiven turnir na $n$ vozliščih (do izomorfizma natančno)
                     \foreach \from/\to in {3/2, 2/1}
                         \draw (VV-\from) -- (VV-\to);
     
-                    \draw (VV-3) .. controls (6.5, 1) and (8.5, 1) .. (VV-1);
+                    \draw (VV-3) .. controls (6, 1) and (8, 1) .. (VV-1);
             \end{tikzpicture}
         \end{center}
         \caption{Izomorfna grafa $G$ in $G_{\sigma}$.}
@@ -1230,7 +1230,7 @@ Obstaja samo en tranzitiven turnir na $n$ vozliščih (do izomorfizma natančno)
     \end{figure}
     Radi bi pokazali, da je $T$ tranzitiven turnir. 
     
-    Naj bosta $(x, y)$ in $(y, z)$ usmerjeni povezavi v grafu $T$. Če bi obe pripadali istemu grafu $D$ ali $\overline{D}$, bi sledilo, da je $(x, z)$ usmerjena povezava v $T$, saj sta $D$ in $\overline{D}$ tranzitivna. Zato brez škode za splošnost privzamimo, da $(x, y) \in E(D) $ in $(y, z) \in E(\overline{D})$. Če je $(x, z) \in E(D)$ smo končali, saj je potem $(x, z) \in E(T)$. Zato privzamimo da $(x, z) \notin E(D)$. Poglejmo, ali je lahko $(z, x) \in E(D)$. Zaradi tranzitivnosti grafa $D$ bi to pomenilo, da je tudi $(z, y) \in E(D)$, kar je v protislovju s tem, da je  $(y, z) \in E(\overline{D})$. Potem je $(z, x) \in E(\overline{D})$ ali $(x, z) \in E(\overline{D})$. Če je $(z, x) \in E(\overline{D})$, potem zaradi tranzitivnosti $\overline{D}$ in $(y, z), (z, x) \in E(\overline{D})$ sledi, da je $(y, x) \in E(\overline{D})$. To je v protislovju z $(x, y) \in E(D)$. Zato je $(x, z) \in E(\overline{D})$. Sledi, da je $(x, z) \in E(T)$ in $T$ je tranzitiven turnir. Po izreku \ref{izrek_tranzitiven_turnir} je rezultatsko zaporedje tranzitivnega turnirja $T$ enako $(0, 1, 2, \dots, n-1)$. 
+    Naj bosta $(x, y)$ in $(y, z)$ usmerjeni povezavi v grafu $T$. Če bi obe pripadali istemu grafu $D$ ali $\overline{D}$, bi sledilo, da je $(x, z)$ usmerjena povezava v $T$, saj sta $D$ in $\overline{D}$ tranzitivna. Zato brez škode za splošnost privzamimo, da je $(x, y) \in E(D) $ in $(y, z) \in E(\overline{D})$. Če je $(x, z) \in E(D)$ smo končali, saj je potem $(x, z) \in E(T)$. Zato privzamimo da $(x, z) \notin E(D)$. Poglejmo, ali je lahko $(z, x) \in E(D)$. Zaradi tranzitivnosti grafa $D$ bi to pomenilo, da je tudi $(z, y) \in E(D)$, kar je v protislovju s tem, da je  $(y, z) \in E(\overline{D})$. Potem je $(z, x) \in E(\overline{D})$ ali $(x, z) \in E(\overline{D})$. Če je $(z, x) \in E(\overline{D})$, potem zaradi tranzitivnosti $\overline{D}$ in $(y, z), (z, x) \in E(\overline{D})$ sledi, da je $(y, x) \in E(\overline{D})$. To je v protislovju z $(x, y) \in E(D)$. Zato je $(x, z) \in E(\overline{D})$. Sledi, da je $(x, z) \in E(T)$ in $T$ je tranzitiven turnir. Po izreku \ref{izrek_tranzitiven_turnir} je rezultatsko zaporedje tranzitivnega turnirja $T$ enako $(0, 1, 2, \dots, n-1)$. 
     \begin{figure}[h]
         \begin{center}
             \begin{tikzpicture}[shorten >=1pt,-]
@@ -1277,7 +1277,7 @@ Obstaja samo en tranzitiven turnir na $n$ vozliščih (do izomorfizma natančno)
 
 \section{ Drevesa }
 
-V tem podpoglavju si bomo pogledali katera drevesa so permutacijski grafi. Pokazali bomo, da za $n \geq 3$ obstajata natanko dve permutaciji iz $S_n$, katerih permutacijski graf je pot na $n$ vozliščih.
+V tem podpoglavju si bomo pogledali, katera drevesa so permutacijski grafi. Pokazali bomo, da za $n \geq 3$ obstajata natanko dve permutaciji iz $S_n$, katerih permutacijski graf je pot na $n$ vozliščih.
 
 \begin{trditev}
 \label{trditev_zvezde_permutacijski_graf}
@@ -1311,14 +1311,6 @@ V tem podpoglavju si bomo pogledali katera drevesa so permutacijski grafi. Pokaz
     \label{graf_kohezivnega_zaporedja_zvezda}
 \end{figure}
 
-\begin{trditev}
-\label{trditev_pot_permutacijski_graf}
-    Pot $P_n$ je permutacijski graf.
-\end{trditev}
-\begin{dokaz}
-    Naj bo $P_n$ pot na $n$ vozliščih. Naj bo prvo vozlišče na poti označeno z $v_1$, drugo z $v_2$, $\dots$, in zadnje z $v_n$ (slika \ref{graf_kohezivnega_zaporedja_pot}). Če je $n$ sodo število, potem je $(v_2, v_1, v_4, v_3,\dots,v_{n}, v_{n-1})$ kohezivno zaporedje poti $P_n$. Če je $n$ liho število, potem je $(v_2, v_1, v_4, v_3,\dots,v_{n-1}, v_{n-2}, v_{n})$ kohezivno zaporedje poti $P_n$. To je res, saj sta izpolnjena pogoja $(a)$ in $(b)$ iz definicije \ref{def_kohezivno_zaporedje}. 
-\end{dokaz}
-
 \begin{figure}[h]
     \begin{center}        
         \begin{tikzpicture}[shorten >=1pt,-]
@@ -1346,6 +1338,15 @@ V tem podpoglavju si bomo pogledali katera drevesa so permutacijski grafi. Pokaz
     \caption{Primer kohezivnega zaporedja za pot $P_n$.}
     \label{graf_kohezivnega_zaporedja_pot}
 \end{figure}
+
+\begin{trditev}
+\label{trditev_pot_permutacijski_graf}
+    Pot $P_n$ je permutacijski graf.
+\end{trditev}
+\begin{dokaz}
+    Naj bo $P_n$ pot na $n$ vozliščih. Naj bo prvo vozlišče na poti označeno z $v_1$, drugo z $v_2$, $\dots$, in zadnje z $v_n$ (slika \ref{graf_kohezivnega_zaporedja_pot}). Če je $n$ sodo število, potem je $(v_2, v_1, v_4, v_3,\dots,v_{n}, v_{n-1})$ kohezivno zaporedje poti $P_n$. Če je $n$ liho število, potem je $(v_2, v_1, v_4, v_3,\dots,v_{n-1}, v_{n-2}, v_{n})$ kohezivno zaporedje poti $P_n$. To je res, saj sta izpolnjena pogoja $(a)$ in $(b)$ iz definicije \ref{def_kohezivno_zaporedje}. Po izreku \ref{izrek_permutacijski_graf_kohezivno_zaporedje} je pot $P_n$ permutacijski graf, saj ima kohezivno zaporedje.
+\end{dokaz}
+
 % \begin{figure}[h]
 %     \begin{center}        
 %         \begin{tikzpicture}[shorten >=1pt,-]
@@ -2001,7 +2002,7 @@ Izrek \ref{izrek_neprimaren_graf_je_kompozicija_z_primarnim} nam opiše struktur
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{ Tekmovalnostni grafi }
 
-Tekmovalnostni graf je generiran z množico permutacij $R$. Ima množico vozlišč $[n]$ in povezave med vozlišči, ki sta v različnem vrstem redu med poljubnima permutacijama iz $R$.
+Tekmovalnostni graf je generiran z množico permutacij $R$. Ima množico vozlišč $[n]$ in povezave med vozlišči, ki v permutacijah iz $R$ zamenjata svoji relativni poziciji.
 
 Tekmovalnostni grafi so razširitev permutacijskih grafov, saj je vsak tekmovalnostni graf, ki je generiran z dvema permutacijama $\pi$ in $\sigma$ izomorfen ravno permutacijskemu grafu permutacije $\pi^{-1} \circ \sigma$. 
 
@@ -2107,7 +2108,7 @@ Tekmovalnost med dvema vozliščema $i, j \in [n]$ je močno povezano z dejstvom
     
     $((i) \Rightarrow (iii))$ Preimenujmo vozlišča tako, da bo $c_1 = id$. Naj $i$ in $j$ zamenjata svoji relativni poziciji med rangiranji $c_s$ in $c_t$. Potem je v enem izmed $c_s$ ali $c_t$ inverzija $(i, j)$. 
     
-    $((iii) \Rightarrow (ii))$ Preimenujmo vozlišča tako, da je $c_1 = id$ in je $(i, j)$ inverzija v $c_s$. Potem $i$ in $j$ zamenjata relativno pozicijo med $c_s$ in $c_{s-1}$ ali pa $c_{s-1}$ prav tako vsebuje inverzijo $(i, j)$ in se zamenjava zgodi prej. To sledi iz dejstva, da je $R$ končna množica.
+    $((iii) \Rightarrow (ii))$ Preimenujmo vozlišča tako, da je $c_1 = id$ in $(i, j)$ inverzija v $c_s$. Potem $i$ in $j$ zamenjata relativno pozicijo med $c_s$ in $c_{s-1}$ ali pa $c_{s-1}$ prav tako vsebuje inverzijo $(i, j)$ in se zamenjava zgodi prej. To sledi iz dejstva, da je $R$ končna množica.
 \end{dokaz}
 
 \begin{definicija}
@@ -2118,9 +2119,7 @@ Tekmovalnost med dvema vozliščema $i, j \in [n]$ je močno povezano z dejstvom
 \label{primer_tekmovalnostni_graf}
     Naj bo $R = \{ c_1, c_2, c_3 \}$ množica rangiranj množice $[4]$.
     \begin{align*}
-        c_1 &= (1, 2, 3, 4) \notag\\
-        c_2 &= (1, 2, 4, 3) \notag\\
-        c_3 &= (3, 1, 2, 4) \notag
+        c_1 = (1, 2, 3, 4) \quad c_2 = (1, 2, 4, 3) \quad c_3 = (3, 1, 2, 4) \notag
     \end{align*}
     Ker je $c_1=id$, so povezave grafa $G_c(R)$ ravno inverzije rangiranj $c_2$ in $c_3$. Rangiranje $c_2$ ima inverzijo $(4, 3)$, medtem ko ima rangiranje $c_3$ inverziji $(3, 1), \ (3, 2)$. Graf $G_c(R)$ je prikazan na sliki \ref{graf_tekmovalnosti_primer}.
     \begin{figure}[h]
@@ -2208,7 +2207,7 @@ Medtem, ko je pogoj $(a)$ iz definicije \ref{def_kohezivno_zaporedje} povezan s 
     Vsak tekmovalnostni graf je delno koheziven.
 \end{izrek}
 \begin{dokaz}
-    Naj bo $G_c(R)$ tekmovalnostni graf, ki je generiran z množico rangiranj $R$. Brez izgube splošnosti privzemimo, da je rangiranje $id \in R$. Naj bo $ab \in E(G_c(R))$, kjer $a \prec_{id} b$ in $x \in [n]$ tak, da je $a \prec_{id} x \prec_{id} b$. Ker je $ab$ povezava, vozlišči $(a, b)$ tekmujeta. To pomeni, da obstaja tako rangiranje $c_m \in R$, da je $b \prec_{c_m} a$. Če $x \prec_{c_m} a$, potem tekmujeta $(x, a)$ in je $ax \in E(G_c(R))$, v nasprotnem primeru je $b \prec_{c_m} a \prec_{c_m} x$, kar pomeni, da tekmujeta $(b, x)$ in $xb \in E(G_c(R))$.
+    Naj bo $G_c(R)$ tekmovalnostni graf, ki je generiran z množico rangiranj $R$. Brez izgube splošnosti privzemimo, da je rangiranje $id \in R$. Naj bo $ab \in E(G_c(R))$, kjer je $a \prec_{id} b$, in $x \in [n]$ tak, da je $a \prec_{id} x \prec_{id} b$. Ker je $ab$ povezava, vozlišči $(a, b)$ tekmujeta. To pomeni, da obstaja tako rangiranje $c_m \in R$, da je $b \prec_{c_m} a$. Če $x \prec_{c_m} a$, potem tekmujeta $(x, a)$ in je $ax \in E(G_c(R))$, v nasprotnem primeru je $b \prec_{c_m} a \prec_{c_m} x$, kar pomeni, da tekmujeta $(b, x)$ in $xb \in E(G_c(R))$.
 \end{dokaz}
 
 V \cite{setsOfRankings} avtorji domnevajo, da velja naslednja domneva.
@@ -2447,7 +2446,7 @@ Dokaz zadnjega izreka nam podaja algoritem za izračun množice posrednih in nep
 
 Poglejmo si sezono 2014 v prvenstvu MotoGP. V tej sezoni je bil najboljši dirkač Marc Márquez. Zmagal je na prvih desetih dirkah sezone. V celi sezoni pa je zmagal na trinajstih od skupaj osemnajst dirk. Na treh dirkah je padel, vendar se je v trenutku padca potegoval za zmago. Poleg tega je bil še enkrat drugi in enkrat četrti. Poleg Marca Márqueza so bili veliko boljši od ostalih še Valentino Rossi, Jorge Lorenzo in Dani Pedrosa. Na stopničkah so bili trije od njih (štirih) na trinajstih dirkah, vsaj dva na sedemnajstih dirkah, vsaj en pa na vseh osemnajstih dirkah te sezone. Opazimo, da so se to sezono izoblikovale vsaj tri kakovostne skupine. V prvi skupini je Marc Márquez, ki je bil to sezono veliko boljši od ostalih. V drugi skupini so Valentino Rossi, Jorge Lorenzo in Dani Pedrosa. V ostalih skupinah pa so ostali dirkači.
 
-Če bi uporabili algoritem za izračun množic posrednih in neposrednih tekmovalcev na rezultatih vseh dirk sezone 2014, bi naleteli na težave. Ena od težav je, da ni na vseh dirkah tekmovalo enako tekmovalcev, oziroma ni vsake dirke zaključilo enako število tekmovalcev. Zato rezultati dirk niso iz iste simetrične grupe $S_n$. Poleg tega opazimo, da je Marc Márquez bil na prvem in na zadnjem mestu (je odstopil), iz česar sledi, da tekmuje z vsemi ostalimi dirkači in imamo samo eno množico posrednih in neposrednih tekmovalcev.
+Če bi uporabili algoritem za izračun množic posrednih in neposrednih tekmovalcev na rezultatih vseh dirk sezone 2014, bi naleteli na težave. Ena od težav je, da ni na vseh dirkah tekmovalo enako število tekmovalcev, oziroma ni vsake dirke zaključilo enako število tekmovalcev. Zato rezultati dirk niso iz iste simetrične grupe $S_n$. Poleg tega opazimo, da je Marc Márquez bil na prvem in na zadnjem mestu (je odstopil), iz česar sledi, da tekmuje z vsemi ostalimi dirkači in imamo samo eno množico posrednih in neposrednih tekmovalcev.
 
 Zato bomo izbrali neko podmnožico dirk $A$ in neko podmnožico dirkačev, ki so na vseh dirkah iz podmnožice $A$ dirko zaključili. Tako dobimo $|A|$ rangiranj/permutacij neke simetrične grupe.
 
@@ -2469,7 +2468,7 @@ Sedaj poženemo algoritem za izračun množice posrednih in neposrednih tekmoval
 \end{align}
 Tako vidimo, da so za to izbiro dirk in dirkačev, ki so zaključili te dirke, dobimo pričakovane ugotovitve. Torej je Marc Márquez v svoji množici posrednih in neposrednih tekmovalcev, v drugi množici posrednih in neposrednih tekmovalcev so Valentino Rossi, Jorge Lorenzo in Dani Pedrosa. Ostali dirkači pa so v tretji množici posrednih in neposrednih tekmovalcev.
 
-Poglejmo si še en pristop. Dirkače označimo z zaporedno številko glede na to, kako so bili na koncu sezone uvrščeni v skupnem vrstem redu. Tako dobimo dobimo vektor = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29) = (Marc Márquez, Valentino Rossi, Jorge Lorenzo, Dani Pedrosa, Andrea Dovizioso, Pol Espargaró, Aleix Espargaró, Bradley Smith, Stefan Bradl, Andrea Iannone, Álvaro Bautista, Scott Redding, Cal Crutchlow, Hiroshi Aoyama, Yonny Hernández, Nicky Hayden, Karel Abraham, Héctor Barberá, Michele Pirro, Danilo Petrucci, Alex de Angelis, Colin Edwards, Broc Parkes, Michael Laverty, Mike Di Meglio, Katsuyuki Nakasuga, Leon Camier, Michel Fabrizio, Randy de Puniet). Tokrat si za podmnožice dirk izbirajmo po 3 zaporedne dirke in glejmo samo dirkače, ki so na vseh teh 3 dirkah zaključili dirko. Množice posrednih in neposrednih tekmovalcev, ki jih dobimo z algoritmom za izračun množic posrednih in neposrednih tekmovalcev, so zbrane v tabeli \ref{tbl:tabelaPosrednihNeposrednihTekmovalcev3}. Ponovno vidimo, da se Marc Márquez velikokrat pojavi v prvi množici posrednih in neposrednih tekmovalcev, kot edini tekmovalec te množice. Dvakrat se nam kot samostojna množica pojavi množica najboljših štirih te sezone. Množice $\{ 24 \}$, $\{ 25 \}$, $\{ 18 \}$, $\{ 23 \}$ nam pokažejo, da nekateri dirkači to sezono niso bili prav zares konkurenčni ostalim dirkačem. Vidimo tudi, da se nam pri skoraj vseh izbirah treh zaporednih dirkah ustvari nekaj množic posrednih in neposrednih tekmovalcev. To se ne zgodi samo takrat, ko je Marc Márquez padel, vendar nadaljeval dirko in jo zaključil na 15 oziroma 13 mestu (dirki trinajst in štirinajst). To nam pove, da so dirkači v različnih množicah verjetno res različno konkurenčni. Na to seveda vpliva tudi to, da dirkajo z opremo različnih kvalitet. 
+Poglejmo si še en pristop. Dirkače označimo z zaporedno številko glede na to, kako so bili na koncu sezone uvrščeni v skupnem vrstem redu. Tako dobimo dobimo vektor = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29) = (Marc Márquez, Valentino Rossi, Jorge Lorenzo, Dani Pedrosa, Andrea Dovizioso, Pol Espargaró, Aleix Espargaró, Bradley Smith, Stefan Bradl, Andrea Iannone, Álvaro Bautista, Scott Redding, Cal Crutchlow, Hiroshi Aoyama, Yonny Hernández, Nicky Hayden, Karel Abraham, Héctor Barberá, Michele Pirro, Danilo Petrucci, Alex de Angelis, Colin Edwards, Broc Parkes, Michael Laverty, Mike Di Meglio, Katsuyuki Nakasuga, Leon Camier, Michel Fabrizio, Randy de Puniet). Tokrat si za podmnožice dirk izbirajmo po 3 zaporedne dirke in glejmo samo dirkače, ki so na vseh teh 3 dirkah zaključili dirko. Množice posrednih in neposrednih tekmovalcev, ki jih dobimo z algoritmom za izračun množic posrednih in neposrednih tekmovalcev, so zbrane v tabeli \ref{tbl:tabelaPosrednihNeposrednihTekmovalcev3}. Ponovno vidimo, da se Marc Márquez velikokrat pojavi v prvi množici posrednih in neposrednih tekmovalcev, kot edini tekmovalec te množice. Dvakrat se nam kot samostojna množica pojavi množica najboljših štirih te sezone. Množice $\{ 24 \}$, $\{ 25 \}$, $\{ 18 \}$, $\{ 23 \}$ nam pokažejo, da nekateri dirkači to sezono niso bili prav zares konkurenčni ostalim dirkačem. Vidimo tudi, da se nam pri skoraj vseh izbirah treh zaporednih dirk ustvari nekaj množic posrednih in neposrednih tekmovalcev. To se ne zgodi samo takrat, ko je Marc Márquez padel, vendar nadaljeval dirko in jo zaključil na 15 oziroma 13 mestu (dirki trinajst in štirinajst). To nam pove, da so dirkači v različnih množicah verjetno res različno konkurenčni. Na to seveda vpliva tudi to, da dirkajo z opremo različnih kvalitet. 
 
 % \begin{table}
 %     \begin{center}
@@ -2521,7 +2520,7 @@ Poglejmo si še en pristop. Dirkače označimo z zaporedno številko glede na to
 \begin{center}
     \begin{tabular}{ |c|c| } 
         \hline
-            dirke & Množice posrednih in neposrednih tekmovalcev \\ 
+            Dirke & Množice posrednih in neposrednih tekmovalcev \\ 
         \hline
             1,2,3 & $\{1\}, \{2, 4, 5, 7, 10, 14, 15, 16, 17\}, \{24\}, \{25\}$ \\ 
         \hline
