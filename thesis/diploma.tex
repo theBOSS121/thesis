@@ -1272,7 +1272,7 @@ Obstaja natanko en tranzitiven turnir na $n$ vozliščih (do izomorfizma natanč
     \[
         l = (l_1, l_2, \dots, l_k) = (v_1^1, v_2^1, \dots, v_{n_1}^1, v_1^2, v_2^2, \dots, v_{n_2}^2, \dots, v_1^k, v_2^k, \dots, v_{n_k}^k)
     \]
-         kohezivno zaporedje grafa $G$ in graf $G$ permutacijski. 
+    kohezivno zaporedje grafa $G$ in graf $G$ permutacijski. 
 \end{dokaz}
 
 \section{ Drevesa }
@@ -1390,7 +1390,7 @@ Kohezivni zaporedji poti $P_{11}$ sta permutaciji:
 \[
     \sigma = (3, 1, 5, 2, 7, 4, 9, 6, 11, 8, 10) \quad \text{in} \quad \pi = (2, 4, 1, 6, 3, 8, 5, 10, 7, 11, 9). 
 \]
-Permutacijski graf permutacije $\sigma$ je tak, kot v dokazu izreka \ref{trditev_pot_permutacijski_graf}. Permutacijski graf permutacije $\pi$ je zrcalna slika permutacijskega graf permutacije $\sigma$.
+Permutacijski graf permutacije $\sigma$ je tak, kot v dokazu izreka \ref{trditev_pot_permutacijski_graf}. Permutacijski graf permutacije $\pi$ je zrcalna slika permutacijskega grafa permutacije $\sigma$.
 Vidimo, da obstajata vsaj dve permutaciji, katerih permutacijski graf je pot $P_{11}$. V izreku \ref{izrek_dve_permutaciji_poti} bomo pokazali, da sta to tudi edini permutaciji, katerih permutacijski graf je pot $P_{11}$.
 \end{primer}
 % Vidimo, da je pogoj $(a)$ iz definicije kohezivnega zaporedja \ref{def_kohezivno_zaporedje} za poti $P_n$ na prazno izpolnjen, saj ni dveh povezav $v_iv_k$ in $v_kv_j$, kjer so $i < k < j$. Pogoj $(b)$ pa je izpolnjen, saj je vedno, ko je $v_iv_j$ povezava in $k$ tak, da $i < k < j$, v grafu ena od povezav $v_iv_k$ ali $v_kv_j$. Podobno je pogoj $(a)$ izpolnjen na prazno za zvezde. Pogoj $(b)$ pa je izpolnjen, saj so vse povezave v grafu oblike $v_{n+1}v_k$ za $k \in \{ 1, 2, \dots, n \}$. Zato katerokoli povezavo vzamemo, bodo vsa vozlišča med krajiščema izbrane povezave $v_{n+1}v_k$ povezana z vozliščem $v_{n+1}$.
@@ -1455,7 +1455,7 @@ Drevo $K_{1,3}^*$ je graf pridobljen s subdivizijo vseh povezav zvezde $K_{1,3}$
 \begin{dokaz}
     Če hočemo pokazati, da graf $K_{1,3}^*$ ni permutacijski, moramo pokazati, da nima kohezivnega zaporedja. 
     
-    Najprej si oglejmo, kakšno kohezivno zaporedje ima podgraf $K_{1, 3}$ grafa $K_{1, 3}^*$. Iz dokaza trditve \ref{trditev_zvezde_permutacijski_graf} dobimo kohezivno zaporedje zvezde prikazano na sliki \ref{graf_kohezivnega_zaporedja_zvezda}. Opazimo, da ima zvezda $K_{1, 3}$ poleg kohezivnega zaporedja, kjer so vsi listi desno od vozlišča s stopnjo $3$ tudi kohezivno zaporedje, kjer so vsi listi levo od vozlišča s stopnjo $3$. To sta edini možnosti, saj če bi bili listi levo in desno od vozlišča s stopnjo $3$, potem pogoj $(a)$ iz definicije \ref{def_kohezivno_zaporedje} ni izpolnjen. Zaradi simetrije si lahko poglejmo samo primer, ko so listi desno od vozlišča s stopnjo $3$ (slika \ref{graf_kohezivnega_zaporedja_zvezda}). 
+    Najprej si oglejmo, kakšno kohezivno zaporedje ima podgraf $K_{1, 3}$ grafa $K_{1, 3}^*$. Iz dokaza trditve \ref{trditev_zvezde_permutacijski_graf} dobimo kohezivno zaporedje zvezde prikazano na sliki \ref{graf_kohezivnega_zaporedja_zvezda}. Opazimo, da ima zvezda $K_{1, 3}$ poleg kohezivnega zaporedja, kjer so vsi listi desno od vozlišča s stopnjo $3$ tudi kohezivno zaporedje, kjer so vsi listi levo od vozlišča s stopnjo $3$. To sta edini možnosti, saj če bi bili listi levo in desno od vozlišča s stopnjo $3$, potem pogoj $(a)$ iz definicije \ref{def_kohezivno_zaporedje} ne bi bil izpolnjen. Zaradi simetrije si lahko poglejmo samo primer, ko so listi desno od vozlišča s stopnjo $3$ (slika \ref{graf_kohezivnega_zaporedja_zvezda}). 
     
     Da bi našli kohezivno zaporedje grafa $K_{1,3}^*$, moramo kohezivnemu zaporedju iz prejšnega odstavka dodati še preostala vozlišča (liste grafa $K_{1,3}^*$). Če vozlišče, ki je sosednje srednjemu listu podgrafa $K_{1,3}$ v kohezivnem zaporedju dodamo na katerokoli mesto (slika \ref{slika_k12*_ni}) ne dobimo kohezivnega zaporedja, saj nikoli nista izpolnjena oba pogoja iz definicije \ref{def_kohezivno_zaporedje}. Zato tudi graf $K_{1,3}^*$ nima kohezivnega zaporedja in ni permutacijski graf.
 \end{dokaz}
@@ -1770,7 +1770,6 @@ Imejmo tako gosenico, da ko ji odstranimo vse liste, dobimo pot na $k$ vozlišč
     (1. način) Če je $k = 1$, priredimo števila $2, 3,\dots, m_1+1$ listom, ki so sosedi vozlišča $u_1$, in  število $1$ vozlišču $u_1$. Na ta način dobimo permutacijo $(2, 3,\dots, m_1+1, 1)$, katere permutacijski graf je gosenica $C_1(m_1)$ . Naj bo $k$ sodo število in si poglejmo, kako iz $C_k(m_1, m_2, \dots, m_k)$ konstruiramo $C_{k+1}(m_1, m_2, \dots, m_{k+1})$. Število $p$, ki je prirejeno vozlišču $u_k$, povečamo na $p+1$ in priredimo število $p$ vozlišču $u_{k+1}$. Števila $p+2, p+3, \dots, p+m_{k+1}+1$ priredimo listom, ki so sosedi vozlišča $u_{k+1}$. Se pravi, da smo permutacijo posodobili tako, da najprej na koncu zaporedja prejšnje permutacije priključimo nova števila v zaporedju $p+2, p+3, \dots, p+m_{k+1}+1, p+1$ in dobimo $(\dots, p, \dots, p+2, p+3, \dots, p+m_{k+1}+1, p+1)$, potem pa zamenjamo števili $p$ in $p+1$ in dobimo $(\dots, p+1, \dots, p+2, p+3, \dots, p+m_{k+1}+1, p)$. Naj bo sedaj $k$ liho število in si poglejmo, kako iz $C_k(m_1, m_2, \dots, m_k)$ konstruiramo $C_{k+1}(m_1, m_2, \dots m_{k+1})$. Naj bo $p_k = k + m_1 + m_2 + \cdot\cdot\cdot + m_k$. Priredimo števila $p_k+1, p_k+2, \dots, p_k+m_{k+1}$ listom, ki so sosedi vozlšča $u_{k+1}$. Število $p_k+m_{k+1}+1$ pa priredimo vozlišču $u_{k+1}$. Se pravi, da smo permutacijo posodobili tako, da najprej na koncu zaporedja prejšne permutacije priključimo nova števila v zaporedju $p_k + m_{k+1} + 1, p_k+1, p_k+2, \dots,p_k+m_{k+1}$ in dobimo $(\dots, p_k - m_k - 1, \dots, p_k + m_{k+1} + 1, p_k+1, p_k+2,\dots,p_k+m_{k+1})$, potem pa zamenjamo števili $p_k - m_k - 1$ in $p_k + m_{k+1} + 1$, ki pripadata vozliščema $u_k$ in $u_{k+1}$. 
 
     (2. način) Če je $k = 1$ priredimo število $m_1 + 1$ vozlišču $u_1$ in števila $1, 2, \dots, m_1$ listom, ki so sosedi vozlišča $u_1$. Na ta način dobimo permutacijo $(m_1+1, 1, 2, \dots, m_1)$. Naj bo $k$ sodo število in si poglejmo, kako iz $C_k(m_1, m_2, \dots, m_k)$ konstruiramo $C_{k+1}(m_1, m_2, \dots, m_{k+1})$. To naredimo na enak način kot pri 1. načinu v primeru, ko je bilo $k$ liho število. Naj bo $k$ liho število in si poglejmo, kako iz $C_k(m_1, m_2, \dots, m_k)$ konstruiramo $C_{k+1}(m_1, m_2, \dots, m_{k+1})$. To naredimo na enak način kot pri 1. načinu v primeru, ko je bilo $k$ sodo število. Tako smo pokazali, da je $C_k(m_1, m_2, \dots, m_k)$ permutacijski graf vsaj dveh permutacij.
-
 \end{dokaz}
 
 \begin{figure}[h]
@@ -2448,6 +2447,7 @@ Dokaz zadnjega izreka nam podaja algoritem za izračun množice posrednih in nep
 % \end{minipage}
 
 \begin{definicija}
+\label{definicija_gdr}
     Naj bo $R = \{ c_1, \dots, c_r \}$ množica $r$ rangiranj $(r \geq 2)$ množice $[n]$. Definirajmo usmerjen graf $G_d(R)$  na naslednji način:
     \begin{enumerate}[label=(\roman*)]
         \item Vozlišča grafa $G_d(R)$ so elementi množice $[n]$.
@@ -2497,7 +2497,7 @@ Dokaz zadnjega izreka nam podaja algoritem za izračun množice posrednih in nep
     Binarna relacija $\rightarrow$ je tranzitivna.
 \end{lema}
 \begin{dokaz}
-    Predpostavimo, da je $D_1 \rightarrow D_2$ in $D_2 \rightarrow D_3$. Radi bi pokazali, da je potem $D_1 \rightarrow D_3$. Predpostavimo, da je $D_3 \rightarrow D_1$ in pokažimo, da nas to privede do protislovja. Vzamimo vozlišče $x \in D_1$. Ker je $D_3 \rightarrow D_1$, obstaja takšno rangiranje $c_m$ tako, da je $a \prec_{c_m} x$ za vse $a \in D_3$. Še več, ker $D_1 \rightarrow D_2$, $x \prec_{c_m} b$ za vsak $b \in D_2$ in zato $a \prec_{c_m} b$ za vse $a \in D_3$ in $b \in D_2$, kar pomeni $D_3 \rightarrow D_2$. To je protislovje.
+    Predpostavimo, da je $D_1 \rightarrow D_2$ in $D_2 \rightarrow D_3$. Radi bi pokazali, da je potem $D_1 \rightarrow D_3$. Predpostavimo, da je $D_3 \rightarrow D_1$ in pokažimo, da nas to privede do protislovja. Vzamimo vozlišče $x \in D_1$. Ker je $D_3 \rightarrow D_1$, obstaja takšno rangiranje $c_m$ tako, da je $a \prec_{c_m} x$ za vse $a \in D_3$. Še več, ker $D_1 \rightarrow D_2$, $x \prec_{c_m} b$ za vsak $b \in D_2$ in zato $a \prec_{c_m} b$ za vse $a \in D_3$ in $b \in D_2$, kar pomeni $D_3 \rightarrow D_2$. To je protislovje. Iz definicije \ref{definicija_gdr} vidimo, da ima graf $G_d(R)$ usmerjeno povezavo med vsakim parom različnih vozlišč. Zato je $D_1 \rightarrow D_3$.
 \end{dokaz}
 
 \begin{posledica}
