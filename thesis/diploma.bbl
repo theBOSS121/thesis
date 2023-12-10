@@ -13,24 +13,30 @@ Ziya Arnavut.
 \bibitem[Brualdi and Dahl(2023)]{weakBruhatOrder}
 Richard~A Brualdi and Geir Dahl.
 \newblock Permutation graphs and the weak {B}ruhat order.
-\newblock \emph{The Art of Discrete and Applied Mathematics}, 6\penalty0 (3), 2023.
+\newblock \emph{The Art of Discrete and Applied Mathematics}, 6\penalty0 (3),
+  2023.
 \newblock Article P3.01, 20 pp.
 
-\bibitem[Criado et~al.(2016)Criado, Garc{\'\i}a, Pedroche, and Romance]{setsOfRankings}
+\bibitem[Criado et~al.(2016)Criado, Garc{\'\i}a, Pedroche, and
+  Romance]{setsOfRankings}
 Regino Criado, Esther Garc{\'\i}a, Francisco Pedroche, and Miguel Romance.
 \newblock On graphs associated to sets of rankings.
-\newblock \emph{Journal of computational and applied mathematics}, 291:\penalty0 497--508, 2016.
+\newblock \emph{Journal of computational and applied mathematics},
+  291:\penalty0 497--508, 2016.
 
 \bibitem[del Vigna()]{factorialNumberSystem}
 Alessio del Vigna.
 \newblock {The factorial number system}.
-\newblock Dosegljivo: \url{http://www.phc.pisa.it/~delvigna/maths/factorial-base.pdf}.
+\newblock Dosegljivo:
+  \url{http://www.phc.pisa.it/~delvigna/maths/factorial-base.pdf}.
 \newblock [Dostopano: 18. 1. 2023].
 
-\bibitem[Gervacio et~al.(2013)Gervacio, Rapanut, and Ramos]{charectarizationPermutationGraphs}
+\bibitem[Gervacio et~al.(2013)Gervacio, Rapanut, and
+  Ramos]{charectarizationPermutationGraphs}
 Severino~V Gervacio, Teofina~A Rapanut, and Phoebe Chloe~F Ramos.
 \newblock Characterization and construction of permutation graphs.
-\newblock \emph{Open Journal of Discrete Mathematics}, 3\penalty0 (1):\penalty0 33--38, 2013.
+\newblock \emph{Open Journal of Discrete Mathematics}, 3\penalty0 (1):\penalty0
+  33--38, 2013.
 
 \bibitem[Golumbic(1980)]{algorithmGraphTheoryAndPerfectGraphs}
 Martin~Charles Golumbic.
@@ -40,7 +46,9 @@ Martin~Charles Golumbic.
 \bibitem[Kleinberg and Tardos(2005)]{algorithmDesign}
 Jon Kleinberg and Éva Tardos.
 \newblock Algorithm design.
-\newblock Dosegljivo: \url{https://web.cs.ucla.edu/~srinath/static/pdfs/AlgorithmDesign_%20EvaTardos.pdf}, 2005.
+\newblock Dosegljivo:
+  \url{https://web.cs.ucla.edu/~srinath/static/pdfs/AlgorithmDesign_%20EvaTardos.pdf},
+  2005.
 \newblock [Dostopano: 18. 11. 2023].
 
 \bibitem[Margolius(2001)]{generatingFunction}
@@ -52,13 +60,15 @@ Barbara~H Margolius.
 \bibitem[Zhao(2007)]{bruhatOrder}
 Yufei Zhao.
 \newblock On the {B}ruhat order of the symmetric group and its shellability.
-\newblock Dosegljivo: \url{https://web.mit.edu/yufeiz/www/papers/bruhat.pdf}, 2007.
+\newblock Dosegljivo: \url{https://web.mit.edu/yufeiz/www/papers/bruhat.pdf},
+  2007.
 \newblock [Dostopano: 18. 11. 2023].
 
 \bibitem[Škrekovski(2010)]{dsSkripta}
 Riste Škrekovski.
 \newblock Diskretne strukture {II} [{E}lektronski vir] : zapiski predavanj.
-\newblock Dosegljivo: \url{https://users.fmf.uni-lj.si/skreko/Gradiva/DS2-skripta.pdf}, 2010.
+\newblock Dosegljivo:
+  \url{https://users.fmf.uni-lj.si/skreko/Gradiva/DS2-skripta.pdf}, 2010.
 \newblock [Dostopano: 18. 11. 2023].
 
 \end{thebibliography}
