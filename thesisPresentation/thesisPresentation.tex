@@ -57,9 +57,13 @@
 % \usecolortheme{whale} %<- this one is nice
 % \usecolortheme{wolverine}
 
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[circle]
+
 %\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
 \setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
 \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+
 }
 
 
@@ -85,7 +89,14 @@ Fakulteta za matematiko in fiziko}
 \section{Uvod}
 \frame{
     \frametitle{Uvod}
-    V delu smo si pogledali različne kombinatorične interpretacije inverzij permutacij. Za permutacijo smo predstavili njen graf inverzij in karakterizirali permutacijske grafe. Nato smo si ogledali tekmovalnostne grafe, ki so posplošitev permutacijskih grafov. Pokazali smo, kako jih lahko uporabimo za gručenje tekmovalcev.
+    \begin{itemize}[label={-}]
+        \item Kombinatorične interpretacije inverzij permutacij
+        \item Graf inverzij
+        \item Karakterizacija permutacijskega grafa
+        \item Tekmovalnostni grafi
+        \item Gručenje tekmovalcev
+    \end{itemize}
+    % V delu smo si pogledali različne kombinatorične interpretacije inverzij permutacij. Za permutacijo smo predstavili njen graf inverzij in karakterizirali permutacijske grafe. Nato smo si ogledali tekmovalnostne grafe, ki so posplošitev permutacijskih grafov. Pokazali smo, kako jih lahko uporabimo za gručenje tekmovalcev.
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Permutacije in inverzije}
@@ -192,6 +203,8 @@ Fakulteta za matematiko in fiziko}
     \begin{block}{Definicija permutacijskega grafa:}
         Naj bo $\sigma \in S_n$. Graf inverzij permutacije $\sigma$, ki ga označimo z $G_{\sigma}$, je neusmerjen graf z $V(G_{\sigma}) = [n]$, kjer je $xy \in E(G_{\sigma})$ natanko tedaj, ko je $(x, y)$ ali $(y, x)$ inverzija permutacije $\sigma$. Vsak graf izomorfen grafu $G_{\sigma}$ za neko permutacijo $\sigma$ imenujemo permutacijski graf.
     \end{block}
+
+    $\pi = (3, 1, 5, 2, 6, 4)$
     
     \begin{figure}[h]
         \begin{center}        
@@ -221,6 +234,8 @@ Fakulteta za matematiko in fiziko}
             \item Če je $v_iv_j \in E(G)$, potem je $v_iv_k \in E(G)$ ali $v_kv_j \in E(G)$.
         \end{enumerate}
     \end{block}
+    
+    $\pi = (3, 1, 5, 2, 6, 4)$
     
     \begin{figure}[h]
         \begin{center}        
@@ -700,11 +715,25 @@ Fakulteta za matematiko in fiziko}
 \section{Zaključek}
 \frame{
     \frametitle{Zaključek}
-    Pogledali smo si, kaj so inverzije permutacij, njihove lastnosti in kako definirajo permutacijske in tekmovalnostne grafe.
+    % Pogledali smo si, kaj so inverzije permutacij, njihove lastnosti in kako definirajo permutacijske in tekmovalnostne grafe.
 
-    Permutacijske grafe smo karakterizirali s kohezivnim zaporedjem. Povedali smo, da so gosenice edina drevesa, ki so permutacijski grafi, in da obstajata natanko dve permutaciji iz $S_n$, ki imata permutacijski graf izomorfen neki gosenici na $n \geq 3$ vozliščih.
+    \begin{itemize}[label={-}]
+        \item Permutacije in inverzije permutacij
+        \item Permutacijski graf
+        \item Kohezivno zaporedje
+        \item Karakterizacija permutacijskih grafov
+        \item Gosenice
+        \item Drevesa, ki so permutacijski grafi
+        \item Rangiranja
+        \item Tekmovalnost para vozlišč
+        \item Množica posrednih in neposrednih tekmovalcev
+        \item Tekmovalnostni grafi
+        \item Delna kohezivnost
+        \item Algoritem za izračun množic posrednih in neposrednih tekmovalcev
+    \end{itemize}
+    % Permutacijske grafe smo karakterizirali s kohezivnim zaporedjem. Povedali smo, da so gosenice edina drevesa, ki so permutacijski grafi, in da obstajata natanko dve permutaciji iz $S_n$, ki imata permutacijski graf izomorfen neki gosenici na $n \geq 3$ vozliščih.
     
-    Potem smo definirali, kaj so rangiranja, kdaj par vozlišč tekmuje ter kaj je množica posrednih in neposrednih tekmovalcev.  Pogledali smo si, kaj so tekmovalnostni grafi in povedali, da so delno kohezivni. Na koncu smo predstavili algoritem za izračun množic posrednih in neposrednih tekmovalcev.
+    % Potem smo definirali, kaj so rangiranja, kdaj par vozlišč tekmuje ter kaj je množica posrednih in neposrednih tekmovalcev.  Pogledali smo si, kaj so tekmovalnostni grafi in povedali, da so delno kohezivni. Na koncu smo predstavili algoritem za izračun množic posrednih in neposrednih tekmovalcev.
 }
 % \frame{
 %     \frametitle{Lemi}
